@@ -1,0 +1,65 @@
+\chapter{The Domain}
+
+For every fixed $k \in \Z$ choosing a $v \in C^{\infty}(\R)$ with $\supp v = \Omega_{k}$ as test function in \eqref{weak-formulation} yields
+	\[ \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} A u \overline{v} \iff \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u(x) \overline{v''(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} - A u \overline{v} \]
+Such that $A u = - u'' \in L^{2}$ on $(x_{k} -\nicefrac{1}{2}, x_{k})$ and analogously on $(x_{k}, x_{k} + \nicefrac{1}{2})$.
+As $k \in \Z$ was arbitrary $\mathcal{D}(A) \subset \big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\nicefrac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \nicefrac{1}{2}) \right)\big\}$. \\
+Next, again for an arbitrary $k \in \Z$ choosing a $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$ and integrating in \eqref{weak-formulation} on both sides of $x_{k}$ by parts yields
+	\[ -\left( \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}}\right) u'' \cdot \overline{v} + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
+	\[ +  \rho u(x_{k})\overline{v(x_{k})} = - \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} u'' \overline{v} - \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}} u'' \overline{v} \]
+But as $v \in C^{\infty}(\R)$ this is equivalent to
+	\[ u'(x_{k}-0) - u'(x_{k}+0) + \rho u(x_{k}) = 0 \]
+Such that
+	\begin{align*}
+		\mathcal{D}(A) \subset \big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \big\} \eqqcolon B
+	\end{align*} 
+and the action of the operator is defined by
+	\[ A u = \begin{cases}
+					- u'' & (x_{k} - \frac{1}{2}, x_{k}) \\
+					- u'' & (x_{k}, x_{k} + \frac{1}{2})
+				\end{cases}, ~\forall k \in \Z \]
+The opposite inclusion is shown, as $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, by proving that a $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$ and show that $u = R_{\mu}(f - \mu u)$:
+	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
+	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \nicefrac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \nicefrac{1}{2}} u'' \overline{v} \]
+	For each $k \in \Z$ partial integration for a $v$ with $\supp v = (x_{k} - \nicefrac{1}{2}, x_{k} + \nicefrac{1}{2})$ yields
+	\[ \left( \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} +\nicefrac{1}{2}} \right) u' \overline{v'} - u'(x_{k}-0) \overline{v(x_{k})}  + u'(x_{k}+0) \overline{v(x_{k})}  = \int_{\Omega_{k}} u' \overline{v'} + \rho u(x_{k}) \overline{v(x_{k})} \]
+	\[ \iff u'(x_{k}+0) - u'(x_{k}-0) - \rho u(x_{k}) = 0 \]
+	such that
+	\begin{align*}
+		\mathcal{D}(A) & = \big\{ u \in H^{1}(\R): u \in \bigcap_{j \in \Z} H^{2}(x_{j} , x_{j+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho \cdot u(x_{j}) = 0 ~\forall j \in \Z \big\}
+	\end{align*}
+
+Furthermore, $A$ is self-adjoint which will will be later impoartant.\footnote{Here HAS to be some more text but I don't know what}
+
+\begin{theorem}
+	$A$ is a self-adjoint operator
+		
+	\begin{proof} % 	TODO prove that $R_{\mu}$ is symmetric and with that $A$ self-adjoint and that
+		We focus first on $R_{\mu}(A)^{-1} = (A - \mu I)$, which is symmetric, as $\forall v \in H^{1}$:
+			\begin{align*}
+				\langle R_{\mu}^{-1} u, v \rangle & = \langle (A - \mu I) u, v \rangle \\
+					& = \int (A - \mu I)(u) v dx \\
+					& = \int u'v' -  \lambda \int u v + \rho \sum_{i \in \Z} u(x_{i}) v(x_{i}) \\
+					& = \langle u, (A - \mu I) v \rangle = \langle u,  R_{\mu}^{-1} v \rangle 
+			\end{align*}
+
+		Now as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ and $\mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$, we want to show that for each $f, g \in L^{2}(\R)$
+		
+		\[ \gamma \coloneqq \langle R_{\mu} f, g \rangle - \langle f, R_{\mu} g \rangle = 0 \]
+		% todo todododod
+		Now, choose $u, v \in \mathcal{D}(A)$ such that $R_{\mu}f = u, R_{\mu} g = v$. Using this fact in combination with \eqref{weak-formulation} for those two $u, v$ one gets for all $\varphi, \psi \in H^{1}$
+		
+		\begin{align*}
+			\int u' \varphi' + \rho \sum_{i \in \Z} u(i) \varphi(i) - \mu \int u \varphi & = \int f \varphi \\
+			\int v' \psi' + \rho \sum_{i \in \Z} v(i) \psi(i) - \mu \int v \psi & = \int g \psi
+		\end{align*}
+		
+		As it has to hold for all $\varphi, \psi \in H^{1}_{k}$ the special choice of $\varphi = v$ and $\psi = u$ yields $\gamma = 0$ and $R_{\mu}$ is therefore symmetric. All in all we can use this to show that $R_{\mu}$ is self-adjoint, as we get for an arbitrary $v^{*} \in \mathcal{D}(R_{\mu}^{-1})$ there exists a $v \in \mathcal{R}(R_{\mu}^{-1}) = \mathcal{D}(R_{\mu})$: \footnote{I haven't understood this proof yet. As R is symmetric D(R*) >= D(R) we therefore have to show D(R*) <= D(R) to show the self-adjointness...}
+		
+		\begin{align*}
+			\langle u, v^{*} \rangle & = \langle R_{\mu}^{-1} R_{\mu} u , v^{*} \rangle = \langle R_{\mu} u, v \rangle  = \langle  u, R_{\mu} v \rangle 
+		\end{align*}
+		
+		So $v^{*} \in \mathcal{R}(R_{\mu})$ which means that $R_{\mu}^{-1}$ is self-adjoint. As $A$ is simply $R_{\mu}^{-1}$ shifted by the real constant $\mu$, $A$ is self-adjoint as well.		
+	\end{proof}
+\end{theorem}

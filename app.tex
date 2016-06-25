@@ -1,0 +1,70 @@
+\chapter{Appendix}
+
+\begin{theorem}[Lax-Milgram]
+Let $H$ be a real Hilbert space, with norm $\| \cdot \|$ and inner product $\langle \cdot, \cdot \rangle$ as well as the pairing of $H$ with its dual space. Assume that
+	\[ B \colon H \times H \rightarrow R  \]
+
+is a bilinear mapping, for which there exist constant $\alpha, \beta > 0$ such that
+	\[ |B[u, v]| \leq \alpha \| u \| \| v \| \quad (u, v \in H) \]
+and
+	\[ \beta \| u \|^{2} \leq B[u, u] \quad ( u \in H) \]
+Finally, let $f \colon H\rightarrow \R$ be a bounded linear functional on $H$. \\
+
+Then there exists a unique element $u \in H$ such that
+	\[ B[u, v] = \langle f, v \rangle\]
+for all $v \in H$.
+
+\begin{proof} % verw. Evans: Partial Differential Equations % question I used <> for both, the inner product and the pairing between dual spaces, is that okay?
+	For each fixed element $u \in H$, the mapping $v \mapsto B[u, v]$ is a bounded linear functional on $H$; whence the Riesz' Representation Theorem asserts the existence of a unique element $w \in H$ satisfying
+		\begin{equation}
+			 B[u, v] = \langle w, v \rangle \label{lax-milgram-*}
+		\end{equation}
+	Let us write $A u = w$ whenever \eqref{lax-milgram-*} holds; so that
+		\[ B[u, v] = \langle Au, v \rangle \quad (u, v \in H) \]
+	We first claim $A \colon H \rightarrow H$ is a bounded linear operator. Indeed if $\lambda_{1}, \lambda_{2} \in \R$ and $u_{1}, u_{2} \in H$, we see for each $v \in H$ that
+	\begin{align*}
+		\langle A (\lambda_{1} u_{1} + \lambda_{2} u_{2}), v \rangle & = B[\lambda_{1} u_{1} + \lambda_{2} u_{2}, v], ~(\text{by \eqref{lax-milgram-*}}) \\
+			& = \lambda_{1} B[u_{1}, v] + \lambda_{2} Bu_{2}, v] \\
+			& = \lambda_{1} \langle A u_{1}, v \rangle + \lambda_{2} \langle A u_{2}, v \rangle, ~(\text{by \eqref{lax-milgram-*} again}) \\
+			& = \langle \lambda_{1} A u_{1} + \langle_{2} A u_{2}, v \rangle.
+	\end{align*}
+	This equality obtains for each $v \in H$, and so $A$ is linear. Furthermore
+	\[ \| A u \|^{2} = \langle A u, A u \rangle = B[u, Au] \leq \alpha \| u \| \| Au \|. \]
+	Consequently $\| A u \| \leq \alpha \|u \|$ for all $u \in H$, and so $A$ is bounded. \\
+	
+	Next we assert
+	\begin{equation}
+		\begin{cases} A \text{ is one-to-one, and} \\ R(A), \text{ the range of } A, \text{ is close in } H. \end{cases} \label{lax-milgram-assertion}
+	\end{equation} 
+	To prove this, let us compute
+		\[ \beta \| u \|^{2} \leq B[u, u] = \langle Au, u \rangle \leq \| Au \| \| u \| \]
+	Hence $\beta \| u \| \leq \| Au \|$. This inequality easily implies \eqref{lax-milgram-assertion}. \\
+	We demonstrate now
+		\begin{equation}
+			R(A) = H \label{lax-milgram-demonstation}
+		\end{equation} 
+		For if not, then, since $R(A)$ is closed, there would exist a nonzero element $w \in H$ with $w \in R(A)^{\bot}$. But this fact in turn implies the contradiction $\beta \| w \|^{2} \leq B[w, w] = \langle A w , w \rangle = 0$. \\
+	Next, we observe once more from the Riesz' Representation Theorem that
+		\[ \langle f, v \rangle = \langle w , v \rangle \text{ for all } v \in H \]
+	for some element $w \in H$. We then utilise \eqref{lax-milgram-assertion} and \eqref{lax-milgram-demonstation} to find $u \in H$ satisfying $A u  = w$. Then 
+		\[ B[u, v] = \langle A u, v \rangle = \langle w, v \rangle = \langle f, v \rangle (v \in H) \]
+	and this is the claim. \\
+	
+	Finally, we show there is at most one element $u \in H$ verifying the claim. For if both $B[u, v] = \langle f, v \rangle$ and $B[\tilde{u}, v] = \langle f, v \rangle$, then $B[u - \tilde{u}, v] = 0$ $(v \in H)$. We set $v = u - \tilde{u}$ to find $\beta \| u - \tilde{u}\|^{2} \leq B[u - \tilde{u}, u - \tilde{u}] = 0$.
+	\end{proof}
+\end{theorem}
+
+\begin{theorem}[Sobolev Embedding] % verw. Spektraltheorie
+	\[ H^{1}[0, 1] \subset C[0, 1]. \]
+\begin{proof} % verw. Simplest Sobolev imbedding and Rellich-Kondrachev compactness Paul Garrett garrett@math.umn.edu http:/www.math.umn.edu/ garrett/
+Prove that the $H^{1}$ norm dominates the $C$ norm, namely, sup-norm, on $C_{c}^{\infty}[0, 1]$. First, for $0 \leq x \leq y \leq 1$, the difference between maximum and minimum values of $f \in C_{c}^{\infty}[0, 1]$ is constrained:
+	\[ |f(y) - f(x)| = | \int_{x}^{y} f'(t) dt | \leq \left( \int_{0}^{1} |f'(t)|^{2} dt \right)^{\nicefrac{1}{2}} \cdot |x-y|^{\frac{1}{2}} = \|f'\|_{L^2} \cdot |x - y|^{\frac{1}{2}} \]
+	Let $y \in [0, 1]$ be such that $|f(y) = \min_{x}|f(x)|$. Then, using this inequality,
+	\begin{align*}
+		|f(x)| & \leq |f(y)| + |f(x) - f(y)| \\
+			   & \leq \int_{0}^{1} |f(t) dt + |f(x) - f(y)| \\
+			   & \leq \| f \| + \| f' \| \ll 2 \left(  \| f \|^{2} + \| f' \|^{2} \right)^{\nicefrac{1}{2}} = 2 \|f\|_{H^{1}}
+	\end{align*}
+	Thus, on $C_{c}^{\infty}[0,1]$ the $H^{1}$ norm dominates the sup-norm and therefore this comparison holds on the $H^{1}$ completion $H^{1}[0,1]$, and $H^{1}[0,1] \subset C[0,1]$.
+\end{proof}
+\end{theorem}

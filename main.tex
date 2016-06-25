@@ -1,0 +1,48 @@
+
+\documentclass[12pt,twoside]{mitthesis}
+\usepackage{lgrind}
+
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{nicefrac}
+\pagestyle{plain}
+ \usepackage{dsfont}
+ \usepackage{amsmath,amssymb,amsthm}
+\def\supp{\operatorname{supp}}
+\usepackage{mathtools}
+\makeatletter
+\newcommand{\leqnomode}{\tagsleft@true}
+\newcommand{\reqnomode}{\tagsleft@false}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\numberwithin{equation}{chapter}
+
+\DeclareUnicodeCharacter{00A0}{ }
+
+\begin{document}
+
+%\include{cover}
+ \pagestyle{plain}
+ 
+%\include{contents}
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+\include{chap5}
+\include{chapx}
+\appendix
+\include{app}
+%\include{appa}
+%\include{appb}
+%\include{biblio}
+\end{document}
+

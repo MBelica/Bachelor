@@ -1,0 +1,66 @@
+\chapter{The spectrum of A}	
+
+In this section, we will prove the main result stating that
+	\begin{equation}
+		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{main-statement}
+	\end{equation}
+where
+	\[ I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} \quad (s \in \N) \]
+For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}$, which follows by standard arguments from the fact that the coefficients in the eigenvalue problem \eqref{mod-eigv-problem},  \eqref{periodic-condition} depend continuously on $k$. Thus, since $B$ is compact and connected, 
+	\begin{equation}
+		I_{s} \text{ is a compact real interval, for each } s \in \N. \label{Iisacompactrealinterval}
+	\end{equation} 
+	Moreover, Poincare's min-max principle for eigenvalues implies that
+	\[ \mu_{s} \leq \lambda_{s}(k) \text{ for all } s \in \N, k \in \overline{B} \]
+	with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann ("free") boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
+		\[ \min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty, \]
+	which together with \eqref{Iisacompactrealinterval} implies that
+		\[ \bigcup_{s \in \N} I_{s} \text{ is close.}\]
+	The first part of the statement \eqref{main-statement} is 
+\begin{theorem}
+	$\sigma(A) \supset \bigcup_{s \in \N} I_{s}.$
+	\begin{proof}
+		Let $\lambda \in \bigcup_{s \in \N} I_{s}$, i.e. $\lambda = \lambda_{s}(k)$ for some $s \in \N$ and some $k \in \overline{B}$, and 
+		\begin{equation}
+			A \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation}
+		\end{equation}
+		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodicity of $A$, \eqref{firstinclusion-firstequation} holds for all $x \in \R$ and $\psi_{s} \in H^{2}_{loc}(\R)$ \\
+		We choose a function $\eta \in H^{2}(\R)$ such that
+			\[ \eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \]
+		and define, for each $l \in \N$,
+			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]
+	 	Then,
+		\begin{align}
+			(A - \lambda I) u_{l} & = \sum_{j \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \label{eq:sepofspectraleq} \\
+				& = \sum_{j \in \N} \left[ \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \left( \eta\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& = \sum_{j \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& ~\qquad - \frac{2}{l} \sum_{j \in \N} \left[ \left( \eta'\left(\frac{|\cdot|}{l}\right) \psi_{s}'(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})}  \right] \notag \\
+				& ~\qquad - \frac{1}{l^{2}} \sum_{j \in \N} \left[ \left( \eta''\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& = \sum_{j \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] + R \notag
+		\end{align}
+		where $R$ is a sum of products of derivatives (of order $\geq 1$) of $\eta(\frac{|\cdot|}{l})$, and derivatives (of order $\leq 1$) of $\psi_{s}(\cdot, k)$. Thus (note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$), and the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
+		\begin{equation}
+			 \| R \| \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(K_{l})} \leq c \frac{1}{\sqrt{l}}, \label{eq:estimofR}
+		\end{equation}
+		with $K_{l}$ denoting the ball in $\R$ with radius $l$, centered at $x_{0}$. Together with \eqref{firstinclusion-firstequation}, \eqref{eq:sepofspectraleq} and \eqref{eq:estimofR}, this gives
+		\[ \| (A - \lambda I) u_{l} \| \leq \frac{c}{\sqrt{l}} \]
+		Again, by the semiperiodicity of $\psi_{s}(\cdot, k)$,
+		\[ \| u_{l} \| \geq c \| \psi_{s}(\cdot, k) \| \geq c \sqrt{l} \]
+		with $c > 0$. We obtain therefore
+		\[ \frac{1}{\|u_{l}\|}\| (A - \lambda I) u_{l} \| \leq \frac{c}{l} \]
+		Because moreover $u_{l} \in D(A)$, this results in
+			\[ \frac{1}{\|u_{l} \|} \| (A - \lambda I) u_{l} \| \rightarrow 0 \text{ as } l \rightarrow \infty \]
+		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
+	\end{proof}
+\end{theorem}	
+% todo last part	
+	
+\begin{theorem}
+	$\sigma(A) \subset \bigcup_{s \in \N} I_{s}.$
+\end{theorem}
+\begin{proof}
+	todo
+\end{proof}
+	
+TODO 
+	Theorem 3.6.3.
