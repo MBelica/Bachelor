@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  25 JUN 2016 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  26 JUN 2016 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -473,20 +473,25 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
  (./chap1.tex
 Chapter 1.
 <<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+[1
 
 
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Command \ss invalid in math mode on input line 30.
+LaTeX Warning: Command \ss invalid in math mode on input line 26.
 
 Missing character: There is no ÿ in font cmr12!
 [2]) [3]
@@ -517,21 +522,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
-
- []
-
 [8] [9]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 59.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 58.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [10]
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
+)
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
 
  []
 
-[11]) [12]
+[10] [11]) [12]
 \openout2 = `chap4.aux'.
 
  (./chap4.tex
@@ -587,14 +587,14 @@ Overfull \hbox (0.62247pt too wide) in paragraph at lines 60--61
 Here is how much of TeX's memory you used:
  3862 strings out of 493089
  53191 string characters out of 6134843
- 121515 words of memory out of 5000000
+ 120515 words of memory out of 5000000
  7158 multiletter control sequences out of 15000+600000
  17103 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  51i,13n,27p,666b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-s
 uper/sfti1200.pfb>
-Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (21 pages, 248287 bytes).
+Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (21 pages, 246502 bytes).
 PDF statistics:
  151 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams

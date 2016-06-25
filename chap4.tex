@@ -2,13 +2,13 @@
 
 Using the Floquet transformation $U$, we are now able to prove a completeness property of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
 	
-	\begin{theorem}
+\begin{theorem}
 		For each $f \in L^{2}(\R)$ and $l \in \N$, define
 			\begin{equation}
 				f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, K) dk \quad (x \in \R). \label{3.20}
 			\end{equation}
 		Then, $f_{l} \rightarrow f$ in $L^{2}(\R)$ as $l \rightarrow \infty$.
-	\end{theorem}
+
 	\begin{proof}
 		Sine $Uf \in L^{2}(\Omega \times B)$, we have $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for a.e. $k \in B$ by Fubini's Theorem. Since $(\psi_{s}(\cdot, k))_{s \in \N}$ is orthonormal and complete in $L^{2}(\Omega)$ for each $k \in B$, we obtain
 			\[ \lim_{l \rightarrow \infty} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|_{L^{2}(\Omega)} = 0 \text{ for a.e. } k \in B\]
@@ -30,4 +30,4 @@ Using the Floquet transformation $U$, we are now able to prove a completeness pr
 			\[ \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
 		and the assertion follows since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by Lemma \eqref{3.4.1}.
 	\end{proof}
-	
+\end{theorem}
