@@ -1,22 +1,22 @@
 \chapter{Fundamental domain of periodicity and the Brillouin zone}
 
-Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator}, e.g. $\Omega = \Omega_{0}$. As commonly used by literature the reciprocal lattice for $\Omega$ is equal to $[-\pi, \pi]$, this set is the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, we now consider now the operator \footnote{Where does Lax-Milgram reappear?}
-
-	\begin{equation}
-		A_{k} \colon H^{1}_{k} \rightarrow L^{2}(\R), \quad \psi \mapsto - \Delta \psi + \rho \cdot \delta_{x_{0}} \psi
-	\end{equation}
+Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator}, for simplicity let $\Omega = \Omega_{0}$ and with that $x_{0} = 0$ being the delta-point contained in $\Omega$. As commonly used by literature the reciprocal lattice for $\Omega$ is equal to $[-\pi, \pi]$, this set is the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, consider now the operator $A_{k}$ on $\Omega$ formally defined by the operation
+		\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}} \]
+	More precicely, define $A_{k}$ as follows: let us consider the problem to find for $f \in L^{2}(\Omega)$ a $u \in H^{1}_{k}$ such that
+	\[ \int_{\Omega} u' \overline{v'} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u v = \int_{\Omega} f v, \quad \forall v \in H^{1}_{k} \]
 	where 
-		\begin{equation}
-			H^{1}_{k} \coloneqq \big\{ H^{1}(\R) : \psi (-\frac{1}{2}) = e^{ik} \psi(\frac{1}{2}) \big\} \label{quasi-periodic-condition}	
-		\end{equation}
- As $H^{1}_{k}$ is a Hilbert space we can use the same arguments as in \ref{1.1} and \ref{1.2} to show that the resolvent $R_{\mu, k}$ for $A_{k}$ is well defined and therefore again
-	\[ A_{k} = R_{\mu, k}^{-1} + \mu \]
-	and we consider the eigenvalue problem
+	\begin{equation}
+		H^{1}_{k} \coloneqq \big\{ H^{1}(\Omega): ... \big\} \label{quasi-periodic-condition}	
+	\end{equation}
+
+ 	Using the fact that $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$ one can use the same arguments as above for $A$ to show that the resolvent $R_{\mu, k}$ of $A_{k}$ is well defined and analogously as before
+		\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu \]
+	Subsequently, we will now mainly consider the eigenvalue problem
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega, \label{eigv-problem}
 	\end{equation}
 
-	In writing the boundary condition in the form, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem in $L^{2}(\Omega)$ and $\psi$ from \ref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
+	In writing the boundary condition in the form \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem\footnote{explain this in more detail} in $L^{2}(\Omega)$ and $\psi$ from \ref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
 	
 	Since $\Omega$ is bounded, the subsequently shown compactness can be used to prove that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} has a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $H^{2}_{loc}(\R)$, with corresponding eigenvalues satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty \]

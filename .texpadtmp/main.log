@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  25 JUN 2016 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  25 JUN 2016 23:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -386,18 +386,18 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chap1.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chap2.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chap3.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chap4.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chap5.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapx.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/app.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
@@ -525,31 +525,34 @@ Underfull \vbox (badness 1552) has occurred while \output is active []
 ]
 Chapter 3.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-[9]
+
 Underfull \hbox (badness 10000) in paragraph at lines 22--24
 
  []
 
 [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 59.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
+ [12]
 Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]) [14]
@@ -620,14 +623,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  3862 strings out of 493089
  53191 string characters out of 6134843
- 120610 words of memory out of 5000000
+ 121610 words of memory out of 5000000
  7158 multiletter control sequences out of 15000+600000
  17103 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,13n,27p,593b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,13n,27p,664b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-
 super/sfti1200.pfb>
-Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (24 pages, 249291 bytes).
+Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (24 pages, 248268 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  109 compressed objects within 2 object streams
