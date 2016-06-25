@@ -5,31 +5,31 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 	More precicely, define $A_{k}$ as follows: let us consider the problem to find for $f \in L^{2}(\Omega)$ a $u \in H^{1}_{k}$ such that
 	\[ \int_{\Omega} u' \overline{v'} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u v = \int_{\Omega} f v, \quad \forall v \in H^{1}_{k} \]
 	where 
-	\begin{equation}
-		H^{1}_{k} \coloneqq \big\{ H^{1}(\Omega): ... \big\} \label{quasi-periodic-condition}	
-	\end{equation}
+	\begin{eqnarray}
+		H^{1}_{k} \coloneqq \Big\{ H^{1}(\Omega): \psi(-\frac{1}{2}) = e^{ik} \psi(-\frac{1}{2}), \psi'(-\frac{1}{2}) = e^{ik} \psi'(-\frac{1}{2}) \notag \\ \text{ and } \psi'(x_{0} - 0) - \psi'(x_{0} + 0) + \rho \psi'(x_{0}) = 0 \Big\} \label{quasi-periodic-condition}	
+	\end{eqnarray}
 
- 	Using the fact that $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$ one can use the same arguments as above for $A$ to show that the resolvent $R_{\mu, k}$ of $A_{k}$ is well defined and analogously as before
+ 	Using the fact that $H^{1}_{k}$ is a closed subspace\footnote{I think I will explain this also in more detail} of $H^{1}(\R)$ one can use the same arguments as above for $A$ to show that the resolvent $R_{\mu, k}$ of $A_{k}$ is well defined and analogously as before
 		\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu \]
 	Subsequently, we will now mainly consider the eigenvalue problem
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega, \label{eigv-problem}
 	\end{equation}
 
-	In writing the boundary condition in the form \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem\footnote{explain this in more detail} in $L^{2}(\Omega)$ and $\psi$ from \ref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
+	In writing the boundary condition in the form \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem\footnote{explain this in more detail} in $L^{2}(\Omega)$ and $\psi$ from \eqref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
 	
 	Since $\Omega$ is bounded, the subsequently shown compactness can be used to prove that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} has a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $H^{2}_{loc}(\R)$, with corresponding eigenvalues satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty \]
-	The eigenfunctions $\psi_{s}(\cdot, k)$ are called Bloch waves. They can be chosen such that they depend on $k$ in a measurable way (see [M. Reed and B. Simon. Methods of modern mathematical physics I–IV. Academic Press (Harcourt Brace Jovanovich, Publishers), New York, 1975–1980., XIII.16, Theorem XIII.98]). \footnote{todo some expl} \\ % todo some explainations 
+	The eigenfunctions $\psi_{s}(\cdot, k)$ are called Bloch waves. They can be chosen such that they depend on $k$ in a measurable way (see [M. Reed and B. Simon. Methods of modern mathematical physics I–IV. Academic Press (Harcourt Brace Jovanovich, Publishers), New York, 1975–1980., XIII.16, Theorem XIII.98]). \\ % todo some explainations 
 	\begin{theorem}
 		The operator $R_{\mu, k}$ is compact.
 	\end{theorem}
 	\begin{proof}
-	$R_{\mu, k}$ is compact since for $(f_{j})_{j \geq 1} \in L^{2}(\Omega): \|f_{j} \|_{L^{2}(\Omega)} \leq c$ $\forall j \geq 1$ there exists for all $j \in \N$  $u_{j} \in H^{1}_{k}$ with
-		\[ R_{\mu, k} f_{j} = u_{j} \]
-	now we show $\| u_{j} \|_{H^{1}} \leq \tilde{c}$ but has such a $u_{j}$ has to satisfy
+	For a bounded sequence $(f_{j})_{j \geq 1} \in L^{2}(\Omega)$: there exist $(u_{j})_{j \geq 1} \in H^{1}_{k}$ with
+		\[ R_{\mu, k} f_{j} = u_{j} \quad \forall j \geq 1 \]
+	First, we want to show that $\| u_{j} \|_{H^{1}} \leq \tilde{c}$. As such a$u_{j}$ has to satisfy
 		\[ \int_{\Omega} u_{j}' v' + \rho u(x_{0}) v(x_{0}) - \mu \int_{\Omega} u v = \int f_{j} v \quad \forall v \in H^{1}_{k} \]
-	choosing $v = u$ and using \eqref{eq:potentialestim} it follows for $\mu$ small enough
+	and choosing $v = u$ with \eqref{eq:potentialestim} it follows for $\mu$ small enough
 		\[ c \| u_{j} \|_{H^{1}(\Omega)} \leq | \int_{\Omega} f_{j} v | \leq \underbrace{\| f_{j} \|_{L^{2}(\Omega)}}_{\leq c} \underbrace{\| u_{j} \|_{L^{2}(\Omega)}}_{\leq D \sqrt{vol(\Omega)}} \]
 	and $H^{1}$ can be compactly embedding into $L^{2}$, since for $B_{H^{1}_{k}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \| \leq 1 \}$. We want to show that $\forall \epsilon > 0 ~\exists g_{1}, \dotsc, g_{n_{\epsilon}}$:
 	\[ \forall f \in B ~\exists g \in \{ g_{1}, \dotsc, g_{n_{\epsilon}} \} : \quad \| f - g \|\leq \epsilon \]
