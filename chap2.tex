@@ -29,13 +29,13 @@ The opposite inclusion is shown, as $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, by 
 		\mathcal{D}(A) & = \big\{ u \in H^{1}(\R): u \in \bigcap_{j \in \Z} H^{2}(x_{j} , x_{j+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho \cdot u(x_{j}) = 0 ~\forall j \in \Z \big\}
 	\end{align*}
 
-Furthermore, $A$ is self-adjoint which will will be later impoartant.\footnote{Here HAS to be some more text but I don't know what}
+Furthermore, $A$ is self-adjoint which will be later important.\footnote{Here HAS to be some more text but I don't know what}
 
 \begin{theorem}
 	$A$ is a self-adjoint operator
 		
 	\begin{proof} % 	TODO prove that $R_{\mu}$ is symmetric and with that $A$ self-adjoint and that
-		We focus first on $R_{\mu}(A)^{-1} = (A - \mu I)$, which is symmetric, as $\forall v \in H^{1}$:
+		First, focus on $R_{\mu}(A)^{-1} = (A - \mu I)$ which is a symmetric operator as $\forall v \in H^{1}$:
 			\begin{align*}
 				\langle R_{\mu}^{-1} u, v \rangle & = \langle (A - \mu I) u, v \rangle \\
 					& = \int (A - \mu I)(u) v dx \\
@@ -43,23 +43,15 @@ Furthermore, $A$ is self-adjoint which will will be later impoartant.\footnote{H
 					& = \langle u, (A - \mu I) v \rangle = \langle u,  R_{\mu}^{-1} v \rangle 
 			\end{align*}
 
-		Now as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ and $\mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$, we want to show that for each $f, g \in L^{2}(\R)$
+		Now as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ and $\mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$ for each $f, g \in L^{2}(\R)$ it follows
 		
-		\[ \gamma \coloneqq \langle R_{\mu} f, g \rangle - \langle f, R_{\mu} g \rangle = 0 \]
-		% todo todododod
-		Now, choose $u, v \in \mathcal{D}(A)$ such that $R_{\mu}f = u, R_{\mu} g = v$. Using this fact in combination with \eqref{weak-formulation} for those two $u, v$ one gets for all $\varphi, \psi \in H^{1}$
+		\[  \langle R_{\mu} f, g \rangle =  \langle R_{\mu} f, R_{\mu}^{-1} R_{\mu} g \rangle = \langle f, R_{\mu} g \rangle \]
 		
-		\begin{align*}
-			\int u' \varphi' + \rho \sum_{i \in \Z} u(i) \varphi(i) - \mu \int u \varphi & = \int f \varphi \\
-			\int v' \psi' + \rho \sum_{i \in \Z} v(i) \psi(i) - \mu \int v \psi & = \int g \psi
-		\end{align*}
-		
-		As it has to hold for all $\varphi, \psi \in H^{1}_{k}$ the special choice of $\varphi = v$ and $\psi = u$ yields $\gamma = 0$ and $R_{\mu}$ is therefore symmetric. All in all we can use this to show that $R_{\mu}$ is self-adjoint, as we get for an arbitrary $v^{*} \in \mathcal{D}(R_{\mu}^{-1})$ there exists a $v \in \mathcal{R}(R_{\mu}^{-1}) = \mathcal{D}(R_{\mu})$: \footnote{I haven't understood this proof yet. As R is symmetric D(R*) >= D(R) we therefore have to show D(R*) <= D(R) to show the self-adjointness...}
-		
+		such that also $R_{\mu}$ is symmetric. Both can be used to show that $R_{\mu}$ is even self-adjoint, as for an arbitrary $v^{*} \in \mathcal{D}(R_{\mu}^{-1})$ there exists a $v \in \mathcal{R}(R_{\mu}^{-1}) = \mathcal{D}(R_{\mu})$:
 		\begin{align*}
 			\langle u, v^{*} \rangle & = \langle R_{\mu}^{-1} R_{\mu} u , v^{*} \rangle = \langle R_{\mu} u, v \rangle  = \langle  u, R_{\mu} v \rangle 
 		\end{align*}
 		
-		So $v^{*} \in \mathcal{R}(R_{\mu})$ which means that $R_{\mu}^{-1}$ is self-adjoint. As $A$ is simply $R_{\mu}^{-1}$ shifted by the real constant $\mu$, $A$ is self-adjoint as well.		
+		Which means $v^{*} \in \mathcal{R}(R_{\mu})$ and therefore is $R_{\mu}^{-1}$  self-adjoint. As $A$ is simply $R_{\mu}^{-1}$ shifted by the real constant $\mu$, $A$ is self-adjoint aswell.		
 	\end{proof}
 \end{theorem}
