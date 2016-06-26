@@ -15,7 +15,9 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 	with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann ("free") boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
 		\[ \min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty, \]
 	which together with \eqref{Iisacompactrealinterval} implies that
-		\[ \bigcup_{s \in \N} I_{s} \text{ is close.}\]
+		\begin{equation}
+			\bigcup_{s \in \N} I_{s} \text{ is close.} \label{UIclosed}
+		\end{equation} 
 	The first part of the statement \eqref{main-statement} is 
 
 \begin{theorem}
@@ -60,10 +62,49 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 	$\sigma(A) \subset \bigcup_{s \in \N} I_{s}.$
 
 	\begin{proof}
-		todo
+		Let $\lambda \in \R \setminus \bigcup_{s \in \N} I_{s}$, we have to prove that $\lambda \in \rho(A)$, i.e., that, for each $f \in L^{2}(\R)$, some $u \in D(A)$ exists satisfying $(A-\lambda I)u = f$. For given $f \in L^{2}(\R)$, we define, for $l \in \N$, 
+			\[ f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k) dk \]
+			and
+			\begin{equation}
+				u_{l} \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk \label{ul}
+			\end{equation} 
+		Here, note that, due to \ref{UIclosed}, some $\delta > 0$ exists such that
+			\begin{equation}
+				|\lambda_{s}(k) - \lambda| \geq \delta \text{ for all } s \in \N, k \in B \label{lambda-distance}
+			\end{equation}
+
+		In particular, the boundary value problem
+		\begin{eqnarray}
+			(A - \lambda I) v(\cdot, k) & = & (Uf)(\cdot, k) \text{ on } \Omega, \label{3.33} \\
+			v(\frac{1}{2}) & = & e^{ik} v(-\frac{1}{2}) \notag
+		\end{eqnarray}
+		unique solution for every $k \in B$. Bloch wave expansion\footnote{whats that?} gives 
+		\begin{align*}
+			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle|^{2} \\
+			& = \sum_{s=1}^{\infty}|\langle (A - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2}
+		\end{align*}
+
+		Since both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy semi-periodic boundary conditions, $A - \lambda I$ can be moved to $\psi_{s}(\cdot, k)$ in the inner product, and hence \eqref{eigv-problem} and \eqref{lambda-distance} give
+		\begin{align*}
+			\| (Uf)(\cdot,k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\lambda_{s}(k) - \lambda|^{2} |\langle v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
+			& \geq \delta^{2} \| v(\cdot, k)\|^{2}_{L^{2}(\Omega)}
+		\end{align*}
+		By Theorem \ref{3.4.1}, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{3.33} gives
+			\[ a \]
+		whence \eqref{ul} implies
+			\[ u_{l}(x) = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int \langle (Uu)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk, \]
+		and Theorem \ref{3.5.1} gives
+			\begin{equation}
+				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R). \label{ulflconvergence}
+			\end{equation}
+		We will now prove that in the distributional sense 
+			\[ (A - \lambda I) u_{l} = f_{l} \text{ for all } l \in \N \]
+		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$ for all $v \in D(A)$, whence Theorem \ref{3.21} implies $u_{l} \in D(A)$, and
+			\[ (A - \lambda I) u_{l} = f_{l} \quad \forall l \in \N \]
+		Since $A$ is closed, \eqref{ulflconvergence} now implies
+			\[ u \in D(A), \text{ and } (A - \lambda I) u = f \]
+		which is the desired result.
 	\end{proof}
 \end{theorem}
 
-	
-TODO 
-	Theorem 3.6.3.
+

@@ -1,21 +1,22 @@
-
 \documentclass[12pt]{mitthesis}
 \usepackage{lgrind}
-
 % todo go through all footnotes 
-
-\usepackage{cmap}
+% all refs and labels and eqnarrays aligns etc
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{cmap}
+\usepackage{dsfont}
+\usepackage{mathtools}
 \usepackage{nicefrac}
 \pagestyle{plain}
- \usepackage{dsfont}
- \usepackage{amsmath,amssymb,amsthm}
+
+\DeclareUnicodeCharacter{00A0}{ } 
 \def\supp{\operatorname{supp}}
-\usepackage{mathtools}
 \makeatletter
-\newcommand{\leqnomode}{\tagsleft@true}
-\newcommand{\reqnomode}{\tagsleft@false}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\K}{\mathbb{K}}
@@ -27,14 +28,13 @@
 \newtheorem{theorem}{Theorem}[chapter]
 \numberwithin{equation}{chapter}
 
-\DeclareUnicodeCharacter{00A0}{ }
-
 \begin{document}
 
 %\include{cover}
+%\include{cover2}
  \pagestyle{plain}
  
-%\include{contents}
+%\tableofcontents
 \include{chap1}
 \include{chap2}
 \include{chap3}

@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {1}The Operator}{2}
+\contentsline {chapter}{\numberline {2}The Domain}{5}
+\contentsline {chapter}{\numberline {3}Fundamental domain of periodicity and the Brillouin zone}{8}
+\contentsline {chapter}{\numberline {4}Completeness of the Bloch waves}{14}
+\contentsline {chapter}{\numberline {5}The spectrum of A}{16}
+\contentsline {chapter}{\numberline {A}Appendix}{21}
