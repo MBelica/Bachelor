@@ -31,10 +31,8 @@ and
 		\begin{align*}
 			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} u(x_{i})^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle - \mu \langle u , u \rangle \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
-					& = \| u \|_{H^{1}}^{2}
-		\end{align*}
-		and for $\rho < 0$:
-		\begin{align*}
+					& = \| u \|_{H^{1}}^{2} \\
+		\intertext{and for $\rho < 0$:}
 			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu 	\langle u , u \rangle \\
 					& = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u(x) dx \big|^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle + 2 \rho \left( \int_{\R} |u(x)|^{2} dx + \int_{\R} |u'(\tau)|^{2} d\tau \right) - \mu \langle u , u \rangle \\

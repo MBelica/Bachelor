@@ -31,21 +31,21 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		\[ u_{j} = R_{\mu, k} f_{j}, \quad \forall j \geq 1 \]
 	and this $u_{j}$ has to satisfy
 		\[ \int_{\Omega} u_{j}' \overline{v'} + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j} \overline{v} = \int f_{j} \overline{v} \quad \forall v \in H^{1}_{k} \]
-	Now, choosing here $v = u_{j}$ and \eqref{eq:potentialestim} yields for $\mu$ small enough % todo do this!!!!!!!
+	Now, choosing here $v = u_{j}$ yields with \eqref{eq:potentialestim} for $\mu$ small enough % todo do this!!!!!!!
 		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)} \]
 	Which shows that $u_{j}$ is bounded in $H^{1}(\Omega)$. As $H^1(\Omega) \subset C(\Omega)$: 
 		\begin{equation}
 			|f(x) - f(y)| \leq c |x - y|^{\nicefrac{1}{2}} \text{ for some } c > 0 \label{eq:H1estimation}
-		\end{equation} 
-		From \eqref{eq:H1estimation} for a $f \in B_{H^{1}} \coloneqq \{ f \in H^{1}_{k}(\Omega)$ it follows that 
-		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega\]
-		And with that we can approximate $f$ by simple functions through partitioning $\Omega$ into $n_{\epsilon}$ equidistant intervals. As our simple function is constant on each subinterval, we chose this constant $c_{k}$ such that $|f(\frac{k}{n}) - c_{k + 1}| < \frac{1}{n}$ which leads to
+		\end{equation}  
+		From \eqref{eq:H1estimation} follows for a $f \in B_{H^{1}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \| \leq 1 \}$ that 
+		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega \]
+		and with that we can approximate $f$ by simple functions through partitioning $\Omega$ into $n_{\epsilon}$ equidistant intervals. As our simple function is constant on each subinterval, we chose this constant $c_{k}$ such that $|f(\frac{k}{n}) - c_{k + 1}| < \frac{1}{n}$ which leads to
 		\begin{align*}
 			\| f - g \|^{2}_{L^{2}} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f - c_{k+1} |^{2} dx \\
 				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
 				& \leq 2 \sum_{n = 0}^{n-1} \frac{1}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} + \frac{2}{n^{2}} < \epsilon^{2} \text{ for } n \text{ small enough.}
-		\end{align*}		
-		Which means $\forall f \in B_{H^{1}_{k}}$: $\| f - g \|\leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$, such that $R_{\mu, k}$ is compact.
+		\end{align*}		 
+		Which means $\forall f \in B_{H^{1}_{k}}$: $\| f - g \| \leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$, such that $R_{\mu, k}$ is compact. \footnote{I somehow skipped the finite coveer?!}
 	\end{proof}	
 \end{theorem}
 
