@@ -1,25 +1,6 @@
 \chapter{The Operator}
 
-
-An important problem in mathematical physics is the solution of the one-dimensional Schrödinger equation with distributional potential, which is formally defined by the operation
-\begin{equation}
-	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator}
-\end{equation}
-on the whole of $\R$ where $f$ is a function modelling an external force and $x_{i}$ are periodically distributed. $\Omega_{k}$ will denote the periodicity cell containing delta point $x_{k}$ and let w.o.l.g. $x_{0} = 0$ and $|\Omega_{i}| = 1 ~\forall i \in \Z$.  Henceforth, consider	for a $\mu \in \R$ small enough the problem 
-	
-\begin{equation}
-	\int u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v}, \quad \forall v \in H^{1}(\R) \label{weak-formulation}
-\end{equation}	
-where $f \in L^{2}(\R)$ and $u \in H^{1}(\R)$. \\
-	
-This expression actually converges as for arbitrary $\tilde{x}_{i} \in \Omega_{i}$
-\begin{eqnarray}
-	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq & \sum_{i \in \Z} \left( \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u'( \tau ) d\tau \big| \right)^{2} \notag \\
-		 & \leq & 2 \sum_{i \in \Z} \left( \int_{\Omega_{i}} |u( x )|^{2} dx +  \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
-		 & \leq & 2 \cdot \| u \|^{2}_{H^{1}(\R)} \label{eq:potentialestim}
-\end{eqnarray}
-
-Now, as we can interpret the left-hand side of \eqref{weak-formulation} as a bounded bilinear mapping $B \colon H^{1}(\R) \times H^{1}(\R) \rightarrow \R$, Lax Milgram's Theorem asserts the existence of a unique element $u \in H^{1}$ satisfying
+As we can interpret the left-hand side of \eqref{weak-formulation} as a bounded bilinear mapping $B \colon H^{1}(\R) \times H^{1}(\R) \rightarrow \R$, Lax Milgram's Theorem asserts the existence of a unique element $u \in H^{1}$ satisfying
 \begin{equation*}
 	B[u, v] = \langle f, v \rangle
 \end{equation*}
@@ -27,10 +8,11 @@ if there exist constants $\alpha, \beta > ß$ such that
 	\[ \left| B[u,v] \right| \leq \alpha \|u\| \|v\| \quad (u, v \in H^{1}(\R)) \]
 and
 	\[ \beta \|u\|^{2} \leq B[u, u] \quad (u \in H^{1}(\R)) \]
+Taking these two condition under examination, \eqref{eq:potentialestim} yields for the norm of $B[u, v]$ both: \newpage %todo temporarily
 
-Taking these two condition under examination, \eqref{eq:potentialestim} yields for the norm of $B[u, v]$ both:
 \begin{theorem} \label{1.1}
 	The bilinear form $B[u, v]$ is bounded.
+	
 	\begin{proof}
 		\begin{align*}
 			| B(u, \varphi)|^{2} & \leq \| u' \| \cdot \| v' \| + 2 \rho \sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \| \cdot \| v \| \\
@@ -43,6 +25,7 @@ Taking these two condition under examination, \eqref{eq:potentialestim} yields f
 and
 \begin{theorem} \label{1.2}
 	$B[u, u]$ is coercive.
+	
 	\begin{proof}
 		Lets first assume $\rho \geq 0$ then for $\mu < -1$:
 		\begin{align*}
@@ -56,11 +39,11 @@ and
 					& = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u(x) dx \big|^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle + 2 \rho \left( \int_{\R} |u(x)|^{2} dx + \int_{\R} |u'(\tau)|^{2} d\tau \right) - \mu \langle u , u \rangle \\
 					& = (2 \rho + 1) \| u' \|^{2} + (2\rho - \mu) \| u \|^{2}  \\
-					& \geq \beta \| u \|_{H^{1}}^{2} 
+					& \geq \beta \| u \|_{H^{1}}^{2},
 		\end{align*}
 	\end{proof}
 \end{theorem}
-Such that that the problem \eqref{weak-formulation} has the unique element $u \in H$ and with that the resolvent mapping $R_{\mu} \colon L^{2}(\R) \rightarrow H^{1}(\R), f \mapsto u$ is well-defined; obviously the mapping is one-to-one since for $u_{1} = u_{2}$
+such that that the problem \eqref{weak-formulation} has the unique element $u \in H$ and with that the resolvent mapping $R_{\mu} \colon L^{2}(\R) \rightarrow H^{1}(\R), f \mapsto u$ is well-defined; obviously the mapping is one-to-one since for $u_{1} = u_{2}$
 	\[ 0 = B[u_{1}, v] - B[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v}, \quad \forall v \in H^{1}(\R) \]
-and as $H^{1}$ is dense in $L^{2}$ this means that this equation holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in turn we can define 
+and as $H^{1}$ is dense in $L^{2}$ this means that this equation holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in turn we can define the Schrödinger operator as follows
 		\[ A \coloneqq R_{\mu}^{-1} + \mu I \text{ and with that } \mathcal{D}(A) = \mathcal{R}(R_{\mu}) \]
