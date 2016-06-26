@@ -9,16 +9,17 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		H^{1}_{k} \coloneqq \Big\{ H^{1}(\Omega): \psi(-\frac{1}{2}) = e^{ik} \psi(-\frac{1}{2}), \psi'(-\frac{1}{2}) = e^{ik} \psi'(-\frac{1}{2}) \notag \\ \text{ and } \psi'(x_{0} - 0) - \psi'(x_{0} + 0) + \rho \psi'(x_{0}) = 0 \Big\} \label{quasi-periodic-condition}	
 	\end{eqnarray}
 
- 	Using the fact that $H^{1}_{k}$ is a closed subspace\footnote{I think I will explain this also in more detail} of $H^{1}(\R)$ one can use the same arguments as above for $A$ to show that the resolvent $R_{\mu, k}$ of $A_{k}$ is well defined and analogously as before
-		\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu \]
-	Subsequently, we will now mainly consider the eigenvalue problem
+ 	Using the fact that $H^{1}_{k}$ is a closed subspace\footnote{I think I will explain this also in more detail} of $H^{1}(\R)$ one can apply the same arguments as above for $A$ to show that the resolvent $R_{\mu, k}$ of $A_{k}$ is well defined and analogous to before define
+		\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu \] 
+		
+	As from now, consider the eigenvalue problem
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega, \label{eigv-problem}
 	\end{equation}
 
-	In writing the boundary condition in the form \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem\footnote{explain this in more detail} in $L^{2}(\Omega)$ and $\psi$ from \eqref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
+	In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem\footnote{explain this in more detail and/or why do we need this} in $L^{2}(\Omega)$ and $\psi$ from \eqref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
 	
-	Since $\Omega$ is bounded, the subsequently shown compactness can be used to prove that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} has a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $H^{2}_{loc}(\R)$, with corresponding eigenvalues satisfying	
+	Since $\Omega$ is bounded, the subsequently shown compactness can be used to verify that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} has a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $H^{2}_{loc}(\R)$, with corresponding eigenvalues satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty \]
 	The eigenfunctions $\psi_{s}(\cdot, k)$ are called Bloch waves. They can be chosen such that they depend on $k$ in a measurable way (see [M. Reed and B. Simon. Methods of modern mathematical physics I–IV]). % Academic Press (Harcourt Brace Jovanovich, Publishers), New York, 1975–1980., XIII.16, Theorem XIII.98]).
 	
@@ -26,9 +27,9 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 	The operator $R_{\mu, k}$ is compact.
 
 	\begin{proof}
-	For each bounded sequence $(f_{j})_{j \geq 1} \in L^{2}(\Omega)$ there exist $(u_{j})_{j \geq 1} \in H^{1}_{k}$ with
-		\[ R_{\mu, k} f_{j} = u_{j} \quad \forall j \geq 1 \]
-	Though such $u_{j}$ has to satisfy
+	For each bounded sequence $(f_{j})_{j \geq 1} \in L^{2}(\Omega)$ there exist $(u_{j})_{j \geq 1} \in H^{1}_{k}$, such that
+		\[ u_{j} = R_{\mu, k} f_{j}, \quad \forall j \geq 1 \]
+	and this $u_{j}$ has to satisfy
 		\[ \int_{\Omega} u_{j}' \overline{v'} + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j} \overline{v} = \int f_{j} \overline{v} \quad \forall v \in H^{1}_{k} \]
 	Now, choosing here $v = u_{j}$ and \eqref{eq:potentialestim} yields for $\mu$ small enough % todo do this!!!!!!!
 		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)} \]
@@ -36,7 +37,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		\begin{equation}
 			|f(x) - f(y)| \leq c |x - y|^{\nicefrac{1}{2}} \text{ for some } c > 0 \label{eq:H1estimation}
 		\end{equation} 
-		From \eqref{eq:H1estimation} for a $f \in B_{H^{1}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \| \leq 1 \} ~\exists g \in \{ g_{1}, \dotsc, g_{n_{\epsilon}} \} : \quad \| f - g \|\leq \epsilon$ it follows that 
+		From \eqref{eq:H1estimation} for a $f \in B_{H^{1}} \coloneqq \{ f \in H^{1}_{k}(\Omega)$ it follows that 
 		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega\]
 		And with that we can approximate $f$ by simple functions through partitioning $\Omega$ into $n_{\epsilon}$ equidistant intervals. As our simple function is constant on each subinterval, we chose this constant $c_{k}$ such that $|f(\frac{k}{n}) - c_{k + 1}| < \frac{1}{n}$ which leads to
 		\begin{align*}
@@ -44,7 +45,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
 				& \leq 2 \sum_{n = 0}^{n-1} \frac{1}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} + \frac{2}{n^{2}} < \epsilon^{2} \text{ for } n \text{ small enough.}
 		\end{align*}		
-		Which means $\forall f \in B_{H^{1}_{k}}$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$ such that $R_{\mu, k}$ is compact.
+		Which means $\forall f \in B_{H^{1}_{k}}$: $\| f - g \|\leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$, such that $R_{\mu, k}$ is compact.
 	\end{proof}	
 \end{theorem}
 
