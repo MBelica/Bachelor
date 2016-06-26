@@ -1,14 +1,16 @@
 \chapter{The Domain}
 
-For every fixed $k \in \Z$ choosing a $v \in C^{\infty}(\R)$ with $\supp v = \Omega_{k}$ as test function in \eqref{weak-formulation} yields
+For every fixed $k \in \Z$ choosing a test function $v \in C^{\infty}(\R)$ with $\supp v = \Omega_{k}$  in \eqref{weak-formulation} yields
 	\[ \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} A u \overline{v} \iff \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u(x) \overline{v''(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} - A u \overline{v} \]
 Such that $A u = - u'' \in L^{2}$ on $(x_{k} -\nicefrac{1}{2}, x_{k})$ and analogously on $(x_{k}, x_{k} + \nicefrac{1}{2})$.
 As $k \in \Z$ was arbitrary $\mathcal{D}(A) \subset \big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\nicefrac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \nicefrac{1}{2}) \right)\big\}$. \\
-Next, again for an arbitrary $k \in \Z$ choosing a $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$ and integrating in \eqref{weak-formulation} on both sides of $x_{k}$ by parts yields
+
+Next, again for an arbitrary $k \in \Z$ a test function $v \in C^{\infty}(\R)$ with $\supp v = \Omega_{k}$ and integration by parts on both sides of $x_{k}$ in \eqref{weak-formulation} yields
 	\[ -\left( \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}}\right) u'' \cdot \overline{v} + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
 	\[ +  \rho u(x_{k})\overline{v(x_{k})} = - \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} u'' \overline{v} - \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}} u'' \overline{v} \]
 But as $v \in C^{\infty}(\R)$ this is equivalent to
 	\[ u'(x_{k}-0) - u'(x_{k}+0) + \rho u(x_{k}) = 0 \]
+	
 Such that
 	\begin{align*}
 		\mathcal{D}(A) \subset \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \Big\} \eqqcolon B
@@ -18,6 +20,7 @@ and the action of the operator is defined by
 					- u'' & (x_{k} - \frac{1}{2}, x_{k}) \\
 					- u'' & (x_{k}, x_{k} + \frac{1}{2})
 				\end{cases}, ~\forall k \in \Z \]
+				
 The opposite inclusion is shown, as $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, by proving that a $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$ and show that $u = R_{\mu}(f - \mu u)$:
 	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
 	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \nicefrac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \nicefrac{1}{2}} u'' \overline{v} \]
