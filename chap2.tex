@@ -24,7 +24,7 @@ and the action of the operator is defined by
 The opposite inclusion is shown, as $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, by proving that a $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$ and show that $u = R_{\mu}(f - \mu u)$:
 	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
 	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \nicefrac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \nicefrac{1}{2}} u'' \overline{v} \]
-	For each $k \in \Z$ partial integration for a $v$ with $\supp v = (x_{k} - \nicefrac{1}{2}, x_{k} + \nicefrac{1}{2})$ yields
+	For each $k \in \Z$ partial integration with a $v$ having $\supp v = (x_{k} - \nicefrac{1}{2}, x_{k} + \nicefrac{1}{2})$ returns
 	\[ \left( \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} +\nicefrac{1}{2}} \right) u' \overline{v'} - u'(x_{k}-0) \overline{v(x_{k})}  + u'(x_{k}+0) \overline{v(x_{k})}  = \int_{\Omega_{k}} u' \overline{v'} + \rho u(x_{k}) \overline{v(x_{k})} \]
 	\[ \iff u'(x_{k}+0) - u'(x_{k}-0) - \rho u(x_{k}) = 0 \]
 	such that
