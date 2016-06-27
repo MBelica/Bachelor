@@ -1,0 +1,87 @@
+We want to construct the operator$A$ in a smart way with
+	\[ A = - \frac{d^{2}}{dx^{2}} + \alpha d_{x_{0}}, \quad \mathcal{H} = L^{2}(\R) \]
+	
+Then we introduced the variational problem
+	\[ \forall v \in H^{1}(\R): \quad \int \nabla u \overline{\nabla v}dx - \mu \int u \overline{v} dx + \alpha u(x_{0}) v(x_{0}) = \int f \overline{v} dx \quad (1) \]
+$\exists_{1} u \in H^{1}(\R)$ satisfying $(1)$
+	\[ L^{2}(\R) \ni f \mapsto u \eqqcolon R_{\mu} f \]
+	
+For $f_{1} \neq f_{2} \Rightarrow u_{1} \neq u_{2}$, since:
+	\[ \text{Suppose } u_{1} = u_{2} \Rightarrow \int (f_{1} - f_{2}) \overline{v} = 0 \quad \forall \underbrace{v \in H^{1}(\R)}_{\underset{\forall v \in L^{2}(\R)}{\text{and therefore }}} \Rightarrow f_{1} = f_{2} \]
+Since $H^{1}$  is dense in $L^{2}$ $\Longrightarrow f_{1} = f_{2}$
+
+	\[ \Rightarrow \begin{rcases*} f = R^{-1}_{\mu} u \\ A u - \mu u \end{rcases*} Au = R_{\mu}^{-1} u + \mu u \]
+	
+$\Rightarrow dom A = range A\R_{mu}$ \\
+$R_{\mu}^{-1} u = Au - \mu u \eqqcolon g$ or $u = R_{\mu}g$ \\
+	\[ \int u' v' - \mu \int u \overline{v} + \alpha u(x_{0}) v(x_{0}) = \int \left( Au - \mu u \right)\overline{v} \quad (2) \]
+	
+Lets take $v \in C_{0}^{\infty}(-\infty, x_{0})$: 
+\begin{align*}
+	& \Leftrightarrow \int_{-\infty}^{x_{0}} u' v' dx = \int_{-\infty}^{x_{0}} A u \overline{v} \\
+	& \Leftrightarrow - \int_{-\infty}^{x_{0}} u \overline{v}'' dx = \int_{-\infty}^{x_{0}} Au \overline{v} dx
+\end{align*}
+
+for $u \in D'$:
+	\[ \langle u^{(m)} , v\rangle = (-1)^{m} \langle u , v^{(m)} \rangle \quad v \in C^{\infty} \]
+\begin{align*}
+	\Rightarrow \langle u^{(m)} , v \rangle = \langle u , v'' \rangle = \int_{-\infty}^{x_{0}} u \overline{v}'' = - \int_{-\infty}^{x_{0}} A u \overline{v}
+\end{align*}
+$\Rightarrow u'' = \underbrace{- A u}_{\in L^{2}}$ on $.(-\infty, x_{0})$
+Analogous argument on $(x_{0}, \infty)$
+
+Therefore we can fix the statement:
+\[ \boxed{dom A \supset \{ u \in H^{1}(\R), u \in H^{2}(-\infty, x_{0}), u \in H^{2}(x_{0}, \infty)} \]
+
+for an arbitrary $b \in C_{0}^{\infty}(\R)$, therefore with the help of $(2)$ since $u \in H^{2}$ only on these two subintervals we integrate twice by parts on both sides of $x_{0}$
+
+\[ -\left( \int_{-\infty}^{x_{0}} + \int_{x_{0}}^{\infty}\right) u'' \overline{v} + \left( u'(x_{0}-0) v_(x_{0} - 0) - u'(x_{0} + 0)v(x_{0}+0) \right) + \alpha u(x_{0})\overline{v}(x_{0}) \]
+\[  = - \int_{-\infty}^{x_{0}} u'' v - \int_{x_{0}}^{\infty}s u'' v \]
+which we can rewrite with the fact that $v$ is continous and $v(x_{0}+0) = v(x_{0}-0)$, after all we know that $v \in C_{0}^{\infty}$
+
+	\[ \Leftrightarrow u'(x_{0}-0) - u'(x_{0}+0) + \alpha u(x_{0}) = 0 \]
+	
+$\Rightarrow dom \subset \{ u \in H^{1}(\R), u \in H^{2}(-\infty, x_{0}), u \in H^{2}(x_{0}, \infty), u'(x_{0} - 0) - u'(x_{0} + 0) + \alpha u(x_{0}) = 0 \} \eqqcolon B$
+And the action of the operator is defined by
+\[A u = \begin{cases}
+	-u'', & (-\infty, x_{0}) \\ -u'', & (x_{0}, \infty) \end{cases} \]
+\newline	
+	
+Now lets show $"\supset"$: \\
+Let $u \in B$, and since for $u \in B$ it holds $u \in H^{2}$ for both sides $f \coloneqq \begin{cases} -u'', & (-\infty, x_{0}) \\  -u'' &(x_{0}, \infty) \end{cases}$ \\
+Now we have to show that $u$ is in Range of $R_{\mu}$.
+
+Idea: $A u = R_{\mu}^{-1} u + \mu u$	
+\begin{align*}
+	\Rightarrow u & = R_{\mu} A u - \mu R_{\mu} u \\
+				& = R_{\mu} (\underbrace{A u}_{f} - \mu u) 
+\end{align*} 
+
+We have to show $u \in dom A = range R_{\mu}$ \\
+guess take $u \in B$ construct $f = \begin{cases}-u'', & (-\infty, x_{0}) \\ -u'', (x_{0},\infty)\end{cases}$ and further to show::
+
+So we have to show $u = R_{\mu}(f - \mu u)$:
+\[ \int u' v' - \mu \int u v + \alpha u(x_{0}) v(x_{0}) = \int(f-\mu u)v \]
+\[ \int u' v' + \alpha u(x_{0}) v(x_{0}) = - \int_{-\infty}^{x_{0}} u'' v - \int_{x_{0}}u'' v \]  
+\[ \Rightarrow \int u' v' + \alpha u(x_{0}) v(x_{0}) = \int_{-\infty}^{x_{0}} u'v' + \int_{x_{0}}^{\infty} u'v' -u'(x_{0}-0) v(x_{0})  + u'(x_{0}+0) v(x_{0}) \]
+\[ \alpha u(x_{0})v(x_{0}) = u(x_{0}+0)v(x_{0}) - u(x_{0}-0)v(x_{0}) \]
+$\Rightarrow$ holds for $B \Rightarrow dom A = B$.
+
+Now we are going to show the self-adjointness: \\
+We know that $A = R_{\mu}^{-1}u + \mu u$. We are going to show that $R_{\mu}^{-1}$ is symmetric and then $A$ is of course symmetric as it is simply its shift.
+
+As $dom R_{\mu} = L^{2}(\R)$ and $range R_{\mu} = dom R_{\mu}^{-1}$ we are first going to focus on $R_{\mu}$, and proof that this operator is symmetric:
+
+$(\underbrace{R_{\mu} f}_{= u}, g ) - (f , \underbrace{R_{\mu} g}_{\eqqcolon v} ) = \gamma$ We want to show that $\gamma = 0$:
+\begin{align*}
+	\int u' \phi' - \mu u \overline{\phi} + \alpha u(x_{0})\overline{\phi(x_{0})} &= \underbrace{\int f \overline{\phi} }_{v} \\
+	\int v' \psi - \mu \int v \overline{\psi} + \alpha u(x_{0}) \overline{\psi(x_{0})} & = \underbrace{\int g \overline{\psi} }_{u} 
+\end{align*}
+
+Summing over lines yields: $ 0 - 0 + 0 = \gamma$.
+
+Now as we know that $R_{\mu}$ is symmetric we show that $R_{\mu}^{-1}$ is also symmetric:
+	\[ (R_{\mu}^{-1} u , v) = (u, v^{*}) \quad u \in dom R_{\mu}^{-1} \]
+$u = R_{\mu} f$ for some $f$ since $dom R_{\mu}^{-1} =range R_{\mu}$. Now we have to show that $v \in dom R^{-1}_{\mu}$ and since self-sadjoint and operator is definied on whole space
+	\[ (f , v) = (R_{\mu} f, v^{*}) = (f , R_{\mu} v*) \quad \text{for arbitrary } f \in C^{2} \]
+$v = R_{\mu} v^{*} \Rightarrow v \in range R_{\mu} = dom R_{\mu}^{-1}$???

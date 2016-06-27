@@ -1,6 +1,5 @@
 % todo go through all footnotes 
 % all refs and labels and eqnarrays aligns etc
-% punctiuation
 \documentclass[12pt]{mitthesis}
 
 \usepackage[T1]{fontenc}
@@ -15,9 +14,11 @@
 \usepackage{lgrind}
 \usepackage{mathtools}
 \usepackage{nicefrac}
+\usepackage{xpatch}
 
 \pagestyle{plain}
 
+\makeatletter \xpatchcmd{\proof}{\@addpunct{.}}{\@addpunct{:}}{}{}\makeatother
 \DeclareUnicodeCharacter{00A0}{ } 
 \def\supp{\operatorname{supp}}
 \makeatletter
@@ -46,7 +47,6 @@
 \include{chap5}
 \include{chapx}
 \appendix
-\include{app}
 %\include{appa}
 %\include{appb}
 %\include{biblio}

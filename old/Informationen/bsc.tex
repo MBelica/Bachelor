@@ -1,0 +1,482 @@
+\documentclass[fontsize=14pt,a4paper,DIV=1]{scrartcl}
+
+% replace balls arounds
+% correct norms
+% todo definition set correct all!
+% was alles zu zeigen eta mal pi = ull in DA
+% all over R or over Omega
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{dsfont}
+\usepackage[pdftex]{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage[bottom=0.8in]{geometry}
+\usepackage{pdfcomment}
+\usepackage{nicefrac}
+
+\setlength{\topmargin}{-15mm}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.15}
+\DeclareUnicodeCharacter{00A0}{ }
+
+\newtheorem{theorem}{Theorem}[section]
+\numberwithin{equation}{section}
+ 
+\addto\captionsngerman{
+  \renewcommand{\proofname}{Proof}
+} 
+ 
+\def\supp{\operatorname{supp}}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareUnicodeCharacter{00A0}{ }
+
+\begin{document}
+
+\pagestyle{headings}
+
+\section{On the spectra of Schrödinger operator with periodic delta potential}
+
+\subsection{Periodic differential operator}
+
+Let $A$ be the one-dimensional Schrödinger operator with a periodic delta potential, i.e. $\exists (x_{k})_{k \in \Z}$ periodically distributed such that \pdfcomment{I'm not satisfied with this start into the topic... also the question how this small enough shift can be reasonable explained etc..}
+
+\begin{equation}
+	A = - \Delta + \rho \cdot \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator}
+\end{equation}
+
+Moreover, identify with $\Omega_{k}$ the periodicity cell containing delta point $x_{k}$ and let w.o.l.g. $x_{0} = 0$ and $|\Omega_{i}| = 1 ~\forall i \in \Z$. 
+
+
+ For this topic, one is interested in the weak formulation of the corresponding differential equation, i.e. for $\mu \in \R$ small enough and for a $f \in L^{2}(\R)$ consider the equation
+
+\begin{equation}
+	\int u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v}, \quad \forall v \in H^{1}(\R) \label{weak-formulation}
+\end{equation} 
+
+First, one has to notice that this formulation is well defined as for arbitrary $\tilde{x}_{i} \in \Omega_{i}$
+\begin{align}
+	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u'( \tau ) d\tau \big| \right)^{2} \notag \\
+		 & \leq \sum_{i \in \Z}  \left( 2 |u(\tilde{x}_{i})|^{2} + 2 \int_{\tilde{x_{i}}}^{x_{i}} \left| u'(\tau) \right|^{2} d\tau \cdot (x_{i} - \tilde{x}_{i}) \right) \notag \\
+		 & \leq 2 \sum_{i \in \Z} \left( \int_{\Omega_{i}} |u( x )|^{2} dx +  \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
+		 & \leq 2 \cdot \| u \|^{2}_{H^{1}(\R)} \label{eq:potentialestim}
+\end{align}
+
+Next, to show that for all $f \in L^{2}(\R)$ there exists a unique $u \in H^{1}(\R)$ such that \eqref{weak-formulation} holds we want to use Lax-Milgram's theorem\footnote{formulation and prove in appendix A}. It would guarantee the existence and uniqueness of a solution as $H^{1}(\R)$ is a Hilbert space if the left-hand side of \eqref{weak-formulation} as bilinear form
+\begin{align*}
+	B[u, v] & \coloneqq \langle u' , v' \rangle + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \langle u , v \rangle 
+\end{align*}  
+is bounded and $B[u,u]$ is coercive.
+	
+\begin{theorem} \label{1.1}
+	The bilinear form $B[u, v]$ is bounded.
+	\begin{proof}
+		Using (\eqref{eq:potentialestim}) we can estimate the norm of $B[u, v]$ by
+		\begin{align*}
+			| B(u, \varphi)|^{2} & \leq \| u' \| \cdot \| v' \| + 2 \rho \sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \| \cdot \| v \| \\
+				& \overset{\eqref{eq:potentialestim}}{\leq} \| u' \| \cdot \| v' \| + 8 \rho \cdot \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  - \mu \| u \| \cdot \| v \| \\
+				& = (8\rho - \mu) \| u \| \cdot \| v \| + 8\rho \left( \| u \| \cdot \| v' \| + \| u' \| \cdot \| v \| \right) + (8\rho + 1) \| u' \| \cdot \| v'\| \\
+				& \leq \alpha \cdot \| u \|_{H^{1}} \cdot \| \varphi \|_{H^{1}}
+		\end{align*}
+	\end{proof}
+\end{theorem}
+	
+\begin{theorem} \label{1.2}
+	$B[u, u]$ is coercive.
+	\begin{proof}
+		Lets first assume $\rho \geq 0$ then for $\mu < -1$:
+		\begin{align*}
+			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} u(x_{i})^{2} - \mu \langle u , u \rangle \\
+					& \geq \langle u' , u' \rangle - \mu \langle u , u \rangle \\
+					& \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
+					& = \| u \|_{H^{1}}^{2} \\
+			\intertext{and for $\rho < 0$:}
+			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu 	\langle u , u \rangle \\
+					& = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u(x) dx \big|^{2} - \mu \langle u , u \rangle \\
+					& \geq \langle u' , u' \rangle + 2 \rho \left( \int_{\R} |u(x)|^{2} dx + \int_{\R} |u'(\tau)|^{2} d\tau \right) - \mu \langle u , u \rangle \\
+					& = (2 \rho + 1) \| u' \|^{2} + (2\rho - \mu) \| u \|^{2}  \\
+					& \geq \beta \| u \|_{H^{1}}^{2} 
+		\end{align*}
+	\end{proof}
+\end{theorem}
+
+All in all, Lax-Milgram's theorem now guarantees a unique element $u \in H$ such that
+	\[ B[u, v] = \langle f , v \rangle \]
+for all $v \in H^{1}(\R)$.	
+	
+As we now have a map $R_{\mu} f \mapsto u, R_{\mu} \colon L^{2}(\R) \rightarrow \mathcal{R}(R_{\mu}) \subset H^{1}(\R)$ one can show that the inverse is well defined as $R_{\mu}$ is one-to-one since for $u_{1} = u_{2}$
+	
+	\[ 0 = B[u_{1}, v] - B[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v}, \quad \forall v \in H^{1}(\R) \]
+		
+As $H^{1}$ is dense in $L^{2}$ this means that this equation holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in turn 
+		\[ A= R_{\mu}^{-1} + \mu I \text{ and } \mathcal{D}(A) = \mathcal{R}(R_{\mu}) \]
+
+For every fixed $k \in \Z$ a $v \in C^{\infty}(\R)$ with $\supp v = \Omega_{k}$ yields in equation \eqref{weak-formulation}
+	\[ \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} A u \overline{v} \]
+	\[ \iff \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u(x) \overline{v''(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} - A u \overline{v} \]
+Such that $u'' = - A u \in L^{2}$ on $(x_{k} -\nicefrac{1}{2}, x_{k})$ and analogously on $(x_{k}, x_{k} + \nicefrac{1}{2})$.
+As $k \in \Z$ was arbitrary one can therefore fix
+	\[ \mathcal{D}(A) \subset \big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\nicefrac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \nicefrac{1}{2}) \right)\big\} \]
+Next, again for an arbitrary $k \in \Z$ choosing in \eqref{weak-formulation} a $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$ and integrating on both sides of $x_{k}$ by parts yields
+	\[ -\left( \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}}\right) u'' \cdot \overline{v} + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
+	\[ +  \rho u(x_{k})\overline{v(x_{k})} = - \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} u'' \overline{v} - \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}} u'' \overline{v} \]
+But this is equivalent to
+	\[ u'(x_{k}-0) - u'(x_{k}+0) + \rho u(x_{k}) = 0 \]
+Such that
+	\begin{align*}
+		\mathcal{D}(A) \subset \big\{ & u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \big\}
+	\end{align*} 
+	and the action of the operator is defined by
+		\[ A u = \begin{cases}
+					- u'' & (x_{k} - \frac{1}{2}, x_{k}) \\
+					- u'' & (x_{k}, x_{k} + \frac{1}{2})
+				 \end{cases}, ~\forall k \in \Z \]
+	which also means that the definition of $A$ is independent of $\mu$. \pdfcomment{Is that ready already here the case}
+	The opposite inclusion one shows, as $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, by proving that such a $u$ is in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ a particular choice  of such an element in  $\mathcal{D}(\R_{\mu})$ would be
+	\[ f \coloneqq A u \in L^{2} \] 
+	and left to show that $u = R_{\mu}(f - \mu u)$:
+	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
+	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \nicefrac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \nicefrac{1}{2}} u'' \overline{v} \]
+	For each $k \in \Z$ partial integration for a $v$ with $\supp v = (x_{k} - \nicefrac{1}{2}, x_{k} + \nicefrac{1}{2})$ yields
+	\begin{align*}
+		\left( \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} +\nicefrac{1}{2}} \right) & u' \overline{v'} - u'(x_{k}-0) \overline{v(x_{k})}  + u'(x_{k}+0) \overline{v(x_{k})} \\
+		 & = \int_{\Omega_{k}} u' \overline{v'} + \rho u(x_{k}) \overline{v(x_{k})}
+	\end{align*}
+	\[ \iff u'(x_{k}+0) - u'(x_{k}-0) - \rho u(x_{k}) = 0 \]
+	such that
+	\begin{align*}
+		\mathcal{D}(A) & = \big\{ u \in H^{1}(\R): u \in \bigcap_{j \in \Z} H^{2}(x_{j} , x_{j+1}), \\
+		& ~\qquad u'(x_{j} - 0) - u'(x_{j} + 0) + \rho \cdot u(x_{j}) = 0 ~\forall j \in \Z \big\}
+	\end{align*} 
+
+	\begin{theorem}
+		$A$ is a self-adjoint operator
+		
+		\begin{proof} % 	TODO prove that $R_{\mu}$ is symmetric and with that $A$ self-adjoint and that
+			Last but not least, to show that $A$ is self-adjoint, we focus first on $R_{\mu}^{-1}$ which is given by 
+				\[ R_{\mu}(A)^{-1} = (A - \mu I) \] 
+			First one has to notice that $R_{\mu}^{-1}$ is symmetric, as $\forall v \in H^{1}$:
+			\begin{align*}
+				\langle R_{\mu}^{-1} u, v \rangle & = \langle (A - \mu I) u, v \rangle \\
+					& = \int (A - \mu I)(u) v dx \\
+					& = \int u'v' -  \lambda \int u v + \rho \sum_{i \in \Z} u(x_{i}) v(x_{i}) \\
+					& = \int u (A - \mu I)(v) dx \\
+					& = \langle u, (A - \mu I) v \rangle = \langle u,  R_{\mu}^{-1} v \rangle 
+			\end{align*}
+
+Now as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ and $\mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$, we want to show that for each $f, g \in L^{2}(\R)$ and for 
+	\[ \gamma \coloneqq \langle R_{\mu} f, g \rangle - \langle f, R_{\mu} g \rangle \]
+	it must hold that $\gamma = 0$. Now, choose $u, v \in \mathcal{D}(A)$ such that $R_{\mu}f = u, R_{\mu} g = v$. Using this fact in combination with \eqref{weak-formulation} for those two $u, v$ one gets for all $\varphi, \psi \in H^{1}$
+\begin{align*}
+	\int u' \varphi' + \rho \sum_{i \in \Z} u(i) \varphi(i) - \mu \int u \varphi & = \int f \varphi \\
+	\int v' \psi' + \rho \sum_{i \in \Z} v(i) \psi(i) - \mu \int v \psi & = \int g \psi
+\end{align*}
+As it has to hold for all $\varphi, \psi \in H^{1}_{k}$ the special choice of $\varphi = v$ and $\psi = u$ yields $\gamma = 0$ and $R_{\mu}$ is therefore symmetric. \\
+All in all we can use this to show that $R_{\mu}$ is self-adjoint, as we get for an arbitrary $v^{*} \in \mathcal{D}(R_{\mu}^{-1})$ there exists a $v \in \mathcal{R}(R_{\mu}^{-1}) = \mathcal{D}(R_{\mu})$: \pdfcomment{I haven't understood this proof yet. As R is symmetric D(R*) >= D(R) we therefore have to show D(R*) <= D(R) to show the self-adjointness...}
+\begin{align*}
+	\langle u, v^{*} \rangle & = \langle R_{\mu}^{-1} R_{\mu} u , v^{*} \rangle = \langle R_{\mu} u, v \rangle  = \langle  u, R_{\mu} v \rangle 
+\end{align*}
+So $v^{*} \in \mathcal{R}(R_{\mu})$ which means that $R_{\mu}^{-1}$ is self-adjoint. As $A$ is simply $R_{\mu}^{-1}$ shifted by the real constant $\mu$, $A$ is self-adjoint as well.		
+		\end{proof}
+	\end{theorem}
+
+
+\subsection{Fundamental domain of periodicity and the Brillouin zone}
+  Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator}, e.g. $\Omega = \Omega_{0}$. As commonly used by literature the reciprocal lattice for $\Omega$ is equal to $[-2\pi, 2\pi]$, this set is the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, we now consider the operator \pdfcomment{Where does Lax-Milgram reappear?}
+	
+	\begin{equation}
+		A_{k} \colon H^{1}_{k} \rightarrow L^{2}(\R), \quad \psi \mapsto - \Delta \psi + \rho \cdot \delta_{x_{0}} \psi
+	\end{equation}
+	where 
+		\begin{equation}
+			H^{1}_{k} \coloneqq \big\{ H^{1}(\R) : \psi (-\frac{1}{2}) = e^{ik} \psi(\frac{1}{2}) \big\} \label{quasi-periodic-condition}	
+		\end{equation}
+ As $H^{1}_{k}$ is a Hilbert space we can use the same arguments as in \ref{1.1} and \ref{1.2} to show that the resolvent $R_{\mu, k}$ for $A_{k}$ is well defined and therefore again
+	\[ A_{k} = R_{\mu, k}^{-1} + \mu \]
+	and we consider the eigenvalue problem
+	\begin{equation}
+		A_{k} \psi = \lambda \psi \text{ on } \Omega, \label{eigv-problem}
+	\end{equation}
+
+	In writing the boundary condition in the form, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem in $L^{2}(\Omega)$ and $\psi$ from \ref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
+	
+	Since $\Omega$ is bounded, the subsequently shown compactness can be used to prove that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} has a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $H^{2}_{loc}(\R)$, with corresponding eigenvalues satisfying	
+	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty \]
+	The eigenfunctions $\psi_{s}(\cdot, k)$ are called Bloch waves. They can be chosen such that they depend on $k$ in a measurable way (see [M. Reed and B. Simon. Methods of modern mathematical physics I–IV. Academic Press (Harcourt Brace Jovanovich, Publishers), New York, 1975–1980., XIII.16, Theorem XIII.98]). \pdfcomment{todo some expl} \\ % todo some explainations 
+	\begin{theorem}
+		The operator $R_{\mu, k}$ is compact.
+	\end{theorem}
+	\begin{proof}
+	$R_{\mu, k}$ is compact since for $(f_{j})_{j \geq 1} \in L^{2}(\Omega): \|f_{j} \|_{L^{2}(\Omega)} \leq c$ $\forall j \geq 1$ there exists for all $j \in \N$  $u_{j} \in H^{1}_{k}$ with
+		\[ R_{\mu, k} f_{j} = u_{j} \]
+	now we show $\| u_{j} \|_{H^{1}} \leq \tilde{c}$ but has such a $u_{j}$ has to satisfy
+		\[ \int_{\Omega} u_{j}' v' + \rho u(x_{0}) v(x_{0}) - \mu \int_{\Omega} u v = \int f_{j} v \quad \forall v \in H^{1}_{k} \]
+	choosing $v = u$ and using \eqref{eq:potentialestim} it follows for $\mu$ small enough
+		\[ c \| u_{j} \|_{H^{1}(\Omega)} \leq | \int_{\Omega} f_{j} v | \leq \underbrace{\| f_{j} \|_{L^{2}(\Omega)}}_{\leq c} \underbrace{\| u_{j} \|_{L^{2}(\Omega)}}_{\leq D \sqrt{vol(\Omega)}} \]
+	and $H^{1}$ can be compactly embedding into $L^{2}$, since for $B_{H^{1}_{k}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \| \leq 1 \}$. We want to show that $\forall \epsilon > 0 ~\exists g_{1}, \dotsc, g_{n_{\epsilon}}$:
+	\[ \forall f \in B ~\exists g \in \{ g_{1}, \dotsc, g_{n_{\epsilon}} \} : \quad \| f - g \|\leq \epsilon \]
+	Together with the closure of $H^{1}_{k}$ this yields the compact embedding. Now, as $H^1(\Omega) \subset C(\Omega)$: 
+		\begin{equation}
+			|f(x) - f(y)| \leq c |x - y|^{\nicefrac{1}{2}} \text{ for some } c > 0 \label{eq:H1estimation}
+		\end{equation} 
+		Now, for a $f \in B_{H^{1}}$ follows from \eqref{eq:H1estimation} that 
+		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega\]
+		And with that we can approximate a $f \in B$ by simple functions through partitioning $\Omega$ into $n_{\epsilon}$ equidistant intervals. As our simple function is constant on each subinterval, we chose this constant $c_{k}$ such that
+		\[ |f(\frac{k}{n}) - c_{k + 1}| < \frac{1}{n}  \]
+		such that
+		\begin{align*}
+			\| f - g \|^{2}_{L^{2}} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f - c_{k+1} |^{2} dx \\
+				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
+				& \leq 2 \sum_{n = 0}^{n-1} \frac{1}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} + \frac{2}{n^{2}} < \epsilon^{2} \text{ for } n \text{ small enough.}
+		\end{align*}		
+	\end{proof}	
+		
+	Now define
+		\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k) \]
+	Then,
+		\begin{align*}
+			A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \\
+				& = e^{ikx} \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \\
+				& ~\qquad + e^{ikx} \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}
+		\end{align*}
+	We therefore define the operator $\tilde{A_{k}} \colon D(A_{k}) \rightarrow L^{2}(\R)$, 
+	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
+ 		\left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2})
+ 	\end{cases} \] 
+	Furthermore, using  \eqref{eigv-problem} and \eqref{quasi-periodic-condition},
+		\[ \varphi_{s}(x - \frac{1}{2}, k) = e^{-ik(x - \frac{1}{2})} \psi_{s}(x - \frac{1}{2}, k) = e^{-ik(x + \frac{1}{2})} \psi_{s}(x + \frac{1}{2}, k) = \varphi_{s}(x + \frac{1}{2}, k) \]
+	which shows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions of the periodic eigenvalue problem
+	\begin{eqnarray}
+		\tilde{A}_{k} \varphi = & \lambda
+		 \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
+		 \varphi(x - \frac{1}{2}) = & \varphi(x + \frac{1}{2}) \label{periodic-condition}
+	\end{eqnarray}
+	with the same eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as before. We shall see that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(s))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$.\\
+	
+	An important step towards this aim is the Floquet transformation
+		\begin{equation}
+			(Uf)(x, k) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{n \in \Z} f(x - n) e^{ikn} \quad (x \in \Omega, k \in B) \label{floquet-transformation}
+		\end{equation}
+		
+\begin{theorem} \label{3.4.1}
+	$ U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is an isometric isomorphism, with inverse
+		\begin{equation}
+			(U^{-1}g)(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in \Z) \label{3.16}
+		\end{equation} 
+	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, we have
+		\begin{equation}
+			U^{-1} g = \frac{1}{\sqrt{|B|}} \int_{B} g(\cdot, k) dk. \label{3.17}
+		\end{equation}
+\end{theorem}
+\begin{proof}
+	For $f \in L^{2}(\R)$,
+		\begin{equation}
+			\int_{\R} |f(x)|^{2} dx = \sum_{n \in \Z} \int_{\Omega} |f(x - n)|^{2} dx. \label{functionoverperiodicity}
+		\end{equation} 
+	Here, we can exchange summation and integration by Beppo Levi's Theorem. Therefore, 
+		\[ \sum_{n \in \Z} |f(x - n)|^{2} < \infty \text{ for a.e. } x \in \Omega.\]
+	Thus, $(Uf)(x, k)$ is well-defined by \eqref{floquet-transformation} (as a Fourier series with variable $k$) for a.e. $x \in \Omega$, and Parseval's equality gives, for these $x$,
+		\[ \int_{B}|(Uf)(x,k)|^{2} dk = \sum_{n \in \Z} |f(x - n)|^{2}. \]
+	By \eqref{functionoverperiodicity}, this expression is in $L^{2}(\Omega)$, and
+		\[ \| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}. \]
+	We are left to show that $U$ is onto, and that $U^{-1}$ is given by \eqref{3.16} or \eqref{3.17}. Let $g \in L^{2}(\Omega \times B)$, and define
+		\begin{equation}
+			f(x - n) \coloneqq \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in\Z).\label{3.19}
+		\end{equation}
+	For fixed $x \in \Omega$, Parseval's Theorem gives
+		\[ \sum_{n \in \Z} |f(x - n)|^{2} = \int_{B} |g(x, k)|^{2} dk, \]
+	whence, by integration over $\Omega$,
+		\begin{eqnarray}
+			\int_{\Omega \times B} |g(x, k)|^{2} dx dk & = \int_{\Omega} \sum_{n \in \Z} |f(x - n)|^{2} dx \\
+				& = \sum_{n \in\Z} \int_{\Omega} |f(x-n)|^{2} dx \\
+				& = \int_{\R} |f(x)|^{2} dx,	
+		\end{eqnarray}
+	i.e. $f \in L^{2}(\R)$. Now \eqref{floquet-transformation} gives, for a.e. $x \in\Omega$,
+		\[ f(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} (Uf)(x,k) e^{-ikn} dk \quad (n \in \Z), \]
+	whence \eqref{3.19} implies $U f = g$ and \eqref{3.16}. Now \eqref{3.17} follows from \eqref{3.16} using $g(x + n, k) = e^{ikn} g(x, k)$.
+\end{proof}
+	
+\subsection{Completeness of the Bloch waves}
+Using the Floquet transformation $U$, we are now able to prove a completeness property of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
+	
+	\begin{theorem}
+		For each $f \in L^{2}(\R)$ and $l \in \N$, define
+			\begin{equation}
+				f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, K) dk \quad (x \in \R). \label{3.20}
+			\end{equation}
+		Then, $f_{l} \rightarrow f$ in $L^{2}(\R)$ as $l \rightarrow \infty$.
+	\end{theorem}
+	\begin{proof}
+		Sine $Uf \in L^{2}(\Omega \times B)$, we have $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for a.e. $k \in B$ by Fubini's Theorem. Since $(\psi_{s}(\cdot, k))_{s \in \N}$ is orthonormal and complete in $L^{2}(\Omega)$ for each $k \in B$, we obtain
+			\[ \lim_{l \rightarrow \infty} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|_{L^{2}(\Omega)} = 0 \text{ for a.e. } k \in B\]
+		where 
+			\begin{equation}
+				g_{l}(x, k) \coloneqq \sum_{s=1}^{l} \langle(Uf)(\cdot, k), \psi_{s}(\cdot,k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k). \label{3.21}
+			\end{equation}
+		Thus, for $\chi(k) \coloneqq \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)}$, we get
+			\[ \chi_{l}(k) \rightarrow 0 \text{ as } l \rightarrow \infty \text{ for a.e. } k \in B, \]
+		and moreover, by Bessel's inequality,
+			\[ \chi_{l}(k) \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \text{ for all } l \in \N \text{ and a.e. } k \in B \]
+		and $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)}$ is in $L^{1}(B)$ as a function of $k$ by Theorem \ref{3.4.1}. Altogether, Lebesgue's Dominated Convergence theorem implies
+			\[ \int_{B} \chi_{l}(k) dk \rightarrow 0 \text{ as } l \rightarrow \infty, \]
+		i.e., 
+			\begin{equation}
+				\| U f - g_{l} \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty \label{3.22}
+			\end{equation} 
+		Using \eqref{3.20}, \eqref{3.21} and \eqref{3.17}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.22} gives
+			\[ \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
+		and the assertion follows since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by Lemma \eqref{3.4.1}.
+	\end{proof}
+	
+\subsection{The spectrum of A}	
+
+In this section, we will prove the main result stating that
+	\begin{equation}
+		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{main-statement}
+	\end{equation}
+where
+	\[ I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} \quad (s \in \N) \]
+For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}$, which follows by standard arguments from the fact that the coefficients in the eigenvalue problem \eqref{mod-eigv-problem},  \eqref{periodic-condition} depend continuously on $k$. Thus, since $B$ is compact and connected, 
+	\begin{equation}
+		I_{s} \text{ is a compact real interval, for each } s \in \N. \label{Iisacompactrealinterval}
+	\end{equation} 
+	Moreover, Poincare's min-max principle for eigenvalues implies that
+	\[ \mu_{s} \leq \lambda_{s}(k) \text{ for all } s \in \N, k \in \overline{B} \]
+	with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann ("free") boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
+		\[ \min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty, \]
+	which together with \eqref{Iisacompactrealinterval} implies that
+		\[ \bigcup_{s \in \N} I_{s} \text{ is close.}\]
+	The first part of the statement \eqref{main-statement} is 
+\begin{theorem}
+	$\sigma(A) \supset \bigcup_{s \in \N} I_{s}.$
+	\begin{proof}
+		Let $\lambda \in \bigcup_{s \in \N} I_{s}$, i.e. $\lambda = \lambda_{s}(k)$ for some $s \in \N$ and some $k \in \overline{B}$, and 
+		\begin{equation}
+			A \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation}
+		\end{equation}
+		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodicity of $A$, \eqref{firstinclusion-firstequation} holds for all $x \in \R$ and $\psi_{s} \in H^{2}_{loc}(\R)$ \\
+		We choose a function $\eta \in H^{2}(\R)$ such that
+			\[ \eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \]
+		and define, for each $l \in \N$,
+			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]
+	 	Then,
+		\begin{align}
+			(A - \lambda I) u_{l} & = \sum_{j \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \label{eq:sepofspectraleq} \\
+				& = \sum_{j \in \N} \left[ \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \left( \eta\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& = \sum_{j \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& ~\qquad - \frac{2}{l} \sum_{j \in \N} \left[ \left( \eta'\left(\frac{|\cdot|}{l}\right) \psi_{s}'(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})}  \right] \notag \\
+				& ~\qquad - \frac{1}{l^{2}} \sum_{j \in \N} \left[ \left( \eta''\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& = \sum_{j \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] + R \notag
+		\end{align}
+		where $R$ is a sum of products of derivatives (of order $\geq 1$) of $\eta(\frac{|\cdot|}{l})$, and derivatives (of order $\leq 1$) of $\psi_{s}(\cdot, k)$. Thus (note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$), and the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
+		\begin{equation}
+			 \| R \| \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(K_{l})} \leq c \frac{1}{\sqrt{l}}, \label{eq:estimofR}
+		\end{equation}
+		with $K_{l}$ denoting the ball in $\R$ with radius $l$, centered at $x_{0}$. Together with \eqref{firstinclusion-firstequation}, \eqref{eq:sepofspectraleq} and \eqref{eq:estimofR}, this gives
+		\[ \| (A - \lambda I) u_{l} \| \leq \frac{c}{\sqrt{l}} \]
+		Again, by the semiperiodicity of $\psi_{s}(\cdot, k)$,
+		\[ \| u_{l} \| \geq c \| \psi_{s}(\cdot, k) \| \geq c \sqrt{l} \]
+		with $c > 0$. We obtain therefore
+		\[ \frac{1}{\|u_{l}\|}\| (A - \lambda I) u_{l} \| \leq \frac{c}{l} \]
+		Because moreover $u_{l} \in D(A)$, this results in
+			\[ \frac{1}{\|u_{l} \|} \| (A - \lambda I) u_{l} \| \rightarrow 0 \text{ as } l \rightarrow \infty \]
+		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
+	\end{proof}
+\end{theorem}	
+% todo last part	
+	
+\begin{theorem}
+	$\sigma(A) \subset \bigcup_{s \in \N} I_{s}.$
+\end{theorem}
+\begin{proof}
+	todo
+\end{proof}
+	
+TODO 
+	Theorem 3.6.3.
+	
+\newpage
+
+\section{Appendix}
+
+\begin{theorem}[Lax-Milgram]
+Let $H$ be a real Hilbert space, with norm $\| \cdot \|$ and inner product $\langle \cdot, \cdot \rangle$ as well as the pairing of $H$ with its dual space. Assume that
+	\[ B \colon H \times H \rightarrow R  \]
+
+is a bilinear mapping, for which there exist constant $\alpha, \beta > 0$ such that
+	\[ |B[u, v]| \leq \alpha \| u \| \| v \| \quad (u, v \in H) \]
+and
+	\[ \beta \| u \|^{2} \leq B[u, u] \quad ( u \in H) \]
+Finally, let $f \colon H\rightarrow \R$ be a bounded linear functional on $H$. \\
+
+Then there exists a unique element $u \in H$ such that
+	\[ B[u, v] = \langle f, v \rangle\]
+for all $v \in H$.
+
+\begin{proof} % verw. Evans: Partial Differential Equations % question I used <> for both, the inner product and the pairing between dual spaces, is that okay?
+	For each fixed element $u \in H$, the mapping $v \mapsto B[u, v]$ is a bounded linear functional on $H$; whence the Riesz' Representation Theorem asserts the existence of a unique element $w \in H$ satisfying
+		\begin{equation}
+			 B[u, v] = \langle w, v \rangle \label{lax-milgram-*}
+		\end{equation}
+	Let us write $A u = w$ whenever \eqref{lax-milgram-*} holds; so that
+		\[ B[u, v] = \langle Au, v \rangle \quad (u, v \in H) \]
+	We first claim $A \colon H \rightarrow H$ is a bounded linear operator. Indeed if $\lambda_{1}, \lambda_{2} \in \R$ and $u_{1}, u_{2} \in H$, we see for each $v \in H$ that
+	\begin{align*}
+		\langle A (\lambda_{1} u_{1} + \lambda_{2} u_{2}), v \rangle & = B[\lambda_{1} u_{1} + \lambda_{2} u_{2}, v], ~(\text{by \eqref{lax-milgram-*}}) \\
+			& = \lambda_{1} B[u_{1}, v] + \lambda_{2} Bu_{2}, v] \\
+			& = \lambda_{1} \langle A u_{1}, v \rangle + \lambda_{2} \langle A u_{2}, v \rangle, ~(\text{by \eqref{lax-milgram-*} again}) \\
+			& = \langle \lambda_{1} A u_{1} + \langle_{2} A u_{2}, v \rangle.
+	\end{align*}
+	This equality obtains for each $v \in H$, and so $A$ is linear. Furthermore
+	\[ \| A u \|^{2} = \langle A u, A u \rangle = B[u, Au] \leq \alpha \| u \| \| Au \|. \]
+	Consequently $\| A u \| \leq \alpha \|u \|$ for all $u \in H$, and so $A$ is bounded. \\
+	
+	Next we assert
+	\begin{equation}
+		\begin{cases} A \text{ is one-to-one, and} \\ R(A), \text{ the range of } A, \text{ is close in } H. \end{cases} \label{lax-milgram-assertion}
+	\end{equation} 
+	To prove this, let us compute
+		\[ \beta \| u \|^{2} \leq B[u, u] = \langle Au, u \rangle \leq \| Au \| \| u \| \]
+	Hence $\beta \| u \| \leq \| Au \|$. This inequality easily implies \eqref{lax-milgram-assertion}. \\
+	We demonstrate now
+		\begin{equation}
+			R(A) = H \label{lax-milgram-demonstation}
+		\end{equation} 
+		For if not, then, since $R(A)$ is closed, there would exist a nonzero element $w \in H$ with $w \in R(A)^{\bot}$. But this fact in turn implies the contradiction $\beta \| w \|^{2} \leq B[w, w] = \langle A w , w \rangle = 0$. \\
+	Next, we observe once more from the Riesz' Representation Theorem that
+		\[ \langle f, v \rangle = \langle w , v \rangle \text{ for all } v \in H \]
+	for some element $w \in H$. We then utilise \eqref{lax-milgram-assertion} and \eqref{lax-milgram-demonstation} to find $u \in H$ satisfying $A u  = w$. Then 
+		\[ B[u, v] = \langle A u, v \rangle = \langle w, v \rangle = \langle f, v \rangle (v \in H) \]
+	and this is the claim. \\
+	
+	Finally, we show there is at most one element $u \in H$ verifying the claim. For if both $B[u, v] = \langle f, v \rangle$ and $B[\tilde{u}, v] = \langle f, v \rangle$, then $B[u - \tilde{u}, v] = 0$ $(v \in H)$. We set $v = u - \tilde{u}$ to find $\beta \| u - \tilde{u}\|^{2} \leq B[u - \tilde{u}, u - \tilde{u}] = 0$.
+	\end{proof}
+\end{theorem}
+
+\begin{theorem}[Sobolev Embedding] % verw. Spektraltheorie
+	\[ H^{1}[0, 1] \subset C[0, 1]. \]
+\begin{proof} % verw. Simplest Sobolev imbedding and Rellich-Kondrachev compactness Paul Garrett garrett@math.umn.edu http:/www.math.umn.edu/ garrett/
+Prove that the $H^{1}$ norm dominates the $C$ norm, namely, sup-norm, on $C_{c}^{\infty}[0, 1]$. First, for $0 \leq x \leq y \leq 1$, the difference between maximum and minimum values of $f \in C_{c}^{\infty}[0, 1]$ is constrained:
+	\[ |f(y) - f(x)| = | \int_{x}^{y} f'(t) dt | \leq \left( \int_{0}^{1} |f'(t)|^{2} dt \right)^{\nicefrac{1}{2}} \cdot |x-y|^{\frac{1}{2}} = \|f'\|_{L^2} \cdot |x - y|^{\frac{1}{2}} \]
+	Let $y \in [0, 1]$ be such that $|f(y) = \min_{x}|f(x)|$. Then, using this inequality,
+	\begin{align*}
+		|f(x)| & \leq |f(y)| + |f(x) - f(y)| \\
+			   & \leq \int_{0}^{1} |f(t) dt + |f(x) - f(y)| \\
+			   & \leq \| f \| + \| f' \| \ll 2 \left(  \| f \|^{2} + \| f' \|^{2} \right)^{\nicefrac{1}{2}} = 2 \|f\|_{H^{1}}
+	\end{align*}
+	Thus, on $C_{c}^{\infty}[0,1]$ the $H^{1}$ norm dominates the sup-norm and therefore this comparison holds on the $H^{1}$ completion $H^{1}[0,1]$, and $H^{1}[0,1] \subset C[0,1]$.
+\end{proof}
+\end{theorem}
+
+\end{document} 

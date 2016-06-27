@@ -1,0 +1,51 @@
+% Vorlage für eine Bachelorarbeit
+% Siehe auch LaTeX-Kurs von Mathematik-Online
+% www.mathematik-online.org/kurse
+% Anpassungen für die Fakultät für Mathematik
+% am KIT durch Klaus Spitzmüller und Roland Schnaubelt Dezember 2011
+\documentclass[12pt,a4paper]{scrartcl}
+% scrartcl ist eine abgeleitete Artikel-Klasse im Koma-Skript
+% zur Kontrolle des Umbruchs Klassenoption draft verwenden
+
+\usepackage{Bachelor}
+
+
+% Removes common mistake occurring with broken unicode character 
+\DeclareUnicodeCharacter{00A0}{ }
+
+
+\begin{document}
+
+% Keine Seitenzahlen im Vorspann
+\pagestyle{empty}  
+
+% Titelblatt
+%\include{chapters/titlepage}
+
+% Inhaltsverzeichnis
+%\tableofcontents
+%\newpage
+
+% Ab sofort Seitenzahlen in der Kopfzeile anzeigen
+\pagestyle{headings}
+
+
+\include{chapters/section1}
+\include{chapters/section2} 
+\include{chapters/section3}
+\newpage
+\include{chapters/main1}
+ % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
+%\begin{thebibliography}{Lam00}
+ 
+%\end{thebibliography}
+ 
+      
+% ggf. hier Tabelle mit Symbolen 
+% (kann auch auf das Inhaltsverzeichnis folgen)
+
+
+%\include{chapters/erklaerung}
+
+
+\end{document}

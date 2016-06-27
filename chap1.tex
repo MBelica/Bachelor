@@ -7,32 +7,31 @@ As we can interpret the left-hand side of \eqref{weak-formulation} as a bounded 
 if there exist constants $\alpha, \beta > 0$ such that
 	\[ \left| B[u,v] \right| \leq \alpha \|u\| \|v\| \quad (u, v \in H^{1}(\R)) \]
 and
-	\[ \beta \|u\|^{2} \leq B[u, u] \quad (u \in H^{1}(\R)) \]
-Taking these two condition under examination, \eqref{eq:potentialestim} yields for the norm of $B[u, v]$ both: \newpage %todo temporarily
+	\[ \beta \|u\|^{2} \leq B[u, u] \quad (u \in H^{1}(\R)). \]
+Taking these two condition under examination, \eqref{eq:potentialestim} yields for the norm of $B[u, v]$ both. \newpage %todo temporarily
 
 \begin{theorem} \label{1.1}
-	The bilinear form $B[u, v]$ is bounded.
+	For the bilinear form $B[u, v]$ as left-hand of \eqref{weak-formulation}
+	\begin{enumerate}
+		\item[i)] $B[u, v]$ is bounded.
+		\item[ii)] $B[u, u]$ is coercive.
+	\end{enumerate}
 	
-	\begin{proof}
+	\begin{proof} ~\\
+		i) The boundedness of $B[u, v]$ one see through
 		\begin{align*}
-			| B(u, \varphi)|^{2} & \leq \| u' \| \cdot \| v' \| + 2 \rho \sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \| \cdot \| v \| \\
+			|B(u, \varphi)|^{2} & \leq \| u' \| \cdot \| v' \| + 2 \rho \sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \| \cdot \| v \| \\
 				& \leq \| u' \| \cdot \| v' \| + 8 \rho \cdot \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  - \mu \| u \| \cdot \| v \| \\
 				& = (8\rho - \mu) \| u \| \cdot \| v \| + 8\rho \left( \| u \| \cdot \| v' \| + \| u' \| \cdot \| v \| \right) + (8\rho + 1) \| u' \| \cdot \| v'\| \\
 				& \leq \alpha \cdot \| u \|_{H^{1}} \cdot \| \varphi \|_{H^{1}}
 		\end{align*}
-	\end{proof}
-\end{theorem}
-and
-\begin{theorem} \label{1.2}
-	$B[u, u]$ is coercive.
-	
-	\begin{proof}
-		Lets first assume $\rho \geq 0$ then for $\mu < -1$:
+		ii)
+		For the coercivity assume first $\rho \geq 0$. For $\mu < -1$:
 		\begin{align*}
 			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} u(x_{i})^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle - \mu \langle u , u \rangle \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
-					& = \| u \|_{H^{1}}^{2} \\
-		\intertext{and for $\rho < 0$:}
+					& = \| u \|_{H^{1}}^{2}.
+		\intertext{For $\rho < 0$ there exists a $\mu \in (-\infty, 2\rho)$ such that}
 			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu 	\langle u , u \rangle \\
 					& = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u(x) dx \big|^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle + 2 \rho \left( \int_{\R} |u(x)|^{2} dx + \int_{\R} |u'(\tau)|^{2} d\tau \right) - \mu \langle u , u \rangle \\
@@ -41,7 +40,10 @@ and
 		\end{align*}
 	\end{proof}
 \end{theorem}
-such that $u \in H$ is the unique solution t0 the problem \eqref{weak-formulation} and with that is the resolvent mapping $R_{\mu} \colon L^{2}(\R) \rightarrow H^{1}(\R), f \mapsto u$ well-defined; obviously the mapping is one-to-one since for $u_{1} = u_{2}$
-	\[ 0 = B[u_{1}, v] - B[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v}, \quad \forall v \in H^{1}(\R) \]
-and as $H^{1}$ is dense in $L^{2}$ this means that this equation holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in turn, we can define the Schrödinger operator as follows
-		\[ A \coloneqq R_{\mu}^{-1} + \mu I \text{ and with that } \mathcal{D}(A) = \mathcal{R}(R_{\mu}) \]
+where $u \in H$ is the unique solution to the problem \eqref{weak-formulation}. Thus, the resolvent $R_{\mu} \colon L^{2}(\R) \rightarrow H^{1}(\R), f \mapsto u$ is well-defined; obviously the mapping is one-to-one since for $u_{1} = u_{2}$
+	\begin{equation}
+		0 = B[u_{1}, v] - B[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v} \quad \forall v \in H^{1}(\R). \label{f1f2almosteverywhere}
+	\end{equation} 
+As $H^{1}$ is dense in $L^{2}$ this means that the equation \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and we can define the Schrödinger operator as follows
+		\[ A \coloneqq R_{\mu}^{-1} + \mu I \]
+from which $\mathcal{D}(A) = \mathcal{R}(R_{\mu})$ follows.
