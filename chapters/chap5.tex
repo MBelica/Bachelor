@@ -73,12 +73,12 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 				|\lambda_{s}(k) - \lambda| \geq \delta \text{ for all } s \in \N, k \in B \label{lambda-distance}
 			\end{equation}
 
-		In particular, the boundary value problem\footnote{todo those next 6 lines!}
+		In particular, the boundary value problem\footnote{todo those next 3 lines!} % todo todo
 		\begin{eqnarray}
 			(A - \lambda I) v(\cdot, k) & = & (Uf)(\cdot, k) \text{ on } \Omega, \label{3.33} \\
 			v(\frac{1}{2}) & = & e^{ik} v(-\frac{1}{2}) \notag
 		\end{eqnarray}
-		has a unique solution for every $k \in B$. Bloch wave expansion\footnote{whats that?} gives 
+		has a unique solution for every $k \in B$. Bloch wave expansion\footnote{check this} gives
 		\begin{align*}
 			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle|^{2} \\
 			& = \sum_{s=1}^{\infty}|\langle (A - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2}
@@ -102,12 +102,12 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R). \label{ulflconvergence}
 			\end{equation}
 		We will now prove that in the distributional sense 
-			\begin{equation}
+		\begin{equation}
 				(A - \lambda I) u_{l} = f_{l} \text{ for all } l \in \N \label{lefttoprove}
 			\end{equation} 
-		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$\footnote{we have to do this} for all $v \in D(A)$, whence Theorem \ref{3.21} implies $u_{l} \in D(A)$, and
+		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$ for all $v \in D(A)$, whence Theorem \ref{3.21} implies $u_{l} \in D(A)$, and
 			\[ (A - \lambda I) u_{l} = f_{l} \quad \forall l \in \N \]
-		Since $A$ is closed\footnote{Thats clear but I will write some stuff down for that}, \eqref{ulflconvergence} now implies
+		Since $A$ is closed\footnote{That's clear but I will write some stuff down for that}, \eqref{ulflconvergence} now implies
 			\[ u \in D(A), \text{ and } (A - \lambda I) u = f \]
 		which is the desired result.
 		
@@ -122,28 +122,21 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 		\end{align*}
 		are easily seen to be in $L^{2}(K \times B)$ by Fubini's Theorem, since \eqref{lambda-distance} and the fact that $(A - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$, imply both
 		\[ \int_{K} |r_{s}(x, k)|^{2} dx \quad \text{and} \quad \int_{K} |t_{s}(x, k)|^{2} dx \]
-		are bounded by $C \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}$ the latter factor is bounded as a function of $k$ because $K$ is covered by a finite number of copies of $\Omega$, and the former is in $L^{1}(B)$ by Theorem \ref{3.4.1}.\footnote{todo from this block til the end}
+		are bounded by $C \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}$ the latter factor is bounded as a function of $k$ because $K$ is covered by a finite number of copies of $\Omega$, and the former is in $L^{1}(B)$ by Theorem \ref{3.4.1}.\footnote{Isn't this in L2B?}
 		
-		Since $K \times B$ is bounded, $r$ and $t$ are also $L^{1}(K \times B)$. Therefore, Fubini's Theorem implies that the order of integration with respect to $x$ and $k$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul},
+		Since $K \times B$ is bounded, $r$ and $t$ are also $L^{1}(K \times B)$. \footnote{again L2?} Therefore, Fubini's Theorem implies that the order of integration with respect to $x$ and $k$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul},
 			\begin{align*}
-				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
+				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
 					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& ~\qquad ~\qquad ~\qquad ~\qquad \langle \psi_{s}(\cdot, k), (A - \lambda I) \varphi \rangle_{L^{2}(K)} dk. 
 			\end{align*}
-			Since $\varphi$ has compact support in the interior of $K$, $(A - \lambda I)$ may be moved to $\psi_{s}(\cdot, k)$, and hence \eqref{eigv-problem} gives
+			Since $\varphi$ has compact support in the interior of $K$, $(A - \lambda I)$ may be moved to $\psi_{s}(\cdot, k)$,\footnote{How is this important?} and hence \eqref{eigv-problem} gives
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \langle \psi_{s}(\cdot, k), \varphi \rangle_{L^{2}(K)} dk \\
 				 	& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \left( \int_{K} t_{s}(x, k) dx \right) dk \\
-					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& = \int_{K} \left[ \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk \right] \overline{\varphi(x)} dx \\
-					& = \int_{K} f_{l}(x) \overline{\varphi(x)},
+					& = \int_{K} f_{l}(x) \overline{\varphi(x)} dx,
 			\end{align*}
 			i.e. \eqref{lefttoshow2}.
 	\end{proof}
 \end{theorem}
-
-
-
-
-
-
