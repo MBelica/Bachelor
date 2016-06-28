@@ -1,0 +1,149 @@
+\chapter{The spectrum of A}	
+
+In this section, we will prove the main result stating that
+	\begin{equation}
+		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{main-statement}
+	\end{equation}
+where
+	\[ I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} \quad (s \in \N) \]
+For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}$, which follows by standard arguments from the fact that the coefficients in the eigenvalue problem \eqref{mod-eigv-problem},  \eqref{periodic-condition} depend continuously on $k$. Thus, since $B$ is compact and connected, 
+	\begin{equation}
+		I_{s} \text{ is a compact real interval, for each } s \in \N. \label{Iisacompactrealinterval}
+	\end{equation} 
+	Moreover, Poincare's min-max principle for eigenvalues implies that
+	\[ \mu_{s} \leq \lambda_{s}(k) \text{ for all } s \in \N, k \in \overline{B} \]
+	with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann ("free") boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
+		\[ \min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty, \]
+	which together with \eqref{Iisacompactrealinterval} implies that
+		\begin{equation}
+			\bigcup_{s \in \N} I_{s} \text{ is close.} \label{UIclosed}
+		\end{equation} 
+	The first part of the statement \eqref{main-statement} is 
+
+\begin{theorem}
+	$\sigma(A) \supset \bigcup_{s \in \N} I_{s}.$
+	
+	\begin{proof}
+		Let $\lambda \in \bigcup_{s \in \N} I_{s}$, i.e. $\lambda = \lambda_{s}(k)$ for some $s \in \N$ and some $k \in \overline{B}$, and 
+		\begin{equation}
+			A \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation}
+		\end{equation}
+		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodicity of $A$, \eqref{firstinclusion-firstequation} holds for all $x \in \R$ and $\psi_{s} \in H^{2}_{loc}(\R)$ \\
+		We choose a function $\eta \in H^{2}(\R)$ such that
+			\[ \eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \]
+		and define, for each $l \in \N$,
+			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]
+	 	Then,
+		\begin{align}
+			(A - \lambda I) u_{l} & = \sum_{j \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \label{eq:sepofspectraleq} \\
+				& = \sum_{j \in \N} \left[ \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \left( \eta\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& ~\qquad - \frac{2}{l} \sum_{j \in \N} \left[ \left( \eta'\left(\frac{|\cdot|}{l}\right) \psi_{s}'(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})}  \right] \notag \\
+				& ~\qquad - \frac{1}{l^{2}} \sum_{j \in \N} \left[ \left( \eta''\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& = \sum_{j \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] + R \notag
+		\end{align}
+		where $R$ is a sum of products of derivatives (of order $\geq 1$) of $\eta(\frac{|\cdot|}{l})$, and derivatives (of order $\leq 1$) of $\psi_{s}(\cdot, k)$. Thus (note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$), and the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
+		\begin{equation}
+			 \| R \| \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(K_{l})} \leq c \frac{1}{\sqrt{l}}, \label{eq:estimofR}
+		\end{equation}
+		with $K_{l}$ denoting the ball in $\R$ with radius $l$, centered at $x_{0}$. Together with \eqref{firstinclusion-firstequation}, \eqref{eq:sepofspectraleq} and \eqref{eq:estimofR}, this gives
+		\[ \| (A - \lambda I) u_{l} \| \leq \frac{c}{\sqrt{l}} \]
+		Again, by the semiperiodicity of $\psi_{s}(\cdot, k)$,
+		\[ \| u_{l} \| \geq c \| \psi_{s}(\cdot, k) \| \geq c \sqrt{l} \]
+		with $c > 0$. We obtain therefore
+		\[ \frac{1}{\|u_{l}\|}\| (A - \lambda I) u_{l} \| \leq \frac{c}{l} \]
+		Because moreover $u_{l} \in D(A)$, this results in
+			\[ \frac{1}{\|u_{l} \|} \| (A - \lambda I) u_{l} \| \rightarrow 0 \text{ as } l \rightarrow \infty \]
+		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
+	\end{proof}
+\end{theorem}	
+
+	
+\begin{theorem}
+	$\sigma(A) \subset \bigcup_{s \in \N} I_{s}.$
+
+	\begin{proof}
+		Let $\lambda \in \R \setminus \bigcup_{s \in \N} I_{s}$, we have to prove that $\lambda \in \rho(A)$, i.e., that, for each $f \in L^{2}(\R)$, some $u \in D(A)$ exists satisfying $(A-\lambda I)u = f$. For given $f \in L^{2}(\R)$, we define, for $l \in \N$, 
+			\[ f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k) dk \]
+			and
+			\begin{equation}
+				u_{l} \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk \label{ul}
+			\end{equation} 
+		Here, note that, due to \ref{UIclosed}, some $\delta > 0$ exists such that
+			\begin{equation}
+				|\lambda_{s}(k) - \lambda| \geq \delta \text{ for all } s \in \N, k \in B \label{lambda-distance}
+			\end{equation}
+
+		In particular, the boundary value problem
+		\begin{eqnarray}
+			(A - \lambda I) v(\cdot, k) & = & (Uf)(\cdot, k) \text{ on } \Omega, \label{3.33} \\
+			v(\frac{1}{2}) & = & e^{ik} v(-\frac{1}{2}) \notag
+		\end{eqnarray}
+		unique solution for every $k \in B$. Bloch wave expansion\footnote{whats that?} gives 
+		\begin{align*}
+			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle|^{2} \\
+			& = \sum_{s=1}^{\infty}|\langle (A - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2}
+		\end{align*}
+
+		Since both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy semi-periodic boundary conditions, $A - \lambda I$ can be moved to $\psi_{s}(\cdot, k)$ in the inner product, and hence \eqref{eigv-problem} and \eqref{lambda-distance} give
+		\begin{align*}
+			\| (Uf)(\cdot,k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\lambda_{s}(k) - \lambda|^{2} |\langle v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
+			& \geq \delta^{2} \| v(\cdot, k)\|^{2}_{L^{2}(\Omega)}
+		\end{align*}
+		By Theorem \ref{3.4.1}, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{3.33} gives
+			\begin{align*}
+				\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} & = \langle (A - \lambda I)(Uu)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
+					& = \langle (Uu)(\cdot,k), (A - \lambda I) \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
+					& = (\lambda_{s}(k) - \lambda) \langle Uu(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)}
+			\end{align*}
+		whence \eqref{ul} implies
+			\[ u_{l}(x) = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int \langle (Uu)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk, \]
+		and Theorem \ref{3.5.1} gives
+			\begin{equation}
+				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R). \label{ulflconvergence}
+			\end{equation}
+		We will now prove that in the distributional sense 
+			\begin{equation}
+				(A - \lambda I) u_{l} = f_{l} \text{ for all } l \in \N \label{lefttoprove}
+			\end{equation} 
+		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$ for all $v \in D(A)$, whence Theorem \ref{3.21} implies $u_{l} \in D(A)$, and
+			\[ (A - \lambda I) u_{l} = f_{l} \quad \forall l \in \N \]
+		Since $A$ is closed, \eqref{ulflconvergence} now implies
+			\[ u \in D(A), \text{ and } (A - \lambda I) u = f \]
+		which is the desired result.
+		
+		Left to prove is \eqref{lefttoprove}, i.e. that
+			\begin{equation}
+				\langle u_{l} , (A - \lambda I) \varphi \rangle_{L^{2}(\R)} \quad \forall \varphi \in C^{\infty}_{0}(\R). \label{lefttoshow2}
+			\end{equation} 
+		Let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open interval containing $\supp(\varphi)$ in its interior. Both the functions
+		\begin{align*}
+			r_{s}(x, k) & \coloneqq \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{(A - \lambda I) \varphi(x)}, \\
+			t_{s}(x, k) & \coloneqq \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{\varphi(x)}
+		\end{align*}
+		are easily seen to be in $L^{2}(K \times B)$ by Fubini's Theorem, since \eqref{lambda-distance}, and the fact that $(A - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$, imply both
+		\[ \int_{K} |r_{s}(x, k)|^{2} dx \text{ and } \int_{K} |t_{s}(x, k)|^{2} dx \]
+		are bounded by $C \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}$ the latter factor is bounded as a function of $k$ because $K$ is covered by a finite number of copies of $\Omega$, and the former is in $L^{1}(B)$ by Theorem \ref{3.4.1}.
+		
+		Since $K \times B$ is bounded, $r$ and $t$ are also $L^{1}(K \times B)$. Therefore, Fubini's Theorem implies that the order of integration with respect to $x$ and $k$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul},
+			\begin{align*}
+				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
+					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
+					& ~\qquad ~\qquad ~\qquad ~\qquad \langle \psi_{s}(\cdot, k), (A - \lambda I) \varphi \rangle_{L^{2}(K)} dk. 
+			\end{align*}
+			Since $\varphi$ has compact support in the interior of $K$, $(A - \lambda I)$ may be moved to $\psi_{s}(\cdot, k)$, and hence \eqref{eigv-problem} gives
+			\begin{align*}
+				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \langle \psi_{s}(\cdot, k), \varphi \rangle_{L^{2}(K)} dk \\
+				 	& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \left( \int_{K} t_{s}(x, k) dx \right) dk \\
+					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
+					& = \int_{K} \left[ \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk \right] \overline{\varphi(x)} dx \\
+					& = \int_{K} f_{l}(x) \overline{\varphi(x)},
+			\end{align*}
+			i.e. \eqref{lefttoshow2}.
+	\end{proof}
+\end{theorem}
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+\chapter{Completeness of the Bloch waves}
+
+Using the Floquet transformation $U$, we are now able to prove a completeness property of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
+	
+\begin{theorem} \label{3.5.1}
+		For each $f \in L^{2}(\R)$ and $l \in \N$, define
+			\begin{equation}
+				f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, K) dk \quad (x \in \R). \label{3.20}
+			\end{equation}
+		Then, $f_{l} \rightarrow f$ in $L^{2}(\R)$ as $l \rightarrow \infty$.
+
+	\begin{proof}
+		Sine $Uf \in L^{2}(\Omega \times B)$, we have $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for a.e. $k \in B$ by Fubini's Theorem. Since $(\psi_{s}(\cdot, k))_{s \in \N}$ is orthonormal and complete in $L^{2}(\Omega)$ for each $k \in B$, we obtain
+			\[ \lim_{l \rightarrow \infty} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|_{L^{2}(\Omega)} = 0 \text{ for a.e. } k \in B\]
+		where 
+			\begin{equation}
+				g_{l}(x, k) \coloneqq \sum_{s=1}^{l} \langle(Uf)(\cdot, k), \psi_{s}(\cdot,k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k). \label{3.21}
+			\end{equation}
+		Thus, for $\chi(k) \coloneqq \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)}$, we get
+			\[ \chi_{l}(k) \rightarrow 0 \text{ as } l \rightarrow \infty \text{ for a.e. } k \in B, \]
+		and moreover, by Bessel's inequality,
+			\[ \chi_{l}(k) \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \text{ for all } l \in \N \text{ and a.e. } k \in B \]
+		and $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)}$ is in $L^{1}(B)$ as a function of $k$ by Theorem \ref{3.4.1}. Altogether, Lebesgue's Dominated Convergence theorem implies
+			\[ \int_{B} \chi_{l}(k) dk \rightarrow 0 \text{ as } l \rightarrow \infty, \]
+		i.e., 
+			\begin{equation}
+				\| U f - g_{l} \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty \label{3.22}
+			\end{equation} 
+		Using \eqref{3.20}, \eqref{3.21} and \eqref{3.17}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.22} gives
+			\[ \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
+		and the assertion follows since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by Lemma \eqref{3.4.1}.
+	\end{proof}
+\end{theorem}
