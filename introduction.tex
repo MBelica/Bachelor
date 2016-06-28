@@ -1,0 +1,19 @@
+\chapter{Introduction}
+
+An important problem in mathematical physics is the solution of the one-dimensional Schrödinger equation with distributional potential, which is formally defined by the operation
+\begin{equation}
+	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator}
+\end{equation}
+on the whole of $\R$, where $\delta$ denotes the Dirac delta distribution and $x_{i}$ are periodically distributed points on $\R$. $\Omega_{k}$ will hereafter identify the periodicity cell containing delta point $x_{k}$ and let w.o.l.g. $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$.\footnote{Obviously, here is going to be much more but for starters this should suffice} \\
+
+Henceforth, consider for a $\mu \in \R$\footnote{removed here 'small enough', its at this point just too far fetched. Have to implement it at a later point} the problem
+\begin{equation}
+	\int u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v} \quad \forall v \in H^{1}(\R), \label{weak-formulation}
+\end{equation}	
+where $u \in H^{1}(\R)$ and $f \in L^{2}(\R)$ is a function modelling an external force. \\	
+The left-hand side of problem \eqref{weak-formulation} is actually convergent as for arbitrary $\tilde{x}_{i} \in \Omega_{i}$
+\begin{eqnarray}
+	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq & \sum_{i \in \Z} \left( \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u'( \tau ) d\tau \big| \right)^{2} \notag \\
+		 & \leq & 2 \sum_{i \in \Z} \left( \int_{\Omega_{i}} |u( x )|^{2} dx +  \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
+		 & \leq & 2 \cdot \| u \|^{2}_{H^{1}(\R)}. \label{eq:potentialestim}
+\end{eqnarray}
