@@ -43,9 +43,9 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega. \]
 		Now, given an $\epsilon > 0$ we partitioning $\Omega$ into $n_{\epsilon}$ equidistant intervals and define a simple function $g \in L^{2}(\Omega)$ such that on each subinterval the constant value of the function $c_{k}$ holds $|f(\frac{k}{n}) - c_{k + 1}| < \frac{1}{n}$ which leads to
 		\begin{align*}
-			\| f - g \|^{2}_{L^{2}} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f - c_{k+1} |^{2} dx \\
-				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
-				& \leq 2 \sum_{n = 0}^{n-1} \frac{1}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} + \frac{2}{n^{2}} < \epsilon^{2} \text{ for } n \text{ small enough.}
+			\| f - g \|^{2}_{L^{2}} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - c_{k+1} |^{2} dx \\
+				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
+				& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} \left( c + \frac{1}{n} \right) < \epsilon^{2} \text{ for } n \text{ small enough.}
 		\end{align*}		 
 		There is only a finite number of simple functions as... \footnote{todo}, this means for all $\epsilon > 0$ there exists a finite set of simple functions $\{ g_{1}, \dotsc, g_{n} \}$ such that for all $f \in B_{H^{1}_{k}}$ there is a $k \in \{1, \dotsc, n\}$ such that $\| f - g_{k} \| \leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$ and thus $R_{\mu, k}$ is compact.
 	\end{proof}	
