@@ -11,14 +11,14 @@ and
 Taking these two condition under examination, \eqref{eq:potentialestim} yields for the norm of $B[u, v]$ both. \newpage %todo temporarily
 
 \begin{theorem} \label{1.1}
-	For the bilinear form $B[u, v]$ as left-hand of \eqref{weak-formulation}
+	The bilinear form $B[u, v]$ as left-hand of \eqref{weak-formulation} has for all $u, v \in H^{1}(\R)$ the properties
 	\begin{enumerate}
 		\item[i)] $B[u, v]$ is bounded.
 		\item[ii)] $B[u, u]$ is coercive.
 	\end{enumerate}
 	
 	\begin{proof} ~\\
-		i) The boundedness of $B[u, v]$ one see through
+		i) The boundedness follows from
 		\begin{align*}
 			|B(u, \varphi)|^{2} & \leq \| u' \| \cdot \| v' \| + 2 \rho \sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \| \cdot \| v \| \\
 				& \leq \| u' \| \cdot \| v' \| + 8 \rho \cdot \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  - \mu \| u \| \cdot \| v \| \\
