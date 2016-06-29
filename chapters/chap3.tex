@@ -9,7 +9,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		H^{1}_{k} & \coloneqq & \Big\{ H^{1}(\Omega): \psi(-\frac{1}{2}) = e^{ik} \psi(-\frac{1}{2}), \psi'(-\frac{1}{2}) = e^{ik} \psi'(-\frac{1}{2}) \notag \\ & ~ &\qquad~\qquad  \text{ and } \psi'(x_{0} - 0) - \psi'(x_{0} + 0) + \rho \psi'(x_{0}) = 0 \Big\}. \label{quasi-periodic-condition}	
 	\end{eqnarray}
 
- 	Using the fact that $H^{1}_{k}$ is a closed subspace\footnote{I think I will explain this also in more detail} of $H^{1}(\R)$ one can apply the same arguments as above for $A$ to show that the resolvent $R_{\mu, k}$ of $A_{k}$ is well defined and analogously
+ 	Using the fact that $H^{1}_{k}$ is a closed subspace\footnote{I think I will explain this also in more detail} of $H^{1}(\R)$ one can apply the same arguments as above for $A$ to show that the resolvent $R_{\mu, k}$ of $A_{k}$ is well defined and analogously % todo #5: Do I have to show this? Or is it okay in that way
 		\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu. \] 
 		
 	As from now, consider the periodic eigenvalue problem
@@ -17,7 +17,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		A_{k} \psi = \lambda \psi \text{ on } \Omega \text{ for } \psi \in H^{1}_{k}, \label{eigv-problem}
 	\end{equation}
 
-	In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore, we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem\footnote{Evans page 645} in $L^{2}(\Omega)$ and $\psi$ from \eqref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\
+	In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. Furthermore, we know that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} is a symmetric eigenvalue problem\footnote{Evans page 645} in $L^{2}(\Omega)$ and $\psi$ from \eqref{eigv-problem} extended to the whole of $\R$ by \eqref{quasi-periodic-condition} solves also the eigenvalue problem of $A$ with the same eigenvalue. \\ % todo #6: Ref on Evans is that okay?
 	
 	Since $\Omega$ is bounded, the subsequently shown compactness can be used to verify that \eqref{eigv-problem}, \eqref{quasi-periodic-condition} has a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $H^{2}_{loc}(\R)$ with corresponding eigenvalues satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
@@ -47,7 +47,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
 				& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} \left( c + \frac{1}{n} \right) < \epsilon^{2} \text{ for } n \text{ small enough.}
 		\end{align*}		 
-		There is only a finite number of simple functions as... \footnote{todo}, this means for all $\epsilon > 0$ there exists a finite set of simple functions $\{ g_{1}, \dotsc, g_{n} \}$ such that for all $f \in B_{H^{1}_{k}}$ there is a $k \in \{1, \dotsc, n\}$ such that $\| f - g_{k} \| \leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$ and thus $R_{\mu, k}$ is compact. % todo todo
+		There is only a finite number of simple functions as... \footnote{todo}, this means for all $\epsilon > 0$ there exists a finite set of simple functions $\{ g_{1}, \dotsc, g_{n} \}$ such that for all $f \in B_{H^{1}_{k}}$ there is a $k \in \{1, \dotsc, n\}$ such that $\| f - g_{k} \| \leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$ and thus $R_{\mu, k}$ is compact. % todo #7: This, I haven't showed yet...
 	\end{proof}	
 \end{theorem}
 
