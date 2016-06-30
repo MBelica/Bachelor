@@ -2,7 +2,7 @@
 
 In this section, we will prove the main result stating that
 	\begin{equation}
-		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{main-statement}
+		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{MainResult}
 	\end{equation}
 where
 	\[ I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} \quad (s \in \N) \]
@@ -12,15 +12,15 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 	\end{equation} 
 	Moreover, Poincare's min-max principle for eigenvalues implies that
 	\[ \mu_{s} \leq \lambda_{s}(k) \text{ for all } s \in \N, k \in \overline{B} \]
-	with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann ("free") boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
+	with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann (``free'') boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
 		\[ \min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty, \]
 	which together with \eqref{Iisacompactrealinterval} implies that
 		\begin{equation}
 			\bigcup_{s \in \N} I_{s} \text{ is close.} \label{UIclosed}
 		\end{equation} 
-	The first part of the statement \eqref{main-statement} is 
+	The first part of the statement \eqref{MainResult} is 
 
-\begin{theorem}
+\begin{theorem} \label{4.1:thm-MainResult.FirstInclusion}
 	$\sigma(A) \supset \bigcup_{s \in \N} I_{s}.$
 	
 	\begin{proof}
@@ -45,7 +45,7 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 		\begin{equation}
 			 \| R \| \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(K_{l})} \leq c \frac{1}{\sqrt{l}}, \label{eq:estimofR}
 		\end{equation}
-		with $K_{l}$ denoting the ball in $\R$ with radius $l$, centered at $x_{0}$. Together with \eqref{firstinclusion-firstequation}, \eqref{eq:sepofspectraleq} and \eqref{eq:estimofR}, this gives
+		with $K_{l}$ denoting the ball in $\R$ with radius $l$ centered at $x_{0}$. Together with \eqref{firstinclusion-firstequation}, \eqref{eq:sepofspectraleq} and \eqref{eq:estimofR}, this gives
 		\[ \| (A - \lambda I) u_{l} \| \leq \frac{c}{\sqrt{l}} \]
 		Again, by the semiperiodicity of $\psi_{s}(\cdot, k)$,
 		\[ \| u_{l} \| \geq c \| \psi_{s}(\cdot, k) \| \geq c \sqrt{l} \]
@@ -58,7 +58,7 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 \end{theorem}	
 
 	
-\begin{theorem}
+\begin{theorem} \label{4.1:thm-MainResult.SecondInclusion}
 	$\sigma(A) \subset \bigcup_{s \in \N} I_{s}.$
 
 	\begin{proof}
@@ -73,12 +73,11 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 				|\lambda_{s}(k) - \lambda| \geq \delta \text{ for all } s \in \N, k \in B \label{lambda-distance}
 			\end{equation}
 
-		In particular, the boundary value problem\footnote{todo those next 3 lines!} % todo #8: This, I haven't showed yet either...
-		\begin{eqnarray}
-			(A - \lambda I) v(\cdot, k) & = & (Uf)(\cdot, k) \text{ on } \Omega, \label{3.33} \\
-			v(\frac{1}{2}) & = & e^{ik} v(-\frac{1}{2}) \notag
-		\end{eqnarray}
-		has a unique solution for every $k \in B$. Bloch wave expansion\footnote{check this} gives % todo #9: Is it correct that this simply means the completeness of Bloch waves as Basis of H1(Omega) which is the range of U (*,k)?
+		In particular, consider for fixed $k \in B$ and $v \in \mathcal{D}(A_{k})$:
+		\begin{equation}
+			(A_{k} - \lambda I) v(\cdot, k) = (Uf)(\cdot, k) \text{ on } \Omega, \label{4.9}			
+		\end{equation}
+		which has a unique solution as $\lambda \in \R \setminus \bigcup_{s \in \N} I_{s}$. Parseval gives
 		\begin{align*}
 			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle|^{2} \\
 			& = \sum_{s=1}^{\infty}|\langle (A - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2}
@@ -89,7 +88,7 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 			\| (Uf)(\cdot,k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\lambda_{s}(k) - \lambda|^{2} |\langle v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& \geq \delta^{2} \| v(\cdot, k)\|^{2}_{L^{2}(\Omega)}
 		\end{align*}
-		By Theorem \ref{3.4.1}, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{3.33} gives
+		By Theorem \ref{3.2:thm-UIsometricIsomorphism}, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{4.9} gives
 			\begin{align*}
 				\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} & = \langle (A - \lambda I)(Uu)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& = \langle (Uu)(\cdot,k), (A - \lambda I) \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
@@ -97,7 +96,7 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 			\end{align*}
 		whence \eqref{ul} implies
 			\[ u_{l}(x) = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int \langle (Uu)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk, \]
-		and Theorem \ref{3.5.1} gives
+		and Theorem \ref{3.3:thm-flConvergence} gives
 			\begin{equation}
 				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R). \label{ulflconvergence}
 			\end{equation}
@@ -105,9 +104,9 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 		\begin{equation}
 				(A - \lambda I) u_{l} = f_{l} \text{ for all } l \in \N \label{lefttoprove}
 			\end{equation} 
-		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$ for all $v \in D(A)$, whence Theorem \ref{3.21} implies $u_{l} \in D(A)$, and
+		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$ for all $v \in D(A)$, whence Theorem \ref{3.16} implies $u_{l} \in D(A)$, and
 			\[ (A - \lambda I) u_{l} = f_{l} \quad \forall l \in \N \]
-		Since $A$ is closed\footnote{That's clear but I will write some stuff down for that}, \eqref{ulflconvergence} now implies % todo #10: A self-adjoint => A closed that's clear but I guess Im gonna show this in the introduction
+		Since $A$ is closed, \eqref{ulflconvergence} now implies
 			\[ u \in D(A), \text{ and } (A - \lambda I) u = f \]
 		which is the desired result.
 		
@@ -122,15 +121,15 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 		\end{align*}
 		are easily seen to be in $L^{2}(K \times B)$ by Fubini's Theorem, since \eqref{lambda-distance} and the fact that $(A - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$, imply both
 		\[ \int_{K} |r_{s}(x, k)|^{2} dx \quad \text{and} \quad \int_{K} |t_{s}(x, k)|^{2} dx \]
-		are bounded by $C \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}$ the latter factor is bounded as a function of $k$ because $K$ is covered by a finite number of copies of $\Omega$, and the former is in $L^{1}(B)$ by Theorem \ref{3.4.1}.\footnote{Isn't this in L2B?} % todo #12: I have problems understanding why this is in L1
+		are bounded by $C \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}$ the latter factor is bounded as a function of $k$ because $K$ is covered by a finite number of copies of $\Omega$, and the former is in $L^{2}(B)$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}.
 		
-		Since $K \times B$ is bounded, $r$ and $t$ are also $L^{1}(K \times B)$. \footnote{again L2?} Therefore, Fubini's Theorem implies that the order of integration with respect to $x$ and $k$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul}, % todo #12: I have problems understanding why this is in L2
+		Since $K \times B$ is bounded, $r$ and $t$ are also $L^{2}(K \times B)$. Therefore, Fubini's Theorem implies that the order of integration with respect to $x$ and $k$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul},
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
 					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& ~\qquad ~\qquad ~\qquad ~\qquad \langle \psi_{s}(\cdot, k), (A - \lambda I) \varphi \rangle_{L^{2}(K)} dk. 
 			\end{align*}
-			Since $\varphi$ has compact support in the interior of $K$, $(A - \lambda I)$ may be moved to $\psi_{s}(\cdot, k)$,\footnote{How is this important?} and hence \eqref{eigv-problem} gives % todo #13: I don't see how the compact support is needed. Convergence?
+			Since $\varphi$ has compact support in the interior of $K$, $(A - \lambda I)$ may be moved to $\psi_{s}(\cdot, k)$, and hence \eqref{eigv-problem} gives % todo #10: I don't see how the compact support is needed. Convergence?
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \langle \psi_{s}(\cdot, k), \varphi \rangle_{L^{2}(K)} dk \\
 				 	& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \left( \int_{K} t_{s}(x, k) dx \right) dk \\

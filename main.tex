@@ -1,7 +1,6 @@
-% Important: Rework all refs, labels, eqnarrays, aligns etc.
-% Question: What is supposed to be in the introduction and what is part of the mathematical introduction
-% todo #0: Which parts do I have to show in more detail?
-\documentclass[12pt]{mitthesis}
+% Important: Rework all refs, labels, eqnarrays, aligns etc.y
+% footnote
+\documentclass[11pt]{mitthesis}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -20,7 +19,7 @@
 
 \pagestyle{plain}
 
-\makeatletter \xpatchcmd{\proof}{\@addpunct{.}}{\@addpunct{:}}{}{}\makeatother
+\makeatletter\xpatchcmd{\proof}{\@addpunct{.}}{\@addpunct{:}}{}{}\makeatother
 \DeclareUnicodeCharacter{00A0}{ } 
 \def\supp{\operatorname{supp}}
 \makeatletter
@@ -40,13 +39,11 @@
 %\include{cover}
  \pagestyle{plain}
  
-%\tableofcontents
-\include{chapters/introduction}
-\include{chapters/chap1}
-\include{chapters/chap2}
-\include{chapters/chap3}
-\include{chapters/chap4}
-\include{chapters/chap5}
+\tableofcontents
+\include{chapters/chap1-introduction}
+\include{chapters/chap2-operator}
+\include{chapters/chap3-brillouin}
+\include{chapters/chap4-spectrum}
 
 \appendix
 %\include{appendix}

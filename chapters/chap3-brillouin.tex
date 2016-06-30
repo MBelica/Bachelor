@@ -1,0 +1,157 @@
+\chapter{Fundamental domain of periodicity and the Brillouin zone}
+
+Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega = \Omega_{0}$ and thus $x_{0} = 0$ being the delta-point contained in $\Omega$. As commonly used by literature the reciprocal lattice for $\Omega$ is equal to $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, consider now the operator $A_{k}$ on $\Omega$ formally defined by the operation
+		\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}}. \]
+	More precisely, define $A_{k}$ by considering the problem to find for $f \in L^{2}(\Omega)$ a function $u \in H^{1}_{k}$ such that
+	\[ \int_{\Omega} u' \overline{v'} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u \overline{v} = \int_{\Omega} f \overline{v} \quad \forall v \in H^{1}_{k}, \]
+	where 
+	\begin{eqnarray}
+		H^{1}_{k} & \coloneqq & \Big\{ \psi \in H^{1}(\Omega): ~ \psi(\frac{1}{2}) = e^{ik} \psi(-\frac{1}{2}) \Big\}. \label{quasi-periodic-condition}	
+	\end{eqnarray}
+
+ 	Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the trace of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$ and one can apply the same arguments as above to show that now the operator $R_{\mu, k}$ is well-defined and define again % todo define operator
+		\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu, \] 
+	such that $R_{\mu, k}$ is the resolvent of $A_{k}$.	
+		
+\begin{theorem} \label{3.1:thm-R_mu,k.isCompact}
+	The operator $R_{\mu, k}$ is compact.
+
+	\begin{proof}
+	For each bounded sequence $(f_{j})_{j \geq 1} \in L^{2}(\Omega)$ there exist $(u_{j})_{j \geq 1} \in H^{1}_{k}$ such that
+		\[ u_{j} = R_{\mu, k} f_{j} \quad \forall j \geq 1 \]
+	and each $u_{j}$ for $j \geq 1$ has to satisfy
+		\begin{equation}
+			\int_{\Omega} u_{j}' \overline{v'} + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j} \overline{v} = \int f_{j} \overline{v} \quad \forall v \in H^{1}_{k}. \label{ujsatisfy}
+		\end{equation} 
+	Now, choosing in \eqref{ujsatisfy} $v = u_{j}$ yields with \eqref{estimation-for-potential} for $\mu$ small enough
+		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)} \]
+	Which shows that $(u_{j})_{j \geq 1}$ is bounded in $H^{1}(\Omega)$. As $H^1(\Omega) \subset C(\Omega)$ it holds
+		\begin{equation}
+			|f(x) - f(y)| \leq c |x - y|^{\nicefrac{1}{2}} \text{ for some } c > 0. \label{eq:H1estimation}
+		\end{equation}  
+		From \eqref{eq:H1estimation} follows for $f \in B_{H^{1}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \| \leq 1 \}$ that 
+		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega. \]
+		Now, given an $\epsilon > 0$ we partition $\Omega$ into $n_{\epsilon}$ equidistant intervals. As all $f \in B_{H^{1}_{k}}$ are by \eqref{estimation-for-potential} uniformly bounded on $\Omega$ there exist a finite number of constants $c_{1}, \dotsc, c_{\nu_{\epsilon}}$ such that 
+			$$ \forall f \in B_{H^{1}_{k}} ~\exists j \in \{1, \dotsc, \nu_{\epsilon} \}: \quad |f(\frac{k}{n_{\epsilon}}) - c_{j}| < \frac{1}{n_{\epsilon}} \text{ for } k \in \{ 1 , \dotsc, n_{\epsilon} $$	
+		Hence, we can define a simple function $g \in L^{2}(\Omega)$ through those constants on each subinterval such that for all $f \in L^{2}(\Omega)$
+		\begin{align*}
+			\| f - g \|^{2}_{L^{2}} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - c_{k+1} |^{2} dx \\
+				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
+				& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} \left( c + \frac{1}{n} \right) < \epsilon^{2} \text{ for } n \text{ small enough.}
+		\end{align*}		 
+		This means for all $\epsilon > 0$ there exists a finite set of simple functions $\{ g_{1}, \dotsc, g_{n} \}$ such that for all $f \in B_{H^{1}_{k}}$ there exists a $k \in \{1, \dotsc, n\}$ such that $\| f - g_{k} \| \leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$ and thus $R_{\mu, k}$ is compact. % todo #4: This, I haven't showed yet...
+	\end{proof}	
+\end{theorem}		
+
+\section{The Spectrum of $A_{k}$}		
+As from now, consider the periodic eigenvalue problem
+	\begin{equation}
+		A_{k} \psi = \lambda \psi \text{ on } \Omega \text{ for } \psi \in H^{1}_{k}. \label{eigv-problem}
+	\end{equation}
+
+In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. \\
+	
+Since $\Omega$ is bounded, and $R_{\mu, k}$, as resolvent of $A_{k}$, is a compact and symmetric operator, $A_{k}$ has a purely discrete spectrum satisfying	
+	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
+and the corresponding eigenfunction can be chosen such that they depend on $k$ in a measurable way\footnote{see [M. Reed and B. Simon. Methods of modern mathematical physics I–IV]} and that they form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}.
+
+Now, we want to transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$. Define therefore
+	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
+Then,
+	\begin{align*}
+		A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \\
+				& = e^{ikx} \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \\
+				& ~\qquad + e^{ikx} \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}.
+	\end{align*}
+Defining the operator $\tilde{A_{k}} \colon D(A_{k}) \rightarrow L^{2}(\R)$ through 
+	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
+ 		\left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2})
+ 	\end{cases} \] 
+and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, gives
+		\[ \varphi_{s}(x - \frac{1}{2}, k) = e^{-ik(x - \frac{1}{2})} \psi_{s}(x - \frac{1}{2}, k) = e^{-ik(x + \frac{1}{2})} \psi_{s}(x + \frac{1}{2}, k) = \varphi_{s}(x + \frac{1}{2}, k). \]
+Which shows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions of the periodic eigenvalue problem
+	\begin{eqnarray}
+		\tilde{A}_{k} \varphi = & \lambda
+		 \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
+		 \varphi(x - \frac{1}{2}) = & \varphi(x + \frac{1}{2}). \label{periodic-condition}
+	\end{eqnarray}
+with the same eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem}. We shall see that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(s))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$.\\
+	
+\section{The Floquet transormation}
+An important step towards this aim is the Floquet transformation
+	\begin{equation}
+		(Uf)(x, k) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{n \in \Z} f(x - n) e^{ikn} \quad (x \in \Omega, k \in B). \label{floquet-transformation}
+	\end{equation}
+		
+\begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
+	$ U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is an isometric isomorphism, with inverse
+		\begin{equation}
+			(U^{-1}g)(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in \Z). \label{3.8}
+		\end{equation} 
+	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, we have
+		\begin{equation}
+			U^{-1} g = \frac{1}{\sqrt{|B|}} \int_{B} g(\cdot, k) dk. \label{3.9}
+		\end{equation}
+		
+	\begin{proof}
+		For $f \in L^{2}(\R)$,
+		\begin{equation}
+			\int_{\R} |f(x)|^{2} dx = \sum_{n \in \Z} \int_{\Omega} |f(x - n)|^{2} dx. \label{functionoverperiodicity}
+		\end{equation} 
+		Here, we can exchange summation and integration by Beppo Levi's Theorem. Therefore, 
+		\[ \sum_{n \in \Z} |f(x - n)|^{2} < \infty \text{ for a.e. } x \in \Omega.\]
+		Thus, $(Uf)(x, k)$ is well-defined by \eqref{floquet-transformation} (as a Fourier series with variable $k$) for a.e. $x \in \Omega$, and Parseval's equality gives, for these $x$,
+		\[ \int_{B}|(Uf)(x,k)|^{2} dk = \sum_{n \in \Z} |f(x - n)|^{2}. \]
+		By \eqref{functionoverperiodicity}, this expression is in $L^{2}(\Omega)$, and
+		\[ \| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}. \]
+		We are left to show that $U$ is onto, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. Let $g \in L^{2}(\Omega \times B)$, and define
+		\begin{equation}
+			f(x - n) \coloneqq \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in\Z).\label{3.11}
+		\end{equation}
+		For fixed $x \in \Omega$, Parseval's Theorem gives
+		\[ \sum_{n \in \Z} |f(x - n)|^{2} = \int_{B} |g(x, k)|^{2} dk, \]
+		whence, by integration over $\Omega$,
+		\begin{eqnarray}
+			\int_{\Omega \times B} |g(x, k)|^{2} dx dk & = \int_{\Omega} \sum_{n \in \Z} |f(x - n)|^{2} dx \\
+				& = \sum_{n \in\Z} \int_{\Omega} |f(x-n)|^{2} dx \\
+				& = \int_{\R} |f(x)|^{2} dx,	
+		\end{eqnarray}
+		i.e. $f \in L^{2}(\R)$. Now \eqref{floquet-transformation} gives, for a.e. $x \in\Omega$,
+		\[ f(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} (Uf)(x,k) e^{-ikn} dk \quad (n \in \Z), \]
+		whence \eqref{3.11} implies $U f = g$ and \eqref{3.8}. Now \eqref{3.9} follows from \eqref{3.8} using $g(x + n, k) = e^{ikn} g(x, k)$.
+	\end{proof}				
+\end{theorem}
+
+\section{Completeness of the Bloch waves}
+
+Using the Floquet transformation $U$, we are now able to prove a completeness property of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
+	
+\begin{theorem} \label{3.3:thm-flConvergence}
+		For each $f \in L^{2}(\R)$ and $l \in \N$, define
+			\begin{equation}
+				f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, K) dk \quad (x \in \R). \label{3.15}
+			\end{equation}
+		Then, $f_{l} \rightarrow f$ in $L^{2}(\R)$ as $l \rightarrow \infty$.
+
+	\begin{proof}
+		Sine $Uf \in L^{2}(\Omega \times B)$, we have $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for a.e. $k \in B$ by Fubini's Theorem. Since $(\psi_{s}(\cdot, k))_{s \in \N}$ is orthonormal and complete in $L^{2}(\Omega)$ for each $k \in B$, we obtain
+			\[ \lim_{l \rightarrow \infty} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|_{L^{2}(\Omega)} = 0 \text{ for a.e. } k \in B\]
+		where 
+			\begin{equation}
+				g_{l}(x, k) \coloneqq \sum_{s=1}^{l} \langle(Uf)(\cdot, k), \psi_{s}(\cdot,k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k). \label{3.16}
+			\end{equation}
+		Thus, for $\chi(k) \coloneqq \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)}$, we get
+			\[ \chi_{l}(k) \rightarrow 0 \text{ as } l \rightarrow \infty \text{ for a.e. } k \in B, \]
+		and moreover, by Bessel's inequality,
+			\[ \chi_{l}(k) \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \text{ for all } l \in \N \text{ and a.e. } k \in B \]
+		and $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)}$ is in $L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}. Altogether, Lebesgue's Dominated Convergence theorem implies
+			\[ \int_{B} \chi_{l}(k) dk \rightarrow 0 \text{ as } l \rightarrow \infty, \]
+		i.e., 
+			\begin{equation}
+				\| U f - g_{l} \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty \label{3.17}
+			\end{equation} 
+		Using \eqref{3.15}, \eqref{3.16} and \eqref{3.9}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.17} gives
+			\[ \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
+		and the assertion follows since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by Lemma \ref{3.2:thm-UIsometricIsomorphism}.
+	\end{proof}
+\end{theorem}

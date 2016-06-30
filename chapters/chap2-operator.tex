@@ -1,0 +1,116 @@
+\chapter{The Operator}
+
+As we can interpret the left-hand side of \eqref{weak-formulation-of-A} as a bounded bilinear mapping $B \colon H^{1}(\R) \times H^{1}(\R) \rightarrow \R$, Lax Milgram's Theorem asserts the existence of a unique element $u \in H^{1}(\R)$ satisfying
+\begin{equation*}
+	B[u, v] = \langle f, v \rangle
+\end{equation*}
+if there exist constants $\alpha, \beta > 0$ such that
+	\[ \left| B[u,v] \right| \leq \alpha \|u\| \|v\| \quad (u, v \in H^{1}(\R)) \]
+and
+	\[ \beta \|u\|^{2} \leq B[u, u] \quad (u \in H^{1}(\R)). \]
+Taking these two condition under examination, \eqref{estimation-for-potential} yields for the norm of $B[u, v]$ both.
+
+
+\begin{theorem} \label{2.1:thm-LaxMilgram}
+	The bilinear form $B[u, v]$ as left-hand of \eqref{weak-formulation-of-A} has for all $u, v \in H^{1}(\R)$ the properties
+	\begin{enumerate}
+		\item[i)] $B[u, v]$ is bounded.
+		\item[ii)] $B[u, u]$ is coercive.
+	\end{enumerate} 
+
+	\begin{proof} ~\\
+		i) The boundedness follows from
+		\begin{align*}
+			|B(u, \varphi)|^{2} & \leq \| u' \| \cdot \| v' \| + 2 \rho \sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \| \cdot \| v \| \\
+				& \leq \| u' \| \cdot \| v' \| + 8 \rho \cdot \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  - \mu \| u \| \cdot \| v \| \\
+				& = (8\rho - \mu) \| u \| \cdot \| v \| + 8\rho \left( \| u \| \cdot \| v' \| + \| u' \| \cdot \| v \| \right) + (8\rho + 1) \| u' \| \cdot \| v'\| \\
+				& \leq \alpha \cdot \| u \|_{H^{1}} \cdot \| \varphi \|_{H^{1}}
+		\end{align*}
+		ii)
+		For the coercivity assume first $\rho \geq 0$. For $\mu < -1$:
+		\begin{align*}
+			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} u(x_{i})^{2} - \mu \langle u , u \rangle \\
+					& \geq \langle u' , u' \rangle - \mu \langle u , u \rangle \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
+					& = \| u \|_{H^{1}}^{2}.
+		\intertext{For $\rho < 0$ there exists a $\mu \in (-\infty, 2\rho)$ such that}
+			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu 	\langle u , u \rangle \\
+					& = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u(x) dx \big|^{2} - \mu \langle u , u \rangle \\
+					& \geq \langle u' , u' \rangle + 2 \rho \left( \int_{\R} |u(x)|^{2} dx + \int_{\R} |u'(\tau)|^{2} d\tau \right) - \mu \langle u , u \rangle \\
+					& = (2 \rho + 1) \| u' \|^{2} + (2\rho - \mu) \| u \|^{2}  \\
+					& \geq \beta \| u \|_{H^{1}}^{2},
+		\end{align*}
+	\end{proof}
+\end{theorem}
+where $u \in H^{1}(\R)$ is the unique solution to the problem \eqref{weak-formulation-of-A}. Thus, the operator $R_{\mu} \colon L^{2}(\R) \rightarrow H^{1}(\R), f \mapsto u$ is for $\mu \in \R$ small enough well-defined; obviously the mapping is one-to-one since for $u_{1} = u_{2}$
+	\begin{equation}
+		0 = B[u_{1}, v] - B[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v} \quad \forall v \in H^{1}(\R). \label{f1f2almosteverywhere}
+	\end{equation} 
+As $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equation \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and we can define the Schrödinger operator as follows
+		\[ A \coloneqq R_{\mu}^{-1} + \mu I \]
+from which follows that $R_{\mu}$ is the resolvent of $A$.
+
+\section{The Domain}
+
+For every fixed $k \in \Z$ choosing a test function $v \in C^{\infty}(\R)$ with $\supp v = \Omega_{k}$  in \eqref{weak-formulation-of-A} yields
+	\[ \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} A u \overline{v} \iff \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u(x) \overline{v''(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} - A u \overline{v}, \]
+such that $A u = - u'' \in L^{2}$ on $(x_{k} -\nicefrac{1}{2}, x_{k})$ and analogous on $(x_{k}, x_{k} + \nicefrac{1}{2})$.
+As $k \in \Z$ was arbitrary $\mathcal{D}(A) \subset \big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\nicefrac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \nicefrac{1}{2}) \right)\big\}$. \\
+
+Next, again for an arbitrary $k \in \Z$ a test function $v \in C^{\infty}(\R)$ with $\supp v = \Omega_{k}$ and integration by parts on both sides of $x_{k}$ in \eqref{weak-formulation-of-A} yields
+	\[ -\left( \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}}\right) u'' \cdot \overline{v} + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
+	\[ +  \rho u(x_{k})\overline{v(x_{k})} = - \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} u'' \overline{v} - \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}} u'' \overline{v}. \]
+But as $v \in C^{\infty}(\R)$, this is equivalent to
+	\[ u'(x_{k}-0) - u'(x_{k}+0) + \rho u(x_{k}) = 0 \]
+such that
+	\begin{align*}
+		\mathcal{D}(A) \subset \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \Big\} \eqqcolon B.
+	\end{align*} 
+The action of the operator is defined by
+	\[ A u = \begin{cases}
+					- u'' & (x_{k} - \frac{1}{2}, x_{k}) \\
+					- u'' & (x_{k}, x_{k} + \frac{1}{2}),
+				\end{cases} \quad \forall k \in \Z \]
+				
+The opposite inclusion is shown, as $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, by proving for $u \in B$ that is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider
+	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
+	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \nicefrac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \nicefrac{1}{2}} u'' \overline{v}. \]
+	For each $k \in \Z$ partial integration with a function $v$ having $\supp v = (x_{k} - \nicefrac{1}{2}, x_{k} + \nicefrac{1}{2})$ yields
+	\[ \left( \int_{x_{k} - \nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} +\nicefrac{1}{2}} \right) u' \overline{v'} - u'(x_{k}-0) \overline{v(x_{k})}  + u'(x_{k}+0) \overline{v(x_{k})}  = \int_{\Omega_{k}} u' \overline{v'} + \rho u(x_{k}) \overline{v(x_{k})} \]
+	\[ \iff u'(x_{k}+0) - u'(x_{k}-0) - \rho u(x_{k}) = 0 \]
+	such that we conclude
+	\begin{align*}
+		\mathcal{D}(A) & = \Big\{ u \in H^{1}(\R): u \in \bigcap_{j \in \Z} H^{2}(x_{j} , x_{j+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho \cdot u(x_{j}) = 0 ~\forall j \Big\}.
+	\end{align*}
+
+\begin{theorem} \label{2.2:thm-R_muSymmetric}
+	$R_{\mu}$ is a symmetric operator.
+	
+	\begin{proof}
+		First, focus on $R_{\mu}^{-1} = (A - \mu I)$. As for all $v \in D(A)$:
+			\begin{align*}
+				\langle R_{\mu}^{-1} u, v \rangle & = \langle (A - \mu I) u, v \rangle \\
+					& = \int u'\overline{v'} -  \mu \int u \overline{v} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} \\
+					& = \langle u, (A - \mu I) v \rangle = \langle u,  R_{\mu}^{-1} v \rangle.
+			\end{align*}
+
+		$R_{\mu}^{-1}$ is symmetric. Now, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ and $\mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$ for each $f, g \in L^{2}(\R)$ it follows
+		
+		\[  \langle R_{\mu} f, g \rangle =  \langle R_{\mu} f, R_{\mu}^{-1} R_{\mu} g \rangle = \langle f, R_{\mu} g \rangle \]
+		
+		such that $R_{\mu}$ is also symmetric.
+	\end{proof}
+\end{theorem}
+
+\begin{theorem} \label{2.3:thm-ASelfAdjoint}
+	$A$ is a self-adjoint operator.
+		
+	\begin{proof}
+		As we already know that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to show that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
+		\[ \langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle, \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}) \tag*{(*)} \]
+		then $v \in \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu}^{-1} v = v^{*}$.
+		In $(*)$ we define $u \coloneqq R_{\mu} f$ for $f \in L^{2}$ and use that $R_{\mu}$ is symmetric and defined on the whole of $L^{2}(\R)$:
+		\[  \langle f, v \rangle = \langle R_{\mu} f, v^{*} \rangle = \langle f, R_{\mu} v^{*} \rangle, \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}) \]
+		
+		Which means that $v \in \mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu}^{-1} v = v^{*}$, i.e. $R_{\mu}^{-1}$ is self-adjoint. As the operator $A$ is simply $R_{\mu}^{-1}$ shifted by $\mu \in \R$, $A$ is self-adjoint as well.		
+	\end{proof}
+\end{theorem}
