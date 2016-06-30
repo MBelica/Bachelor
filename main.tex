@@ -1,11 +1,10 @@
-% Important: Rework all refs, labels, eqnarrays, aligns etc.y
-% footnote
 \documentclass[11pt]{mitthesis}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
+\usepackage[export]{adjustbox}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -36,8 +35,7 @@
 
 \begin{document}
 
-%\include{cover}
- \pagestyle{plain}
+\include{kit-cover}
  
 \tableofcontents
 \include{chapters/chap1-introduction}
@@ -47,6 +45,7 @@
 
 \appendix
 %\include{appendix}
-%\include{biblio}
+\include{biblio}
+\include{statement}
 
 \end{document}

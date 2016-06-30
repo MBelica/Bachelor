@@ -9,7 +9,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		H^{1}_{k} & \coloneqq & \Big\{ \psi \in H^{1}(\Omega): ~ \psi(\frac{1}{2}) = e^{ik} \psi(-\frac{1}{2}) \Big\}. \label{quasi-periodic-condition}	
 	\end{eqnarray}
 
- 	Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the trace of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$ and one can apply the same arguments as above to show that now the operator $R_{\mu, k}$ is well-defined and define again % todo define operator
+ 	Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the trace of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$ and one can apply the same arguments as above to show that now the operator $R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k}, f \mapsto u$ is well-defined and define again % todo define operator
 		\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu, \] 
 	such that $R_{\mu, k}$ is the resolvent of $A_{k}$.	
 		
@@ -31,7 +31,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 		\end{equation}  
 		From \eqref{eq:H1estimation} follows for $f \in B_{H^{1}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \| \leq 1 \}$ that 
 		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega. \]
-		Now, given an $\epsilon > 0$ we partition $\Omega$ into $n_{\epsilon}$ equidistant intervals $I_{k}$, i.e. $\Omega = \bigcup_{j = 1}^{n_{\epsilon}} I_{j}$. As all $f \in B_{H^{1}_{k}}$ are by \eqref{estimation-for-potential} uniformly bounded on $\Omega$, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1}(I_{k}), \dotsc, c_{\nu_{\epsilon}}(I_{k})$ such that 
+		Now, for $\epsilon > 0$ we partition $\Omega$ into $n_{\epsilon}$ equidistant intervals $I_{k}$, i.e. $\Omega = \bigcup_{j = 1}^{n_{\epsilon}} I_{j}$. As all $f \in B_{H^{1}_{k}}$ are by \eqref{estimation-for-potential} uniformly bounded on $\Omega$, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1}(I_{k}), \dotsc, c_{\nu_{\epsilon}}(I_{k})$ such that 
 			$$ \forall f \in B_{H^{1}_{k}} ~\exists j \in \{1, \dotsc, \nu_{\epsilon} \}: \quad |f(\frac{k}{n_{\epsilon}}) - c_{j}(I_{k})| < \frac{1}{n_{\epsilon}} \quad \forall k \in \{ 1 , \dotsc, n_{\epsilon} \}. $$	
 		Hence, a simple function $g \in L^{2}(\Omega)$ with function value $c_{k}$ on interval $I_{k}$ would yield
 		\begin{align*}
@@ -39,7 +39,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
 				& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} \left( c + \frac{1}{n} \right) < \epsilon^{2} \text{ for } n \text{ small enough.}
 		\end{align*}		 
-		This means for all $\epsilon > 0$ there exists a finite set of simple functions $\{ g_{1}, \dotsc, g_{N} \}$ such that for all $f \in B_{H^{1}_{k}}$ there exists a $\nu \in \{1, \dotsc, N\}$ such that $\| f - g_{\nu} \| \leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$ and thus $R_{\mu, k}$ is compact. % todo #4: This, I haven't showed yet...
+		This means for all $\epsilon > 0$ there exists a finite set of simple functions $\{ g_{1}, \dotsc, g_{N} \}$ such that for all $f \in B_{H^{1}_{k}}$ there exists a $\nu \in \{1, \dotsc, N\}$ such that $\| f - g_{\nu} \| \leq \epsilon$. Together with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$ and thus $R_{\mu, k}$ is compact.
 	\end{proof}	
 \end{theorem}		
 
