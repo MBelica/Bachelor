@@ -1,18 +1,16 @@
-\chapter{The spectrum of A}	
+\chapter{The spectrum of A}	\label{chap4}
 
 In this section, we will prove the main result stating that
 	\begin{equation}
 		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{MainResult}
 	\end{equation}
-where
-	\[ I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} \quad (s \in \N) \]
-For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}$, which follows by standard arguments from the fact that the coefficients in the eigenvalue problem \eqref{mod-eigv-problem},  \eqref{periodic-condition} depend continuously on $k$. Thus, since $B$ is compact and connected, 
+where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$. As $B$ is compact and connected, for each of those sets $I_{s}$ holds that
 	\begin{equation}
-		I_{s} \text{ is a compact real interval, for each } s \in \N. \label{Iisacompactrealinterval}
+		I_{s} \text{ is a compact real interval for each } s \in \N,\label{Iisacompactrealinterval}
 	\end{equation} 
-	Moreover, Poincare's min-max principle for eigenvalues implies that
-	\[ \mu_{s} \leq \lambda_{s}(k) \text{ for all } s \in \N, k \in \overline{B} \]
-	with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann (``free'') boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
+as $\lambda_{s}$ is a continuous function of $k \in \overline{B}$ fo.r all $s \in \N$, which follows by standard arguments from the fact that the coefficients in the transformed eigenvalue problem \eqref{mod-eigv-problem},  \eqref{periodic-condition} depend continuously on $k$.
+
+	Moreover, Poincare's min-max principle for eigenvalues implies that $\mu_{s} \leq \lambda_{s}(k) \text{ for all } s \in \N, k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann (``free'') boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain 
 		\[ \min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty, \]
 	which together with \eqref{Iisacompactrealinterval} implies that
 		\begin{equation}
@@ -26,7 +24,7 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 	\begin{proof}
 		Let $\lambda \in \bigcup_{s \in \N} I_{s}$, i.e. $\lambda = \lambda_{s}(k)$ for some $s \in \N$ and some $k \in \overline{B}$, and 
 		\begin{equation}
-			A \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation}
+			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} % todo Is the k in the index is correct?
 		\end{equation}
 		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodicity of $A$, \eqref{firstinclusion-firstequation} holds for all $x \in \R$ and $\psi_{s} \in H^{2}_{loc}(\R)$ \\
 		We choose a function $\eta \in H^{2}(\R)$ such that
@@ -119,17 +117,21 @@ For each $s \in \N, \lambda_{s}$ is a continuous function of $k \in \overline{B}
 			r_{s}(x, k) & \coloneqq \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{(A - \lambda I) \varphi(x)}, \\
 			t_{s}(x, k) & \coloneqq \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{\varphi(x)}
 		\end{align*}
-		are easily seen to be in $L^{2}(K \times B)$ by Fubini's Theorem, since \eqref{lambda-distance} and the fact that $(A - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$, imply both
-		\[ \int_{K} |r_{s}(x, k)|^{2} dx \quad \text{and} \quad \int_{K} |t_{s}(x, k)|^{2} dx \]
-		are bounded by $C \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}$ the latter factor is bounded as a function of $k$ because $K$ is covered by a finite number of copies of $\Omega$, and the former is in $L^{2}(B)$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}.
+		are in $L^{2}(K \times B)$ by Fubini's THeorem, since \eqref{lambda-distance} and the fact that $(A_{k} - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$, imply both
+		\begin{align*}
+			\| r_{s}(x, k) \|_{L^{2}(K \times B)} & \leq c \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)} 
+		\intertext{and}
+			\| t_{s}(x, k) \|_{L^{2}(K \times B)} & \leq \tilde{c} \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)},.			
+		\end{align*}
+		the latter factor is bounded as a function of $k$ because $K$ is covered by a finite number of copies of $\Omega$, and the former is in $L^{1}(B)$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}.
 		
-		Since $K \times B$ is bounded, $r$ and $t$ are also $L^{2}(K \times B)$. Therefore, Fubini's Theorem implies that the order of integration with respect to $x$ and $k$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul},
+		Since $K \times B$ is bounded, $r$ and $t$ are also in $L^{1}(K \times B)$. Therefore, Fubini’s Theorem implies that the order of integration with respect to $x$ and $l$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul},
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
 					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& ~\qquad ~\qquad ~\qquad ~\qquad \langle \psi_{s}(\cdot, k), (A - \lambda I) \varphi \rangle_{L^{2}(K)} dk. 
 			\end{align*}
-			Since $\varphi$ has compact support in the interior of $K$, $(A - \lambda I)$ may be moved to $\psi_{s}(\cdot, k)$, and hence \eqref{eigv-problem} gives % todo #10: I don't see how the compact support is needed. Convergence?
+			Since $\varphi$ has compact support in the interior of $K$, $(A - \lambda I)$ may be moved to $\psi_{s}(\cdot, k)$, and hence \eqref{eigv-problem} gives % todo I don't see how the compact support is needed. Convergence?
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \langle \psi_{s}(\cdot, k), \varphi \rangle_{L^{2}(K)} dk \\
 				 	& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \left( \int_{K} t_{s}(x, k) dx \right) dk \\
