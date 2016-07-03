@@ -56,7 +56,7 @@ In writing the boundary condition in \eqref{quasi-periodic-condition}, we unders
 	
 Obviously, $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and if $\tilde{\lambda}$ is an eigenvalue for the eigenfunction $\psi$ of $R_{\mu, k}$ then so is
 	\[ \lambda = \frac{1}{\tilde{\lambda}} - \mu \]
-for the operator $A$. Since $\Omega$ is bounded, and $R_{\mu, k}$ is a compact and symmetric operator, $A_{k}$ has also a purely discrete spectrum satisfying	
+ an eigenvalue for same the eigenfunction $\psi$ for the operator $A$. Since $\Omega$ is bounded, and $R_{\mu, k}$ is a compact and symmetric operator, $A_{k}$ has also a purely discrete spectrum satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
 and the corresponding eigenfunction can be chosen such that they depend on $k$ in a measurable way\footnote{see [M. Reed and B. Simon. Methods of modern mathematical physics I–IV]} and that they form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. Therefore, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$:
 	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
@@ -74,14 +74,14 @@ and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
 		\[ \varphi_{s}(x - \frac{1}{2}, k) = e^{-ik(x - \frac{1}{2})} \psi_{s}(x - \frac{1}{2}, k) = e^{-ik(x + \frac{1}{2})} \psi_{s}(x + \frac{1}{2}, k) = \varphi_{s}(x + \frac{1}{2}, k). \]
 Which shows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions of the periodic eigenvalue problem
 	\begin{eqnarray}
-		\tilde{A}_{k} \varphi = & \lambda
+		\tilde{A}_{k} \varphi = & \lambda_{s}(k)
 		 \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
 		 \varphi(x - \frac{1}{2}) = & \varphi(x + \frac{1}{2}). \label{periodic-condition}
 	\end{eqnarray}
-with the same eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem}.
+with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem}.
 ~\newline
 
-We shall see in the next chapter that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(s))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, an operator mapping from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ as $\Omega \times B$ is compact. \\
+In the next chapter we shall see that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, an operator mapping from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ as $\Omega \times B$ is compact. \\
 	
 \section{The Floquet transformation} 	
 \begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
@@ -93,7 +93,7 @@ We shall see in the next chapter that the spectrum of the operator $A$ can be co
 		\begin{equation}
 			(U^{-1}g)(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in \Z). \label{3.8}
 		\end{equation} 
-	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, we have
+	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, the inverse simplifies to
 		\begin{equation}
 			U^{-1} g = \frac{1}{\sqrt{|B|}} \int_{B} g(\cdot, k) dk. \label{3.9}
 		\end{equation}
@@ -101,9 +101,9 @@ We shall see in the next chapter that the spectrum of the operator $A$ can be co
 	\begin{proof}
 		For $f \in L^{2}(\R)$,
 		\begin{equation}
-			\int_{\R} |f(x)|^{2} dx = \sum_{n \in \Z} \int_{\Omega} |f(x - n)|^{2} dx. \label{functionoverperiodicity}
+			\int_{\R} |f(x)|^{2} dx = \sum_{n \in \Z} \int_{\Omega} |f(x - n)|^{2} dx,\label{functionoverperiodicity}
 		\end{equation} 
-		where we used Beppo Levi's Theorem to exchange summation and integration, that shows that
+		where we used Beppo Levi's Theorem to exchange summation and integration. This shows that
 		\[ \sum_{n \in \Z} |f(x - n)|^{2} < \infty \text{ for almost every } x \in \Omega.\]
 		Thus, $(Uf)(x, k)$ is well-defined by \eqref{floquet-transformation} (as a Fourier series with variable $k$) for almost every $x \in \Omega$, and Parseval's equality gives for these $x$
 		\[ \int_{B}|(Uf)(x,k)|^{2} dk = \sum_{n \in \Z} |f(x - n)|^{2}. \]
@@ -118,7 +118,7 @@ We shall see in the next chapter that the spectrum of the operator $A$ can be co
 		\begin{align*}
 			\int_{\Omega \times B} |g(x, k)|^{2} dx dk & = \int_{\Omega} \sum_{n \in \Z} |f(x - n)|^{2} dx  = \sum_{n \in\Z} \int_{\Omega} |f(x-n)|^{2} dx = \int_{\R} |f(x)|^{2} dx,	
 		\end{align*}
-		i.e. $f \in L^{2}(\R)$. Now \eqref{floquet-transformation} gives, for almost every $x \in \Omega$,
+		which means $f \in L^{2}(\R)$. For almost every $x \in \Omega$ \eqref{floquet-transformation} gives
 		\[ f(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} (Uf)(x,k) e^{-ikn} dk \quad (n \in \Z), \]
 		whence \eqref{3.11} implies $U f = g$ and \eqref{3.8}. Now \eqref{3.9} follows from \eqref{3.8} using $g(x + n, k) = e^{ikn} g(x, k)$.
 	\end{proof}				
@@ -126,7 +126,7 @@ We shall see in the next chapter that the spectrum of the operator $A$ can be co
 
 \section{Completeness of the Bloch waves}
 
-Using the transformation $U$, we can now prove the property of completeness of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
+Using the Floquet transformation $U$, we can now prove the property of completeness of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
 	
 \begin{theorem} \label{3.3:thm-flConvergence}
 		For each $f \in L^{2}(\R)$ and $l \in \N$, define
@@ -144,7 +144,7 @@ Using the transformation $U$, we can now prove the property of completeness of t
 			\end{equation}
 		By Bessel's inequality, we get moreover
 			\[ \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)}  \]
-		for all $l \in \N$ and almost every $k \in B$. Moreover $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}. Thus, by Lebesgue's Dominated Convergence theorem
+		for all $l \in \N$ and almost every $k \in B$. Next, $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}, thus by Lebesgue's Dominated Convergence theorem
 		\[ \lim_{l \rightarrow \infty} \int_{B} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk  = \int_{B} \lim_{l \rightarrow \infty}  \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk = 0. \]
 		  All in all, this means
 			\begin{equation}

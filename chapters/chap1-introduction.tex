@@ -1,38 +1,38 @@
 \chapter{Introduction}
 
-In 1962 Erwin Schrödinger published his theory based on de Broglie's idea of understanding systems with discrete energies as standing waves. A wave function in classical mechanics and electrodynamics is a periodic function with the property that
-	\begin{equation}
-		\psi(x, t) = A \cdot \sin( \omega t - kx) \label{wavefunction}
-	\end{equation} 
-where $x$ denotes the space, $t$ the time, $\omega$ the circular frequency, $k$ the wave number and $A$ the amplitude. Differentiating the equation \eqref{wavefunction} twice with respect to $x$ we get
-	\[ \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = -k^{2} A \sin( \omega t - kx) = -k^{2} \psi(x, t) \]
-and differentiating twice with respect to $t$ yields
-	\[ \frac{\partial^{2}}{\partial t^{2}} \psi(x, t)  = -\omega^{2} A \sin( \omega t - kx) = -\omega^{2} \psi(x, t). \]
-Therefore $\psi$ satisfies the following differential equations
-	\begin{equation}
-		 \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = \frac{k^{2}}{\omega^{2}} \frac{\partial^{2}}{\delta t^{2}} \psi(x, t) \label{11.6}
-	\end{equation}
-Now, we are looking for a wave function for mass tainted particles, like electrons. For that use the de-Broglie relation $\lambda = \frac{h}{p}$ in the quotient of \eqref{11.6}:
-	\begin{equation}
-		\frac{k^{2}}{\omega^{2}} = \frac{p^{2}}{\nu^{2} h^{2}}. \label{11.7}
-	\end{equation} 
-The kinetic energy of such a particle is his total energy $E$ without the potential energy $V$:
-	\[ E_{kin} = \frac{p^{2}}{2m} = E - V \]
-Solving this equation to the impulse squared $p^{2}$ yields:
-	\[ p^{2} = 2m \cdot ( E - V), \]
-and using this expression in \eqref{11.7} we conclude with the new differential equation:
-	\begin{equation} 
-		 \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = \frac{2m (E - V)}{h^{2} \nu^{2}} \frac{\partial^{2}}{\partial t^{2}} \psi(x, t). \label{differentialeq}
-	\end{equation}
-For simplicity, let us consinder only time-independent solutions of the differential eqation \eqref{differentialeq} and focus on systems for which the total energy stays constant. Because of $E = h \nu$, the frequency will stay constant too; hence the  quotient $\frac{2m/(E-V)}{h^{2}v^{2}}$ on the right-hand side of \eqref{differentialeq} is a constant as well. Solutions for such a differential equation can be split into one only space-dependent and one only time-dependent component:
-		\[ \psi(x, t) = f(t) \cdot \psi(x). \]
-	Using the approach $f(t) = \sin(\omega t)$ with $\frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = f(t) \psi''(x)$ and $\frac{\partial^{2}}{\partial t^{2}} \psi(x, t) = \psi(x) f''(t)$ shows that \eqref{differentialeq} is equivalent to
-	\begin{align*}
-		f(t) \psi''(x) & = \frac{2m (E - V)}{h^{2} \nu^{2}} \psi(x) f''(t) \\
-		\iff - \psi''(x) + & \frac{2m\omega^{2}}{h^{2} \nu^{2}} V \psi(x) = \frac{2m \omega^{2}E}{h^{2} \nu^{2}} \psi(x) 
-	\end{align*}
-
-Based on this, we are interested in the one-dimensional Schrödinger operator with describes the simplified movement of a non-relativistic movement of a quantum particle in a potential, especially in the spectral problem of such an operator; meanwhile the potential in this thesis given by a delta-distribution, thereby this operator is formally defined through the operation
+%In 1962 Erwin Schrödinger published his theory based on de Broglie's idea of understanding systems with discrete energies as standing waves. A wave function in classical mechanics and electrodynamics is a periodic function with the property that
+%	\begin{equation}
+%		\psi(x, t) = A \cdot \sin( \omega t - kx) \label{wavefunction}
+%	\end{equation} 
+%where $x$ denotes the space, $t$ the time, $\omega$ the circular frequency, $k$ the wave number and $A$ the amplitude. Differentiating the equation \eqref{wavefunction} twice with respect to $x$ we get
+%	\[ \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = -k^{2} A \sin( \omega t - kx) = -k^{2} \psi(x, t) \]
+%and differentiating twice with respect to $t$ yields
+%	\[ \frac{\partial^{2}}{\partial t^{2}} \psi(x, t)  = -\omega^{2} A \sin( \omega t - kx) = -\omega^{2} \psi(x, t). \]
+%Therefore $\psi$ satisfies the following differential equations
+%	\begin{equation}
+%		 \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = \frac{k^{2}}{\omega^{2}} \frac{\partial^{2}}{\delta t^{2}} \psi(x, t) \label{11.6}
+%	\end{equation}
+%Now, we are looking for a wave function for mass tainted particles, like electrons. For that use the de-Broglie relation $\lambda = \frac{h}{p}$ in the quotient of \eqref{11.6}:
+%	\begin{equation}
+%		\frac{k^{2}}{\omega^{2}} = \frac{p^{2}}{\nu^{2} h^{2}}. \label{11.7}
+%	\end{equation} 
+%The kinetic energy of such a particle is his total energy $E$ without the potential energy $V$:
+%	\[ E_{kin} = \frac{p^{2}}{2m} = E - V \]
+%Solving this equation to the impulse squared $p^{2}$ yields:
+%	\[ p^{2} = 2m \cdot ( E - V), \]
+%and using this expression in \eqref{11.7} we conclude with the new differential equation:
+%	\begin{equation} 
+%		 \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = \frac{2m (E - V)}{h^{2} \nu^{2}} \frac{\partial^{2}}{\partial t^{2}} \psi(x, t). \label{differentialeq}
+%	\end{equation}
+%For simplicity, let us consinder only time-independent solutions of the differential eqation \eqref{differentialeq} and focus on systems for which the total energy stays constant. Because of $E = h \nu$, the frequency will stay constant too; hence the  quotient $\frac{2m/(E-V)}{h^{2}v^{2}}$ on the right-hand side of \eqref{differentialeq} is a constant as well. Solutions for such a differential equation can be split into one only space-dependent and one only time-dependent component:
+%		\[ \psi(x, t) = f(t) \cdot \psi(x). \]
+%	Using the approach $f(t) = \sin(\omega t)$ with $\frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = f(t) \psi''(x)$ and $\frac{\partial^{2}}{\partial t^{2}} \psi(x, t) = \psi(x) f''(t)$ shows that \eqref{differentialeq} is equivalent to
+%	\begin{align*}
+%		f(t) \psi''(x) & = \frac{2m (E - V)}{h^{2} \nu^{2}} \psi(x) f''(t) \\
+%		\iff - \psi''(x) + & \frac{2m\omega^{2}}{h^{2} \nu^{2}} V \psi(x) = \frac{2m \omega^{2}E}{h^{2} \nu^{2}} \psi(x) 
+%	\end{align*}
+Here comes an introduction the the Schrödinger operator... \\
+Based on this, we are interested in the one-dimensional Schrödinger operator with describes the simplified movement of a non-relativistic movement of a quantum particle in a potential, especially in the spectral problem of such an operator; note that in this thesis we will a potential given by a delta-distribution, thereby this operator is formally defined through the operation
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
 \end{equation}

@@ -8,7 +8,7 @@ Such that \eqref{weak-formulation-of-A} is equivalent to finding $u \in H^{1}(\R
 	\begin{equation}
 		B_{\mu}[u, v] =  l(v) \quad \forall v \in H^{1}(\R). \label{weak-formulation-of-A-for-LM}
 	\end{equation}
-The existence of an unique element $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-of-A-for-LM} is asserted by Lax Milgram's Theorem asserts if the bilinear form $B$ is bounded and coercive.
+The existence of an unique element $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-of-A-for-LM} is asserted by Lax Milgram's Theorem asserts if the bilinear form $B$ is bounded and coercive, which we will prove in the next theorem.
 
 \begin{theorem} \label{2.1:thm-LaxMilgram}
 	The bilinear form $B_{\mu}[u, v]$ as left-hand of \eqref{weak-formulation-of-A} has for all $u, v \in H^{1}(\R)$ the properties
@@ -51,7 +51,7 @@ As $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equation \eqref{f1f2
 from which follows that $R_{\mu}$ is the resolvent of $A$.
 
 \section{The Domain of $A$}
-Even though Lax Milgram's Theorem guarantees a solution $u \in H^{1}(\R)$ the operator $A$ yields additional properties for the solution, i.e. the domain of $A$. 
+Even though Lax Milgram's Theorem guarantees a solution $u \in H^{1}(\R)$ the operator $A$ yields additional properties for the solution to the problem \eqref{weak-formulation-of-A-for-LM}, i.e. the domain of $A$. 
 
 For every fixed $k \in \Z$ consider in \eqref{weak-formulation-of-A} a test function $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$, then
 	\[ \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} A u \overline{v} \iff \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u(x) \overline{v''(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} - A u \overline{v}, \]
@@ -65,15 +65,15 @@ But as $v \in C^{\infty}(\R)$, this is equivalent to
 	\[ u'(x_{k}-0) - u'(x_{k}+0) + \rho u(x_{k}) = 0 \]
 such that
 	\begin{equation}
-		\mathcal{D}(A) \subset \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \Big\} \eqqcolon B. \label{firstdomaininclusion}
+		\mathcal{D}(A) \subset \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \Big\} \eqqcolon B \label{firstdomaininclusion}
 	\end{equation} 
-The action of the operator is defined by
+and the action of the operator is defined by
 	\[ A u = \begin{cases}
 					- u'' & (x_{k} - \frac{1}{2}, x_{k}) \\
 					- u'' & (x_{k}, x_{k} + \frac{1}{2}),
-				\end{cases} \quad \forall k \in \Z \]
+			 \end{cases} \quad \forall k \in \Z \]
 				
-We can even the opposite inclusion in \eqref{firstdomaininclusion}, as $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, by proving for $u \in B$ that is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider
+We can even prove the opposite inclusion for \eqref{firstdomaininclusion}. As $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider
 	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
 	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \nicefrac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \nicefrac{1}{2}} u'' \overline{v}. \]
 	For each $k \in \Z$ partial integration with a function $v$ having $\supp v = (x_{k} - \nicefrac{1}{2}, x_{k} + \nicefrac{1}{2})$ yields
@@ -83,6 +83,11 @@ We can even the opposite inclusion in \eqref{firstdomaininclusion}, as $\mathcal
 	\begin{align*}
 		\mathcal{D}(A) & = \Big\{ u \in H^{1}(\R): u \in \bigcap_{j \in \Z} H^{2}(x_{j} , x_{j+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho \cdot u(x_{j}) = 0 ~\forall j \Big\}.
 	\end{align*}
+~\newpage % todo temporarily
+
+\section{The self-adjointness}
+
+The last property of $A$ we will need later is its self-adjointness. This reveals that $A$ is also a symmetric and closed operator and that its eigenvalues are entirely real. 
 
 \begin{theorem} \label{2.2:thm-R_muSymmetric}
 	$R_{\mu}$ is a symmetric operator.
@@ -103,7 +108,7 @@ We can even the opposite inclusion in \eqref{firstdomaininclusion}, as $\mathcal
 	\end{proof}
 \end{theorem}
 
-The last property of $A$ we will need later is its self-adjointness. This reveals that $A$ is also a symmetric and closed operator and that its eigenvalues are entirely real. 
+We use now both symmetries to show that $A$ is self-adjoint:
 
 \begin{theorem} \label{2.3:thm-ASelfAdjoint}
 	$A$ is a self-adjoint operator.
