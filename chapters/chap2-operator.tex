@@ -1,17 +1,18 @@
 \chapter{\texorpdfstring{The Schrödinger operator $A$}{The Schrödinger operator A}}
-
-The mathematical representation of the above introduced problem is an one-dimensional Schrödinger operator where the potential is given by a periodic delta-distribution, formally this means that the operation of $A$ is defined by \pdfcomment{do I have to explain why?} % todo Markus: is that better?
+%% todo COMPLETE ANFANG
+The mathematical representation of the above introduced problem is an one-dimensional Schrödinger operator where the potential is given by a periodic delta-distribution, formally this means that the operation of $A$ is defined by % todo Andrii do I have to explain why? 
+% todo Markus: is that better?
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
 \end{equation}
-on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Dirac delta distribution in $x_{i}$. $\Omega_{k}$ will hereafter identify the periodicity cell containing delta point $x_{k}$ and w.o.l.g. let $x_{0} = 0$ and $a \coloneqq |\Omega_{i}| = 1$ for all $i \in \Z$.
+on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Dirac delta distribution in $x_{i}$. $\Omega_{k}$ will hereafter identify the periodicity cell containing delta point $x_{k}$ and w.o.l.g. let $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$.
 ~\\ ~\\ % todo Martin: lesen verbessern...das hier!
-In general, one cannot expect that given a right-hand side $f \in L^{2}$ \eqref{the-operator-A-formally} has a classical solution. For the existence of a classical solution, all the problem has to be sufficiently regular, which for a distributional potential is never the case. Nevertheless, for $\mu \in \R$ the problem % todo Markus: I don't like this 
+In general, one cannot expect that given a right-hand side $f \in L^{2}$  a classical solution exists in \eqref{the-operator-A-formally}. For the existence of a classical solution, all the problem has to be sufficiently regular, which for a distributional potential is never the case. Nevertheless, for $\mu \in \R$ the problem % todo Markus: I don't like this 
 \begin{equation}
 	\int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v} \quad \forall v \in H^{1}(\R), \label{weak-formulation-of-A}
 \end{equation}	
 where $u \in H^{1}(\R)$ and $f \in L^{2}$ requires much less regularity, as it is the weak-formulation of our operator $A$ shifted by the constant $\mu$. % todo Markus: neu formulieren
-~\\ ~\\
+~\\ ~\\ %% todo COMPLETE ENDE
 We should note that left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for arbitrary $\tilde{x}_{i} \in \Omega_{i}$
 \begin{eqnarray}
 	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq & \sum_{i \in \Z} \left( \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u'( \tau ) d\tau \big| \right)^{2} \notag \\
@@ -77,7 +78,7 @@ If for every fixed $k \in \Z$ we consider in \eqref{weak-formulation-of-A} a tes
 	\[ \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} A u \overline{v} \iff \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u(x) \overline{v''(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} - A u \overline{v}, \]
 such that $A u = - u'' \in L^{2}$ on $(x_{k} -\nicefrac{1}{2}, x_{k})$ and analogous on $(x_{k}, x_{k} + \nicefrac{1}{2})$. % todo Martin/Markus war das nicht klar?
 As $k \in \Z$ was arbitrary this means 
-	$$ \mathcal{D}(A) \subset \big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\nicefrac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \nicefrac{1}{2}) \right) \big\}. $$
+	$$ \mathcal{D}(A) \subset \Big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\nicefrac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \nicefrac{1}{2}) \right) \Big\}. $$
 	
 Next, a test function $v \in C^{\infty}(\R)$ sucht that $\supp v = \Omega_{k}$ will yield for an arbitrary $k \in \Z$ from \eqref{weak-formulation-of-A}   through integration by parts on both sides of $x_{k}$ that
 	\[ -\left( \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} + \nicefrac{1}{2}}\right) u'' \cdot \overline{v} + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
@@ -92,7 +93,7 @@ Hence, the operator defined by the action
 	\[ A u = \begin{cases}
 					- u'' & x \in (x_{k} - \frac{1}{2}, x_{k}) \\
 					- u'' & x \in (x_{k}, x_{k} + \frac{1}{2}),
-			 \end{cases} \quad \forall k \in \Z \] % todo Markus: on or in?
+			 \end{cases} \quad \forall k \in \Z \] % todo Markus: on (...) or x \in (...)?
 				
 We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. As $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider\pdfcomment{I guess I have to show that $f - \mu$ u is onto though $\mu$ is fixed..}
 	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
@@ -131,7 +132,7 @@ In chapter 4, we will further utilise the fact that the operator $A$ is self-adj
 Now, using both symmetries we can show that $A$ is self-adjoint:
 
 \begin{theorem} \label{2.3:thm-ASelfAdjoint}
-	$A$ is a self-adjoint operator. % todo Markus: genauer?hatte keine bessere Idee..
+	$A$ is a self-adjoint operator. % todo Markus: genauer? Was meinst du mit genauer
 		
 	\begin{proof}
 		As we already know that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that

@@ -27,14 +27,13 @@ The first part of the statement \eqref{MainResult} is
 	\begin{proof}
 		Let $\lambda \in \bigcup_{s \in \N} I_{s}$, i.e. $\lambda = \lambda_{s}(k)$ for some $s \in \N$ and some $k \in \overline{B}$, and 
 		\begin{equation}
-			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} % todo Is the k in the index is correct?
+			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} % todo Andrii Is the k in the index is correct?
 		\end{equation}
-		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodicity of $A$, \eqref{firstinclusion-firstequation} holds for all $x \in \R$ and $\psi_{s} \in H^{2}_{loc}(\R)$. \\ % todo Martin nachlesen ggf. Marksus
-		We choose a function $\eta \in H^{2}(\R)$ such that
+		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, \eqref{firstinclusion-firstequation} holds for all $x \in \R$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that
 			\[ \eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \]
 		and define, for each $l \in \N$,
-			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]
-	 	Then,
+			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k) \]
+	 	then
 		\begin{align}
 			(A - \lambda I) u_{l} & = \sum_{j \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{j \in \N} \left[ \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \left( \eta\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\

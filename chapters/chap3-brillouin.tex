@@ -1,6 +1,6 @@
 \chapter{Fundamental domain of periodicity and the Brillouin zone}
-% todo Martin der Absatz?
-Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being the delta point contained in $\Omega$. As commonly used in the literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, now consider the operator $A_{k}$ on $\Omega$ formally denoted by the operation % todo Markus über diese Absatz reden
+
+Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, now consider the operator $A_{k}$ on $\Omega$ formally denoted by the operation % todo Markus über diese Absatz reden
 	\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}}. \]
 Again, define $A_{k}$ by considering the weak formulation to this problem, i.e. for $f \in L^{2}(\Omega)$ find a function $u \in H^{1}_{k}$ such that the equation
 	\[ \int_{\Omega} u' \overline{v'} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u \overline{v} = \int_{\Omega} f \overline{v} \]
@@ -9,13 +9,13 @@ holds for all $v \in H^{1}_{k}$ where
 		H^{1}_{k} & \coloneqq & \Big\{ \psi \in H^{1}(\Omega): ~ \psi(\frac{1}{2}) = e^{ik} \psi(-\frac{1}{2}) \Big\}. \label{quasi-periodic-condition}
 	\end{eqnarray}
 % todo Markus: das ist korrekt aber nur im 1. dim sollte wohl aber einen Beweis liefern
-Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the trace of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$, and one can therefore apply the same arguments as above to show that $R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k}, f \mapsto u$ is well-defined and define in return % todo Martrin: ref to above and trance convergence?
+Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the trace of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$, and one can therefore apply the same arguments as above to show that $R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k}, f \mapsto u$ is well-defined and define in return % todo Martrin: ref to above and trace convergence?
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu, \] 
 such that $R_{\mu, k}$ is the resolvent of $A_{k}$.	
 ~\\ ~\\
 In chapter is going to provide additional information about the operator $R_{\mu, k}$. We shall see that the eigenfunctions of $A$ form a complete and orthonormal system in $H^{1}_{k}$ and use this fact to deduce additional properties about the spectrum of $A_{k}$ and also $A$ in chapter \ref{chap4}.
 
-\begin{theorem} \label{3.1:thm-Rmuk.isCompact} % todo Markus so viele Kommentare
+\begin{theorem} \label{3.1:thm-Rmuk.isCompact} % todo Martin/Markus so viele Kommentare
 	The operator $R_{\mu, k}$ is compact.
 
 	\begin{proof}
@@ -27,7 +27,7 @@ In chapter is going to provide additional information about the operator $R_{\mu
 		\end{equation} 
 	Now, choosing in \eqref{ujsatisfy} $v = u_{j}$ yields with \eqref{estimation-for-potential} for $\mu$ small enough
 		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)} \]
-	Which means that $(u_{j})_{j \geq 1}$ is bounded in $H^{1}(\Omega)$. As $H^1(\Omega) \subseteq C(\Omega)$ we can further estimate
+	Which means that $(u_{j})_{j}$ is bounded in $H^{1}(\Omega)$. As $H^1(\Omega) \subseteq C(\Omega)$ we can further estimate
 		\begin{equation}
 			|f(x) - f(y)| \leq c |x - y|^{\nicefrac{1}{2}} \text{ for some } c > 0, \label{eq:H1estimation}
 		\end{equation}  
@@ -41,11 +41,11 @@ In chapter is going to provide additional information about the operator $R_{\mu
 				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
 				& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} \left( c + \frac{1}{n} \right) < \epsilon^{2} \text{ for } n \text{ large enough.}
 		\end{align*}		 
-	In conclusion this means that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(\Omega)$ and with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$. Thus, $R_{\mu, k}$ is compact. % todo Martin cloure
+	In conclusion this means that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(\Omega)$ and with the closure of $H^{1}_{k}$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$. Thus, $R_{\mu, k}$ is compact. % todo Martin/Martin closure Bweis
 	\end{proof}	
 \end{theorem}		
 
-\section{The Spectrum of the restricted operator \texorpdfstring{$A_{k}$}{Ak}}	% todo  Martin rewrite this a bit
+\section{The Spectrum of the restricted operator \texorpdfstring{$A_{k}$}{Ak}}	% todo Markus  rewrite this a bit it isnt actually in H^1_k hmm
 As from now, consider the eigenvalue problem to find $\psi \in H^{1}_{k}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}
