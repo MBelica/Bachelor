@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  24 JUL 2016 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  25 JUL 2016 23:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -564,21 +564,37 @@ Package: amsthm 2015/03/04 v2.20.2
 \dth@everypar=\toks30
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/cmap/cmap.sty
 Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/dsfont.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2015/04/15 v5.1e context-sensitive quotations (JAW)
+\csq@reset=\count150
+\csq@gtype=\count151
+\csq@glevel=\count152
+\csq@qlevel=\count153
+\csq@maxlvl=\count154
+\csq@tshold=\count155
+\csq@ltx@everypar=\toks31
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2015/04/15 v5.1e csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\enitkv@toks@=\toks31
+\enitkv@toks@=\toks32
 \labelindent=\skip63
 \enit@outerparindent=\dimen120
-\enit@toks=\toks32
+\enit@toks=\toks33
 \enit@inbox=\box29
-\enitdp@description=\count150
+\enitdp@description=\count156
 ) (./lgrind.sty
 Package: lgrind 1997/01/30 v3.4 LGrind environment and supporting stuff
-\lc@unt=\count151
-\ln@xt=\count152
-\LGnuminterval=\count153
+\lc@unt=\count157
+\ln@xt=\count158
+\LGnuminterval=\count159
 \LGindent=\skip64
 \LGsloppy=\skip65
 \procbox=\box30
@@ -595,7 +611,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count154
+\g_MT_multlinerow_int=\count160
 \l_MT_multwidth_dim=\dimen123
 \origjot=\skip66
 \l_MT_shortvdotswithinadjustabove_dim=\dimen124
@@ -621,24 +637,24 @@ L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
 L3 Module: l3str 2015/03/01 v5545 L3 Strings
 L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
 L3 Module: l3int 2015/02/21 v5529 L3 Integers
-\c_max_int=\count155
-\l_tmpa_int=\count156
-\l_tmpb_int=\count157
-\g_tmpa_int=\count158
-\g_tmpb_int=\count159
+\c_max_int=\count161
+\l_tmpa_int=\count162
+\l_tmpb_int=\count163
+\g_tmpa_int=\count164
+\g_tmpb_int=\count165
 L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
 L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
-\g__prg_map_int=\count160
+\g__prg_map_int=\count166
 L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
 L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
 L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
 L3 Module: l3msg 2015/02/26 v5537 L3 Messages
 L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
-\l_iow_line_count_int=\count161
-\l__iow_target_count_int=\count162
-\l__iow_current_line_int=\count163
-\l__iow_current_word_int=\count164
-\l__iow_current_indentation_int=\count165
+\l_iow_line_count_int=\count167
+\l__iow_target_count_int=\count168
+\l__iow_current_line_int=\count169
+\l__iow_current_word_int=\count170
+\l__iow_current_indentation_int=\count171
 L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \c_zero_dim=\dimen130
 \c_max_dim=\dimen131
@@ -659,18 +675,18 @@ L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
 L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
-\g__keyval_level_int=\count166
-\l_keys_choice_int=\count167
+\g__keyval_level_int=\count172
+\l_keys_choice_int=\count173
 L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
-\c__fp_leading_shift_int=\count168
-\c__fp_middle_shift_int=\count169
-\c__fp_trailing_shift_int=\count170
-\c__fp_big_leading_shift_int=\count171
-\c__fp_big_middle_shift_int=\count172
-\c__fp_big_trailing_shift_int=\count173
-\c__fp_Bigg_leading_shift_int=\count174
-\c__fp_Bigg_middle_shift_int=\count175
-\c__fp_Bigg_trailing_shift_int=\count176
+\c__fp_leading_shift_int=\count174
+\c__fp_middle_shift_int=\count175
+\c__fp_trailing_shift_int=\count176
+\c__fp_big_leading_shift_int=\count177
+\c__fp_big_middle_shift_int=\count178
+\c__fp_big_trailing_shift_int=\count179
+\c__fp_Bigg_leading_shift_int=\count180
+\c__fp_Bigg_middle_shift_int=\count181
+\c__fp_Bigg_trailing_shift_int=\count182
 L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
 \c_empty_box=\box33
 \l_tmpa_box=\box34
@@ -719,16 +735,16 @@ L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
 File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count177
+\l__driver_color_stack_int=\count183
 ))
 Package: xpatch 2012/10/02 v0.3 Extending etoolbox patching commands
  (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count178
-\l__xparse_m_args_int=\count179
-\l__xparse_mandatory_args_int=\count180
-\l__xparse_processor_int=\count181
-\l__xparse_v_nesting_int=\count182
+\l__xparse_current_arg_int=\count184
+\l__xparse_m_args_int=\count185
+\l__xparse_mandatory_args_int=\count186
+\l__xparse_processor_int=\count187
+\l__xparse_v_nesting_int=\count188
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -928,11 +944,12 @@ File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 Package graphics Info: Driver file: pdftex.def on input line 94.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count183
+\Gread@gobject=\count189
 ))
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/collectbox/collectbox.sty
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box48
 )
@@ -950,12 +967,11 @@ File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 \adjbox@Totalheight=\dimen170
  (/usr/local/texlive/2015/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
-\c@checkoddpage=\count184
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/varwidth/varwidth.sty
+\c@checkoddpage=\count190
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box49
-\sift@deathcycles=\count185
+\sift@deathcycles=\count191
 \@vwid@loff=\dimen171
 \@vwid@roff=\dimen172
 )) (/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -977,70 +993,74 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
 ))
    defining Unicode char U+00A0 (decimal 160)
-\c@theorem=\count186
+\c@theorem=\count192
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
 Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
 (marginnote)             Extended position detection mode activated.
-Package soulpos Info: Loading soulutf8 on input line 46.
+Package soulpos Info: Loading soulutf8 on input line 61.
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/soulutf8.sty
 Package: soulutf8 2007/09/09 v1.0 Permit use of UTF-8 characters in soul (HO)
  (/usr/local/texlive/2015/texmf-dist/tex/latex/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks33
-\SOUL@lasttoken=\toks34
-\SOUL@cmds=\toks35
-\SOUL@buffer=\toks36
-\SOUL@token=\toks37
+\SOUL@word=\toks34
+\SOUL@lasttoken=\toks35
+\SOUL@cmds=\toks36
+\SOUL@buffer=\toks37
+\SOUL@token=\toks38
 \SOUL@spaceskip=\skip76
 \SOUL@ttwidth=\dimen173
 \SOUL@uldp=\dimen174
 \SOUL@ulht=\dimen175
 ))
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 61.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count187
+\c@section@level=\count193
 )
-LaTeX Info: Redefining \ref on input line 46.
-LaTeX Info: Redefining \pageref on input line 46.
-LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.out) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
  (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count188
+\scratchcounter=\count194
 \scratchdimen=\dimen176
 \scratchbox=\box51
-\nofMPsegments=\count189
-\nofMParguments=\count190
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count191
+\nofMPsegments=\count195
+\nofMParguments=\count196
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count197
 \MPscratchDim=\dimen177
-\MPnumerator=\count192
-\makeMPintoPDFobject=\count193
-\everyMPtoPDFconversion=\toks39
+\MPnumerator=\count198
+\makeMPintoPDFobject=\count199
+\everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
  (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -1084,7 +1104,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51 \include{chapters/chap1-introduction}
+l.66 \include{chapters/chap1-introduction}
                                            [1
 
 
@@ -1097,21 +1117,17 @@ Chapter 1.
 File: Periodic_square_potential_130707.png Graphic file (type png)
  <use Periodic_square_potential_130707.png>
 Package pdftex.def Info: Periodic_square_potential_130707.png used on input line 6.
-(pdftex.def)             Requested size: 346.89731pt x 134.07462pt.
+(pdftex.def)             Requested size: 303.53267pt x 117.31284pt.
  [2
 
 
  <./Periodic_square_potential_130707.png>] [3]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 42.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-Underfull \hbox (badness 10000) in paragraph at lines 42--46
+Underfull \hbox (badness 10000) in paragraph at lines 43--47
 
  []
 
 [4]
-Overfull \hbox (1.05318pt too wide) detected at line 71
+Overfull \hbox (1.05318pt too wide) detected at line 72
 \OML/cmm/m/it/10.95 ^^UI \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 A [] [] D\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^UI \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )[] [] [] \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 D\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )[]
  []
 
@@ -1122,12 +1138,12 @@ Overfull \hbox (1.05318pt too wide) detected at line 71
 Chapter 2.
 Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input line 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 6--11
+Underfull \hbox (badness 10000) in paragraph at lines 6--10
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--17
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
 
  []
 
@@ -1138,27 +1154,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--17
 ] [8] [9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 95.
+(hyperref)                removing `\mu' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 95.
+(hyperref)                removing `\mu' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 97.
 
 [11]) [12]
 \openout2 = `chapters/chap3-brillouin.aux'.
@@ -1179,8 +1195,11 @@ Overfull \hbox (15.08226pt too wide) in paragraph at lines 59--61
 \OT1/cmr/m/n/10.95 and the cor-re-spond-ing eigen-func-tion form a $\OMS/cmsy/m/n/10.95 h^^A\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 ^^Ai$\OT1/cmr/m/n/10.95 -orthonormal and com-plete sys-tem $(\OML/cmm/m/it/10.95  []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^A\OML/cmm/m/it/10.95 ; k\OT1/cmr/m/n/10.95 ))[]$
  []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 79--83
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 67.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [15]
+Underfull \hbox (badness 10000) in paragraph at lines 81--85
 
  []
 
@@ -1194,27 +1213,27 @@ Chapter 4.
 
 
 ] [21] [22] [23] [24]) [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 17873 strings out of 493089
- 312797 string characters out of 6134843
- 408422 words of memory out of 5000000
- 20897 multiletter control sequences out of 15000+600000
- 21072 words of font info for 87 fonts, out of 8000000 for 9000
+ 18385 strings out of 493089
+ 321054 string characters out of 6134843
+ 425442 words of memory out of 5000000
+ 21400 multiletter control sequences out of 15000+600000
+ 20784 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,13n,39p,10410b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,39p,10410b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (26 pages, 967711 bytes).
+Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (26 pages, 967903 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
+ 389 PDF objects out of 1000 (max. 8388607)
+ 331 compressed objects within 4 object streams
+ 89 named destinations out of 1000 (max. 500000)
  99 words of extra memory for PDF output out of 10000 (max. 10000000)
 

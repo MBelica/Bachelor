@@ -1,46 +1,47 @@
 \chapter{\texorpdfstring{The Schrödinger operator $A$}{The Schrödinger operator A}}
 
-The above introduced problem  can be modelled by a one-dimensional Schrödinger operator where the potential is given by a delta-distribution. Thereby the operator $A$ is formally defined through the operation\pdfcomment{do I have to explain why?}
+The mathematical representation of the above introduced problem is an one-dimensional Schrödinger operator where the potential is given by a periodic delta-distribution, formally this means that the operation of $A$ is defined by \pdfcomment{do I have to explain why?} % todo Markus: is that better?
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
 \end{equation}
-on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Dirac delta distribution in $x_{i}$ and $x_{i}$ are periodically distributed points on $\R$. $\Omega_{k}$ will hereafter identify the periodicity cell containing delta point $x_{k}$ and let w.o.l.g. $x_{0} = 0$ and $a \coloneqq |\Omega_{i}| = 1$ for all $i \in \Z$.
-~\\ ~\\
-In general, one cannot expect that \eqref{the-operator-A-formally} has a classical
-solution. For the existence of a classical solution, all the problem has to be sufficiently regular, which for a distributional potential is never the case. Nevertheless, for $\mu \in \R$ the problem
+on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Dirac delta distribution in $x_{i}$. $\Omega_{k}$ will hereafter identify the periodicity cell containing delta point $x_{k}$ and w.o.l.g. let $x_{0} = 0$ and $a \coloneqq |\Omega_{i}| = 1$ for all $i \in \Z$.
+~\\ ~\\ % todo Martin: lesen verbessern...das hier!
+In general, one cannot expect that given a right-hand side $f \in L^{2}$ \eqref{the-operator-A-formally} has a classical solution. For the existence of a classical solution, all the problem has to be sufficiently regular, which for a distributional potential is never the case. Nevertheless, for $\mu \in \R$ the problem % todo Markus: I don't like this 
 \begin{equation}
-	\int u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v} \quad \forall v \in H^{1}(\R), \label{weak-formulation-of-A}
+	\int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v} \quad \forall v \in H^{1}(\R), \label{weak-formulation-of-A}
 \end{equation}	
-where $u \in H^{1}(\R)$ and $f \in L^{2}$ requires much less regularity, as it is the weak-formulation of our operator $A$ shifted by the constant $\mu$.
+where $u \in H^{1}(\R)$ and $f \in L^{2}$ requires much less regularity, as it is the weak-formulation of our operator $A$ shifted by the constant $\mu$. % todo Markus: neu formulieren
 ~\\ ~\\
-We should note that left-hand side of problem \eqref{weak-formulation-of-A} is actually convergent, as for arbitrary $\tilde{x}_{i} \in \Omega_{i}$
+We should note that left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for arbitrary $\tilde{x}_{i} \in \Omega_{i}$
 \begin{eqnarray}
 	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq & \sum_{i \in \Z} \left( \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u'( \tau ) d\tau \big| \right)^{2} \notag \\
 		 & \leq & 2 \sum_{i \in \Z} \left( \int_{\Omega_{i}} |u( x )|^{2} dx +  \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
 		 & \leq & 2 \cdot \| u \|^{2}_{H^{1}(\R)}. \label{estimation-for-potential}
 \end{eqnarray}
 
-We will now examine show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution. Given $f \in L^{2}(\R)$, we define a functional $l \colon H^{1} \rightarrow \R$ through Riesz' Representation Theorem with
+We will now show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution. Given $f \in L^{2}(\R)$, we define a functional $l \colon H^{1} \rightarrow \R$ through
 	\[ l(v) \coloneqq \int_{\R} f v \]
-and the bilinear form $B_{\mu} \colon H^{1}(\R) \times H^{1}(\R) \rightarrow \R$ for $\mu \in \R$ through
-	\[ B_{\mu}[u, v] \coloneqq \int u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v}. \]
+and a bilinear form $B_{\mu} \colon H^{1}(\R) \times H^{1}(\R) \rightarrow \R$ for $\mu \in \R$ through
+	\[ B_{\mu}[u, v] \coloneqq \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}. \]
 Such that \eqref{weak-formulation-of-A} is equivalent to finding $u \in H^{1}(\R)$ such that
 	\begin{equation}
 		B_{\mu}[u, v] =  l(v) \quad \forall v \in H^{1}(\R). \label{weak-formulation-of-A-for-LM}
 	\end{equation}
-The existence of an unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-of-A-for-LM} follows from Lax Milgram's Theorem asserts if the bilinear form $B$ is bounded and coercive, which we will prove in the next theorem.
+The existence of a unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-of-A-for-LM} follows from Lax Milgram's Theorem asserts if the bilinear form $B$ is bounded and coercive, which we will prove in the next theorem. % todo Markus: Zitate, wie verweisen?
 
 \begin{theorem} \label{2.1:thm-LaxMilgram}
-	The bilinear form $B_{\mu}[u, v]$ as left-hand of \eqref{weak-formulation-of-A} has for all $u, v \in H^{1}(\R)$ the properties
+	The bilinear form $B_{\mu}$
 	\begin{enumerate}
-		\item[i)] $B_{\mu}[u, v]$ is bounded, i.e. there exists a constant $\alpha > 0$ such that
-			\[ \left| B_{\mu}[u,v] \right| \leq \alpha \|u\| \|v\| \quad (u, v \in H^{1}(\R)) \]
-		\item[ii)] $B_{\mu}[u, u]$ is coercive, i.e. there exists a constant $\beta > 0$ such that
-			\[ \beta \|u\|^{2} \leq B_{\mu}[u, u] \quad (u \in H^{1}(\R)). \]
+		\item[i)] is bounded, i.e. there exists a constant $\alpha > 0$ such that
+			\[ \left| B_{\mu}[u,v] \right| \leq \alpha \|u\| \|v\| \]
+			holds for all $u, v \in H^{1}(\R)$.
+		\item[ii)] is coercive, i.e. there exists a constant $\beta > 0$ such that
+			\[ \beta \|u\|^{2} \leq B_{\mu}[u, u] \]
+			for all $u \in H^{1}(\R)$.
 	\end{enumerate} 
 
 	\begin{proof} ~\\
-		i) The boundedness follows from
+		i) The boundedness follows from \eqref{estimation-for-potential} as for an arbitrary $\rho \in \R$ there exists $\alpha \in \R$ such that % todo Markus: is die Begründung jetzt besser?
 		\begin{align*}
 			|B(u, \varphi)|^{2} & \leq \| u' \| \cdot \| v' \| + 2 \rho \sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \| \cdot \| v \| \\
 				& \leq \| u' \| \cdot \| v' \| + 8 \rho \cdot \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  - \mu \| u \| \cdot \| v \| \\
@@ -48,32 +49,33 @@ The existence of an unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-
 				& \leq \alpha \cdot \| u \|_{H^{1}} \cdot \| \varphi \|_{H^{1}}
 		\end{align*}
 		ii)
-		For the coercivity assume first $\rho \geq 0$, in order that for $\mu < -1$:
+		For the coercivity we first assume $\rho \geq 0$. Now, for $\mu < -1$ we get 
 		\begin{align*}
 			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} u(x_{i})^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle - \mu \langle u , u \rangle \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
 					& = \| u \|_{H^{1}}^{2}.
-		\intertext{Same for $\rho < 0$, where $\mu < 2\rho$:}
+		\intertext{Analogously for $\rho < 0$, if we choose $\mu < 2\rho$ there exists $\beta \in \R$ such that}
 			B(u, u) & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu 	\langle u , u \rangle \\
 					& = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u(x) dx \big|^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle + 2 \rho \left( \int_{\R} |u(x)|^{2} dx + \int_{\R} |u'(\tau)|^{2} d\tau \right) - \mu \langle u , u \rangle \\
 					& = (2 \rho + 1) \| u' \|^{2} + (2\rho - \mu) \| u \|^{2}  \\
 					& \geq \beta \| u \|_{H^{1}}^{2},
 		\end{align*}
+		Such that $B_{\mu}$ is coercive for $\mu$ small enough.
 	\end{proof}
 \end{theorem}
-Thus, there is a function $u \in H^{1}(\R)$ as the unique solution to the problem \eqref{weak-formulation-of-A-for-LM} for fixed $f \in L^{2}(\R$ and the operator $R_{\mu} \colon L^{2}(\R) \rightarrow H^{1}(\R), f \mapsto u$ is for $\mu \in \R$ small enough well-defined; obviously this mapping is one-to-one since for $u_{1} = u_{2}$
+Thus, there exists a unique solution $u \in H^{1}(\R)$ to the problem \eqref{weak-formulation-of-A-for-LM} for fixed $f \in L^{2}(\R)$ and  the operator $R_{\mu} \colon L^{2}(\R) \rightarrow H^{1}(\R), f \mapsto u$ is well-defined for $\mu \in \R$ small enough; this mapping is one-to-one since for $u_{1} = u_{2}$
 	\begin{equation}
 		0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v} \quad \forall v \in H^{1}(\R). \label{f1f2almosteverywhere}
 	\end{equation} 
-As further $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equation \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in return we can now define the Schrödinger operator as follows
+As further $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equation \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in return we can now define the Schrödinger operator as follows % todo Markus: Verweis? cite befehl
 		\[ A \coloneqq R_{\mu}^{-1} + \mu I \]
 from which additionally follows that $R_{\mu}$ is the resolvent of $A$.
 
 \section{\texorpdfstring{The Domain of $A$}{The Domain of A}}
-Lax Milgram's Theorem guarantees a solution $u \in H^{1}(\R)$ of \eqref{weak-formulation-of-A}, nevertheless the operator $A$ yields additional properties about such a solution, more specifically about the domain of $A$. For every fixed $k \in \Z$ we therefore consider in \eqref{weak-formulation-of-A} a test function $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$, then
+If for every fixed $k \in \Z$ we consider in \eqref{weak-formulation-of-A} a test function $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$ we get furthermore
 	\[ \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} A u \overline{v} \iff \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} u(x) \overline{v''(x)} dx = \int_{x_{k}-\nicefrac{1}{2}}^{x_{k}} - A u \overline{v}, \]
-such that $A u = - u'' \in L^{2}$ on $(x_{k} -\nicefrac{1}{2}, x_{k})$ and analogous on $(x_{k}, x_{k} + \nicefrac{1}{2})$.
+such that $A u = - u'' \in L^{2}$ on $(x_{k} -\nicefrac{1}{2}, x_{k})$ and analogous on $(x_{k}, x_{k} + \nicefrac{1}{2})$. % todo Martin/Markus war das nicht klar?
 As $k \in \Z$ was arbitrary this means 
 	$$ \mathcal{D}(A) \subset \big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\nicefrac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \nicefrac{1}{2}) \right) \big\}. $$
 	
@@ -86,11 +88,11 @@ such that
 	\begin{equation}
 		\mathcal{D}(A) \subset \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}) : u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \Big\} \eqqcolon B \label{firstdomaininclusion}
 	\end{equation} 
-The operator is hence well-defined by the action
+Hence, the operator defined by the action
 	\[ A u = \begin{cases}
-					- u'' & (x_{k} - \frac{1}{2}, x_{k}) \\
-					- u'' & (x_{k}, x_{k} + \frac{1}{2}),
-			 \end{cases} \quad \forall k \in \Z \]
+					- u'' & x \in (x_{k} - \frac{1}{2}, x_{k}) \\
+					- u'' & x \in (x_{k}, x_{k} + \frac{1}{2}),
+			 \end{cases} \quad \forall k \in \Z \] % todo Markus: on or in?
 				
 We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. As $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider\pdfcomment{I guess I have to show that $f - \mu$ u is onto though $\mu$ is fixed..}
 	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
@@ -102,7 +104,6 @@ We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. As
 	\begin{align*}
 		\mathcal{D}(A) & = \Big\{ u \in H^{1}(\R): u \in \bigcap_{j \in \Z} H^{2}(x_{j} , x_{j+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho \cdot u(x_{j}) = 0 ~\forall j \Big\}.
 	\end{align*}
-~\newpage % todo temporarily
 
 \section{The self-adjointness}
 
@@ -130,7 +131,7 @@ In chapter 4, we will further utilise the fact that the operator $A$ is self-adj
 Now, using both symmetries we can show that $A$ is self-adjoint:
 
 \begin{theorem} \label{2.3:thm-ASelfAdjoint}
-	$A$ is a self-adjoint operator.
+	$A$ is a self-adjoint operator. % todo Markus: genauer?hatte keine bessere Idee..
 		
 	\begin{proof}
 		As we already know that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that

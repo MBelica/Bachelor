@@ -1,12 +1,12 @@
 \chapter{Introduction}
 
-The problem considered in this thesis arises from the Kronig-Penney model which describes an idealised quantum-mechanical system, that demonstrates a particle behaving as a matter wave moving in one-dimension trough an infinite periodic array of rectangular potential barriers, i.e. through a space area in which a potential takes local maximum. Such an array occurs commonly in models of periodic crystal lattices where the potential is caused by ions in the crystal. They create an electromagnetic field around themselves and hence any particle moving through such a crystal would be subject to a periodic electromagnetic potential. Although a solid particle, simplified as a point mass, would be reflected at such a barrier, there is a possibility that the a quantum particle, as it behaves like a wave, penetrates the barrier and continues its movement beyond\footnote{The likelihood that the particle will pass through the barrier is given by the transmission coefficient, whereas the likelihood that it is reflected is given by the reflection coefficient. Schrödinger's wave-equation allows these coefficients to be calculated.}. Assuming the spacing between all ions is $a$, the potential function $V(x)$ in the lattice can be approximated by a rectangular potential like this:
+The problem considered in this thesis arises from the Kronig-Penney model which describes an idealised quantum-mechanical system, that demonstrates a particle behaving as a matter wave moving in one-dimension trough an infinite periodic array of rectangular potential barriers, i.e. through a space area in which a potential attains a local maximum. Such an array commonly occurs in models of periodic crystal lattices where the potential is caused by ions in the crystal. They create an electromagnetic field around themselves and hence any particle moving through such a crystal would be subject to a periodic electromagnetic potential. Although a solid particle, simplified as a point mass, would be reflected at such a barrier, there is a possibility that the quantum particle, as it behaves like a wave, penetrates the barrier and continues its movement beyond\footnote{The likelihood that the particle will pass through the barrier is given by the transmission coefficient, whereas the likelihood that it is reflected is given by the reflection coefficient. Schrödinger's wave-equation allows these coefficients to be calculated.}. Assuming the spacing between all ions is $a$, the potential function $V(x)$ in the lattice can be approximated by a rectangular potential like this:
 
 \begin{figure*}[h!] \centering
-	  \includegraphics[width=0.8\textwidth]{Periodic_square_potential_130707} % todo replace image
+	  \includegraphics[width=0.7\textwidth]{Periodic_square_potential_130707} % todo Martin replace image
 \end{figure*}
 
-where $b$ is the support and $\rho$ the magnitude of the potential.
+where $b$ is the \enquote{support} and $\rho$ the magnitude of the potential.
 
 This thesis will examine the spectrum of an operator describing a special case of the Kronig-Penney model, namely by taking the limit $b \rightarrow 0$ with a finite modulus of the potential which represents the ion creating a finite singular potential. 
 
@@ -18,7 +18,7 @@ For the upcoming analysis we need some basic concepts from functional analysis a
 
 \subsection*{Weak derivate and weak formulation} do I have to do this?
 
-Let $C_{c}^{\infty}$ denote the linear space containing all smooth function with compact support, i.e. for $f \in C_{c}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. Togerther with the supremums norm $\| \cdot \|_{\infty}$ is $C_{c}^{\infty}$ a normed vector space.
+Let $C_{c}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{c}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. Togerther with the supremums norm $\| \cdot \|_{\infty}$ is $C_{c}^{\infty}$ a normed vector space.
 
 \subsection*{Hilbert and Sobolev spaces}
 A normed vector space $(X, \| \cdot \|)$ is called apre-Hilbert space, if there exists a scalar product $\langle \cdot, \cdot, \rangle$ on $X \times X$ such that
@@ -31,18 +31,19 @@ The Sobolev space $H^{k}$ is defined to be the subset of functions $f$ in $L^{2}
 Furthermore, the space $H^{k}$ admits an inner product, which is defined in terms of the $L^2$ inner product: 
 	\[ \langle u , v \rangle_{H^{k}} = \sum_{i=0}^{k} \left\langle D^{i}u , D^{i} v \right\rangle_{L^{2}}. \] 
 The space $H^{k}$ becomes a Hilbert space with this inner product.
-
+~\newline
 ... and using the fact that $C_{c}^{\infty}(\R)$ is dense in $H^{1}(\R)$
-
-
+~\newline
+$H^1(R) is dense in L^2$
+~\newline Symmetric and Self-Adjoint
 \subsection*{Distributons}
 	On $C_{0}^{\infty}$ a sequence $(f_{n})$ converges against $f \in C_{0}^{\infty}$ if the support of all members of the sequence is in a compact interval $I \subset \R$, i.e.
 	$$ \supp (f_{n}) \subseteq I \quad \forall n \in \N, $$
-	and on this interval $f_{n}$ converges uniformally against $f$, i.e.
-	\[ \| (f_{n}^{(i)} - f^{(i)}) \cdot \mathds{1}_{I} \|_{\infty} \rightarrow 0 \quad \forall n \rightarrow \infty \]
-forall all $i \in \N_{0}$. One can proof that that this concept of convergence generates a topology on $C_{0}^{\infty}$ and one usually denoted with $D(\R)$ the space $C_{0}^{\infty}$ equipped with this topology. As the space of distribution, $D'(\R)$ we denote now all linear functionals on $C_{0}^{\infty}$ that are continuous under this topology. 
+	and on this interval $f_{n}$ and all its derivatives converge uniformly against $f$, i.e.
+	\[ \| f_{n}^{(i)} - f^{(i)} \|_{\infty} \rightarrow 0 \quad \forall n \rightarrow \infty \]
+	for all all $i \in \N_{0}$. One can proof that this concept of convergence generates a topology on $C_{0}^{\infty}$ and one usually denoted with $D(\R)$ the space $C_{0}^{\infty}$ equipped with this topology. As the space of distribution, $D'(\R)$ we now denote all linear functionals on $C_{0}^{\infty}$ that are continuous under this topology. % todo Markus: Kommentar nicht lesbar
 ~\\ ~\\
-An important example for a distribution is the delta distribution $\delta_{x_{0}}$ where $x_{0} \in \R$. It is defined as the limit of a weakly converging sequence of functionals over normed symmetric cumulative distribution functions $\delta_{\epsilon}$, whereas the support of those cumulative distributions converges to zero. An example for such a sequence is be
+An important example for a distribution is the delta distribution $\delta_{x_{0}}$ where $x_{0} \in \R$. It is defined by $\delta_{x_{0}} \coloneqq f(x_{0})$ as the limit of a weakly converging sequence of functionals over normed symmetric cumulative distribution functions $\delta_{\epsilon}$, whereas the support of those cumulative distributions converges to zero. It holds $\delta_{x_{0}} = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}$ in $D'(\R)$. An example for such a sequence is be % todo Andrii can I say it like that
 	\[ \delta_{\epsilon}(x) = \frac{1}{\sqrt{2 \pi} \epsilon} e^{-\frac{x^{2}}{2 \epsilon^{2}}}. \]
 Which implies the definition
 	\[ \delta_{x_{0}}(f) \coloneqq \int_{-\infty}^{\infty} \delta_{x_{0}} f(x) dx \coloneqq \lim_{\epsilon \rightarrow 0} \int_{-\infty}^{\infty} \delta_{\epsilon}(x - x_{0}) f(x) dx. \]
@@ -54,10 +55,10 @@ Moreover, is easily seen that $\delta_{x_{0}}(f) = f(x_{0})$.
 	\[ \frac{1}{\sqrt{2\pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} dx = \frac{1}{\sqrt{2\pi} \epsilon} \sqrt{2} \epsilon \int_{-\infty}^{\infty} f(\sqrt{2} \epsilon z + x_{0}) e^{-z^{2}} dx. \]
 	Using the taylor series of $f$ in $x_{0}$ we obtain
 	\[ f(x) = f(x_{0}) + \mathcal{O}(\epsilon), \]
-	where $\mathcal{O}(\epsilon)$ is at least of order $\epsilon$. Hence:
+	Hence:
 	\[ \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} (f(x_{0}) + \mathcal{O}(\epsilon)) e^{-z^{2}} dz = f(x_{0}) \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} dz = f(x_{0}), \]
 	where we used the fact that $\int_{-\infty}^{\infty} e^{-z^{2}}$ is a Gaussian integral and equal to $\sqrt{\pi}$. We can see that through :
-	\[ \left( \int_{-\infty}^{\infty} e^{-x^{2}} dx \right) \left( \int_{-\infty}^{\infty} e^{-y^{2}} dy \right) = \int_{-\infty}^{\infty} e^{(x^{2} + y^{2})} d(x, y). \] 
+	\[ \left( \int_{-\infty}^{\infty} e^{-x^{2}} dx \right) \left( \int_{-\infty}^{\infty} e^{-y^{2}} dy \right) = \int_{\R^{2}} e^{(x^{2} + y^{2})} d(x, y). \] 
 	As we integrate over the whole $\R^{2}$ substituting in polar coordinates with the substition $z \coloneqq \rho^{2}$ yields
 	\[ \int_{0}^{2 \pi} \int_{0}^{\infty} e^{-\rho^{2}} \rho d\rho d\varphi = 2 \pi \int_{0}^{\infty} e^{-\rho^{2}} \rho d\rho = \pi \int_{0}^{\infty} e^{-z^{2}} dz = \pi \left[ -e^{-z} \right]_{0}^{\infty} = \pi \]
 \end{proof} 
