@@ -12,11 +12,10 @@ holds for all $v \in H^{1}_{k}$ where
 Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the trace of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$, and one can therefore apply the same arguments as above to show that $R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k}, f \mapsto u$ is well-defined and define in return % todo ref?
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu, \] 
 such that $R_{\mu, k}$ is the resolvent of $A_{k}$.	
-~\newline		
-		
-In this chapter we are going to analyse the operator $R_{\mu, k}$ in more detail, see that its eigenfunctions form form a complete and orthonormal system in $H^{1}_{k}$ and use this fact to deduce	properties about the spectrum of $A_{k}$ and also $A$ in chapter \ref{chap4}.
+~\\ ~\\
+In chapter is going to provide additional information about the operator $R_{\mu, k}$. We shall see that the eigenfunctions of $A$ form a complete and orthonormal system in $H^{1}_{k}$ and use this fact to deduce additional properties about the spectrum of $A_{k}$ and also $A$ in chapter \ref{chap4}.
 
-\begin{theorem} \label{3.1:thm-R_mu,k.isCompact}
+\begin{theorem} \label{3.1:thm-Rmuk.isCompact}
 	The operator $R_{\mu, k}$ is compact.
 
 	\begin{proof}
@@ -46,19 +45,19 @@ In this chapter we are going to analyse the operator $R_{\mu, k}$ in more detail
 	\end{proof}	
 \end{theorem}		
 
-\section{The Spectrum of $A_{k}$}		
+\section{The Spectrum of the restricted operator \texorpdfstring{$A_{k}$}{Ak}}		
 As from now, consider the eigenvalue problem
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega \text{ for } \psi \in H^{1}_{k}. \label{eigv-problem}
 	\end{equation}
 	
-In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. \\	
-	
+In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions.
+~\\
 Obviously, $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and if $\tilde{\lambda}$ is an eigenvalue for the eigenfunction $\psi$ of $R_{\mu, k}$ then so is
 	\[ \lambda = \frac{1}{\tilde{\lambda}} - \mu \]
  an eigenvalue for same the eigenfunction $\psi$ for the operator $A$. Since $\Omega$ is bounded, and $R_{\mu, k}$ is a compact and symmetric operator, $A_{k}$ has also a purely discrete spectrum satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
-and the corresponding eigenfunction can be chosen such that they depend on $k$ in a measurable way\footnote{see [M. Reed and B. Simon. Methods of modern mathematical physics I–IV]} and that they form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. Therefore, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$:
+and the corresponding eigenfunction form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. Therefore, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$:
 	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
 Then,
 	\begin{align*}
@@ -79,10 +78,8 @@ Which shows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and comp
 		 \varphi(x - \frac{1}{2}) = & \varphi(x + \frac{1}{2}). \label{periodic-condition}
 	\end{eqnarray}
 with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem}.
-~\newline
-
-In the next chapter we shall see that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, an operator mapping from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ as $\Omega \times B$ is compact. \\
-	
+~\\ ~\\
+In the next chapter we shall see that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, which carries the from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. Even though the following two results do not differ in both the statement or the proof from standard theory, as in REF, I still want to list them here for completeness. % todo todo ref
 \section{The Floquet transformation} 	
 \begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
 	The Floquet transformation $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ 
@@ -152,6 +149,5 @@ Using the Floquet transformation $U$, we can now prove the property of completen
 			\end{equation} 
 		 If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, using \eqref{3.15}, \eqref{3.16} and \eqref{3.9}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.17} gives
 			\[ \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
-		and the assertion follows since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by Lemma \ref{3.2:thm-UIsometricIsomorphism}.
 	\end{proof}
 \end{theorem}

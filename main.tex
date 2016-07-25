@@ -1,28 +1,47 @@
-% todo weitere eigenschaftne von A?
+% Sehr wichtig:
+% http://www.lti.kit.edu/rd_download/EPhys5Fcompl.pdf
+% Important: 
+% https://nano.tu-dresden.de/~rgutierrez/2008SS_WPV_NM/SolutionKronigPenneyModel1.pdf	
+% http://www.ece.uc.edu/~mcahay/QuantumSystems/KroenigPenney.pdf
+% http://ecee.colorado.edu/~bart/book/book/chapter2/pdf/ch2_3_8.pdf
+% http://www.tf.uni-kiel.de/matwis/amat/mw2_ge/kap_4/advanced/t4_1_2.html
+% http://www.phys.ufl.edu/~maslov/phz6426/phz6426_dkp.pdf
+% http://people.physik.hu-berlin.de/~sokolov/QM1/QMall/node46.html
+% https://nano.tu-dresden.de/~rgutierrez/2008SS_WPV_NM/SolutionKronigPenneyModel1.pdf
+% I want to read this:
+% https://en.wikipedia.org/wiki/Spectrum#Energy
+% https://en.wikipedia.org/wiki/Continuous_spectrum
+% https://en.wikipedia.org/wiki/Discrete_spectrum
+% skipped fourier series is that okay?
 \documentclass[11pt]{mitthesis}
 
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
-\usepackage[export]{adjustbox}
+\usepackage{pdfcomment}
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{cmap}
 \usepackage{dsfont}
+\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{lgrind}
 \usepackage{mathtools}
 \usepackage{nicefrac}
 \usepackage{xpatch}
+\usepackage[export]{adjustbox}
+\usepackage[dvipsnames]{xcolor}
 
 \pagestyle{plain}
 
-\makeatletter\xpatchcmd{\proof}{\@addpunct{.}}{\@addpunct{:}}{}{}\makeatother
-\DeclareUnicodeCharacter{00A0}{ } 
-\def\supp{\operatorname{supp}}
 \makeatletter
+  \xpatchcmd{\proof}{\@addpunct{.}}{\@addpunct{:}}{}{}
+  \DeclareUnicodeCharacter{00A0}{ } 
+  \def\supp{\operatorname{supp}}
+  \setlength{\parindent}{0pt} 
+\makeatother
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\K}{\mathbb{K}}
@@ -45,8 +64,8 @@
 \include{chapters/chap4-spectrum}
 
 \appendix
-\include{appendix}
-\include{biblio}
-\include{statement}
+%\include{appendix}
+%\include{biblio}
+%\include{statement}
 
 \end{document}

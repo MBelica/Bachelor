@@ -1,55 +1,89 @@
 \chapter{Introduction}
 
-%In 1962 Erwin Schrödinger published his theory based on de Broglie's idea of understanding systems with discrete energies as standing waves. A wave function in classical mechanics and electrodynamics is a periodic function with the property that
-%	\begin{equation}
-%		\psi(x, t) = A \cdot \sin( \omega t - kx) \label{wavefunction}
-%	\end{equation} 
-%where $x$ denotes the space, $t$ the time, $\omega$ the circular frequency, $k$ the wave number and $A$ the amplitude. Differentiating the equation \eqref{wavefunction} twice with respect to $x$ we get
-%	\[ \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = -k^{2} A \sin( \omega t - kx) = -k^{2} \psi(x, t) \]
-%and differentiating twice with respect to $t$ yields
-%	\[ \frac{\partial^{2}}{\partial t^{2}} \psi(x, t)  = -\omega^{2} A \sin( \omega t - kx) = -\omega^{2} \psi(x, t). \]
-%Therefore $\psi$ satisfies the following differential equations
-%	\begin{equation}
-%		 \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = \frac{k^{2}}{\omega^{2}} \frac{\partial^{2}}{\delta t^{2}} \psi(x, t) \label{11.6}
-%	\end{equation}
-%Now, we are looking for a wave function for mass tainted particles, like electrons. For that use the de-Broglie relation $\lambda = \frac{h}{p}$ in the quotient of \eqref{11.6}:
-%	\begin{equation}
-%		\frac{k^{2}}{\omega^{2}} = \frac{p^{2}}{\nu^{2} h^{2}}. \label{11.7}
-%	\end{equation} 
-%The kinetic energy of such a particle is his total energy $E$ without the potential energy $V$:
-%	\[ E_{kin} = \frac{p^{2}}{2m} = E - V \]
-%Solving this equation to the impulse squared $p^{2}$ yields:
-%	\[ p^{2} = 2m \cdot ( E - V), \]
-%and using this expression in \eqref{11.7} we conclude with the new differential equation:
-%	\begin{equation} 
-%		 \frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = \frac{2m (E - V)}{h^{2} \nu^{2}} \frac{\partial^{2}}{\partial t^{2}} \psi(x, t). \label{differentialeq}
-%	\end{equation}
-%For simplicity, let us consinder only time-independent solutions of the differential eqation \eqref{differentialeq} and focus on systems for which the total energy stays constant. Because of $E = h \nu$, the frequency will stay constant too; hence the  quotient $\frac{2m/(E-V)}{h^{2}v^{2}}$ on the right-hand side of \eqref{differentialeq} is a constant as well. Solutions for such a differential equation can be split into one only space-dependent and one only time-dependent component:
-%		\[ \psi(x, t) = f(t) \cdot \psi(x). \]
-%	Using the approach $f(t) = \sin(\omega t)$ with $\frac{\partial^{2}}{\partial x^{2}} \psi(x, t) = f(t) \psi''(x)$ and $\frac{\partial^{2}}{\partial t^{2}} \psi(x, t) = \psi(x) f''(t)$ shows that \eqref{differentialeq} is equivalent to
-%	\begin{align*}
-%		f(t) \psi''(x) & = \frac{2m (E - V)}{h^{2} \nu^{2}} \psi(x) f''(t) \\
-%		\iff - \psi''(x) + & \frac{2m\omega^{2}}{h^{2} \nu^{2}} V \psi(x) = \frac{2m \omega^{2}E}{h^{2} \nu^{2}} \psi(x) 
-%	\end{align*}
-Here comes an introduction the the Schrödinger operator... \\
-Based on this, we are interested in the one-dimensional Schrödinger operator with describes the simplified movement of a non-relativistic movement of a quantum particle in a potential, especially in the spectral problem of such an operator; note that in this thesis we will a potential given by a delta-distribution, thereby this operator is formally defined through the operation
-\begin{equation}
-	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
-\end{equation}
-on the whole of $\R$, where $\delta$ denotes the Dirac delta distribution and $x_{i}$ are periodically distributed points on $\R$. $\Omega_{k}$ will hereafter identify the periodicity cell containing delta point $x_{k}$ and let w.o.l.g. $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$. \\
+The problem considered in this thesis arises from the Kronig-Penney model which describes an idealised quantum-mechanical system, that demonstrates a particle behaving as a matter wave moving in one-dimension trough an infinite periodic array of rectangular potential barriers, i.e. through a space area in which a potential takes local maximum. Such an array occurs commonly in models of periodic crystal lattices where the potential is caused by ions in the crystal. They create an electromagnetic field around themselves and hence any particle moving through such a crystal would be subject to a periodic electromagnetic potential. Although a solid particle, simplified as a point mass, would be reflected at such a barrier, there is a possibility that the a quantum particle, as it behaves like a wave, penetrates the barrier and continues its movement beyond\footnote{The likelihood that the particle will pass through the barrier is given by the transmission coefficient, whereas the likelihood that it is reflected is given by the reflection coefficient. Schrödinger's wave-equation allows these coefficients to be calculated.}. Assuming the spacing between all ions is $a$, the potential function $V(x)$ in the lattice can be approximated by a rectangular potential like this:
 
-In general, one cannot expect that \eqref{the-operator-A-formally} has a classical
-solution. For the existence of a classical solution, all parameters have to be in a sense sufficiently smooth, which, for our distributional potential, is never the case. Nevertheless a solution of the so called weak formulation which requires less regularity can still exist, consider for this for $\mu \in \R$ the problem
-\begin{equation}
-	\int u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v} \quad \forall v \in H^{1}(\R), \label{weak-formulation-of-A}
-\end{equation}	
-where $u \in H^{1}(\R)$ and $f \in L^{2}(\R)$. This is obtained by multiplying
-	\[ Au + \mu u = f \]
-with some $v \in C_{c}^{\infty}(\R)$, partial integration and using the fact that $C_{c}^{\infty}(\R)$ is dense in $H^{1}(\R)$. \\
+\begin{figure*}[h!] \centering
+	  \includegraphics[width=0.8\textwidth]{Periodic_square_potential_130707} % todo replace image
+\end{figure*}
+
+where $b$ is the support and $\rho$ the magnitude of the potential.
+
+This thesis will examine the spectrum of an operator describing a special case of the Kronig-Penney model, namely by taking the limit $b \rightarrow 0$ with a finite modulus of the potential which represents the ion creating a finite singular potential. 
+
+\section*{Mathematical Basics}
+
+For the upcoming analysis we need some basic concepts from functional analysis and spectral theory I want to briefly recapitulate
+
+\subsection*{Fourier series} do I have to do this?
+
+\subsection*{Weak derivate and weak formulation} do I have to do this?
+
+Let $C_{c}^{\infty}$ denote the linear space containing all smooth function with compact support, i.e. for $f \in C_{c}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. Togerther with the supremums norm $\| \cdot \|_{\infty}$ is $C_{c}^{\infty}$ a normed vector space.
+
+\subsection*{Hilbert and Sobolev spaces}
+A normed vector space $(X, \| \cdot \|)$ is called apre-Hilbert space, if there exists a scalar product $\langle \cdot, \cdot, \rangle$ on $X \times X$ such that
+	\[ \| x \| = \langle x, x \rangle^{\frac{1}{2}} \] 
+
+Any pre-Hilbert space that is additionally also a complete space is called a Hilbert space.
+
+The Sobolev space $H^{k}$ is defined to be the subset of functions $f$ in $L^{2}(\R)$ such that the function $f$ and its weak derivatives up to some order $k$ have a $finite L^{2}$ norm. A
+
+Furthermore, the space $H^{k}$ admits an inner product, which is defined in terms of the $L^2$ inner product: 
+	\[ \langle u , v \rangle_{H^{k}} = \sum_{i=0}^{k} \left\langle D^{i}u , D^{i} v \right\rangle_{L^{2}}. \] 
+The space $H^{k}$ becomes a Hilbert space with this inner product.
+
+... and using the fact that $C_{c}^{\infty}(\R)$ is dense in $H^{1}(\R)$
+
+
+\subsection*{Distributons}
+	On $C_{0}^{\infty}$ a sequence $(f_{n})$ converges against $f \in C_{0}^{\infty}$ if the support of all members of the sequence is in a compact interval $I \subset \R$, i.e.
+	$$ \supp (f_{n}) \subseteq I \quad \forall n \in \N, $$
+	and on this interval $f_{n}$ converges uniformally against $f$, i.e.
+	\[ \| (f_{n}^{(i)} - f^{(i)}) \cdot \mathds{1}_{I} \|_{\infty} \rightarrow 0 \quad \forall n \rightarrow \infty \]
+forall all $i \in \N_{0}$. One can proof that that this concept of convergence generates a topology on $C_{0}^{\infty}$ and one usually denoted with $D(\R)$ the space $C_{0}^{\infty}$ equipped with this topology. As the space of distribution, $D'(\R)$ we denote now all linear functionals on $C_{0}^{\infty}$ that are continuous under this topology. 
+~\\ ~\\
+An important example for a distribution is the delta distribution $\delta_{x_{0}}$ where $x_{0} \in \R$. It is defined as the limit of a weakly converging sequence of functionals over normed symmetric cumulative distribution functions $\delta_{\epsilon}$, whereas the support of those cumulative distributions converges to zero. An example for such a sequence is be
+	\[ \delta_{\epsilon}(x) = \frac{1}{\sqrt{2 \pi} \epsilon} e^{-\frac{x^{2}}{2 \epsilon^{2}}}. \]
+Which implies the definition
+	\[ \delta_{x_{0}}(f) \coloneqq \int_{-\infty}^{\infty} \delta_{x_{0}} f(x) dx \coloneqq \lim_{\epsilon \rightarrow 0} \int_{-\infty}^{\infty} \delta_{\epsilon}(x - x_{0}) f(x) dx. \]
+Moreover, is easily seen that $\delta_{x_{0}}(f) = f(x_{0})$.
+\begin{proof}
+	We have
+	\[ \int_{-\infty}^{\infty} f(x) \delta_{\epsilon}(x-x_{0}) dx = \frac{1}{\sqrt{2\pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} dx. \] 
+	The substitution $z \coloneqq \frac{x - x_{0}}{\sqrt{2} \epsilon}$ implies 
+	\[ \frac{1}{\sqrt{2\pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} dx = \frac{1}{\sqrt{2\pi} \epsilon} \sqrt{2} \epsilon \int_{-\infty}^{\infty} f(\sqrt{2} \epsilon z + x_{0}) e^{-z^{2}} dx. \]
+	Using the taylor series of $f$ in $x_{0}$ we obtain
+	\[ f(x) = f(x_{0}) + \mathcal{O}(\epsilon), \]
+	where $\mathcal{O}(\epsilon)$ is at least of order $\epsilon$. Hence:
+	\[ \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} (f(x_{0}) + \mathcal{O}(\epsilon)) e^{-z^{2}} dz = f(x_{0}) \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} dz = f(x_{0}), \]
+	where we used the fact that $\int_{-\infty}^{\infty} e^{-z^{2}}$ is a Gaussian integral and equal to $\sqrt{\pi}$. We can see that through :
+	\[ \left( \int_{-\infty}^{\infty} e^{-x^{2}} dx \right) \left( \int_{-\infty}^{\infty} e^{-y^{2}} dy \right) = \int_{-\infty}^{\infty} e^{(x^{2} + y^{2})} d(x, y). \] 
+	As we integrate over the whole $\R^{2}$ substituting in polar coordinates with the substition $z \coloneqq \rho^{2}$ yields
+	\[ \int_{0}^{2 \pi} \int_{0}^{\infty} e^{-\rho^{2}} \rho d\rho d\varphi = 2 \pi \int_{0}^{\infty} e^{-\rho^{2}} \rho d\rho = \pi \int_{0}^{\infty} e^{-z^{2}} dz = \pi \left[ -e^{-z} \right]_{0}^{\infty} = \pi \]
+\end{proof} 
+
+
+\subsection*{Spektrum and resolvent of an operator}
+
+Let $X$ be a Banach space and let $A \colon \mathcal{D} \rightarrow X$ be a  linear operator with domain $D(A) \supset X$. Let $I$ denote the identity operator on $X$. Then we define for any $\lambda \in \C$
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\lambda$ belongs in the resolvent set of $A$, $\lambda \in \rho(A)$, if and only if
+			\[ \lambda I - A \colon D(A) \rightarrow X \text{ bijektiv, i.e. } (\lambda I - A)^{-1} \colon X \rightarrow D(A) \text{ is a bounded linear operator.} \]
+		\item $\sigma(A) = \C \setminus \rho(A)$ is called spectrum of $A$.
+		\item $\lambda \in \rho(A) \rightarrow R(\lambda, A) = (\lambda - A)^{-1}$ is the resolvent function of $A$.
+	\end{enumerate}	
 	
-One should note that left-hand side of problem \eqref{weak-formulation-of-A} is actually convergent, as for arbitrary $\tilde{x}_{i} \in \Omega_{i}$
-\begin{eqnarray}
-	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq & \sum_{i \in \Z} \left( \big| u(\tilde{x}_{i}) + \int_{\tilde{x}_{i}}^{x_{i}} u'( \tau ) d\tau \big| \right)^{2} \notag \\
-		 & \leq & 2 \sum_{i \in \Z} \left( \int_{\Omega_{i}} |u( x )|^{2} dx +  \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
-		 & \leq & 2 \cdot \| u \|^{2}_{H^{1}(\R)}. \label{estimation-for-potential}
-\end{eqnarray}
+\begin{theorem}
+	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
+	
+	\begin{proof}
+		First, we note that the resolvent set is bounded as for $|\lambda| > \|A\|$ then $\| \lambda^{-1} A \| < 1$ and the operator $A - \lambda I = -\lambda (I - \lambda^{-1} A)$ has by the Neumann series the inverse
+		$$ R(\lambda, A) = (A - \lambda I)^{-1} = - \sum_{k=0}^{\infty} \lambda^{-k-1} A^{k}. $$
+		Now, to show that $\rho(A)$ is open we have proceed by showing that for any $\lambda \in \rho(A)$ there exist $\epsilon > 0$ such that all $\mu$ with $|\lambda- \mu| < \epsilon$ are also in $\rho(A)$. For that consider
+		\begin{align*}
+			A - \mu I & = A - \lambda I + (\lambda - \mu) I \\
+					  & = (A - \lambda I)\left(I + (\lambda - \mu) (A - \lambda I)^{-1} \right).
+		\end{align*}
+		The last expression is an invertible operator because $T - \lambda I$ is invertible by the assumption and $I + (\lambda - \mu)(T - \lambda I)^{-1}$ is invertible again by the Neumann series, since $\|(\lambda - \mu)(A - \lambda I)^{-1}\| < 1$ if $\epsilon < \|(A - \lambda I)^{-1}\|$.
+	\end{proof}
+\end{theorem}
