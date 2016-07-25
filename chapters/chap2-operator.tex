@@ -69,7 +69,7 @@ Thus, there exists a unique solution $u \in H^{1}(\R)$ to the problem \eqref{wea
 	\begin{equation}
 		0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v} \quad \forall v \in H^{1}(\R). \label{f1f2almosteverywhere}
 	\end{equation} 
-As further $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equation \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in return we can now define the Schrödinger operator as follows % todo Markus: Verweis? cite befehl
+As further $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equation \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Accordingly $R_{\mu}$ is bijective and in return we can now define the Schrödinger operator as follows % todo Markus: Zitate, Verweis? cite befehl
 		\[ A \coloneqq R_{\mu}^{-1} + \mu I \]
 from which additionally follows that $R_{\mu}$ is the resolvent of $A$.
 
@@ -91,8 +91,8 @@ such that
 	\end{equation} 
 Hence, the operator defined by the action
 	\[ A u = \begin{cases}
-					- u'' & x \in (x_{k} - \frac{1}{2}, x_{k}) \\
-					- u'' & x \in (x_{k}, x_{k} + \frac{1}{2}),
+					- u'' & \text{ on } (x_{k} - \frac{1}{2}, x_{k}) \\
+					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
 			 \end{cases} \quad \forall k \in \Z \] % todo Markus: on (...) or x \in (...)?
 				
 We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. As $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider\pdfcomment{I guess I have to show that $f - \mu$ u is onto though $\mu$ is fixed..}
