@@ -94,8 +94,7 @@ Hence, the operator defined by the action
 					- u'' & \text{ on } (x_{k} - \frac{1}{2}, x_{k}) \\
 					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
 			 \end{cases} \quad \forall k \in \Z \] % todo Markus: on (...) or x \in (...)?
-				
-We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. As $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider\pdfcomment{I guess I have to show that $f - \mu$ u is onto though $\mu$ is fixed..}
+We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. As $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq A u$. To show $u = R_{\mu}(f - \mu u)$ consider % todo Andrii: I guess I have to show that $f - \mu$ u is onto though $\mu$ is fixed
 	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
 	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \nicefrac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \nicefrac{1}{2}} u'' \overline{v}. \]
 	For each $k \in \Z$ partial integration with a function $v$ having $\supp v = (x_{k} - \nicefrac{1}{2}, x_{k} + \nicefrac{1}{2})$ yields
