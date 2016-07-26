@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  26 JUL 2016 12:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  26 JUL 2016 21:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -892,7 +892,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux))
+ (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
@@ -948,7 +948,23 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 452.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))<<ot1.cmap>> (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.toc<<oml.cmap>><<oms.cmap>><<omx.cmap>>
+))
+\openout2 = `kit-cover.aux'.
+
+ (./kit-cover.tex <kit-logo.jpg, id=40, 199.7061pt x 91.3011pt>
+File: kit-logo.jpg Graphic file (type jpg)
+ <use kit-logo.jpg>
+Package pdftex.def Info: kit-logo.jpg used on input line 3.
+(pdftex.def)             Requested size: 89.86691pt x 41.08511pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+<<ot1.cmap>> [1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./kit-logo.jpg>]) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.toc<<oml.cmap>><<oms.cmap>><<omx.cmap>>
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -960,15 +976,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.61 \include{chapters/chap1-introduction}
+                                           [1
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+]
 \openout2 = `chapters/chap1-introduction.aux'.
 
  (./chapters/chap1-introduction.tex
 Chapter 1.
-<Periodic_square_potential_130707.png, id=65, 477.4638pt x 184.5294pt>
+<Periodic_square_potential_130707.png, id=71, 477.4638pt x 184.5294pt>
 File: Periodic_square_potential_130707.png Graphic file (type png)
  <use Periodic_square_potential_130707.png>
 Package pdftex.def Info: Periodic_square_potential_130707.png used on input line 6.
@@ -1050,27 +1070,45 @@ Chapter 4.
 
 
 ] [21] [22] [23] [24]) [25]
+\openout2 = `biblio.aux'.
+
+ (./biblio.tex) [26
+
+
+
+]
+\openout2 = `statement.aux'.
+
+ (./statement.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 9--69
+
+ []
+
+[27
+
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
- (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux))
+ (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 16024 strings out of 493089
- 271820 string characters out of 6134843
- 363275 words of memory out of 5000000
- 19121 multiletter control sequences out of 15000+600000
+ 16062 strings out of 493089
+ 273007 string characters out of 6134843
+ 364424 words of memory out of 5000000
+ 19130 multiletter control sequences out of 15000+600000
  20471 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,13n,39p,10410b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (25 pages, 270241 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (28 pages, 970367 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 94 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 99 words of extra memory for PDF output out of 10000 (max. 10000000)
 
