@@ -1,19 +1,48 @@
 \chapter{The spectrum of \texorpdfstring{$A$}{A}}	\label{chap4}
-% todo Markus Absetzen wegen Zahlen
 In this chapter, we will prove the main result stating that for the Schrödinger operator $A$ with periodic delta potential
 	\begin{equation}
 		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{MainResult}
 	\end{equation}
-where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$. As $B$ is compact and connected, for each of those sets $I_{s}$ holds that
+where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$. 
+
+\begin{theorem}
+	For all $s \in \N$ the function $\lambda_{s}(k)$ is continuous in $k \in \overline{B}$.
+	\begin{proof}
+		By assumption our potential is bounded and we define 
+		$$H^{1}_{per} \coloneqq \{ 	v \in H^{1}(\Omega) : v(x - \frac{1}{2}) = v(x + \frac{1}{2}) \}. $$
+		In the transformed eigenvalue problem \eqref{mod-eigv-problem},  \eqref{periodic-condition} are our boundary conditions periodic and independent from $k$. By Poincare's min-max principle for eigenvalues we have
+		\[ \lambda_{s}(k) = \underset{\dim U = s}{\min_{U \subseteq H^{1}_{per}(\Omega)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle A_{k} v, v \rangle_{L^{2}(\Omega)}}{\langle v, v \rangle_{L^{2}(\Omega)}}.  \] 
+		Now, let $k \in B$ fixed. Then for all $\tilde{k} \in B$ and all $v \in H^{1}_{per}(\Omega)$ using triangular inequality we can estimate for $J \in \{ (x_{0} - \frac{1}{2}, x_{0}), (x_{0}, x_{0} + \frac{1}{2}) \}$:
+		\begin{align}
+			 \frac{ \langle \left( \frac{d}{dx} + i\tilde{k} \right) v , \left( \frac{d}{dx} + i\tilde{k} \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} & \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} \frac{ \langle \left( \frac{d}{dx} + ik \right) v , \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} \notag \\
+			& ~\quad \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \frac{2 |k-\tilde{k}|\|v'\|_{L^{2}(J)} \| v \|_{L^{2}(J)}}{\| v \|^{2}_{L^{2}(J)}} \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left| |k|^{2} - |\tilde{k}|^{2} \right| \label{**-condition}
+		\end{align}
+		Moreover, 
+		\begin{align*}
+			2 \| v' \|_{L^{2}(J)} \| v \|_{L^{2}(J)} & \leq 2 \| \left( \frac{d}{dx} + ik \right) v\|_{L^{2}(J)} \| v \| + 2|k| \|v\|^{2}_{L^{2}(J)} \\
+			& \leq \| \left( \frac{d}{dx} + ik \right) v \|^{2}_{L^{2}(J)} + \| v \|^{2}_{L^{2}(J)} + 2 |k| \| v \|^{2}_{L^{2}(J)} \\
+			& \leq \langle  \left( \frac{d}{dx} + ik \right) v,  \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)} + (1 + 2|k|) \|v\|^{2}_{L^{2}(J)}.
+		\end{align*}
+		Hence \eqref{**-condition} yields
+		\begin{align*}
+			 \frac{ \langle \left( \frac{d}{dx} + i\tilde{k} \right) v , \left( \frac{d}{dx} + i\tilde{k} \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} & \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} (1 \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} |k - \tilde{k}|) \frac{ \langle \left( \frac{d}{dx} + ik \right) v , \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} \\
+			& ~\quad \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left( |k - \tilde{k}| (1 + 2|k|) + \left| |k|^{2} - |\tilde{k}|^{2} \right| \right).
+		\end{align*}		
+		Thus the min-max-principle gives
+		\begin{align*}
+			\lambda_{s}(\tilde{k}) \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} \left( 1 \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} |k - \tilde{k}| \right) \lambda_{s}(k) \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left( |k - \tilde{k}| (1 + 2|k|) + \left| |k|^{2}- |\tilde{k}|^{2} \right| \right),
+		\end{align*}
+		Which means ultimately
+		\[ |\lambda_{s}(\tilde{k}) - \lambda_{s}(k)| \leq |k - \tilde{k}| \left( \lambda_{s}(k) + 1 + 2|k| + |k| + |\tilde{k}|\right). \] 
+		Now, the eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ and not the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions and as the eigenvalues for the Dirichlet boundary condition are independent from $k$, $\lambda_{s}(k)$ is uniformly bounded and hence continuous.
+	\end{proof}
+\end{theorem}
+
+As $B$ is compact and connected and $\lambda_{s}(k)$ is a continuous function of $k \in B$ we derive for \eqref{MainResult}
 	\begin{equation}
-		I_{s} \text{ is a compact real interval for each } s \in \N,\label{Iisacompactrealinterval}
+		I_{s} \text{ is a compact real interval for each } s \in \N.\label{Iisacompactrealinterval}
 	\end{equation} 
-{\color{gray} as $\lambda_{s}(k)$ is a continuous function of $k \in \overline{B}$ for all $s \in \N$, which follows by standard arguments from the fact that the coefficients in the transformed eigenvalue problem \eqref{mod-eigv-problem},  \eqref{periodic-condition} depend continuously on $k$. % (k) in lambda correct?
-$$ \text{Todo: Proof Plum} $$
-Moreover, Poincare's min-max principle for eigenvalues implies that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann (``free'') boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain} % todo Martin/Markus Cite
- % todo Martin proof
-	\[ \min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty, \]
-which together with \eqref{Iisacompactrealinterval} implies that
+This implies moreover that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann (\enquote{free}) boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that
 	\begin{equation}
 		\bigcup_{s \in \N} I_{s} \text{ is closed.} \label{UIclosed}
 	\end{equation}
@@ -25,14 +54,18 @@ The first part of the statement \eqref{MainResult} is
 	
 	\begin{proof}
 		Let $\lambda \in \bigcup_{s \in \N} I_{s}$, i.e. $\lambda = \lambda_{s}(k)$ for some $s \in \N$ and some $k \in \overline{B}$, and 
-		\begin{equation} % todo Martin/Markus
-			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} % todo Andrii Is the k in the index is correct?
-		\end{equation}
-		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, \eqref{firstinclusion-firstequation} holds for all $x \in \R$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that
+		\begin{equation}
+			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} 
+		\end{equation} 
+		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies
+		\[ A \psi_{s} = \lambda \psi_{s} \]
+		\enquote{locally}, i.e. 
+		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \\ \Big\}, \]
+		thus $\psi_{s} \in \mathcal{D}(A)$ and  $ -\psi_{s}'' = \lambda \psi_{s} \text{ on each } \Omega_{j} \setminus \{ x_{j} \}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that
 			\[ \eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \]
 		and define, for each $l \in \N$,
-			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k) \]
-	 	then
+			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]
+	 	Then
 		\begin{align}
 			(A - \lambda I) u_{l} & = \sum_{j \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{j \in \N} \left[ \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \left( \eta\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
@@ -42,11 +75,9 @@ The first part of the statement \eqref{MainResult} is
 		\end{align}
 		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
 		\begin{equation}
-			 \| R \| \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(K_{l})} \leq c \frac{1}{\sqrt{l}}, \label{eq:estimofR}
-		\end{equation} % todo Martin/Markus more explicitly?!
-		with $K_{l}$ denoting the ball in $\R$ with radius $l$ centred at $x_{0}$. Together with \eqref{firstinclusion-firstequation}, \eqref{eq:sepofspectraleq} and \eqref{eq:estimofR}, this gives
-		\[ \| (A - \lambda I) u_{l} \| \leq \frac{c}{\sqrt{l}} \]
-		Again, by the semi periodicity of $\psi_{s}(\cdot, k)$, which gives us that $\| u_{l} \| \geq c \| \psi_{s}(\cdot, k) \| \geq c \sqrt{l}$ for $c > 0$, we obtain
+			 \| R \| \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}((x_{0} - \frac{l}{2}, x_{0} + \frac{l}{2}))} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
+		\end{equation}
+		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, this gives
 		\[ \frac{1}{\|u_{l}\|}\| (A - \lambda I) u_{l} \| \leq \frac{c}{l} \]
 		Now, as moreover $u_{l} \in D(A)$ this results in
 			\[ \frac{1}{\|u_{l} \|} \| (A - \lambda I) u_{l} \| \rightarrow 0 \text{ as } l \rightarrow \infty \]
@@ -81,7 +112,7 @@ The first part of the statement \eqref{MainResult} is
 			& = \sum_{s=1}^{\infty}|\langle (A - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2}
 		\end{align*}
 
-		Since both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy semi-periodic boundary conditions, $A - \lambda I$ can be moved to $\psi_{s}(\cdot, k)$ in the inner product, and hence \eqref{eigv-problem} and \eqref{lambda-distance} give % todo Markus: Schlecht formuliert?
+		Since both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy semi-periodic boundary conditions, $A - \lambda I$ can be moved to $\psi_{s}(\cdot, k)$ in the inner product, and hence \eqref{eigv-problem} and \eqref{lambda-distance} give
 		\begin{align*}
 			\| (Uf)(\cdot,k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\lambda_{s}(k) - \lambda|^{2} |\langle v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& \geq \delta^{2} \| v(\cdot, k)\|^{2}_{L^{2}(\Omega)}.

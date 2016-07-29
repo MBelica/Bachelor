@@ -1,21 +1,20 @@
 \chapter{Fundamental domain of periodicity and the Brillouin zone}
 
-Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, now consider the operator $A_{k}$ on $\Omega$ formally denoted by the operation % todo Markus über diese Absatz reden
+Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, in this chapter we consider the operator $A_{k}$ on $\Omega$ formally defined by the operation 
 	\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}}. \]
-Again, define $A_{k}$ by considering the weak formulation to this problem, i.e. for $f \in L^{2}(\Omega)$ find a function $u \in H^{1}_{k}$ such that the equation % Martin I don't like this! rewrite!
+As before, we want to define $A_{k}$ by considering the weak formulation to the corresponding problem, i.e. for $f \in L^{2}(\Omega)$ finding $u \in H^{1}_{k}$ such that the equation
 	\[ \int_{\Omega} u' \overline{v'} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u \overline{v} = \int_{\Omega} f \overline{v} \]
 holds for all $v \in H^{1}_{k}$ where 
 	\begin{eqnarray}
 		H^{1}_{k} & \coloneqq & \Big\{ \psi \in H^{1}(\Omega): ~ \psi(\frac{1}{2}) = e^{ik} \psi(-\frac{1}{2}) \Big\}. \label{quasi-periodic-condition}
 	\end{eqnarray}
-% todo Markus: das ist korrekt aber nur im 1. dim sollte wohl aber einen Beweis liefern
-Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the trace of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$, and one can therefore apply the same arguments as above to show that $R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k}, f \mapsto u$ is well-defined and define in return % todo Martin: ref to above and trace convergence?
+Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the boundary of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$, and one can apply analogous arguments as above to prove that $R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k}, f \mapsto u$ is well-defined and injective. Hence we define similarly
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu, \] 
-such that $R_{\mu, k}$ is the resolvent of $A_{k}$.	
+and see therefore that $R_{\mu, k}$ is the resolvent of $A_{k}$.	
 ~\\ ~\\
-In chapter is going to provide additional information about the operator $R_{\mu, k}$. We shall see that the eigenfunctions of $A$ form a complete and orthonormal system in $H^{1}_{k}$ and use this fact to deduce additional properties about the spectrum of $A_{k}$ and also $A$ in chapter \ref{chap4}.
+This chapter is going to provide additional information about the operator $R_{\mu, k}$. We will see that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$. Using this fact we can then deduce additional properties about the spectrum of $A_{k}$ and $A$ in chapter \ref{chap4}.
 
-\begin{theorem} \label{3.1:thm-Rmuk.isCompact} % todo Martin/Markus so viele Kommentare
+\begin{theorem} \label{3.1:thm-Rmuk.isCompact}
 	The operator $R_{\mu, k}$ is compact.
 
 	\begin{proof}
@@ -27,47 +26,48 @@ In chapter is going to provide additional information about the operator $R_{\mu
 		\end{equation} 
 	Now, choosing in \eqref{ujsatisfy} $v = u_{j}$ yields with \eqref{estimation-for-potential} for $\mu$ small enough
 		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)} \]
-	Which means that $(u_{j})_{j}$ is bounded in $H^{1}(\Omega)$. As $H^1(\Omega) \subseteq C(\overline{\Omega})$ we can further estimate % todo 1d-Sovolev embedding + embedding is bounded, do I really need the closure
+	Which means that $(u_{j})_{j}$ is bounded in $H^{1}(\Omega)$. As $H^1(\Omega) \subseteq C^{\frac{1}{2}}(\overline{\Omega})$ we can further estimate 
 		\begin{equation}
-			|f(x) - f(y)| \leq c |x - y|^{\nicefrac{1}{2}} \text{ for some } c > 0, \label{eq:H1estimation}
-		\end{equation} % %todo and do I really need the holder here?  
-	from which for $f \in B_{H^{1}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \| \leq 1 \}$ it follows that 
-		\[ |f(x)|^{2} \leq 2 \| f \|^{2}_{L^{2}} + 2 \leq 4 \quad \forall x \in \Omega. \]
-	For an arbitrary $\epsilon > 0$ we now partition $\Omega$ into $n_{\epsilon}$ equidistant, disjoint intervals $I_{k}$, i.e. $\Omega = \bigcup_{j = 1}^{n_{\epsilon}} I_{j}$. As all $f \in B_{H^{1}_{k}}$ are uniformly bounded on $\Omega$ by \eqref{estimation-for-potential}, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1, k}, \dotsc, c_{\nu_{\epsilon}, k}$ such that % todo Markus finite is wichtig, sonst gibt es nicht endlich viele 
-			$$ \forall f \in B_{H^{1}_{k}} ~\exists j \in \{1, \dotsc, \nu_{\epsilon} \}: \quad \left|f\left(\frac{k}{n_{\epsilon}}\right) - c_{j, k}\right| < \frac{1}{n_{\epsilon}} \quad \forall k \in \{ 1 , \dotsc, n_{\epsilon} \}. $$	
+			|f(x) - f(y)| \leq c |x - y|^{\frac{1}{2}} \text{ for some } c > 0, \label{eq:H1estimation}
+		\end{equation}
+	from which for $f \in B_{H^{1}_{k}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \|_{H^{1}(\Omega)} \leq 1 \}$ it follows that 
+		\[ |f(x)|^{2} \leq 2 \| f \|_{L^{2}}^{2} + 2 \leq 4 \quad \forall x \in \Omega. \]
+	For an arbitrary $\epsilon > 0$ we now partition $\Omega$ into $n_{\epsilon}$ equidistant, disjoint intervals $I_{k}$, i.e. $\Omega = \bigcup_{j = 1}^{n_{\epsilon}} I_{j}$. As all $f \in B_{H^{1}_{k}}$ are uniformly bounded on $\Omega$ by \eqref{estimation-for-potential}, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1, k}, \dotsc, c_{\nu_{\epsilon}, k}$ such that 
+			$$ \forall f \in B_{H^{1}_{k}} ~\exists j \in \{1, \dotsc, \nu_{\epsilon} \}: \quad \left|f\left(\frac{k}{n_{\epsilon}}\right) - c_{j, k}\right| < \epsilon \quad \forall k \in \{ 1 , \dotsc, n_{\epsilon} \}. $$	
 	Hence, there are finitely many step functions such that for any $f \in L^{2}(\Omega)$ one of those step functions, let's call it $g \in L^{2}(\Omega)$ with function value $c_{k}$ on sub interval $I_{k}$ for each $k \in \{ 1, \dotsc, n_{\epsilon} \}$, such that
 		\begin{align*}
-			\| f - g \|^{2}_{L^{2}} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - c_{k+1} |^{2} dx \\
+			\| f - g \|^{2}_{L^{2}(\Omega)} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - c_{k+1} |^{2} dx \\
 				& =  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
 				& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} \left( c + \frac{1}{n} \right) < \epsilon^{2} \text{ for } n \text{ large enough.}
 		\end{align*}		 
-	This means in conclusion that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(\Omega)$. As further $H^{1}_{k}$ is a closed subset of $H^{1}(\Omega)$ this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$. Thus, the operator $R_{\mu, k}$ is compact. % todo Andrii closure Beweis nötig? 
+	This means in conclusion that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(\Omega)$. Furthermore, $H^{1}_{k}$ is a closed subset of $H^{1}(\Omega)$ as convergence in $H^{1}(\R)$ implies convergence on the boundary, and this yields the compact embedding of $H^{1}_{k}$ in $L^{2}(\Omega)$. Thus, the operator $R_{\mu, k}$ is compact.
 	\end{proof}	
 \end{theorem}		
 
-\section{The Spectrum of the restricted operator \texorpdfstring{$A_{k}$}{Ak}}	% todo Markus  rewrite this a bit it isn't actually in H^1_k hmm
+\section{\texorpdfstring{The spectrum of the restricted operator $A_{k}$}{The spectrum of the restricted operator Ak}}	
 As from now, consider the eigenvalue problem to find $\psi \in H^{1}_{k}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}
 	\end{equation}
 	
-In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions.
+In writing the boundary condition in \eqref{quasi-periodic-condition}, we understand $\psi$ extended to the whole of $\R$. In fact, \eqref{quasi-periodic-condition} forms boundary conditions on $\partial \Omega$, so-called semi-periodic boundary conditions. 
 ~\\
 Obviously, $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and if $\tilde{\lambda}$ is an eigenvalue for the eigenfunction $\psi$ of $R_{\mu, k}$ then so is
 	\[ \lambda = \frac{1}{\tilde{\lambda}} - \mu \]
  an eigenvalue for the same eigenfunction $\psi$ for the operator $A$. Since $\Omega$ is bounded, and $R_{\mu, k}$ is a compact and symmetric operator, $A_{k}$ has also a purely discrete spectrum satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
-and the corresponding eigenfunction form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. Therefore, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$, define % todo Markus ja Floquet warum? Bzw. Vorbereitung
+and the corresponding eigenfunction form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. Therefore, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$, define
 	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
-Then, % todo Markus: formal/informal
+{\color{gray}
+Then,
 	\begin{align*}
-		A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \\
-				& = e^{ikx} \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \\
-				& ~\qquad + e^{ikx} \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}.
-	\end{align*}
+		A_{k} \psi_{s}(x, k) & = \frac{d}{dx} \psi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d}{dx} \psi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \\
+				& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \\
+				& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}.
+	\end{align*} }
 Defining the operator $\tilde{A_{k}} \colon D(A_{k}) \rightarrow L^{2}(\R)$ through 
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
- 		\left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d^{2}}{dx^{2}} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2})
+ 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2})
  	\end{cases} \] 
 and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
 		\[ \varphi_{s}(x - \frac{1}{2}, k) = e^{-ik(x - \frac{1}{2})} \psi_{s}(x - \frac{1}{2}, k) = e^{-ik(x + \frac{1}{2})} \psi_{s}(x + \frac{1}{2}, k) = \varphi_{s}(x + \frac{1}{2}, k). \]
@@ -81,7 +81,7 @@ Which shows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and comp
 	\end{equation}
 with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem}.
 ~\\ ~\\
-In the next chapter we shall see that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, which carries the from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. Even though the following two results do not differ in both the statement or the proof from standard theory, as in REF, I still want to list them here for completeness. % todo Martin: ref auf Plum
+In the next chapter we are going to show that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, which carries the from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. Even though the following two results do not differ in both the statement or the proof from standard theory, as in REF, I still want to list them here for completeness.
 \section{The Floquet transformation} 	
 \begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
 	The Floquet transformation $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ 
@@ -95,7 +95,7 @@ In the next chapter we shall see that the spectrum of the operator $A$ can be co
 	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, the inverse simplifies to
 		\begin{equation}
 			U^{-1} g = \frac{1}{\sqrt{|B|}} \int_{B} g(\cdot, k) dk. \label{3.9}
-		\end{equation} % todo Markus: das ist...?
+		\end{equation}
 		
 	\begin{proof}
 		For $f \in L^{2}(\R)$,
@@ -125,7 +125,7 @@ In the next chapter we shall see that the spectrum of the operator $A$ can be co
 
 \section{Completeness of the Bloch waves}
 
-Using the Floquet transformation $U$, we can now prove the property of completeness of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$. % todo Martin/Markus: Das ist was anderes..?!
+Using the Floquet transformation $U$, we can now prove the property of completeness of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
 	
 \begin{theorem} \label{3.3:thm-flConvergence}
 		For each $f \in L^{2}(\R)$ and $l \in \N$, define
