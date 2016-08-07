@@ -8,73 +8,45 @@ The problem considered in this thesis arises from the Kronig-Penney model which 
 
 where $b$ is the \enquote{support} and $\rho$ the magnitude of the potential.
 ~\newline ~\newline
-This thesis will examine the spectrum of an operator describing a special case of the Kronig-Penney model, namely by taking the limit $b \rightarrow 0$ with a finite modulus of the potential which represents the ion creating a finite singular potential.
+This thesis will examine the spectrum of an operator describing a special case of the Kronig-Penney model, namely by taking the limit $b \rightarrow 0$ while $V_{0}$ remains in order $\rho b$, which represents the ion creating a finite singular potential.
 
 \section*{Mathematical Basics}
 
-For the upcoming analysis we need some basic concepts from functional analysis and spectral theory I want to briefly recapitulate
-
-\subsection*{Topics I don't know if I'm supposed to introduce them:} 
-\begin{itemize}
-	\item Introducing: weak formulation
-\end{itemize}
-\subsection*{I will introduce}
-\begin{itemize}
-	\item Defining: symmetric and self-Adjoint operators 
-	\item Introducing weak derivates
-\end{itemize}
-~\newline
-Let $C_{c}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{c}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. Together with the supremums norm $\| \cdot \|_{\infty}$ is $C_{c}^{\infty}$ a normed vector space.
-
-\subsection*{Hilbert and Sobolev spaces}
-A normed vector space $(X, \| \cdot \|)$ is called a pre-Hilbert space, if there exists a scalar product $\langle \cdot, \cdot, \rangle$ on $X \times X$ such that
-	\[ \| x \| = \langle x, x \rangle^{\frac{1}{2}} \] 
-
-Any pre-Hilbert space that is additionally also a complete space is called a Hilbert space.
+For the upcoming analysis we need some basic concepts from functional analysis and spectral theory I want to briefly recapitulate:
 ~\newline ~\newline
-For $\Omega \subseteq \R$ the Sobolev space $H^{k}(\Omega)$ is defined to be the subset of functions $f$ in $L^{2}(\Omega)$ such that the function $f$ and its weak derivatives up to some order $k$ have a finite $L^{2}(\Omega)$ norm. Furthermore, the space $H^{k}(\Omega)$ admits an inner product, which is defined in terms of the $L^{2}(\Omega)$ inner product: 
-	\[ \langle u , v \rangle_{H^{k}(\Omega)} = \sum_{i=0}^{k} \left\langle D^{i}u , D^{i} v \right\rangle_{L^{2}(\Omega)}. \] 
-The space $H^{k}(\Omega)$ becomes a Hilbert space with this inner product.
-
+Let $C_{c}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. From now on we will denote with $\langle x, x \rangle$ the scalar product in $L^{2}(\R)$.
+\subsection*{The Sobolev space $H^{k}(\Omega)$}
+Let $\Omega \subseteq \R$ be an open set and let $u$ be a function in the Lebesgue space $L^{1}(\Omega)$. Then $v$ in $L^{1}(\Omega)$ is a weak derivative of $u$ if, 
+	\[ \int_{\Omega} u(t)\varphi'(t) dt = -\int_{\Omega} v(t) \varphi(t) dt \]
+for all $\varphi \in C_{0}^{\infty}(\Omega)$. Now, an important example for a Hilbert space is the Sobolev space $H^{k}(\Omega)$, which is defined to be the set of functions $f$ in $L^{2}(\Omega)$ such that the function $f$ and its weak derivatives up to the order $k$ have a finite $L^{2}(\Omega)$ norm, by admitting the inner product in terms of the $L^{2}(\Omega)$ inner product for all derivatives up to order $k$: 
+	\[ \langle u , v \rangle_{H^{k}(\Omega)} = \sum_{i=0}^{k} \left\langle D^{i}u , D^{i} v \right\rangle_{L^{2}(\Omega)}. \] 	
 \subsection*{Distributions}
 	On $C_{0}^{\infty}$ a sequence $(f_{n})$ converges against $f \in C_{0}^{\infty}$ if the support of all members of the sequence is in a compact interval $I \subset \R$, i.e.
 	$$ \supp (f_{n}) \subseteq I \quad \forall n \in \N, $$
 	and on this interval $f_{n}$ and all its derivatives converge uniformly against $f$, i.e.
 	\[ \| f_{n}^{(i)} - f^{(i)} \|_{\infty} \rightarrow 0 \quad \text{ for } n \rightarrow \infty \]
-	for all $i \in \N_{0}$. One can proof that this concept of convergence generates a topology on $C_{0}^{\infty}$ and one usually denoted with $D(\R)$ the space $C_{0}^{\infty}$ equipped with this topology. As the space of distribution, $D'(\R)$ we now denote all linear functionals on $C_{0}^{\infty}$ that are continuous with respect to this topology.
-~\\ ~\\
+	for all $i \in \N_{0}$. One can proof that this concept of convergence generates a topology on $C_{0}^{\infty}$ and one usually denoted with $\mathcal{D}(\R)$ the space $C_{0}^{\infty}$ equipped with this topology. From now on, we denote with $D'(\R)$ the space of all linear functionals on $C_{0}^{\infty}$ that are continuous with respect to this topology and call those functionals distributions.
+~\newline ~\newline
 An important example for a distribution is the Dirac delta function $\delta_{x_{0}}$ where $x_{0} \in \R$. It is defined as the limit of a weakly converging sequence of functionals over normed symmetric around $x_{0}$ cumulative distribution functions $\delta_{\epsilon}$, whereas the support of those cumulative distributions converges to zero. It holds $\delta_{x_{0}} = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}$ in $D'(\R)$. An example for such a sequence is be
 	\[ \delta_{\epsilon}(x) = \frac{1}{\sqrt{2 \pi} \epsilon} e^{-\frac{x^{2}}{2 \epsilon^{2}}}. \]
 Which implies the definition
 	\[ \delta_{x_{0}}(f) \coloneqq \int_{-\infty}^{\infty} \delta_{x_{0}} f(x) dx \coloneqq \lim_{\epsilon \rightarrow 0} \int_{-\infty}^{\infty} \delta_{\epsilon}(x - x_{0}) f(x) dx. \]
 Moreover, is easily seen that $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$.
-{\color{gray}
-\begin{proof}
-	We have
-	\[ \int_{-\infty}^{\infty} f(x) \delta_{\epsilon}(x-x_{0}) dx = \frac{1}{\sqrt{2\pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} dx. \] 
-	The substitution $z \coloneqq \frac{x - x_{0}}{\sqrt{2} \epsilon}$ implies 
-	\[ \frac{1}{\sqrt{2\pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} dx = \frac{1}{\sqrt{2\pi} \epsilon} \sqrt{2} \epsilon \int_{-\infty}^{\infty} f(\sqrt{2} \epsilon z + x_{0}) e^{-z^{2}} dx. \]
-	Using the taylor series of $f$ in $x_{0}$ we obtain
-	\[ f(x) = f(x_{0}) + \mathcal{O}(\epsilon), \]
-	Hence:
-	\[ \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} (f(x_{0}) + \mathcal{O}(\epsilon)) e^{-z^{2}} dz = f(x_{0}) \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} dz = f(x_{0}), \]
-	where we used the fact that $\int_{-\infty}^{\infty} e^{-z^{2}}$ is a Gaussian integral and equal to $\sqrt{\pi}$. We can see that through :
-	\[ \left( \int_{-\infty}^{\infty} e^{-x^{2}} dx \right) \left( \int_{-\infty}^{\infty} e^{-y^{2}} dy \right) = \int_{\R^{2}} e^{(x^{2} + y^{2})} d(x, y). \] 
-	As we integrate over the whole $\R^{2}$ substituting in polar coordinates with the substition $z \coloneqq \rho^{2}$ yields
-	\[ \int_{0}^{2 \pi} \int_{0}^{\infty} e^{-\rho^{2}} \rho d\rho d\varphi = 2 \pi \int_{0}^{\infty} e^{-\rho^{2}} \rho d\rho = \pi \int_{0}^{\infty} e^{-z^{2}} dz = \pi \left[ -e^{-z} \right]_{0}^{\infty} = \pi \]
-\end{proof} }
-
-
 \subsection*{Spectrum and resolvent of an operator}
-
-Let $X$ be a Banach space and let $A \colon \mathcal{D} \rightarrow X$ be a  linear operator with domain $D(A) \supset X$. Let $I$ denote the identity operator on $X$. Then we define for any $\lambda \in \C$
+Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \supset X$. On the set of all linear operators we define the operator norm 
+	\[ \| A \| \coloneqq \sup_{x \in \mathcal{D}(A)} \left\{ \| A x \|_{Y} \colon \| x \|_{X} \leq 1 \right\}, \]
+and call an operator bounded if its operator norm is bounded. We call a bounded operator $A$ symmetric, if % todo I think this definition is wrong
+	\[  \langle Tx,y \rangle = \langle x ,Ty \rangle \]
+for all $x,y \in \mathcal{D}(A)$, and self-adjoint, if $T$ coincides with its adjoint, $T^{*} = T$, i.e. 
+	\[ \langle Tx,y \rangle = \langle x ,Ty \rangle \]
+for all $x,y \in X$. Furthermore, let $I$ denote the identity operator on $X$. Then we define for any $\lambda \in \C$
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\lambda$ belongs in the resolvent set of $A$, $\lambda \in \rho(A)$, if and only if
-			\[ \lambda I - A \colon D(A) \rightarrow X \text{ bijective, i.e. } (\lambda I - A)^{-1} \colon X \rightarrow D(A) \text{ is a bounded linear operator.} \]
+			\[ \lambda I - A \colon \mathcal{D}(A) \rightarrow X \text{ bijective, i.e. } (\lambda I - A)^{-1} \colon X \rightarrow \mathcal{D}(A) \text{ is a bounded linear operator.} \]
 		\item $\sigma(A) = \C \setminus \rho(A)$ is called spectrum of $A$.
 		\item $\lambda \in \rho(A) \rightarrow R(\lambda, A) = (\lambda - A)^{-1}$ is the resolvent function of $A$.
-	\end{enumerate}	
-	
+	\end{enumerate}		
+
 \begin{theorem}
 	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
 	
@@ -89,3 +61,4 @@ Let $X$ be a Banach space and let $A \colon \mathcal{D} \rightarrow X$ be a  lin
 		The last expression is an invertible operator because $T - \lambda I$ is invertible by the assumption and $I + (\lambda - \mu)(T - \lambda I)^{-1}$ is invertible again by the Neumann series, since $\|(\lambda - \mu)(A - \lambda I)^{-1}\| < 1$ if $\epsilon < \|(A - \lambda I)^{-1}\|$.
 	\end{proof}
 \end{theorem}
+

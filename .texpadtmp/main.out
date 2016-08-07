@@ -1,9 +1,10 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{The Schr\366dinger operator A}{}% 2
-\BOOKMARK [1][-]{section.2.1}{The Domain of A}{chapter.2}% 3
+\BOOKMARK [0][-]{chapter.2}{The one-dimensional Schr\366dinger operator A}{}% 2
+\BOOKMARK [1][-]{section.2.1}{The domain of A}{chapter.2}% 3
 \BOOKMARK [1][-]{section.2.2}{A being self-adjoint}{chapter.2}% 4
 \BOOKMARK [0][-]{chapter.3}{Fundamental domain of periodicity and the Brillouin zone}{}% 5
-\BOOKMARK [1][-]{section.3.1}{The spectrum of the restricted operator Ak}{chapter.3}% 6
+\BOOKMARK [1][-]{section.3.1}{The spectrum of the operator Ak}{chapter.3}% 6
 \BOOKMARK [1][-]{section.3.2}{The Floquet transformation}{chapter.3}% 7
 \BOOKMARK [1][-]{section.3.3}{Completeness of the Bloch waves}{chapter.3}% 8
 \BOOKMARK [0][-]{chapter.4}{The spectrum of A}{}% 9
+\BOOKMARK [0][-]{chapter.5}{The multi-dimensional case}{}% 10

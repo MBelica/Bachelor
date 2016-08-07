@@ -44,7 +44,7 @@ This chapter is going to provide additional information about the operator $R_{\
 	\end{proof}	
 \end{theorem}		
 
-\section{\texorpdfstring{The spectrum of the restricted operator $A_{k}$}{The spectrum of the restricted operator Ak}}	
+\section{The spectrum of the operator $A_{k}$}	
 As from now, consider the eigenvalue problem to find $\psi \in H^{1}_{k}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}
@@ -58,18 +58,17 @@ Obviously, $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and 
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
 and the corresponding eigenfunction form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. Therefore, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$, define
 	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
-{\color{gray}
 Then,
 	\begin{align*}
-		A_{k} \psi_{s}(x, k) & = \frac{d}{dx} \psi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d}{dx} \psi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \\
+		A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \\
 				& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \\
 				& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}.
-	\end{align*} }
-Defining the operator $\tilde{A_{k}} \colon D(A_{k}) \rightarrow L^{2}(\R)$ through 
+	\end{align*}
+Defining the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
  		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2})
  	\end{cases} \] 
-and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
+and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, hence yields
 		\[ \varphi_{s}(x - \frac{1}{2}, k) = e^{-ik(x - \frac{1}{2})} \psi_{s}(x - \frac{1}{2}, k) = e^{-ik(x + \frac{1}{2})} \psi_{s}(x + \frac{1}{2}, k) = \varphi_{s}(x + \frac{1}{2}, k). \]
 Which shows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions of the periodic eigenvalue problem
 	\begin{equation}
@@ -81,7 +80,7 @@ Which shows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and comp
 	\end{equation}
 with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem}.
 ~\\ ~\\
-In the next chapter we are going to show that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, which carries the from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. Even though the following two results do not differ in both the statement or the proof from standard theory, as in REF, I still want to list them here for completeness.
+In the next chapter we are going to show that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, which carries the from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. Even though the following two results do not differ in both the statement or the proof from standard theory, as in \cite{Plum10}, I still want to list them here for completeness.
 \section{The Floquet transformation} 	
 \begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
 	The Floquet transformation $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ 

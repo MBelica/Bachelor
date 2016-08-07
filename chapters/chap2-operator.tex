@@ -1,4 +1,4 @@
-\chapter{\texorpdfstring{The Schrödinger operator $A$}{The Schrödinger operator A}}
+\chapter{The one-dimensional Schrödinger operator $A$}
 
 The mathematical representation of the above introduced problem can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. Formally the operation of $A$ is defined by
 \begin{equation}
@@ -14,7 +14,7 @@ where $u \in H^{1}(\R)$ and $f \in L^{2}(\R)$.
 ~\\ ~\\
 We should first note that left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we find for every $i \in \Z$ a point $\tilde{x}_{i} \in \Omega_{i}$ such that
 \begin{align}
-	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( \big| u(\tilde{x}_{i}) - \int_{x_{i}}^{\tilde{x}_{i}} u'( \tau ) d\tau \big| \right)^{2} \notag \\
+	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( \Big| u(\tilde{x}_{i}) - \int_{x_{i}}^{\tilde{x}_{i}} u'( \tau ) d\tau \Big| \right)^{2} \notag \\
 		 & \leq \sum_{i \in \Z} \left( 2 |u( \tilde{x}_{i} )|^{2} +  2 h \int_{x_{i}}^{x_{i} + h} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
 		 & \leq 2 \sum_{i \in \Z} \left( \frac{1}{h} \int_{\Omega_{i}} |u( x )|^{2} dx + h \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right). \label{preestimation-for-potential}
 \end{align}
@@ -75,12 +75,14 @@ Since further $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equality 
 		\[ A \coloneqq R_{\mu}^{-1} + \mu I \]
 from which additionally follows that $R_{\mu}$ is the resolvent of $A$.
 
-\section{\texorpdfstring{The domain of $A$}{The Domain of A}}
-If for every fixed $k \in \Z$ we consider in \eqref{weak-formulation-of-A} a test function $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$ we get furthermore
+\section{The domain of $A$}
+First, we define
+	\[ H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) \coloneqq \Big\{ u \in L^{2}(\R) : u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i+1}), \sum_{i \in \Z} \|u\|^{2}_{H^{2}(x_{i}, x_{i+1})} < \infty \Big\} \]
+
+If we now consider for every fixed $k \in \Z$ in \eqref{weak-formulation-of-A} a test function $v \in C^{\infty}(\R)$ such that $\supp v = \Omega_{k}$ we get furthermore
 	\[ \int_{x_{k}-\frac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx = \int_{x_{k}-\frac{1}{2}}^{x_{k}} A u \overline{v} \iff \int_{x_{k}-\frac{1}{2}}^{x_{k}} - u(x) \overline{v''(x)} dx = \int_{x_{k}-\frac{1}{2}}^{x_{k}} A u \overline{v}, \]
 whence $A u = - u'' \in L^{2}(x_{k} -\frac{1}{2}, x_{k})$. Analogous arguments yield that $A u = - u'' \in L^{2}(x_{k}, x_{k} + \frac{1}{2})$. As $k \in \Z$ was arbitrary we obtain
-	$$ \mathcal{D}(A) \subset \Big\{ u \in \bigcap_{i \in \Z} \left( H^{2}(x_{i}-\frac{1}{2}, x_{i}) \cap H^{2}(x_{i}, x_{i} + \frac{1}{2}) \right) \Big\}. $$
-	
+	$$ \mathcal{D}(A) \subseteq \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i+1}) \Big\}. $$
 Next, a test function $v \in C^{\infty}(\R)$ sucht that $\supp v = \Omega_{k}$ will yield for an arbitrary $k \in \Z$ from \eqref{weak-formulation-of-A}   through integration by parts on both sides of $x_{k}$ that
 	\[ -\left( \int_{x_{k}-\frac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} + \frac{1}{2}}\right) u'' \overline{v} + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
 	\[ +  \rho u(x_{k})\overline{v(x_{k})} = - \int_{x_{k} - \frac{1}{2}}^{x_{k}} u'' \overline{v} - \int_{x_{k}}^{x_{k} + \frac{1}{2}} u'' \overline{v}. \]
@@ -88,15 +90,29 @@ But as $v \in C^{\infty}(\R)$ was arbitrary, choosing one that is non-zero in $x
 	\[ u'(x_{k}-0) - u'(x_{k}+0) + \rho u(x_{k}) = 0, \]
 and therefore
 	\begin{equation}
-		\mathcal{D}(A) \subseteq \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}) : u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \Big\} \eqqcolon B \label{firstdomaininclusion}
+		\mathcal{D}(A) \subseteq \Big\{ u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) : u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 , ~\forall i \in \Z \Big\}
 	\end{equation} 
-Hence, for an arbitrary $u \in D(A)$ it follows
+Using both these properties, choosing a function $v \in C_{0}^{\infty}(x_{-n}, x_{n+1})$ in \eqref{weak-formulation-of-A} yields with partial integration on every interval $(x_{i}, x_{i+1})$ with for every $i \in \Z$ that
+\[ \sum_{i=-n}^{n-1} -\int_{x_{i}}^{x_{i+1}} u'' \overline{v} + \sum_{i=-n}^{n-1} u' v \Big|_{x_{i}}^{x_{i+1}} + \rho \sum_{i=-n}^{n-1} u(x_{i}) \overline{v(x_{j})} - \mu \int_{x_{-n}}^{x_{n}} u \overline{v} = \int_{x_{-n}}^{x_{n}} f \overline{v} \]
+\begin{equation} 
+	\iff \sum_{i=-n}^{n-1} \int_{x_{i}}^{x_{i+1}} u'' \overline{v} = - \int_{x_{-n}}^{x_{n}} f \overline{v} - \mu \int_{x_{-n}}^{x_{n}} u \overline{v} \label{refwa}
+\end{equation} 
+By defining $w_{n} \coloneqq \sum_{i=-n}^{n-1} u'' \mathds{1}_{[x_{i}, x_{i+1}]}$ we can estimate the left-hand side of \eqref{refwa} by
+\begin{align}
+	\left| \langle w_{n}, v \rangle \right| & \leq \left| \mu \int_{x_{-n}}^{x_{n}} u \overline{v} \right| + \left| \int_{x_{-n}}^{x_{n}} f v \right| \notag \\
+		& \leq |\mu| \|u\|_{L^{2}(x_{-n}, x_{n})} \|v\|_{L^{2}(x_{-n}, x_{n})} + \|f\|_{L^{2}(x_{-n}, x_{n})} \|v\|_{L^{2}(x_{-n}, x_{n})} \notag \\
+		& \leq c \|v\|_{L^{2}(x_{-n}, x_{n})}, \label{refwa2}
+\end{align}
+for some $c \in \R$. As $c$ is independent from $n$ we have by \eqref{refwa2} that
+	\[ \sum_{i \in \Z} \|u''\|^{2}_{L^{2}(x_{i}, x_{i+1})} < \infty. \]
+As $u \in H^{1}(\R)$ this yields
+	\[ \mathcal{D}(A) \subseteq \Big\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \Big\} \eqqcolon B \label{firstdomaininclusion} \]
+Hence, for an arbitrary $u \in \mathcal{D}(A)$ it follows
 	\[ A u = \begin{cases}
 					- u'' & \text{ on } (x_{k} - \frac{1}{2}, x_{k}) \\
 					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
 			 \end{cases} \quad \forall k \in \Z \]
-We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. Since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$. We have to show $u = R_{\mu}(f - \mu u)$ or equivalently
-% todo Martin: Implement Andrii's Propositions; Martin/Andrii do I have to show that $f - \mu$ u is onto though $\mu$ is fixed
+We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. Since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$. As we know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$ we also know that $f \in L^{2}$ and hence we have to show $u = R_{\mu}(f - \mu u)$ or equivalently
 	\[ \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \]
 	\[ \iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i} - \frac{1}{2}}^{x_{i}} u'' \overline{v} + \int_{x_{i}}^{x_{i} + \frac{1}{2}} u'' \overline{v}. \]
 	For each $k \in \Z$ partial integration with a function $v$ having $\supp v = (x_{k} - \frac{1}{2}, x_{k} + \frac{1}{2})$ yields
@@ -104,18 +120,18 @@ We can further prove the opposite inclusion for \eqref{firstdomaininclusion}. Si
 	\[ \iff u'(x_{k}+0) - u'(x_{k}-0) - \rho u(x_{k}) = 0 \]
 	such that we conclude
 	\begin{align*}
-		\mathcal{D}(A) & = \Big\{ u \in H^{1}(\R): u \in \bigcap_{j \in \Z} H^{2}(x_{j} , x_{j+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \Big\}.
+		\mathcal{D}(A) & = \Big\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \Big\}.
 	\end{align*}
 
-\section{\texorpdfstring{$A$ being self-adjoint}{A being self-adjoint}}
+\section{$A$ being self-adjoint}
 
-In chapter 4, we will further utilise the fact that the operator $A$ is self-adjoint. A self-adjoint operator is always closed, symmetric and has a completely real spectrum which narrows our analysis its spectrum down. 
+In chapter 4, we will further utilise the fact that the operator $A$ is self-adjoint. A self-adjoint operator is always closed, symmetric and has a completely real spectrum which narrows our analysis of its spectrum down. 
 
 \begin{theorem} \label{2.2:thm-RmuSymmetric}
 	$R_{\mu}$ and $R_{\mu}^{-1}$ are both symmetric operator.
 	
 	\begin{proof}
-		First, focus on $R_{\mu}^{-1} = (A - \mu I)$. As for all $v \in D(A)$:
+		First, focus on $R_{\mu}^{-1} = (A - \mu I)$. As for all $v \in \mathcal{D}(A)$:
 			\begin{align*}
 				\langle R_{\mu}^{-1} u, v \rangle & = \langle (A - \mu I) u, v \rangle \\
 					& = \int u'\overline{v'} -  \mu \int u \overline{v} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} \\

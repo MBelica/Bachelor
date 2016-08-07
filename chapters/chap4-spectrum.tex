@@ -1,4 +1,4 @@
-\chapter{The spectrum of \texorpdfstring{$A$}{A}}	\label{chap4}
+\chapter{The spectrum of $A$}	\label{chap4}
 In this chapter, we will prove the main result stating that for the Schrödinger operator $A$ with periodic delta potential
 	\begin{equation}
 		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{MainResult}
@@ -17,7 +17,7 @@ where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$.
 			 \frac{ \langle \left( \frac{d}{dx} + i\tilde{k} \right) v , \left( \frac{d}{dx} + i\tilde{k} \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} & \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} \frac{ \langle \left( \frac{d}{dx} + ik \right) v , \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} \notag \\
 			& ~\quad \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \frac{2 |k-\tilde{k}|\|v'\|_{L^{2}(J)} \| v \|_{L^{2}(J)}}{\| v \|^{2}_{L^{2}(J)}} \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left| |k|^{2} - |\tilde{k}|^{2} \right| \label{**-condition}
 		\end{align}
-		Moreover, 
+		Moreover, we can estimate
 		\begin{align*}
 			2 \| v' \|_{L^{2}(J)} \| v \|_{L^{2}(J)} & \leq 2 \| \left( \frac{d}{dx} + ik \right) v\|_{L^{2}(J)} \| v \| + 2|k| \|v\|^{2}_{L^{2}(J)} \\
 			& \leq \| \left( \frac{d}{dx} + ik \right) v \|^{2}_{L^{2}(J)} + \| v \|^{2}_{L^{2}(J)} + 2 |k| \| v \|^{2}_{L^{2}(J)} \\
@@ -28,7 +28,7 @@ where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$.
 			 \frac{ \langle \left( \frac{d}{dx} + i\tilde{k} \right) v , \left( \frac{d}{dx} + i\tilde{k} \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} & \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} (1 \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} |k - \tilde{k}|) \frac{ \langle \left( \frac{d}{dx} + ik \right) v , \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} \\
 			& ~\quad \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left( |k - \tilde{k}| (1 + 2|k|) + \left| |k|^{2} - |\tilde{k}|^{2} \right| \right).
 		\end{align*}		
-		Thus the min-max-principle gives
+		Thus the min-max-principle gives for $\left| k - \tilde{k} \right| < 1$
 		\begin{align*}
 			\lambda_{s}(\tilde{k}) \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} \left( 1 \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} |k - \tilde{k}| \right) \lambda_{s}(k) \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left( |k - \tilde{k}| (1 + 2|k|) + \left| |k|^{2}- |\tilde{k}|^{2} \right| \right),
 		\end{align*}
@@ -60,17 +60,20 @@ The first part of the statement \eqref{MainResult} is
 		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies
 		\[ A \psi_{s} = \lambda \psi_{s} \]
 		\enquote{locally}, i.e. 
-		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i + 1}), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \\ \Big\}, \]
+		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \\ \Big\}, \]
 		thus $\psi_{s} \in \mathcal{D}(A)$ and  $ -\psi_{s}'' = \lambda \psi_{s} \text{ on each } \Omega_{j} \setminus \{ x_{j} \}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that
 			\[ \eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \]
 		and define, for each $l \in \N$,
 			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]
+		\begin{figure*}[h!] \centering
+	  		\includegraphics[width=0.75\textwidth]{Periodic_square_potential_130707} 
+		\end{figure*}
 	 	Then
 		\begin{align}
 			(A - \lambda I) u_{l} & = \sum_{j \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{j \in \N} \left[ \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \left( \eta\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
-				& ~\qquad - \frac{2}{l} \sum_{j \in \N} \left[ \left( \eta'\left(\frac{|\cdot|}{l}\right) \psi_{s}'(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})}  \right] \notag \\
-				& ~\qquad - \frac{1}{l^{2}} \sum_{j \in \N} \left[ \left( \eta''\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
+				& ~\qquad - \frac{2}{l} \sum_{j \in \N} \left[ \left( \eta'\left(\frac{|\cdot|}{l}\right) \psi_{s}'(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})}  \right] \notag \\
+				& ~\qquad - \frac{1}{l^{2}} \sum_{j \in \N} \left[ \left( \eta''\left(\frac{|\cdot|}{l}\right) \psi_{s}(\cdot, k) \right)\Big|_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] \notag \\
 				& = \sum_{j \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{j}, x_{j+1})} \cdot \mathds{1}_{(x_{j}, x_{j+1})} \right] + R \notag
 		\end{align}
 		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
@@ -79,19 +82,20 @@ The first part of the statement \eqref{MainResult} is
 		\end{equation}
 		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, this gives
 		\[ \frac{1}{\|u_{l}\|}\| (A - \lambda I) u_{l} \| \leq \frac{c}{l} \]
-		Now, as moreover $u_{l} \in D(A)$ this results in
+		Now, as moreover $u_{l} \in \mathcal{D}(A)$ this results in
 			\[ \frac{1}{\|u_{l} \|} \| (A - \lambda I) u_{l} \| \rightarrow 0 \text{ as } l \rightarrow \infty \]
 		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
 	\end{proof}
 \end{theorem}	
 
-{\color{gray} % todo Martin rework last chapter
+The other inclusion can be shown by simply using the Floquet transformation and the completeness of the Bloch waves. Hence, this prove doesn't differ from the one of any m-th order linear differential operator with periodic coefficients as in \cite[Chapter 3]{Plum10}. Again, due to completeness I still want to list it here.
+
 \begin{theorem} \label{4.1:thm-MainResult.SecondInclusion}
 
 	$\sigma(A) \subset \bigcup_{s \in \N} I_{s}.$
 
 	\begin{proof}
-		Let $\lambda \in \R \setminus \bigcup_{s \in \N} I_{s}$. We have to prove that $\lambda \in \rho(A)$, i.e. for each $f \in L^{2}(\R)$ there exists some $u \in D(A)$ satisfying $(A-\lambda I)u = f$. For given $f \in L^{2}(\R)$, we define, for $l \in \N$, 
+		Let $\lambda \in \R \setminus \bigcup_{s \in \N} I_{s}$. We have to prove that $\lambda \in \rho(A)$, i.e. for each $f \in L^{2}(\R)$ there exists some $u \in \mathcal{D}(A)$ satisfying $(A-\lambda I)u = f$. For given $f \in L^{2}(\R)$, we define, for $l \in \N$, 
 			\[ f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k) dk \]
 			and
 			\begin{equation}
@@ -133,15 +137,15 @@ The first part of the statement \eqref{MainResult} is
 		\begin{equation}
 				(A - \lambda I) u_{l} = f_{l} \text{ for all } l \in \N \label{lefttoprove}
 			\end{equation} 
-		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$ for all $v \in D(A)$, whence Theorem \ref{3.16} implies $u_{l} \in D(A)$, and
+		which implies that $\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle$ for all $v \in \mathcal{D}(A)$, whence Theorem \ref{3.16} implies $u_{l} \in \mathcal{D}(A)$, and
 			\[ (A - \lambda I) u_{l} = f_{l} \quad \text{ for all } l \in \N \]
 		Since $A$ is closed, \eqref{ulflconvergence} now implies
-			\[ u \in D(A) \text{ and } (A - \lambda I) u = f \]
+			\[ u \in \mathcal{D}(A) \text{ and } (A - \lambda I) u = f \]
 		which is the desired result.
 		
 		We are left to prove is \eqref{lefttoprove}, i.e. that
 			\begin{equation}
-				\langle u_{l} , (A - \lambda I) \varphi \rangle_{L^{2}(\R)} = \langle f_{l},\varphi \rangle_{L^{2}(\R)} \quad \forall \varphi \in C^{\infty}_{0}(\R). \label{lefttoshow2}
+				\langle u_{l} , (A - \lambda I) \varphi \rangle_{L^{2}(\R)} = \langle f_{l},\varphi \rangle_{L^{2}(\R)} \quad \forall \varphi \in C_{0}^{\infty}(\R). \label{lefttoshow2}
 			\end{equation} 
 		So, let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open interval containing $\supp(\varphi)$ in its interior. Both the functions
 		\begin{align*}
@@ -172,4 +176,3 @@ The first part of the statement \eqref{MainResult} is
 			i.e. \eqref{lefttoshow2}.
 	\end{proof}
 \end{theorem}
-}
