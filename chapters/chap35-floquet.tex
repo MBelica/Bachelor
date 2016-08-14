@@ -1,0 +1,74 @@
+\chapter{The Floquet transformation}
+
+In the next chapter we are going to show that the spectrum of the operator $A$ can be constructed through the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For that we need two results involving the Floquet transformation, which transfers the problem from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. Even though the following two results do not differ in both the statement or the proof from standard theory, as in \cite[Chap. 3]{Plum10}, I still want to list them here for completeness.
+
+\begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
+	The Floquet transformation $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ 
+	\begin{equation}
+		(Uf)(x, k) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{n \in \Z} f(x - n) e^{ikn} \quad (x \in \Omega, k \in B). \label{floquet-transformation}
+	\end{equation}
+	is an isometric isomorphism, with inverse given by
+		\begin{equation}
+			(U^{-1}g)(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in \Z). \label{3.8}
+		\end{equation} 
+	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, the inverse simplifies to
+		\begin{equation}
+			U^{-1} g = \frac{1}{\sqrt{|B|}} \int_{B} g(\cdot, k) dk. \label{3.9}
+		\end{equation}
+		
+	\begin{proof}
+		For $f \in L^{2}(\R)$,
+		\begin{equation}
+			\int_{\R} |f(x)|^{2} dx = \sum_{n \in \Z} \int_{\Omega} |f(x - n)|^{2} dx,\label{functionoverperiodicity}
+		\end{equation} 
+		where we used Beppo Levi's Theorem to exchange summation and integration. This shows that
+		\[ \sum_{n \in \Z} |f(x - n)|^{2} < \infty \text{ for almost every } x \in \Omega.\]
+		Thus, $(Uf)(x, k)$ is well-defined by \eqref{floquet-transformation} (as a Fourier series with variable $k$) for almost every $x \in \Omega$, and Parseval's equality gives for these $x$
+		\[ \int_{B}|(Uf)(x,k)|^{2} dk = \sum_{n \in \Z} |f(x - n)|^{2}. \]
+	 	This expression is in $L^{2}(\Omega)$ by \eqref{functionoverperiodicity}, and
+		\[ \| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}. \]
+		
+		We still haven't shown that $U$ is onto, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. Let $g \in L^{2}(\Omega \times B)$, then define
+		\begin{equation}
+			f(x - n) \coloneqq \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in\Z).\label{3.11}
+		\end{equation}
+		Parseval's Theorem states for fixed $x \in \Omega$ that $\sum_{n \in \Z} |f(x - n)|^{2} = \int_{B} |g(x, k)|^{2} dk$. Integrating this equality over $\Omega$ then yields
+		\begin{align*}
+			\int_{\Omega \times B} |g(x, k)|^{2} dx dk & = \int_{\Omega} \sum_{n \in \Z} |f(x - n)|^{2} dx  = \sum_{n \in\Z} \int_{\Omega} |f(x-n)|^{2} dx = \int_{\R} |f(x)|^{2} dx,	
+		\end{align*}
+		which means $f \in L^{2}(\R)$. For almost every $x \in \Omega$ \eqref{floquet-transformation} gives
+		\[ f(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} (Uf)(x,k) e^{-ikn} dk \quad (n \in \Z), \]
+		whence \eqref{3.11} implies $U f = g$ and \eqref{3.8}. Now \eqref{3.9} follows from \eqref{3.8} and exploiting $g(x + n, k) = e^{ikn} g(x, k)$.
+	\end{proof}				
+\end{theorem}
+
+\section{Completeness of the Bloch waves}
+
+Using the Floquet transformation $U$, we can now prove the property of completeness of the Bloch waves $\psi_{s}(\cdot, k)$ in $L^{2}(\Omega)$ when we vary $k$ over the Brillouin zone $B$.
+	
+\begin{theorem} \label{3.3:thm-flConvergence}
+		For each $f \in L^{2}(\R)$ and $l \in \N$, define
+			\begin{equation}
+				f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk \quad (x \in \R). \label{3.15}
+			\end{equation}
+		Then, $f_{l} \rightarrow f$ in $L^{2}(\R)$ as $l \rightarrow \infty$.
+
+	\begin{proof}
+		The last theorem tells us that $Uf \in L^{2}(\Omega \times B)$, which in return means that $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for almost all $k \in B$ by Fubini's Theorem. As $(\psi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\Omega)$ for each $k \in B$, we derive
+			\[ \lim_{l \rightarrow \infty} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|_{L^{2}(\Omega)} = 0 \text{ for almost every } k \in B \]
+		where 
+			\begin{equation}
+				g_{l}(x, k) \coloneqq \sum_{s=1}^{l} \langle(Uf)(\cdot, k), \psi_{s}(\cdot,k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k). \label{3.16}
+			\end{equation}
+		Moreover, we get by Bessel's inequality
+			\[ \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)}  \]
+		for all $l \in \N$ and almost every $k \in B$. Next, $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}, thus by Lebesgue's Dominated Convergence theorem
+		\[ \lim_{l \rightarrow \infty} \int_{B} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk  = \int_{B} \lim_{l \rightarrow \infty}  \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk = 0. \]
+		  All in all, this means
+			\begin{equation}
+				\| U f - g_{l} \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty \label{3.17}
+			\end{equation} 
+		 If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, using \eqref{3.15}, \eqref{3.16} and \eqref{3.9}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.17} gives
+			\[ \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
+	\end{proof}
+\end{theorem}

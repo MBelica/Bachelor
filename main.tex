@@ -3,10 +3,9 @@
 %	Create / Replace images
 %	Normen, A_k vs A, L2() H1 etc i,j,k index
 %   all indicies 
+%   Einleitungstexte hinzufügen, wohin und wie
+%   Verweis auf Kuchement!
 
-% gewöhnliche differentialgleichnungen walter
-
-% todo Want to Read:
 %  Very Important:
 % 	http://www.lti.kit.edu/rd_download/EPhys5Fcompl.pdf
 %  Important: 
@@ -15,15 +14,7 @@
 %  Interesting:
 % 	http://www.ece.uc.edu/~mcahay/QuantumSystems/KroenigPenney.pdf
 % 	http://ecee.colorado.edu/~bart/book/book/chapter2/pdf/ch2_3_8.pdf
-% 	http://www.tf.uni-kiel.de/matwis/amat/mw2_ge/kap_4/advanced/t4_1_2.html
-% 	http://www.phys.ufl.edu/~maslov/phz6426/phz6426_dkp.pdf
-% 	http://people.physik.hu-berlin.de/~sokolov/QM1/QMall/node46.html
-% 	https://nano.tu-dresden.de/~rgutierrez/2008SS_WPV_NM/SolutionKronigPenneyModel1.pdf
-%  Optional:
-% 	https://en.wikipedia.org/wiki/Spectrum#Energy
-% 	https://en.wikipedia.org/wiki/Continuous_spectrum
-% 	https://en.wikipedia.org/wiki/Discrete_spectrum
-
+\RequirePackage[l2tabu, orthodox]{nag}
 \documentclass[11pt]{mitthesis}
 
 \usepackage[utf8]{inputenc}
@@ -32,13 +23,15 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{booktabs}
 \usepackage{cmap}
 \usepackage{csquotes}
 \usepackage{dsfont}
 \usepackage{enumitem}
-\usepackage{hyperref}
+\usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
 \usepackage{lgrind}
 \usepackage{mathtools}
+\usepackage{microtype}
 \usepackage{nicefrac}
 \usepackage{xpatch}
 \usepackage[export]{adjustbox}
@@ -60,8 +53,15 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
+
+\newtheoremstyle{itshape}{}{}{\itshape}{}{\bfseries}{:}{ }{}
+\newtheoremstyle{normal}{}{}{\normalfont}{}{\bfseries}{:}{ }{}
+\theoremstyle{itshape}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem*{remark}{Remark}
+\theoremstyle{normal}
+\newtheorem*{definition}{Definition}
+\newtheorem*{definitions}{Definitions}
 \numberwithin{equation}{chapter}
 
 \begin{document}
@@ -72,6 +72,7 @@
 \include{chapters/chap1-introduction}
 \include{chapters/chap2-operator}
 \include{chapters/chap3-brillouin}
+\include{chapters/chap35-floquet}
 \include{chapters/chap4-spectrum}
 \include{chapters/chap5-multid}
 
