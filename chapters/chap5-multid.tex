@@ -54,7 +54,7 @@ yields an operator $A^{n}_{k}$ which we can define by considering analogous to b
 	\end{equation} 
 for for all $v \in H^{1}_{k, n}$.
 ~\newline ~\newline
-Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is well-defined and injective. In return, we are able to define 
+Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is well-defined and injective. In return, this allows us to define 
 	\[ A_{k}^{n} \coloneqq R_{\mu, k}^{n} + \mu I \]
 The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to \eqref{md-weak-formulation-res} to satisfy even
 	\[ \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{-}} \quad j = 1,2  \]
@@ -69,7 +69,7 @@ The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in
 
 By similar transformations of the problem \eqref{md-weak-formulation-res} as in \eqref{mod-eigv-problem} and \eqref{periodic-condition} we are able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B}$, and thus $I_{s} = \{ \lambda_{s}(k) : k \in \overline{B} \}$ is a compact real interval for each $s \in \N$.
 ~\newline ~\newline
-Ultimately, using the same arguments as in Chapter 4 based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}, we are able to prove the main result even for this multi-dimensional case, namely that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of compact intervals, i.e.
+Ultimately, using the same arguments as in Chapter 4 based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}, we are then able to prove the main result even for this multi-dimensional case, namely that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of compact intervals, i.e.
 	\[ \sigma(A) = \bigcup_{s \in \N} I_{s}. \]
 
 \section{Outlook}	
