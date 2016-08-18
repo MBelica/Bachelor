@@ -2,12 +2,29 @@
 
 In this last chapter, we are going to examine a more complex situation. We now want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $n-1$-dimensional surfaces inducing a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will merely give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems, as below.
 ~\newline ~\newline
-To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$ and hence $B = [-\pi, \pi]^{n}$. Contained in $Y$ let $S$ be a smooth surface, without a boundary with the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote for any $j \in \Z^{n}$ with $Y_{j} = Y + j$ the $j$th copy of $Y$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. % todo some better explanations
+To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$ and hence $B = [-\pi, \pi]^{n}$. Contained in $Y$ let $S$ be a smooth surface, without a boundary with the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote for any $j \in \Z^{n}$ with $Y_{j} = Y + j$ the $j$th copy of $Y$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Furthermore, we denote with $S_{i}^{+}$ and $S_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$.
 
-\begin{figure*}[h!] \centering
-	  \includegraphics[width=0.75\textwidth]{Periodic_square_potential_130707} 
-\end{figure*}
-~\newpage % todo temporarily
+\begin{figure}[!ht] \centering
+	\resizebox{.35\linewidth}{!}{
+	  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=4.285714285714286cm,y=4.285714285714286cm]
+	  \clip(-1.2,-1.2) rectangle (1.2,1.3);
+	  \fill[transparent,line width=0.4pt] (-1.,1.) -- (-1.,-1.) -- (1.,-1.) -- (1.,1.) -- cycle;
+	  \draw [line width=0.4pt] (-1.,1.)-- (-1.,-1.);
+	  \draw [line width=0.4pt] (-1.,-1.)-- (1.,-1.);
+	  \draw [line width=0.4pt] (1.,-1.)-- (1.,1.);
+	  \draw [line width=0.4pt] (1.,1.)-- (-1.,1.);
+	  \draw [rotate around={-166.60970691015552:(-0.017884043865981074,0.012185928443575623)}] (-0.017884043865981074,0.012185928443575623) ellipse (2.915306454226339cm and 1.8911924645535707cm);
+	  \draw ( 0.18, 0.35) node[anchor=north west] {$S$};
+	  \draw (-0.85,-0.56) node[anchor=north west] {$Y$};
+	  \draw (-1.2,0.125) node[anchor=north west] {$S_1^-$};
+	  \draw (1.05,0.125) node[anchor=north west] {$S_1^+$};
+	  \draw (-0.125,-1.05) node[anchor=north west] {$S_2^-$};
+	  \draw (-0.125, 1.25) node[anchor=north west] {$S_2^+$};
+	  \end{tikzpicture}
+	}
+	\caption{Periodicity cell for the multi-dimensional potential}
+\end{figure}
+
 The mathematical representation of the above is a multi-dimensional Schrödinger operator $A^{n}$ whose operation is formally defined by
 \begin{equation}
 	- \Delta + \rho \sum_{i \in \Z} \delta_{S_{i}} \label{the-operator-A-formally}
@@ -43,18 +60,35 @@ We can once again exert Lax-Migram's Theorem to prove in \eqref{md-weak-formulat
 	\end{enumerate}
 \end{theorem}
 
-Now, restricting again this problem to a fundamental domain of periodicity, for example $Y$,
-\begin{figure*}[h!] \centering
-	  \includegraphics[width=0.75\textwidth]{Periodic_square_potential_130707} 
-\end{figure*}
+\begin{figure}[!ht] \centering
+	\resizebox{.35\linewidth}{!}{
+	  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=5.0cm,y=5.0cm]
+		\clip(-1,-1) rectangle (1.1,1.1);
+		\fill[transparent,line width=0.4pt] (-1.,1.) -- (-1.,-1.) -- (1.,-1.) -- (1.,1.) -- cycle;
+		\draw [line width=0.4pt] (-1.,1.)-- (-1.,-1.);
+		\draw [line width=0.4pt] (-1.,-1.)-- (1.,-1.);
+		\draw [line width=0.4pt] (1.,-1.)-- (1.,1.);
+		\draw [line width=0.4pt] (1.,1.)-- (-1.,1.);
+		\draw [rotate around={-166.60970691015552:(-0.017884043865981074,0.012185928443575623)}] (-0.017884043865981074,0.012185928443575623) ellipse (3.4011908632640617cm and 2.2063912086458326cm);
+		\draw (0.17773598812780403,0.35749896759640476) node[anchor=north west] {$S$};
+		\draw (-0.8520310518542072,-0.5460385642587798) node[anchor=north west] {$Y$};
+		\draw [->] (0.14155897886779217,0.46905768120862523) -- (0.20343212114361697,0.7943332288652334);
+		\draw (0.20431062141766237,0.7694057835892095) node[anchor=north west] {$\eta$};
+		\draw (-0.014930103223669057,-0.24043028142540857) node[anchor=north west] {-};
+		\draw (0.15116135483794568,-0.4928892976790631) node[anchor=north west] {+};
+	  \end{tikzpicture}
+	}
+	\caption{Periodicity cell with normal $\eta$ on $S$}
+\end{figure}
 
-yields an operator $A^{n}_{k}$ which we can define by considering analogous to before the problem to find $u \in H^{1}_{k, n} \coloneqq \big\{ w \in H^{1}(Y) \colon w \big|_{S_{j}^{+}} = w \big|_{S_{j}^{+}} e^{i k_{j}}$ for $k \in [-\pi, \pi]^{2}, j = 1,2 \big\}$ such that
+Now, restricting again this problem to a fundamental domain of periodicity, for example $Y$,
+% todo todo
+We consider, analogous to before, the problem to find $u \in H^{1}_{k, n} \coloneqq \big\{ w \in H^{1}(Y) \colon w \big|_{S_{j}^{+}} = w \big|_{S_{j}^{+}} e^{i k_{j}}$ for $k \in [-\pi, \pi]^{2}, j = 1,2 \big\}$ such that
 	\begin{equation}
 		\int_{Y} \nabla u \overline{\nabla v} + \rho \int_{S} u \overline{v} ds - \mu \int_{Y} u \overline{v} = \int_{Y} f \overline{v}. \label{md-weak-formulation-res}
 	\end{equation} 
-for for all $v \in H^{1}_{k, n}$.
-~\newline ~\newline
-Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is well-defined and injective. In return, this allows us to define 
+for all $v \in H^{1}_{k, n}$. 
+Again, by Lax-Milgram's Theorem the existence of a unique solution $u \in H^{1}_{k, n}$ is ensured if $\mu$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined and injective. This allows us to define 
 	\[ A_{k}^{n} \coloneqq R_{\mu, k}^{n} + \mu I \]
 The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to \eqref{md-weak-formulation-res} to satisfy even
 	\[ \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{-}} \quad j = 1,2  \]
