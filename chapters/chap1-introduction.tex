@@ -57,7 +57,7 @@ The problem considered in this thesis arises from the Kronig-Penney model, see f
 
 where $b$ is the \enquote{support} and $\rho$ the magnitude of the potential.
 ~\newpage % temporarily
-In this thesis we will examine the spectrum of the operator describing the special case of the Kronig-Penney model when the particle moves through periodically distributed, singular potentials. Analytically speaking this means, taking the limit $b \rightarrow 0$ while $V_{0}$ remains of order $\rho b$ in the above described situation.
+We are interested in the spectrum of the operator describing the situation of the Kronig-Penney model when the particle moves through periodically distributed, singular potentials. With respect to the above this means taking the limit $b \rightarrow 0$ while $V_{0}$ remains of order $\rho b^{-1}$.
 
 \section*{Mathematical Basics}
 
@@ -80,12 +80,17 @@ Now, an important example for a Hilbert space is the Sobolev space $H^{k}(\Omega
 	\[ \| f_{n}^{(i)} - f^{(i)} \|_{\infty} \rightarrow 0 \quad \text{ for } n \rightarrow \infty \]
 	for all $i \in \N_{0}$. One can proof that this concept of convergence generates a topology on $C_{0}^{\infty}$ and one usually denoted with $\mathcal{D}(\R)$ the space $C_{0}^{\infty}$ equipped with this topology. From now on, we denote with $D'(\R)$ the space of all linear functionals on $C_{0}^{\infty}$ that are continuous with respect to this topology and call those functionals distributions.
 \end{definition}
+
 An important example for a distribution is the Dirac delta function $\delta_{x_{0}}$ where $x_{0} \in \R$. It is defined as the limit of a weakly converging sequence of functionals over normed symmetric around $x_{0}$ cumulative distribution functions $\delta_{\epsilon}$, whereas the support of those cumulative distributions converges to zero. It holds $\delta_{x_{0}} = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}$ in $D'(\R)$. An example for such a sequence is
+
 	\begin{equation}
 		\delta_{\epsilon}(x) = \frac{1}{\sqrt{2 \pi} \epsilon} e^{-\frac{x^{2}}{2 \epsilon^{2}}}. \label{smooth-potential}
-	\end{equation} 
+	\end{equation}
+	 
 Which implies the definition
-	\[ \delta_{x_{0}}(f) \coloneqq \int_{-\infty}^{\infty} \delta_{x_{0}} f(x) dx \coloneqq \lim_{\epsilon \rightarrow 0} \int_{-\infty}^{\infty} \delta_{\epsilon}(x - x_{0}) f(x) dx. \]
+
+	\[ \delta_{x_{0}}(f) \coloneqq \int_{\R} \delta_{x_{0}} f(x) dx \coloneqq \lim_{\epsilon \rightarrow 0} \int_{\R} \delta_{\epsilon}(x - x_{0}) f(x) dx. \]
+	
 Moreover, is easily seen that $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see \cite{WeisST}.
 
 \begin{definitions}

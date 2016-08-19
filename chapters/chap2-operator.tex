@@ -1,18 +1,29 @@
 \chapter{The one-dimensional Schrödinger operator $A$} \label{chap2}
 
-The mathematical representation of the above introduced problem can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. Formally the operation of $A$ is defined by
+The mathematical representation of the above introduced problem can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we are going to examine properties of $A$ such as its domain and show that $A$ is self-adjoint. Later, in chapters \ref{chap3} and \ref{chap4}, we will need these results to deduce characteristics about the spectrum of $A$.
+~\\ ~\\
+Formally the operation of $A$ is defined by
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
 \end{equation}
 on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Dirac delta distribution supported at the point $x_{i}$. $\Omega_{k}$ will hereafter identify the periodicity cell containing point $x_{k}$ and w.l.o.g. let $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$.
-~\\ ~\\  
-In general, one cannot say given a right-hand side $f \in L^{2}(\R)$ in which sense a solution exists to the problem $Au = f$, since the potential is given by a singular distribution. Suppose for the moment the problem is smooth, more specifically if the potential is given by \eqref{smooth-potential}, then formally multiplying by a test function and integrating by parts yields the so called weak-formulation to the problem which requires less regularity. Hence, motivated by this we consider, by taking the limit of the potential for $\mu \in \R$, the problem to find $u \in H^{1}(\R)$ such that
+
+~\\  
+In general, one cannot say, given $f \in L^{2}(\R)$, in which sense a solution to the problem 
+	\begin{equation}
+		Au = f \label{formal-problem}
+	\end{equation}
+	exists since the potential in $A$ is consists of a singular distribution. If we suppose for a moment that the problem is smooth, more specifically if the potential is given by \eqref{smooth-potential}, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem for whose solution less regularity is needed. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
 \begin{equation}
-	\int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int u \overline{v} = \int f \overline{v} \quad \forall v \in H^{1}(\R), \label{weak-formulation-of-A}
+	\int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v} = \int_{\R} f \overline{v} \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
-holds. 
-~\\ ~\\
-We should first note that left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate
+holds and call it the weak-formulation of \eqref{formal-problem}.
+
+\begin{remark}
+	Since $C_{0}^{\infty}(\R)$ is dense in $H^{1}(\R)$ with respect to the norm in $H^{1}(\R)$, \eqref{weak-formulation-of-A} holds also for all $v \in H^{1}(\R)$. % todo INTRODUCTION
+\end{remark}
+
+We should first note that the left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate
 \begin{align}
 	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( 2 |u( x_{i} + h )|^{2} +  2 h \int_{x_{i}}^{x_{i} + h} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
 		 & \leq 2 \sum_{i \in \Z} \left( \frac{1}{h} \int_{\Omega_{i}} |u( x )|^{2} dx + h \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right). \label{preestimation-for-potential}
@@ -73,7 +84,7 @@ The existence of a unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-o
 \end{theorem}
 Thus, there exists a unique solution $u \in H^{1}(\R)$ to the problem \eqref{weak-formulation-of-A-for-LM} for fixed $f \in L^{2}(\R)$, and the operator $R_{\mu} \colon L^{2}(\R) \rightarrow L^{2}(\R), f \mapsto u$ is well-defined for $\mu \in \R$ small enough, taking in mind that $\mathcal{R}(R_{\mu}) \subseteq H^{1}(\R)$. This mapping is injective since for $u_{1} = u_{2}$
 	\begin{equation}
-		0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v]= \int (f_{1} - f_{2}) \overline{v} \quad \forall v \in H^{1}(\R). \label{f1f2almosteverywhere}
+		0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v]= \int_{\R} (f_{1} - f_{2}) \overline{v} \quad \forall v \in H^{1}(\R). \label{f1f2almosteverywhere}
 	\end{equation} 
 	
 Since further $H^{1}(\R)$ is dense in $L^{2}(\R)$ this yields that the equality \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$ and therefore $f_{1} = f_{2}$ almost everywhere. Consequently $R_{\mu}$ is invertible and as a result we can now define the Schrödinger operator as follows 

@@ -1,11 +1,11 @@
-% todo General:
-%	Referenzen
-%	Create / Replace images
+% todo General:	
+%	Improve Images & Captions
 %	Normen, A_k vs A, L2() H1 etc i,j,k index
 %   all indicies 
 %   Einleitungstexte hinzufügen, wohin und wie
-%   Verweis auf Kuchement!
-%   Imagines & Captions
+%   Verweis auf Kuchement! Referenzen, andere Cites
+%   Semi-Periodic conditions to check! where + or minus
+%   compact embedding
 
 %  Very Important:
 % 	http://www.lti.kit.edu/rd_download/EPhys5Fcompl.pdf
@@ -21,8 +21,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
-\usepackage[dvipsnames]{xcolor}
 \usepackage[export]{adjustbox}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
 
 \usepackage{amsmath}
@@ -43,6 +43,7 @@
 \usepackage{tikz}
 \usepackage{xpatch}
 
+\pgfplotsset{compat=1.7}
 \usetikzlibrary{arrows}
 
 \pagestyle{plain}
@@ -73,6 +74,12 @@
 \newtheorem*{definition}{Definition}
 \newtheorem*{definitions}{Definitions}
 \numberwithin{equation}{chapter}
+
+% todo temporarily removed all proofs
+\usepackage{environ}
+\NewEnviron{killcontents}{}
+\let\proof\killcontents
+\let\endproof\endkillcontents
 
 \begin{document}
 
