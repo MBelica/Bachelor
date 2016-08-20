@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  20 AUG 2016 02:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  20 AUG 2016 16:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1172,29 +1172,29 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux
-(/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap35-floquet.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap5-multid.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
+(/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap35-floquet.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap5-multid.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap6-concl.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/appendix.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-Package nag Info: pgf.sty is broken: disabling dollar check on input line 85.
-Package nag Info: Command \frontmatter not defined, skipping amendment on input line 85.
-Package nag Info: Command \mainmatter not defined, skipping amendment on input line 85.
-Package nag Info: Command \backmatter not defined, skipping amendment on input line 85.
-Package nag Info: Command \RaggedLeft not defined, skipping amendment on input line 85.
-Package nag Info: Command \RaggedRight not defined, skipping amendment on input line 85.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+Package nag Info: pgf.sty is broken: disabling dollar check on input line 86.
+Package nag Info: Command \frontmatter not defined, skipping amendment on input line 86.
+Package nag Info: Command \mainmatter not defined, skipping amendment on input line 86.
+Package nag Info: Command \backmatter not defined, skipping amendment on input line 86.
+Package nag Info: Command \RaggedLeft not defined, skipping amendment on input line 86.
+Package nag Info: Command \RaggedRight not defined, skipping amendment on input line 86.
  (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count195
@@ -1220,7 +1220,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring OFF on input line 85.
+Package hyperref Info: Link coloring OFF on input line 86.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1228,14 +1228,14 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count201
 )
-LaTeX Info: Redefining \ref on input line 85.
-LaTeX Info: Redefining \pageref on input line 85.
-LaTeX Info: Redefining \nameref on input line 85.
+LaTeX Info: Redefining \ref on input line 86.
+LaTeX Info: Redefining \pageref on input line 86.
+LaTeX Info: Redefining \nameref on input line 86.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.out) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 85.
+LaTeX Info: Redefining \microtypecontext on input line 86.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1250,14 +1250,14 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 ) ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.12} (current compat level: 1.7).
 
-Package nag Info: Command \caption@xlabel not defined, skipping amendment on input line 85.
-Package nag Info: Command \captionabove not defined, skipping amendment on input line 85.
-Package nag Info: Command \captionbelow not defined, skipping amendment on input line 85.
-Package nag Info: Command \hc@caption not defined, skipping amendment on input line 85.
-Package nag Info: Command \topcaption not defined, skipping amendment on input line 85.
+Package nag Info: Command \caption@xlabel not defined, skipping amendment on input line 86.
+Package nag Info: Command \captionabove not defined, skipping amendment on input line 86.
+Package nag Info: Command \captionbelow not defined, skipping amendment on input line 86.
+Package nag Info: Command \hc@caption not defined, skipping amendment on input line 86.
+Package nag Info: Command \topcaption not defined, skipping amendment on input line 86.
 \openout2 = `kit-cover.aux'.
 
-(./kit-cover.tex <kit-logo.jpg, id=59, 199.7061pt x 91.3011pt>
+(./kit-cover.tex <kit-logo.jpg, id=63, 199.7061pt x 91.3011pt>
 File: kit-logo.jpg Graphic file (type jpg)
  <use kit-logo.jpg>
 Package pdftex.def Info: kit-logo.jpg used on input line 4.
@@ -1288,7 +1288,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.90 \include{chapters/chap1-introduction}
+l.91 \include{chapters/chap1-introduction}
                                            [1
 
 
@@ -1297,16 +1297,16 @@ l.90 \include{chapters/chap1-introduction}
 
  (./chapters/chap1-introduction.tex
 Chapter 1.
-[2
 
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 64--67
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
 
  []
 
-[3]
-Overfull \hbox (1.93039pt too wide) detected at line 109
+[2
+
+
+] [3]
+Overfull \hbox (1.93039pt too wide) detected at line 107
 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^UI [] [] \OMS/cmsy/m/n/10.95 D\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^UI\OT1/cmr/m/n/10.95 )[] [] [] \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ! D\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )[]
  []
 
@@ -1413,20 +1413,25 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 57.
 
 [16]
-Overfull \hbox (7.81818pt too wide) in paragraph at lines 68--70
+Overfull \hbox (7.81818pt too wide) in paragraph at lines 66--68
 \OT1/cmr/m/n/10.95 (-20) and the cor-re-spond-ing eigen-func-tion form a $\OMS/cmsy/m/n/10.95 h^^A\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 ^^Ai$\OT1/cmr/m/n/10.95 (-20) -orthonormal and com-plete sys-tem $(\OML/cmm/m/it/10.95  []\OT1/cmr/m/n/10.95 (-20) (\OMS/cmsy/m/n/10.95 ^^A\OML/cmm/m/it/10.95 ; k\OT1/cmr/m/n/10.95 (-20) ))[]$
  []
 
-) [17]
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
+
+ []
+
+[17]) [18]
 \openout2 = `chapters/chap35-floquet.aux'.
 
  (./chapters/chap35-floquet.tex
 Chapter 4.
-[18
+[19
 
 
 
-] [19]) [20]
+] [20]) [21]
 \openout2 = `chapters/chap4-spectrum.aux'.
 
  (./chapters/chap4-spectrum.tex
@@ -1444,21 +1449,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--9
 
  []
 
-[21
+[22
 
 
 
-] [22]
+] [23]
 Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-[23] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 163--167
+[24] [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
 
  []
 
-[26]) [27]
+[27]) [28]
 \openout2 = `chapters/chap5-multid.aux'.
 
  (./chapters/chap5-multid.tex
@@ -1468,21 +1473,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[28
 
-
-
-]
 Underfull \hbox (badness 10000) in paragraph at lines 31--35
 
  []
 
-[29]
+[29
+
+
+
+] [30]
 Underfull \hbox (badness 10000) in paragraph at lines 106--109
 
  []
 
-[30]) [31]
+[31]) [32]
+\openout2 = `chapters/chap6-concl.aux'.
+
+ (./chapters/chap6-concl.tex
+Chapter 7.
+) [33
+
+
+
+]
+\openout2 = `appendix.aux'.
+
+ (./appendix.tex) [34
+
+
+
+]
 \openout2 = `biblio.aux'.
 
  (./biblio.tex
@@ -1530,7 +1551,7 @@ Package nag Warning: Command \it is an old LaTeX 2.09 command.
 Package nag Warning: Command \it is an old LaTeX 2.09 command. 
 (nag)                Use \itshape or \textit instead on input line 12.
 
-) [32
+) [35
 
 
 
@@ -1538,39 +1559,39 @@ Package nag Warning: Command \it is an old LaTeX 2.09 command.
 \openout2 = `statement.aux'.
 
  (./statement.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 12--100
+Underfull \hbox (badness 10000) in paragraph at lines 12--101
 
  []
 
-[33
+[36
 
 
 ]
 
 Package nag Warning: 11 complaints in total.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
-(/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap35-floquet.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap5-multid.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+(/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap35-floquet.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap5-multid.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap6-concl.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/appendix.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 37322 strings out of 493089
- 839717 string characters out of 6134843
- 1036322 words of memory out of 5000000
- 39848 multiletter control sequences out of 15000+600000
- 24520 words of font info for 143 fonts, out of 8000000 for 9000
+ 37340 strings out of 493089
+ 840501 string characters out of 6134843
+ 1037132 words of memory out of 5000000
+ 39851 multiletter control sequences out of 15000+600000
+ 24469 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,15n,107p,10380b,2107s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (34 pages, 992821 bytes).
+Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (37 pages, 996566 bytes).
 PDF statistics:
- 519 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
- 132 named destinations out of 1000 (max. 500000)
- 15498 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 541 PDF objects out of 1000 (max. 8388607)
+ 473 compressed objects within 5 object streams
+ 136 named destinations out of 1000 (max. 500000)
+ 15506 words of extra memory for PDF output out of 17280 (max. 10000000)
 

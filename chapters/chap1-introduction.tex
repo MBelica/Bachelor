@@ -3,7 +3,7 @@
 The problem considered in this thesis arises from the Kronig-Penney model, see for example \cite[Chap. 3]{HeeringEP}, which describes an idealised quantum-mechanical system that models a quantum particle behaving as a matter wave moving in one-dimension through an infinite periodic array of rectangular potential barriers, i.e. through a space area in which a potential attains a local maximum. Such an array commonly occurs in models of periodic crystal lattices where the potential is caused by ions in the crystal structure. Those charged molecules create an electromagnetic field around themselves. Hence, any particle moving through such a crystal would be subject to a recurrent electromagnetic potential. Although a solid particle, simplified as a point mass, would be reflected at such a barrier, there is a possibility that the quantum particle, as it behaves like a wave, penetrates the barrier and continues its movement beyond. Assuming the spacing between all ions is equidistant the potential function $V(x)$ in the lattice can be approximated by a rectangular potential like this:
 
 \begin{figure}[!ht] \centering
-	\resizebox{.65\linewidth}{!}{
+	\resizebox{.45\linewidth}{!}{
 \definecolor{wqwqwq}{rgb}{0.3764705882352941,0.3764705882352941,0.3764705882352941}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw[->,color=wqwqwq] (-5.5,0.) -- (5.5,0.);
@@ -55,13 +55,11 @@ The problem considered in this thesis arises from the Kronig-Penney model, see f
 	\caption{Potential $V(x)$ of the Kronig-Penney model}
 \end{figure}
 
-where $b$ is the \enquote{support} and $\rho$ the magnitude of the potential.
-~\newpage % temporarily
-We are interested in the spectrum of the operator describing the situation of the Kronig-Penney model when the particle moves through periodically distributed, singular potentials. With respect to the above this means taking the limit $b \rightarrow 0$ while $V_{0}$ remains of order $\rho b^{-1}$.
+where $b$ is the \enquote{support} and $\rho$ the magnitude of the potential. We are interested in the spectrum of the operator describing the situation of the Kronig-Penney model when the particle moves through periodically distributed, singular potentials. With respect to the above this means taking the limit $b \rightarrow 0$ while $V_{0}$ remains of order $\rho b^{-1}$. 
 
 \section*{Mathematical Basics}
 
-For the upcoming analysis we need some basic concepts from functional analysis and spectral theory I wish to briefly review:
+For the upcoming analysis we need some basic concepts from functional analysis and spectral theory are here briefly reviewed:
 ~\newline ~\newline
 Let $C_{c}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. And will hereafter $\langle x, x \rangle$ denote the scalar product in $L^{2}(\R)$.
 
@@ -112,11 +110,4 @@ Furthermore, let $I$ denote the identity operator on $X$ and $A$ be a linear, bo
 	\end{enumerate}		
 \end{definitions}
 
-\begin{theorem}
-	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
-	
-	\begin{proof}
-		See \cite[Chap. 6]{WernerFA}
-	\end{proof}
-\end{theorem}
-
+Additionally we will through this thesis need some theorems and lemmata from functional analysis and spectral theory, which will be listed in the appendix.
