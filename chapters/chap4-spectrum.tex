@@ -1,15 +1,17 @@
 \chapter{The spectrum of $A$} \label{chap4}
-We will now prove the principal result, stating that for the operator $A$ it holds
+Now, in the \ref{chap4}th chapter will now prove the main result for the one-dimensional case stating that for the operator $A$ it holds that
 	\begin{equation}
-		\sigma(A) = \bigcup_{s \in \N} I_{s} \label{MainResult}
+		\sigma(A) = \bigcup_{s \in \N} I_{s}, \label{MainResult}
 	\end{equation}
 where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$. 
+~\\ ~\\
+To show this equality we first need to characterise the dependence of $I_{s}$ from $k$, more specifically that $\lambda_{s}(k)$ is continuous in $k$ and hence $I_{s}$ a compact interval.
 
 \begin{theorem}
 	For all $s \in \N$ the function $\lambda_{s}(k)$ is continuous in $k \in \overline{B}$.
 	\begin{proof}
 		By assumption our potential is bounded and we define 
-		$$H^{1}_{per} \coloneqq \{ 	v \in H^{1}(\Omega) : v(x - \frac{1}{2}) = v(x + \frac{1}{2}) \}. $$
+		$$H^{1}_{per} \coloneqq \left\{ 	v \in H^{1}(\Omega) : v\left(x - \frac{1}{2}\right) = v\left(x + \frac{1}{2}\right) \right\}. $$
 		In the transformed eigenvalue problem \eqref{mod-eigv-problem} the boundary conditions \eqref{periodic-condition} are periodic and independent from $k$. By Poincare's min-max principle for eigenvalues we have
 		\[ \lambda_{s}(k) = \underset{\dim U = s}{\min_{U \subseteq H^{1}_{per}(\Omega)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle A_{k} v, v \rangle_{L^{2}(\Omega)}}{\langle v, v \rangle_{L^{2}(\Omega)}}.  \] 
 		Now, let $k \in B$ be fixed. For all $\tilde{k} \in B$ and all $v \in H^{1}_{per}(\Omega)$ using triangular inequality we can estimate for $J \in \{ (x_{0} - \frac{1}{2}, x_{0}), (x_{0}, x_{0} + \frac{1}{2}) \}$:
@@ -136,7 +138,7 @@ The other inclusion can be shown by using the previous shown properties of the F
 		\end{equation}
 		Due to \eqref{4.9}, both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy semi-periodic boundary conditions. Hence, \eqref{eigv-problem}, \eqref{lambda-distance} and Parseval's identity yield
 		\begin{align*}
-			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\ % todo prove this
+			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& = \sum_{s=1}^{\infty}|\langle (A_{k} - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& = \sum_{s=1}^{\infty} |\lambda_{s}(k) - \lambda|^{2} |\langle v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& \geq \delta^{2} \| v(\cdot, k)\|^{2}_{L^{2}(\Omega)}.

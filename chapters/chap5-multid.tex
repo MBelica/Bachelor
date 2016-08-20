@@ -74,17 +74,17 @@ We can once again exert Lax-Migram's Theorem to prove in \eqref{md-weak-formulat
 		\draw (-0.8520310518542072,-0.5460385642587798) node[anchor=north west] {$Y$};
 		\draw [->] (0.14155897886779217,0.46905768120862523) -- (0.20343212114361697,0.7943332288652334);
 		\draw (0.20431062141766237,0.7694057835892095) node[anchor=north west] {$\eta$};
-		\draw (-0.014930103223669057,-0.24043028142540857) node[anchor=north west] {-};
-		\draw (0.15116135483794568,-0.4928892976790631) node[anchor=north west] {+};
+		\draw (-0.014930103223669057,-0.24043028142540857) node[anchor=north west] {$-$};
+		\draw (0.15116135483794568,-0.4928892976790631) node[anchor=north west] {$+$};
 	  \end{tikzpicture}
 	}
-	\caption{Periodicity cell with normal $\eta$ on $S$}
+	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}
 \end{figure}
 
 Now, restricting again this problem to a fundamental domain of periodicity, for example $Y$,
 % todo todo
 We consider, analogous to before, the problem to find 
-	\[ u \in H^{1}_{k, n} \coloneqq \big\{ w \in H^{1}(Y) \colon w \big|_{S_{j}^{-}} = w \big|_{S_{j}^{+}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \big\} \]
+	\[ u \in H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{S_{j}^{-}} = w \big|_{S_{j}^{+}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\} \]
 such that
 	\begin{equation}
 		\int_{Y} \nabla u \overline{\nabla v} + \rho \int_{S} u \overline{v} ds - \mu \int_{Y} u \overline{v} = \int_{Y} f \overline{v} \label{md-weak-formulation-res}
@@ -93,7 +93,7 @@ for all $v \in H^{1}_{k, n}$.
 Again exerting Lax-Milgram's Theorem the existence of a unique solution $u \in H^{1}_{k, n}$ is ensured if $\mu$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined and injective. This allows us to define 
 	\[ A_{k}^{n} \coloneqq R_{\mu, k}^{n} + \mu I. \]
 The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to \eqref{md-weak-formulation-res} to satisfy furthermore
-	\[ \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{-}} \quad \text{for } j = 1, 2.  \] % todo check this
+	\[ \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{-}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{+}} \quad \text{for } j = 1, 2.  \] % todo check this
 	
 \begin{theorem}
 	The operator $R_{\mu, k}^{n}$ is compact.	
