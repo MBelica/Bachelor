@@ -3,17 +3,16 @@
 The problem considered in this thesis arises from the Kronig-Penney model, see for example \cite[Chap. 3]{HeeringEP}, which describes an idealised quantum-mechanical system that models a quantum particle behaving as a matter wave moving in one-dimension through an infinite periodic array of rectangular potential barriers, i.e. through a space area in which a potential attains a local maximum. Such an array commonly occurs in models of periodic crystal lattices where the potential is caused by ions in the crystal structure. Those charged molecules create an electromagnetic field around themselves. Hence, any particle moving through such a crystal would be subject to a recurrent electromagnetic potential. Although a solid particle, simplified as a point mass, would be reflected at such a barrier, there is a possibility that the quantum particle, as it behaves like a wave, penetrates the barrier and continues its movement beyond. Assuming the spacing between all ions is equidistant the potential function $V(x)$ in the lattice can be approximated by a rectangular potential like this:
 
 \begin{figure}[!ht] \centering
-	\resizebox{.45\linewidth}{!}{
-\definecolor{wqwqwq}{rgb}{0.3764705882352941,0.3764705882352941,0.3764705882352941}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=wqwqwq] (-5.5,0.) -- (5.5,0.);
-\foreach \x in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.}
-\draw[shift={(\x,0)},color=wqwqwq] (0pt,-2pt);
-\draw[->,color=wqwqwq] (0.,-1.1) -- (0.,4.25);
-
-\clip(-5.5,-1.1) rectangle (5.5,4.25);
-\draw (-0.3,3.)-- (0.3,3.);
-\draw (0.3,0.)-- (0.3,3.);
+	\resizebox{.55\linewidth}{!}{
+		\definecolor{wqwqwq}{rgb}{0.3764705882352941,0.3764705882352941,0.3764705882352941}
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+			\draw[->,color=wqwqwq] (-5.5,0.) -- (5.5,0.);
+			\foreach \x in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.}
+				\draw[shift={(\x,0)},color=wqwqwq] (0pt,-2pt);
+			\draw[->,color=wqwqwq] (0.,-1.1) -- (0.,4.25);
+			\clip(-5.5,-1.1) rectangle (5.5,4.25);
+			\draw (-0.3,3.)-- (0.3,3.);
+			\draw (0.3,0.)-- (0.3,3.);
 \draw (-0.3,3.)-- (-0.3,0.);
 \draw (-1.7,3.)-- (-1.7,0.);
 \draw (-2.3,3.)-- (-1.7,3.);
@@ -61,14 +60,16 @@ where $b$ is the \enquote{support} and $\rho$ the magnitude of the potential. We
 
 For the upcoming analysis we need some basic concepts from functional analysis and spectral theory are here briefly reviewed:
 ~\newline ~\newline
-Let $C_{c}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. And will hereafter $\langle x, x \rangle$ denote the scalar product in $L^{2}(\R)$.
-
+Let $C_{0}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. And will hereafter $\langle x, x \rangle$ denote the scalar product in $L^{2}(\R)$.
 \begin{definition}[Weak derivative]
-	Let $\Omega \subseteq \R$ be an open set and let $u$ be a function in the Lebesgue space $L^{1}(\Omega)$. Then $v$ in $L^{1}(\Omega)$ is a weak derivative of $u$ if, 
-	\[ \int_{\Omega} u(t)\varphi'(t) dt = -\int_{\Omega} v(t) \varphi(t) dt \]
-for all $\varphi \in C_{0}^{\infty}(\Omega)$. 
+Let $\Omega \subseteq \R$ be open, and $f \in L^{1}_{loc}(\Omega)$. The function $f$ is said to have the weak derivative $g \in L^{1}_{loc}(\Omega)$ in $\Omega$ if  \[ - \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi \]holds for all $\varphi \in C_{0}^{\infty}(\Omega)$.
 \end{definition}
-Now, an important example for a Hilbert space is the Sobolev space $H^{k}(\Omega)$, which is defined to be the set of functions $f$ in $L^{2}(\Omega)$ such that the function $f$ and its weak derivatives up to the order $k$ have a finite $L^{2}(\Omega)$ norm, by admitting the inner product in terms of the $L^{2}(\Omega)$ inner product for all derivatives up to order $k$: 
+Now, an important example for a Hilbert space is the Sobolev space $H^{k}(\Omega)$.
+\begin{definition} Let $\alpha \in \N$ and denote with $D^{\alpha} u$ the $\alpha$-th weak derivate of $u$. We call the space
+\[ H^{k}(\Omega) \coloneqq \left\{ u \in L^{2}(\Omega) : D^{\alpha} u \in L^{2}(\Omega) \text{ for } 0 \leq \alpha \leq k \right\} \]
+equipped with the norm $\| \cdot \|_{H^{k}(\Omega)} \coloneqq \left( \sum_{0 \leq \alpha \leq k} \| D^{\alpha} \cdot \|_{L^{2}(\Omega)}^{2} \right)^{\frac{1}{2}}$ Sobolev space.
+\end{definition}
+ which is defined to be the set of functions $f$ in $L^{2}(\Omega)$ such that the function $f$ and its weak derivatives up to the order $k$ have a finite $L^{2}(\Omega)$ norm, by admitting the inner product in terms of the $L^{2}(\Omega)$ inner product for all derivatives up to order $k$: 
 	\[ \langle u , v \rangle_{H^{k}(\Omega)} = \sum_{i=0}^{k} \left\langle D^{i}u , D^{i} v \right\rangle_{L^{2}(\Omega)}. \] 	
 
 \begin{definition}[Distributions]
@@ -89,14 +90,16 @@ Which implies the definition
 
 	\[ \delta_{x_{0}}(f) \coloneqq \int_{\R} \delta_{x_{0}} f(x) dx \coloneqq \lim_{\epsilon \rightarrow 0} \int_{\R} \delta_{\epsilon}(x - x_{0}) f(x) dx. \]
 	
-Moreover, is easily seen that $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see \cite{WeisST}.
+Moreover, is easily seen that $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see \cite[Chap. 1.4]{WeisST}.
 
 \begin{definitions}
 Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \supset X$. 
 \begin{enumerate}[label=\alph*\upshape)]
 	\item We call $A$ closed if $graph(A) \coloneqq \{ (x, Ax) : x \in \mathcal{D}(A) \} \subseteq X \times Y$ is a closed set.
+	\item The operator $A^{*} : \mathcal{D}(A^{*}) \rightarrow H $ is called the adjoint of $A$ and is defined by
+		\[ \mathcal{D}(A^{*}) \coloneqq \{ u \in H : \exists u^{*} \in H ~\forall v \in \mathcal{D}(A) \langle u, A v \rangle = \langle u^{*} , v \rangle \} \]		and $A^{*} u \coloneqq u^{*}$ for $u \in \mathcal{D}(A^{*})$. Note that for $u \in \mathcal{D}(A^{*})$, $u^{*}$ is uniquely determined. 
 \end{enumerate}
-Are $X, Y$ Hilbert spaces and $A$ a bounded operator we call
+Are $X, Y$ Hilbert spaces, $\langle \cdot, \cdot \rangle$ denotes the scalar product on $Y$ and $A$ a bounded operator, we call
 \begin{enumerate}[label=\alph*\upshape)]  \setcounter{enumi}{1}
 	\item $A$ symmetric, if $\langle Tx,y \rangle = \langle x ,Ty \rangle$ for all $x,y \in \mathcal{D}(A)$, and
 	\item $A$ self-adjoint, if $A$ is densely defined on $X$ and coincides with its adjoint.
@@ -110,4 +113,10 @@ Furthermore, let $I$ denote the identity operator on $X$ and $A$ be a linear, bo
 	\end{enumerate}		
 \end{definitions}
 
-Additionally we will through this thesis need some theorems and lemmata from functional analysis and spectral theory, which will be listed in the appendix.
+Finally, in chapters \ref{chap3}, \ref{chap5} we will examine so called compact operators and some of their properties.
+
+\begin{definition}
+	Let $X$ be a normed space and $Y$ a Banach space. A linear operator $A \colon X \rightarrow Y$ is called compact, if $T(U_{X})$ is relativ compact in $Y$.
+\end{definition}
+
+Additionally, throughout this thesis we will need some theorems and lemmata from functional analysis and spectral theory, which will be listed in the appendix.

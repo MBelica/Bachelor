@@ -3,18 +3,19 @@ Finally, we are able to prove the main result for the one-dimensional case stati
 	\begin{equation}
 		\sigma(A) = \bigcup_{s \in \N} I_{s}, \label{MainResult}
 	\end{equation}
-where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$. 
+where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$. We will prove that  each $I_{s}$ is a compact interval, this means that the spectrum shows a \enquote{band-gap} structure. 
 ~\\ ~\\
-To show this equality we first need to characterise the dependence of $I_{s}$ from $k$, more specifically that $\lambda_{s}(k)$ is continuous in $k$ and hence $I_{s}$ is for each $k$ a compact interval.
+To prove this equality we first need to characterise the dependence of $I_{s}$ from $k$, more specifically that $\lambda_{s}(k)$ is continuous in $k$ and hence $I_{s}$ being for each $k$ a compact interval.
 
 \begin{theorem}
 	For all $s \in \N$ the function $\lambda_{s}(k)$ is continuous in $k \in \overline{B}$.
+	
 	\begin{proof}
-		By assumption our potential is bounded and we define 
+		Let us define 
 		$$H^{1}_{per} \coloneqq \left\{ 	v \in H^{1}(\Omega) : v\left(x - \frac{1}{2}\right) = v\left(x + \frac{1}{2}\right) \right\}. $$
-		In the transformed eigenvalue problem \eqref{mod-eigv-problem} the boundary conditions \eqref{periodic-condition} are periodic and independent from $k$. By Poincare's min-max principle for eigenvalues we have
+		In the transformed eigenvalue problem \eqref{mod-eigv-problem} the boundary conditions \eqref{periodic-condition} are periodic and independent of $k$. By Poincare's min-max principle for eigenvalues we have
 		\[ \lambda_{s}(k) = \underset{\dim U = s}{\min_{U \subseteq H^{1}_{per}(\Omega)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle A_{k} v, v \rangle_{L^{2}(\Omega)}}{\langle v, v \rangle_{L^{2}(\Omega)}}.  \] 
-		Now, let $k \in B$ be fixed. For all $\tilde{k} \in B$ and all $v \in H^{1}_{per}(\Omega)$ using triangular inequality we can estimate for $J \in \{ (x_{0} - \frac{1}{2}, x_{0}), (x_{0}, x_{0} + \frac{1}{2}) \}$:
+		Now, let $k \in B$ be fixed. For all $\tilde{k} \in B$ and all $v \in H^{1}_{per}(\Omega)$ using triangular inequality we can estimate for $J \in \left\{ (x_{0} - \frac{1}{2}, x_{0}), (x_{0}, x_{0} + \frac{1}{2}) \right\}$:
 		\begin{align}
 			 \frac{ \langle \left( \frac{d}{dx} + i\tilde{k} \right) v , \left( \frac{d}{dx} + i\tilde{k} \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} & \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} \frac{ \langle \left( \frac{d}{dx} + ik \right) v , \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} \notag \\
 			& ~\quad \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \frac{2 |k-\tilde{k}|\|v'\|_{L^{2}(J)} \| v \|_{L^{2}(J)}}{\| v \|^{2}_{L^{2}(J)}} \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left| |k|^{2} - |\tilde{k}|^{2} \right| \label{**-condition}
@@ -34,9 +35,9 @@ To show this equality we first need to characterise the dependence of $I_{s}$ fr
 		\begin{align*}
 			\lambda_{s}(\tilde{k}) \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} \left( 1 \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} |k - \tilde{k}| \right) \lambda_{s}(k) \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left( |k - \tilde{k}| (1 + 2|k|) + \left| |k|^{2}- |\tilde{k}|^{2} \right| \right),
 		\end{align*}
-		Which means ultimately
+		which, eventually, yields
 		\[ |\lambda_{s}(\tilde{k}) - \lambda_{s}(k)| \leq |k - \tilde{k}| \left( \lambda_{s}(k) + 1 + 2|k| + |k| + |\tilde{k}|\right). \] 
-		Now, the eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ and not the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions and as the eigenvalues for the Dirichlet boundary condition are independent from $k$, $\lambda_{s}(k)$ is uniformly bounded and hence continuous.
+		Now, thew eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ rather than on the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions and, as the eigenvalues for the Dirichlet boundary condition are independent of $k$, $\lambda_{s}(k)$ is uniformly bounded and hence continuous. % todo kevin dirichlet
 	\end{proof}
 \end{theorem}
 
@@ -47,15 +48,15 @@ To show this equality we first need to characterise the dependence of $I_{s}$ fr
 	\end{equation} 	
 \end{remark}
 
-Through \eqref{Iisacompactrealinterval} we get moreover that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that
+From \eqref{Iisacompactrealinterval} also follows that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that % todo dirichlet oben unten gleich
 	\begin{equation}
 		\bigcup_{s \in \N} I_{s} \text{ is closed.} \label{UIclosed}
 	\end{equation}
 	
-The first part of the statement \eqref{MainResult} is 
+Now, we start proving \eqref{MainResult} by proving the following theorem.
 
 \begin{theorem} \label{4.1:thm-MainResult.FirstInclusion}
-	$\sigma(A) \supset \bigcup_{s \in \N} I_{s}.$
+	$\sigma(A) \supseteq \bigcup_{s \in \N} I_{s}.$
 	
 	\begin{proof}
 		Let $\lambda \in \bigcup_{s \in \N} I_{s}$, i.e. $\lambda = \lambda_{s}(k)$ for some $s \in \N$ and some $k \in \overline{B}$, and 
@@ -65,8 +66,8 @@ The first part of the statement \eqref{MainResult} is
 		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies
 		\[ A \psi_{s} = \lambda \psi_{s} \]
 		\enquote{locally}, i.e. 
-		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \\ \Big\}, \]
-		thus $\psi_{s} \in \mathcal{D}(A)$ and  $ -\psi_{s}'' = \lambda \psi_{s} \text{ on each } \Omega_{j} \setminus \{ x_{j} \}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that
+		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \Big\}, \]
+		thus $\psi_{s} \in \mathcal{D}(A)$ and  $ -\psi_{s}'' = \lambda \psi_{s}$ on $\R \setminus \bigcup_{i \in \Z} x_{i}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that 
 			\begin{equation}
 				\eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \label{eta}
 			\end{equation} 
@@ -85,11 +86,11 @@ The first part of the statement \eqref{MainResult} is
     		width=0.8\textwidth,
     		height=0.6\textwidth,
 		  ]
-			\addplot[color=blue,domain=-2.5:-0.5, smooth] {0};
-			\addplot[color=blue,domain=-0.5:-0.25, smooth] {1/(1+(1/(2.2+4*x)^84))};
-			\addplot[mark=none, domain=-0.25:0.25, blue, samples=2] {1};
-			\addplot[color=blue,domain=0.25:0.5, smooth] {(1/(1+(1/(2.2-4*x)^84))))};
-			\addplot[color=blue,domain=0.5:2.5, smooth] {0};
+			\addplot[color=black,domain=-2.5:-0.5, smooth] {0};
+			\addplot[color=black,domain=-0.5:-0.25, smooth] {1/(1+(1/(2.2+4*x)^84))};
+			\addplot[mark=none, domain=-0.25:0.25, black, samples=2] {1};
+			\addplot[color=black,domain=0.25:0.5, smooth] {(1/(1+(1/(2.2-4*x)^84))))};
+			\addplot[color=black,domain=0.5:2.5, smooth] {0};
 		  \end{axis}
 		\end{tikzpicture}
 	}
@@ -102,36 +103,39 @@ The first part of the statement \eqref{MainResult} is
 			(A - \lambda I) u_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
-		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
+		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
 		\begin{equation}
-			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}((\frac{l}{2}, \frac{l}{2}))} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
+			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
 		\end{equation}
+		Now, the semi-periodic structure allows us find additionally an upper boundary for $u_{l}$:
+		\[ \| u_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l} \]
 		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, this gives
-		\[ \frac{1}{\|u_{l}\|}\| (A - \lambda I) u_{l} \| \leq \frac{c}{l} \]
-		Now, as moreover $u_{l} \in \mathcal{D}(A)$ this results in
-			\[ \frac{1}{\|u_{l} \|} \| (A - \lambda I) u_{l} \| \rightarrow 0 \text{ as } l \rightarrow \infty \]
+		\[ \frac{1}{\|u_{l}\|_{L^{2}(\R)}}\| (A - \lambda I) u_{l} \|_{L^{2}(\R)} \leq \frac{c}{l} \]
+		As moreover $u_{l} \in \mathcal{D}(A)$, this results in
+			\[ \frac{1}{\|u_{l} \|_{L^{2}(\R)}} \| (A - \lambda I) u_{l} \|_{L^{2}(\R)} \rightarrow 0 \text{ as } l \rightarrow \infty \]
 		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
 	\end{proof}
 \end{theorem}	
 
-The other inclusion can be shown by using the previous shown properties of the Floquet transformation and the completeness of the Bloch waves. Hence, this prove doesn't differ from the one for an arbitrary m-th order linear differential operator with periodic coefficients. Again, for the sake of completeness, we include the proof here, as given in \cite[Chap. 3]{Plum10}.
+The other inclusion can be established by using the properties of the Floquet transformation shown above and the completeness of the Bloch waves. Hence, this proof follows that for an arbitrary $m$-th order linear differential operator with periodic coefficients. Again, for the sake of completeness, we include the proof here, as given in \cite[Chap. 3.6]{Plum10}.
 
-\begin{theorem} \label{4.1:thm-MainResult.SecondInclusion}
+ \begin{theorem} \label{4.1:thm-MainResult.SecondInclusion}
 
-	$\sigma(A) \subset \bigcup_{s \in \N} I_{s}.$
+	$\sigma(A) \subseteq \bigcup_{s \in \N} I_{s}.$
 
 	\begin{proof}
 		Let $\lambda \in \R \setminus \bigcup_{s \in \N} I_{s}$. Hence, due to \eqref{UIclosed}, there exists some $\delta > 0$ such that
 			\begin{equation}
 				|\lambda_{s}(k) - \lambda| \geq \delta \quad \text{ for all } s \in \N, k \in B \label{lambda-distance}
-			\end{equation} We have to prove that $\lambda \in \rho(A)$, i.e. for each $f \in L^{2}(\R)$ there exists some $u \in \mathcal{D}(A)$ satisfying $(A-\lambda I)u = f$. For an arbitrary $f \in L^{2}(\R)$ and $l \in \N$, we define 
+			\end{equation}
+		We are going to prove that $\lambda \in \rho(A)$, i.e. for each $f \in L^{2}(\R)$ there exists some $u \in \mathcal{D}(A)$ satisfying $(A-\lambda I)u = f$. For an arbitrary $f \in L^{2}(\R)$ and $l \in \N$, we define 
 			\[ f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k) dk \]
 			and
 			\begin{equation}
 				u_{l} \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk \label{ul}
 			\end{equation} 
 
-		As $\lambda$ is chosen to be outside of the spectrum the operator $A_{k} - \lambda I$ is invertible, therefore the following equation has for every $f \in L^{2}(\R)$ and $k \in \overline{B}$ a unique solution $v \in \mathcal{D}(A_{k})$
+		Since $\lambda$ is chosen to be outside of the spectrum the operator, $A_{k} - \lambda I$ is invertible, and therefore the following equation has for every $f \in L^{2}(\R)$ and $k \in \overline{B}$ a unique solution $v \in \mathcal{D}(A_{k})$
 		\begin{equation}
 			(A_{k} - \lambda I) v(\cdot, k) = (Uf)(\cdot, k) \quad \text{ on } \Omega. \label{4.9}			
 		\end{equation}
@@ -142,15 +146,15 @@ The other inclusion can be shown by using the previous shown properties of the F
 			& = \sum_{s=1}^{\infty} |\lambda_{s}(k) - \lambda|^{2} |\langle v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& \geq \delta^{2} \| v(\cdot, k)\|^{2}_{L^{2}(\Omega)}.
 		\end{align*}
-		By Theorem \ref{3.2:thm-UIsometricIsomorphism} we know that $f \in L^{2}(\Omega \times B)$, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{4.9} gives
+		By theorem \ref{3.2:thm-UIsometricIsomorphism} we know that $f \in L^{2}(\Omega \times B)$, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{4.9} gives
 			\begin{align*}
 				\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} & = \langle (A_{k} - \lambda I)(Uu)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& = \langle (Uu)(\cdot,k), (A_{k} - \lambda I) \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& = (\lambda_{s}(k) - \lambda) \langle Uu(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)}.
 			\end{align*}
-		Now, we are able to apply Theorem \ref{3.3:thm-flConvergence} this yields for \eqref{ul} that
+		Now, we are able to apply theorem \ref{3.3:thm-flConvergence} which yields for \eqref{ul} that
 			\[ u_{l}(x) = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uu)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk, \]
-		and whence Theorem \ref{3.3:thm-flConvergence} gives
+		and whence theorem \ref{3.3:thm-flConvergence} gives
 			\begin{equation}
 				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R) \text{ as } l \rightarrow \infty. \label{ulflconvergence}
 			\end{equation}
@@ -158,10 +162,10 @@ The other inclusion can be shown by using the previous shown properties of the F
 		\begin{equation}
 				\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle \text{ for all } l \in \N, v \in \mathcal{D}(A); \label{lefttoprove}
 			\end{equation} 
-		As $A$ is self-adjoint, by Theorem \ref{2.3:thm-ASelfAdjoint}, this implies $u_{l} \in \mathcal{D}(A)$, and $(A - \lambda I) u_{l} = f_{l}$ for all $l \in \N$. As furthermore every self-adjoint operator is also closed, \eqref{ulflconvergence} now implies
+		As $A$ is self-adjoint, by theorem \ref{2.3:thm-ASelfAdjoint}, this implies $u_{l} \in \mathcal{D}(A)$, and $(A - \lambda I) u_{l} = f_{l}$ for all $l \in \N$. As furthermore every self-adjoint operator is also closed, \eqref{ulflconvergence} now implies
 			\[ u \in \mathcal{D}(A) \text{ and } (A - \lambda I) u = f, \]
 		which is the desired result.
-		~\newline ~\newline
+		~\newline ~\newline % todo calculate last part of theorem
 		Eventually, we are left to prove \eqref{lefttoprove}. So, let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open interval containing $\supp(\varphi)$ in its interior. By Fubini's Theorem we know that 
 		\begin{align*}
 			r_{s}(x, k) & \coloneqq \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{(A - \lambda I) \varphi(x)}, 
@@ -171,7 +175,7 @@ The other inclusion can be shown by using the previous shown properties of the F
 		are in $L^{2}(K \times B)$, since \eqref{lambda-distance}, $(A_{k} - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$ imply 
 		\[ \| r_{s} \|_{L^{2}(K \times B)} \leq c \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}
 		\]
-		and analogously for $t_{s}$.	 Now	, as $K$ is bounded there exists a finite number of copies of $\Omega$ such that they cover $K$, hence $\psi_{s}(\cdot, k)$ is in $L^{2}(K)$ as a function of $k$, and $(Uf)(\cdot, k)$ is in $L^{1}(B)$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}. Since $B$ is equally bounded, $r$ and $t$ are also in $L^{1}(K \times B)$. Therefore, Fubini’s Theorem implies that the order of integration with respect to $x$ and $l$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul}, the fact that $\varphi$ has compact support in the interior of $K$ and \eqref{eigv-problem} we conclude
+		and analogously for $t_{s}$. As $K$ is bounded there exists a finite number of copies of $\Omega$ such that they cover $K$, hence $\psi_{s}(\cdot, k)$ is in $L^{2}(K)$ as a function of $k$, and $(Uf)(\cdot, k)$ is in $L^{1}(B)$ by theorem \ref{3.2:thm-UIsometricIsomorphism}. Since $B$ is equally bounded, $r$ and $t$ are also in $L^{1}(K \times B)$. Therefore, Fubini’s Theorem implies that the order of integration with respect to $x$ and $l$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul}, the fact that $\varphi$ has compact support in the interior of $K$ and \eqref{eigv-problem} we conclude
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
 					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \langle \psi_{s}(\cdot, k), \varphi \rangle_{L^{2}(K)} dk \\

@@ -1,8 +1,8 @@
 \chapter{Fundamental domain of periodicity and the Brillouin zone}  \label{chap3}
 
-In this chapter we will restrict the Kronig-Penney to one periodicity cell and examine the spectrum of the resulting operator. Solving the eigenvalue problem on the period cell while varying boundary conditions can be used to determine the eigenvalues of the unrestricted problem, which is exactly the approach we will use in chapter \ref{chap4}.
+In this chapter we will restrict the Kronig-Penney model to one periodicity cell and examine the spectrum of the resulting operator. Solving the eigenvalue problem on the period cell while varying boundary conditions for the solution functions can be used to determine the eigenvalues of the unrestricted problem, which is exactly the approach we will use in chapter \ref{chap4}.
 ~\\ ~\\
-Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, in this chapter we consider the operator $A_{k}$ on $\Omega$ formally defined by the operation
+Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in \overline{B}$, in this chapter we consider the operator $A_{k}$ on $\Omega$ formally defined by the operation 
 	\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}}. \]
 \begin{definition} 
 	For brevity let us define for every $k$ set of quasi-periodic functions  
@@ -11,78 +11,73 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 	\end{equation}
 \end{definition}	
 \begin{remark}
-Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the boundary of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$.  % todo INTRODUCTION
+Due to the fact that convergence in $H^{1}_{k}$ implies the convergence on the boundary of $\Omega$, $H^{1}_{k}$ is a closed subspace of $H^{1}(\R)$.
 \end{remark}
-We will hereafter refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions. Analogous to before, we now define $A_{k}$ by considering the problem of finding for $f \in L^{2}(\Omega)$ a function $u \in H^{1}_{k}$ such that the equation
+We will hereafter refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions. Analogously to before, we now define $A_{k}$ by considering the problem of finding for $f \in L^{2}(\Omega)$ a function $u \in H^{1}_{k}$ such that the equation
 	\[ \int_{\Omega} u' \overline{v'} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u \overline{v} = \int_{\Omega} f \overline{v} \]
 holds for all $v \in H^{1}_{k}$. One can apply the same arguments as above to prove that 
 	\[ R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k}, f \mapsto u \]
-is well-defined and injective. Consequently, we define now
+is well-defined and injective. Consequently, we define
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu I. \] 
 
-This chapter is now going to provide additional information about the operator $R_{\mu, k}$. We shall see that $R_{\mu, k}$ is compact from which we can deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$. % todo is it really true?
+In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we shall show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
 
-\section{The compactness of  $R_{\mu, k}$} % TODO INTRODUCTION COMAPCT EMBEDDING THEOREM?!
-% todo INTRODUCTION TRACE INEQUALITY
+\section{The compactness of  $R_{\mu, k}$} 
+
 \begin{theorem} \label{3.1:thm-Rmuk.isCompact}
 	The operator $R_{\mu, k}$ is compact.
 
 	\begin{proof}
 	Let $(f_{j})_{j} \in L^{2}(\Omega)$ be a  bounded sequence. We will show that 
-		\[ u_{j} \coloneqq R_{\mu, k} f_{j} \quad \text{ for all } j \geq 1. \]
-	is bounded a bounded sequence as well. Each such $u_{j}$ is by definition in $H^{1}_{k}$ and has to satisfies 
+		\[ u_{j} \coloneqq R_{\mu, k} f_{j} \quad \text{ for all } j \geq 1 \]
+	is a bounded sequence with respect to the $H^{1}$-Norm as well. Each such $u_{j}$ is by definition in $H^{1}_{k}$ and has to satisfy
 		\begin{equation}
-			\int_{\Omega} u_{j}' \overline{v'} + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j} \overline{v} = \int f_{j} \overline{v} \quad \forall v \in H^{1}_{k}. \label{ujsatisfy}
+			\int_{\Omega} u_{j}' \overline{v'} + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j} \overline{v} = \int_{\Omega} f_{j} \overline{v} \quad \forall v \in H^{1}_{k}. \label{ujsatisfy}
 		\end{equation} 
-	Now, the particular choice of $v = u_{j}$ in \eqref{ujsatisfy} yields with \eqref{estimation-for-potential} for $\mu$ small enough
+	Now, the particular choice of $v = u_{j}$ in \eqref{ujsatisfy} yields with \eqref{estimation-for-potential} for small enough $\mu$
 		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)}. \]
-	The compact embedding follows from the subsequently show estimation. As $H^1(\Omega) \subseteq C^{\frac{1}{2}}(\overline{\Omega})$ we can further estimate 
-		\begin{equation}
-			|f(x) - f(y)| \leq c |x - y|^{\frac{1}{2}} \text{ for some } c > 0, \label{eq:H1estimation}
-		\end{equation}
-	from which for $f \in B_{H^{1}_{k}} \coloneqq \{ f \in H^{1}_{k}(\Omega) : \| f \|_{H^{1}(\Omega)} \leq 1 \}$ it follows that 
-		\[ |f(x)|^{2} \leq 2 \| f \|_{L^{2}}^{2} + 2 \leq 4 \quad \forall x \in \Omega. \]
-	For an arbitrary $\epsilon > 0$ we now partition $\Omega$ into $n_{\epsilon}$ equidistant, disjoint intervals $I_{k}$, i.e. $\Omega = \bigcup_{j = 1}^{n_{\epsilon}} I_{j}$. As all $f \in B_{H^{1}_{k}}$ are uniformly bounded on $\Omega$ by \eqref{estimation-for-potential}, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1, k}, \dotsc, c_{\nu_{\epsilon}, k}$ such that 
-			$$ \forall f \in B_{H^{1}_{k}} ~\exists j \in \{1, \dotsc, \nu_{\epsilon} \}: \quad \left|f\left(\frac{k}{n_{\epsilon}}\right) - c_{j, k}\right| < \epsilon \quad \forall k \in \{ 1 , \dotsc, n_{\epsilon} \}. $$	
-	Hence, there are finitely many step functions such that for any $f \in L^{2}(\Omega)$ one of those step functions, let's call it $g \in L^{2}(\Omega)$ with function value $c_{k}$ on sub interval $I_{k}$ for each $k \in \{ 1, \dotsc, n_{\epsilon} \}$, such that
-		\begin{align*}
-			\| f - g \|^{2}_{L^{2}(\Omega)} & = \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - c_{k+1} |^{2} dx \\
-				& \leq  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(x) - f(\frac{k}{n}) |^{2} dx +  2 \sum_{k = 0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} | f(\frac{k}{n}) - c_{k+1} |^{2} dx \\
-				& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n} \left( c + \frac{1}{n} \right) < \epsilon^{2} \text{ for } n \text{ large enough.}
-		\end{align*}		 
-	This means in conclusion that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(\Omega)$ and in return $H^{1}_{k}$ can be compactly embedded in $L^{2}(\Omega)$. Thus, the operator $R_{\mu, k}$ is compact.
+	Thus, $\| u_{j} \|_{H^{1}(\Omega)} \leq C$ for all $j$. The assertion follows now from the compact embedding theorem for Sobolev spaces.
 	\end{proof}	
 \end{theorem}		
 
-\section{The spectrum of the operator $A_{k}$}	
-Using the compactness of $R_{\mu, k}$, we will from now consider the eigenvalue problem to find $\psi \in H^{1}_{k}$ such that
+\section{The spectrum of the operator $A_{k}$}	% todo correct this!
+Using the compactness of $R_{\mu, k}$, we know on the one hand that every non-zero $\lambda \in \sigma(R_{\mu, k})$ is an eigenvalue of $R_{\mu, k}$ and that the at most countable sequence of eigenvalues can only accumulate at $0$, for proofs see \cite[page 74 - 76]{WeisFA}. We will from now consider the eigenvalue problem to find $\psi \in H^{1}_{k}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}
 	\end{equation}
-	% TODO INTRODUCTION
-We understand $\psi$ extended by the boundary condition on $\partial \Omega$ in \eqref{quasi-periodic-condition} to the whole of $\R$ and call them Bloch waves. Obviously, $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and if $\tilde{\lambda}$ is an eigenvalue for the eigenfunction $\psi$ of $R_{\mu, k}$ then respectively is % TODO INTRODUCTION?
+We understand $\psi$ extended by the boundary condition on $\partial \Omega$ in \eqref{quasi-periodic-condition} to the whole of $\R$ and call them Bloch waves. By considering any eigenfunction $w$ of $R_{\mu, k}$ with the corresponding eigenvalue $\lambda_{w}$ we easily see that
+	\[ A_{k} w = R_{\mu, k}^{-1} w + \mu w = \left(\frac{1}{\lambda_{w}} + \mu\right) w, \]
+	i.e. $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and if $\tilde{\lambda}$ is an eigenvalue for the eigenfunction $\psi$ of $R_{\mu, k}$ then respectively
 	\[ \lambda = \frac{1}{\tilde{\lambda}} - \mu \]
- an eigenvalue for the same eigenfunction $\psi$ for the operator $A$, for proof see \cite{WeisFA}. Since $\Omega$ is bounded, and $R_{\mu, k}$ is a compact and symmetric operator, $A_{k}$ has moreover a purely discrete spectrum satisfying	
+is an eigenvalue for the same eigenfunction $w$ merely now for the operator $A$. Using all of this we see that $A_{k}$ has a purely discrete spectrum satisfying	
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
 and the corresponding eigenfunction form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. ~\\
 
-At the end of this chapter, we now want to transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent from $k$. This allows us to show that the eigenvalues as function $\lambda_{s}(k)$ of $k$ are continuous in $k \in \overline{B}$. For this define
-	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
-Then,
-	\begin{align*}
-		A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \\
-				& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \\
-				& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}.
-	\end{align*}
-Defining the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
-	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
- 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2})
- 	\end{cases} \] 
-and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, hence yields
-		\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
-Which shows us together with theorem \ref{3.1:thm-Rmuk.isCompact} that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions to the periodic eigenvalue problem
-	\begin{align}
-		\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
-		 \varphi(x - \frac{1}{2}) = \varphi(x + \frac{1}{2}). \label{periodic-condition}
-	\end{align}
-with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem}. % TODO INTRODUCTION
+At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This allows us to show the following.
+
+\begin{theorem}
+	The eigenvalues of $A_{k}$ as function $\lambda_{s}(k)$ of $k$ are continuous in $k \in \overline{B}$.
+
+	\begin{proof}
+		For this, we first define
+			\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
+		Then,
+		\begin{align}
+			A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \notag \\
+				& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
+				& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
+		\end{align}
+		Defining the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
+			\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
+ 				\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}),
+ 			\end{cases} \] 
+		and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
+			\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
+		From this and from theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions to the periodic eigenvalue problem
+		\begin{align}
+			\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
+		 	\varphi(x - \frac{1}{2}) = \varphi(x + \frac{1}{2}). \label{periodic-condition}
+		\end{align}
+		with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem} by \eqref{transformed}.
+	\end{proof}
+\end{theorem}

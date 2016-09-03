@@ -1,6 +1,6 @@
-\chapter{The Floquet transformation}
+\chapter{The Floquet transformation and the Bloch waves}
 
-In chapter \ref{chap4} we are going to show that the spectrum of the operator $A$ can be constructed through the above introduced eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ by varying $k$ over the Brillouin zone $B$. For this transfer we will need two results involving the Floquet transformation. With those we are able to move the problem from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. Even though the following two results do not differ in both the statement or the proof from standard theory, as in \cite[Chap. 3]{Plum10}, I still want to list them for completeness.
+In chapter \ref{chap4} we are going to show that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ introduced above by varying $k$ over the Brillouin zone $B$. For this purpose we will need two results involving the Floquet transformation to be able to move the problem from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. For the sake of completeness, we include here the proofs of both theorems, as given in \cite[Chap. 3.4, 3.5]{Plum10}.
 
 \begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
 	The Floquet transformation $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ 
@@ -25,10 +25,7 @@ In chapter \ref{chap4} we are going to show that the spectrum of the operator $A
 		\[ \sum_{n \in \Z} |f(x - n)|^{2} < \infty \text{ for almost every } x \in \Omega.\]
 		Thus, $(Uf)(x, k)$ is well-defined by \eqref{floquet-transformation} (as a Fourier series with variable $k$) for almost every $x \in \Omega$, and Parseval's equality gives for these $x$
 		\[ \int_{B}|(Uf)(x,k)|^{2} dk = \sum_{n \in \Z} |f(x - n)|^{2}. \]
-	 	This expression is in $L^{2}(\Omega)$ by \eqref{functionoverperiodicity}, and
-		\[ \| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}. \]
-		
-		We still haven't shown that $U$ is onto, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. Let $g \in L^{2}(\Omega \times B)$, then define
+	 	This expression is in $L^{2}(\Omega)$ by \eqref{functionoverperiodicity}, and we have $\| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}$. It is for us still to show that the mapping $U$ is surjective, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. Let $g \in L^{2}(\Omega \times B)$, then define
 		\begin{equation}
 			f(x - n) \coloneqq \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in\Z).\label{3.11}
 		\end{equation}
@@ -54,7 +51,7 @@ Using the Floquet transformation $U$, we can now prove the property of completen
 		Then, $f_{l} \rightarrow f$ in $L^{2}(\R)$ as $l \rightarrow \infty$.
 
 	\begin{proof}
-		The last theorem tells us that $Uf \in L^{2}(\Omega \times B)$, which in return means that $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for almost all $k \in B$ by Fubini's Theorem. As $(\psi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\Omega)$ for each $k \in B$, we derive
+		The last theorem tells us that $Uf \in L^{2}(\Omega \times B)$, which in return means that $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for almost all $k \in B$ by Fubini's Theorem. Since $(\psi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\Omega)$ for each $k \in B$, we derive
 			\[ \lim_{l \rightarrow \infty} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|_{L^{2}(\Omega)} = 0 \text{ for almost every } k \in B \]
 		where 
 			\begin{equation}
@@ -62,13 +59,14 @@ Using the Floquet transformation $U$, we can now prove the property of completen
 			\end{equation}
 		Moreover, we get by Bessel's inequality
 			\[ \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)}  \]
-		for all $l \in \N$ and almost every $k \in B$. Next, $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}, thus by Lebesgue's Dominated Convergence theorem
+		for all $l \in \N$ and almost every $k \in B$. Next, $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by theorem \ref{3.2:thm-UIsometricIsomorphism}, thus by Lebesgue's Dominated Convergence theorem
 		\[ \lim_{l \rightarrow \infty} \int_{B} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk  = \int_{B} \lim_{l \rightarrow \infty}  \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk = 0. \]
 		  All in all, this means
 			\begin{equation}
 				\| U f - g_{l} \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty \label{3.17}
 			\end{equation} 
-		 If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, using \eqref{3.15}, \eqref{3.16} and \eqref{3.9}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.17} gives
+		 Using \eqref{3.15}, \eqref{3.16} and \eqref{3.9}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.17} gives
 			\[ \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
+		and the assertion follows since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by theorem \ref{3.2:thm-UIsometricIsomorphism}.
 	\end{proof}
 \end{theorem}

@@ -1,24 +1,6 @@
-% Todo General:	
-%   Einleitungstexte und INTRODUCTION from chapter 3
-%	Normen, A_k vs A, L2() H1 etc i,j,k index
-%   L^2 over R/C?!?! H1 H2 the same...
-%   Referenzen, andere Cites! unter anderem Verweise auf Kuchment! 
-%   Semi-Periodic conditions to check! where + or -
-%   Compact embedding theorem
-%   all overlines
-% Very Important:
-% 	http://www.lti.kit.edu/rd_download/EPhys5Fcompl.pdf
-% Important: 
-% 	https://nano.tu-dresden.de/~rgutierrez/2008SS_WPV_NM/SolutionKronigPenneyModel1.pdf	
-% 	The likelihood that the particle will pass through the barrier is given by the transmission coefficient, whereas the likelihood that it is reflected is given by the reflection coefficient. Schrödinger's wave-equation allows these coefficients to be calculated.
-% Interesting:
-% 	http://www.ece.uc.edu/~mcahay/QuantumSystems/KroenigPenney.pdf
-% 	http://ecee.colorado.edu/~bart/book/book/chapter2/pdf/ch2_3_8.pdf
-% To ask:
-%   todo Andrii: all indicies A_k A
-%   todo Plum: Formal definition, page amount, indexices
-\RequirePackage[l2tabu, orthodox]{nag}
-\documentclass[11pt]{mitthesis}
+% bloch waves
+
+\documentclass[10pt]{mitthesis}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -30,8 +12,10 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{apptools}
 \usepackage{booktabs}
 \usepackage{cmap}
+\usepackage{chngcntr}
 \usepackage{csquotes}
 \usepackage{dsfont}
 \usepackage{enumitem}
@@ -48,14 +32,12 @@
 \pgfplotsset{compat=1.7}
 \usetikzlibrary{arrows}
 
-\pagestyle{plain}
-
 \makeatletter
+  \AtAppendix{\counterwithin{theorem}{chapter}}
   \xpatchcmd{\proof}{\@addpunct{.}}{\@addpunct{:}}{}{}
   \DeclareUnicodeCharacter{00A0}{ } 
   \def\supp{\operatorname{supp}}
   \setlength{\parindent}{0pt}
-  \xpatchcmd{\proof}{\@addpunct{.}}{\@addpunct{:}}{}{} 
   \@ifundefined{thechapter}{}{\def\thefigure{\thechapter.\arabic{figure}}} 
 \makeatother
 
@@ -72,16 +54,11 @@
 \theoremstyle{itshape}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem*{remark}{Remark}
-%\theoremstyle{normal}
 \newtheorem*{definition}{Definition}
 \newtheorem*{definitions}{Definitions}
 \numberwithin{equation}{chapter}
-
-% temporarily removed all proofs
-%\usepackage{environ}
-%\NewEnviron{killcontents}{}
-%\let\proof\killcontents
-%\let\endproof\endkillcontents
+\newtheorem{atheorem}{Theorem}[chapter]
+\renewcommand{\theatheorem}{A.\arabic{atheorem}}
 
 \begin{document}
 

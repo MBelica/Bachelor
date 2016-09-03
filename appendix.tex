@@ -1,9 +1,98 @@
-\chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix}
+\chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix} 
 
-\begin{theorem}
+% todo A appendix complete
+
+Hier eine Sammlung der Theoreme. die ich während der Arbeit verwende. Ich hoffe, dass die Liste vollständig ist und keine Fehler enthält. Der Text drumherum kommt noch, aber der ist unbedeutend. % x Martin todo
+
+\begin{atheorem}[The open set of resolvent values]
 	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
 	
 	\begin{proof}
-		See \cite[Chap. 6]{WernerFA}
+		See \cite[page 259]{WernerFA}.
 	\end{proof}
-\end{theorem}
+\end{atheorem}
+
+\begin{atheorem}
+	For $A$ beeing a self-adjoint operator, $\lambda \in \rho(A)$, $(A - \lambda I)^{-1}$ is bounded.
+	
+	\begin{proof}
+		Since every self-adjoint is closed, $(A - \lambda I)$ is as the shift also closed. Furthermore, the graph of $(A - \lambda I)^{-1}$ is simply the graph of $(A - \lambda I)$ rotated and hence $(A - \lambda I)^{-1}$ is closed as well. The closed Graph Theorem now yields the desired result.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Approximation by test functions]
+	$C_{0}^{\infty}(\R)$ is dense in $L^{p}(\R)$, if $1 \leq p < \infty$.
+	
+	\begin{proof}
+		See \cite[page 82]{WernerFA}. % x check this again
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[The spectrum of self-adjoint operators]
+	The spectrum of a self-adjoint operator $A$ is real.
+	
+	\begin{proof}
+		Let $\lambda$ be an eigenvalue of $A$, i.e. there exists $x \in X$ such that $A x = \lambda x$. From this it follows that $\langle A x, x \rangle = \langle \lambda x , x \rangle$. Using then the fact that $A$ is self-adjoint we can further deduce
+		\[ \lambda \langle x , x \rangle = \langle \lambda x , x \rangle = \langle A x, x \rangle = \langle x, A x \rangle = \langle x , \lambda x \rangle = \overline{\lambda} \langle  x , x \rangle \]
+		Hence, $\lambda = \overline{\lambda}$, which shows the desired result.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}
+	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$, and therefore a  Hilbert space with respect to the norm of $H^{1}(\Omega)$.
+	
+	\begin{proof} % x martin do the proof
+		coming
+%		: Let (fn)n∈N be a sequence of elements in Hφ1(Ω) converging to%f ∈ H1(Ω). Due to the Sobolev embedding of H1-functions into the space of continuous 1 ̃ ̃%functions, we can identify the H -functions fn and f with continuous functions f,fn. Since convergence with respect to the H1-norm implies pointwise convergence almost% ̃ ̃%everywhere, we can conclude that f(x) converges everywhere to f(x). In the following% ̃%let us denote f again instead of f. Thus, for k = 1,2:%f(ξk+) = lim fn(ξk+) = lim eiφk fn(ξk−) = eiφk lim fn(ξk−) = eiφk f(ξk−), n→∞ n→∞ n→∞%which shows the closer of Hφ1(Ω).%Analogously as in chapter (2.1) let us regard the equation% Aφu + μu = f%with f being an element of L2(Ω) and μ having the same properties as before. Then we%are able to formulate a weak formulation what we will write down in the following
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Eigenvectors of a compact, symmetric operator]
+	Let $H$ be a separable Hilbert space, and suppose $S \colon H \rightarrow H$ is a compact and symmetric operator. Then there exists a countable orthonormal basis of $H$ consisting of eigenvectors of $S$.
+	
+	\begin{proof}
+		See \cite[page 645]{Evans98}
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}
+	Let $[a, b]$ be a compact interval in $\R$. Then, $H^{1}([a, b])$ is embedded in $C([a, b])$
+	
+	\begin{proof}
+		Let $f$ be a smooth function and $x, y \in [a, b]$ such that $x \leq y$, then:
+		~\\ ~\\ % x martin todo
+		Thus, the supremum norm is dominated by the $H^{1}$-norm, which implies that, which means that this estimation holds for the completion H1([a, b]) as well.
+	\end{proof}
+\end{atheorem}
+
+We need the next theorem in two version, once in chapter \ref{chap3} and once in \ref{chap5}. This is also why I will separate the proofs:
+
+\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] % x I haveto prove this!
+Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Suppose $n > 2$. Then $H^{1}(U) \subset\subset L^{q}(U)$ for each $1 \leq q \leq p^{*}$.
+		
+			\begin{proof}
+				Follows from Rellich-Kondrachov compactness theorem, see for example \cite[page 272]{Evans98}.
+			\end{proof}
+		\item Suppose $n \in \{1, 2\}$. Then $H^{1}(U) \subset\subset L^{2}(U)$.
+			\begin{proof} To proof the embedding for $p=2$ note that from Rellich-Kondrachov compactness theorem it follows that $p^{*} \rightarrow \infty$ if $p \rightarrow n$. It is easily seen that if $(u_{n})_{n}$ is a $H^{1}(U)$-bounded sequence, then so it is bounded in $W^{1, n-\epsilon}(U)$ for some $\epsilon > 0$. Choosing $\epsilon$ such that $(n - \epsilon)^{*} > n$ hence allows using again via part a) the Rellich-Kondrachov compactness theorem and  this provides he existence of a $L^{2}(U)$ convergent subsequence. ~\\
+			For $n = 1$ this follows from Morrey's inequality and the Arzela Ascoli compactness criterion, see for example \cite[page 274]{Evans98}.
+			\end{proof}
+	\end{enumerate}
+\end{atheorem}
+
+\begin{atheorem}[Lax-Milgram]
+	Let $H$ be a Hilbert space where $\| \cdot \|$ denotes the norm on $H$, and let $B \colon H \times H \rightarrow \C$ be a sesquilinear form. If there exist constants $\alpha, \beta > 0$ such that
+		\begin{itemize}
+			\item $\left| B[u, v] \right| \leq \alpha \| u \| \|v \| \quad (u, v \in H)$ and
+			\item $Re(B[u,u]) \geq \beta \|u\|^{2} \quad (u \in H)$,
+		\end{itemize}
+		then there exists to each $l \in H^{*}$ a unique $w \in H$ such that
+		\[ B[v, w] = l(v) \]
+		hold for all $v \in H$.
+		
+		\begin{proof}
+			See \cite{PlumVL}.
+		\end{proof}
+\end{atheorem}

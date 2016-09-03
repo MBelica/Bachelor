@@ -1,11 +1,11 @@
-\chapter{The spectrum for the multi-dimensional case} \label{chap5}
+\chapter{The spectrum for the multi-dimensional case} \label{chap5} 
 
 In this last chapter, we are going to examine a more complex situation. We now want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will merely give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems, as below.
 ~\newline ~\newline
-To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$ and hence $B = [-\pi, \pi]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary with the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote for any $j \in \Z^{n}$ with $Y_{j} = Y + j$ the $j$th copy of $Y$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Furthermore, we denote with $S_{i}^{+}$ and $S_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$.
+To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary with the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote for any $j \in \Z^{n}$ with $Y_{j} = Y + j$ the $j$th copy of $Y$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $S_{i}^{+}$ and $S_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$.
 
 \begin{figure}[!ht] \centering
-	\resizebox{.35\linewidth}{!}{
+	\resizebox{.38\linewidth}{!}{
 	  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=4.285714285714286cm,y=4.285714285714286cm]
 	  \clip(-1.2,-1.2) rectangle (1.2,1.3);
 	  \fill[transparent,line width=0.4pt] (-1.,1.) -- (-1.,-1.) -- (1.,-1.) -- (1.,1.) -- cycle;
@@ -29,39 +29,48 @@ The mathematical representation of the above is a multi-dimensional Schrödinger
 \begin{equation}
 	- \Delta + \rho \sum_{i \in \Z} \delta_{S_{i}} \label{md-the-operator-A-formally}
 \end{equation}
-on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Dirac delta distribution on hypersurface $S_{i}$. that integrates any function $u \in L^{2}(\R)$ over the compact set $S_{i}$.  % todo rewrite this, maybe at the very start with direct delta functions get the definitions
-~\\ ~\\ 
+on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Dirac delta distribution on hypersurface $S_{i}$. Let us recall that on a hypersurface $S$ the Dirac delta acts on $u \in C_{0}^{\infty}(\R^{n})$ by
+	\[ \int_{\R^{n}} \delta_{S} u \coloneqq \int_{S} u ds . \]
+where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite{HeeringEP}.
+~\\ ~\\ % todo 6 Martin Important find that citation or whole replacement!
 Again motivated by the weak-formulation, given a right-hand side $f \in L^{2}(\R^{n})$ we consider for some $\mu \in \R$ the problem to find $u \in H^{1}(\R^{n})$ such that
 	\begin{equation}
 		\int_{\R^{n}} \nabla u \overline{\nabla v} + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u \overline{v} ds - \mu \int_{\R^{n}} u \overline{v} = \int_{\R^{n}} f \overline{v} \label{md-weak-formulation}
 	\end{equation} 
-holds for all $v \in H^{1}(\R^{n})$, where $s$ is the hypersurface measure associated to all $S_{j}$. 
+holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u v$ the traces. They are well defined as $u, v \in H^{1}(\R)$ and hence the trace in $L^{2}(\R)$, for a detailed explanation see \cite[page 164]{Adams}.  % todo 6 read about this traces
 
 \begin{remark}
-	The term originating from the potential is finite as
-	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u \overline{v} \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] % TODO CHECK THIS
-	Both terms on the right-hand side can be finitely estimated by the Trace theorem \cite[Chap. 5]{Evans98} as
+	The term originating from the potential is finite since
+	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u \overline{v} \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] % todo 6 Martin CHECK THIS
+	Both terms on the right-hand side can be finitely estimated by the trace theorem \cite[page 258]{Evans98} since
 	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq 2 \left( \frac{1}{h} \|u\|_{L^{2}(B_{j})}^{2} + h \| \nabla u \|_{L^{2}(B_{j})}^{2} \right) \]
-	for some $h > 0$. % todo more explicit and check thiS
+	for some $h > 0$. % todo 6 Martin more explicit and check thiS
 \end{remark}
 
-We can once again exert Lax-Migram's Theorem to prove in \eqref{md-weak-formulation} the existence of a unique solution $u \in H^{1}(\R^{n})$ in \eqref{md-weak-formulation} for any $f \in L^{2}(\R^{n})$ if $\mu$ is small enough, define the operator injective $R_{\mu}^{n} \colon f \mapsto u$ and define $A^{n}$ by means of $R_{\mu}^{n}$.
-
-\begin{remark}
-	The operator $A^{n}$ is self-adjoint.	
-\end{remark}
-
-% todo check this and rewrite theorem with proof
-\begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. By choosing similar to above different functions $v \in C^{\infty}(\R^{n})$ in \eqref{md-weak-formulation} we can further characterise such $u \in \mathcal{D}(A^{n})$, namely for all $j \in \Z^{n}$ it holds:
+We can once again exert Lax-Migram's Theorem to prove the existence of a unique solution $u \in H^{1}(\R^{n})$ in \eqref{md-weak-formulation} for any $f \in L^{2}(\R^{n})$ if $\mu \in \R$ is small enough. Hence, we can define the operator $R_{\mu}^{n} \colon f \mapsto u$ where $u \in H^{1}(\R^{n})$ is the solution of \eqref{md-weak-formulation}. Same as in theorem \ref{rmuinj} we can proof that $R_{\mu}^{n}$ is a bounded and injective operator. This on the other hand enables us to define $A^{n}$ by means of $R_{\mu}^{n}$:
+\[ A^{n} \coloneqq \left(R_{\mu}^{n}\right)^{-1} + \mu I. \]
+ 
+Using similar methods as in chapter \ref{chap2} we can prove the following two results.
+% todo 6 Martin check this
+\begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
 	\begin{enumerate}
 		\item $\Delta u \in L^{2}(B_{j})$, $\Delta u \in L^{2}(\Omega)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
 		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$
 	\end{enumerate}
+	
+	\begin{proof}
+ 		In section \ref{chap-2.2} we used particular functions $v \in C^{\infty}(\R)$ to prove the the equivalent properties of $\mathcal{D}(A)$. Hence, choosing in \eqref{md-weak-formulation} similar functions to those above will yield the asserted. 
+	\end{proof}
 \end{theorem}
 
+\begin{remark}
+	The operator $A^{n}$ is self-adjoint.	
+\end{remark}
+
+
 \begin{figure}[!ht] \centering
-	\resizebox{.35\linewidth}{!}{
+	\resizebox{.38\linewidth}{!}{
 	  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=5.0cm,y=5.0cm]
 		\clip(-1,-1) rectangle (1.1,1.1);
 		\fill[transparent,line width=0.4pt] (-1.,1.) -- (-1.,-1.) -- (1.,-1.) -- (1.,1.) -- cycle;
@@ -81,29 +90,28 @@ We can once again exert Lax-Migram's Theorem to prove in \eqref{md-weak-formulat
 	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}
 \end{figure}
 
-Now, restricting again this problem to a fundamental domain of periodicity, for example $Y$,
-% todo todo
-We consider, analogous to before, the problem to find 
-	\[ u \in H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{S_{j}^{-}} = w \big|_{S_{j}^{+}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\} \]
+Now, we restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$. Let us therefore, consider analogous to before, the problem to find 
+	\[ u \in H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{S_{j}^{+}} = w \big|_{S_{j}^{-}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\} \]
 such that
 	\begin{equation}
 		\int_{Y} \nabla u \overline{\nabla v} + \rho \int_{S} u \overline{v} ds - \mu \int_{Y} u \overline{v} = \int_{Y} f \overline{v} \label{md-weak-formulation-res}
 	\end{equation} 
-for all $v \in H^{1}_{k, n}$. 
-Again exerting Lax-Milgram's Theorem the existence of a unique solution $u \in H^{1}_{k, n}$ is ensured if $\mu$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined and injective. This allows us to define 
-	\[ A_{k}^{n} \coloneqq R_{\mu, k}^{n} + \mu I. \]
-The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to \eqref{md-weak-formulation-res} to satisfy furthermore
-	\[ \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{-}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{+}} \quad \text{for } j = 1, 2.  \] % todo check this
+holds for all $v \in H^{1}_{k, n}$. 
+~\\ ~\\
+Again exerting Lax-Milgram's Theorem, the existence of a unique solution $u \in H^{1}_{k, n}$ is ensured if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined and injective. This allows us to define 
+	\[ A_{k}^{n} \coloneqq \left(R_{\mu, k}^{n}\right)^{-1} + \mu I. \]
+as the operator considering our problem only on one periodicity cell. The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ of \eqref{md-weak-formulation-res} to satisfy furthermore
+	\[ \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{-}} \quad \text{for } j = 1, 2.  \]
 	
 \begin{theorem}
 	The operator $R_{\mu, k}^{n}$ is compact.	
 
 	\begin{proof}
-		As in chapter \ref{chap3} used, the compact embedding yields the desired result, for a multi-dimensional proof see \cite[Chap. 4]{Adams}.	
+		As in chapter \ref{chap3}, using the compact embedding theorem for Sobolev spaces yields the desired. % todo 6 show R_{\mu, k} bounded
 	\end{proof}
 \end{theorem}
 
-By similar transformations of the problem \eqref{md-weak-formulation-res} as in \eqref{mod-eigv-problem} and \eqref{periodic-condition} we are able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B}$, and thus $I_{s} = \{ \lambda_{s}(k) : k \in \overline{B} \}$ is a compact real interval for each $s \in \N$. % todo explain Is more detailed
+By similar transformations of the problem \eqref{md-weak-formulation-res} as in \eqref{mod-eigv-problem} and \eqref{periodic-condition} we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B}$, and thus $I_{s} = \{ \lambda_{s}(k) : k \in \overline{B} \}$ is a compact real interval for each $s \in \N$. % 6 todo Martin explain Is more detailed
 ~\newline ~\newline
-Ultimately, using the same arguments as in Chapter 4 based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}, we are then able to prove the main result even for this multi-dimensional case, namely that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of compact intervals, i.e.
+Ultimately, the main result for this multi-dimensional case follows from using the same arguments as in Chapter 4 based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}. We are namely able to show that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the  compact intervals $I_{s}$, i.e.
 	\[ \sigma(A^{n}) = \bigcup_{s \in \N} I_{s}. \]
