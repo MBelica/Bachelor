@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  24 AUG 2016 21:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.7)  7 SEP 2016 15:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1168,20 +1168,20 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap35-floquet.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap5-multid.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap6-concl.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/appendix.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
  (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count193
@@ -1207,7 +1207,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring OFF on input line 61.
+Package hyperref Info: Link coloring OFF on input line 63.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1215,14 +1215,14 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count199
 )
-LaTeX Info: Redefining \ref on input line 61.
-LaTeX Info: Redefining \pageref on input line 61.
-LaTeX Info: Redefining \nameref on input line 61.
+LaTeX Info: Redefining \ref on input line 63.
+LaTeX Info: Redefining \pageref on input line 63.
+LaTeX Info: Redefining \nameref on input line 63.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.out) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 61.
+LaTeX Info: Redefining \microtypecontext on input line 63.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1270,7 +1270,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66 \include{chapters/chap1-introduction}
+l.68 \include{chapters/chap1-introduction}
                                            [1
 
 
@@ -1493,7 +1493,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 \openout2 = `statement.aux'.
 
  (./statement.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 12--76
+Underfull \hbox (badness 10000) in paragraph at lines 12--78
 
  []
 
@@ -1501,25 +1501,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--76
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
  (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.aux (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/kit-cover.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap1-introduction.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap2-operator.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap3-brillouin.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap35-floquet.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap4-spectrum.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap5-multid.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/chapters/chap6-concl.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/appendix.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/biblio.aux) (/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/statement.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
  ) 
 Here is how much of TeX's memory you used:
- 37101 strings out of 493089
- 836839 string characters out of 6134843
+ 37103 strings out of 493089
+ 836809 string characters out of 6134843
  1025850 words of memory out of 5000000
  39593 multiletter control sequences out of 15000+600000
- 23250 words of font info for 140 fonts, out of 8000000 for 9000
+ 23358 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,15n,107p,10380b,2106s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (34 pages, 1032804 bytes).
+Output written on "/Users/martin/Dropbox/Aktuelles Semester/Bachelor/.texpadtmp/main.pdf" (34 pages, 1032820 bytes).
 PDF statistics:
  576 PDF objects out of 1000 (max. 8388607)
  506 compressed objects within 6 object streams

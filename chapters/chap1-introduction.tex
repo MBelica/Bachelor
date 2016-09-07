@@ -45,8 +45,8 @@ The problem considered in this thesis arises from the Kronig-Penney model, see f
 \draw [dotted] (1.7,0.)-- (1.7,-1.);
 \draw [dotted] (2.3,0.)-- (2.3,-0.5);
 \draw [dotted] (2.3,-0.5)-- (2.3,-1.);
-\draw (1.75,-0.041546762589927816) node[anchor=north west] {$b$};
-\draw (0.7603430877901116,1.9021582733812952) node[anchor=north west] {$\rho$};
+\draw (1.8,-0.05) node[anchor=north west] {$b$};
+\draw (0.76,1.9) node[anchor=north west] {$V_{0}$};
 \draw (0.1,4.25) node[anchor=north west,color=wqwqwq] {$V(x)$};
 \draw (5,-0.1) node[anchor=north west,color=wqwqwq] {$x$};
 \end{tikzpicture}
@@ -58,13 +58,13 @@ where $b$ is the \enquote{support} and $\rho$ the magnitude of the potential. We
 
 \section*{Mathematical Basics}
 
-For the upcoming analysis we need some basic concepts from functional analysis and spectral theory are here briefly reviewed:
+For the upcoming analysis some basic concepts from functional analysis and spectral theory are here briefly reviewed:
 ~\newline ~\newline
-Let $C_{0}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. And will hereafter $\langle x, x \rangle$ denote the scalar product in $L^{2}(\R)$.
+Let $C_{0}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. And hereafter $\langle x, x \rangle$ will denote the scalar product in $L^{2}(\R)$.
 \begin{definition}[Weak derivative]
 Let $\Omega \subseteq \R$ be open, and $f \in L^{1}_{loc}(\Omega)$. The function $f$ is said to have the weak derivative $g \in L^{1}_{loc}(\Omega)$ in $\Omega$ if  \[ - \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi \]holds for all $\varphi \in C_{0}^{\infty}(\Omega)$.
 \end{definition}
-Now, an important example for a Hilbert space is the Sobolev space $H^{k}(\Omega)$.
+Now, an important example of a Hilbert space is the Sobolev space $H^{k}(\Omega)$.
 \begin{definition} Let $\alpha \in \N$ and denote with $D^{\alpha} u$ the $\alpha$-th weak derivate of $u$. We call the space
 \[ H^{k}(\Omega) \coloneqq \left\{ u \in L^{2}(\Omega) : D^{\alpha} u \in L^{2}(\Omega) \text{ for } 0 \leq \alpha \leq k \right\} \]
 equipped with the norm $\| \cdot \|_{H^{k}(\Omega)} \coloneqq \left( \sum_{0 \leq \alpha \leq k} \| D^{\alpha} \cdot \|_{L^{2}(\Omega)}^{2} \right)^{\frac{1}{2}}$ Sobolev space.
@@ -75,7 +75,7 @@ equipped with the norm $\| \cdot \|_{H^{k}(\Omega)} \coloneqq \left( \sum_{0 \le
 \begin{definition}[Distributions]
 	On $C_{0}^{\infty}$ a sequence $(f_{n})$ converges against $f \in C_{0}^{\infty}$ if the support of all members of the sequence is in a compact interval $I \subset \R$, i.e.
 	$$ \supp (f_{n}) \subseteq I \quad \forall n \in \N, $$
-	and on this interval $f_{n}$ and all its derivatives converge uniformly against $f$, i.e.
+	and on this interval $f_{n}$ and all its derivatives converge uniformly to $f$, i.e.
 	\[ \| f_{n}^{(i)} - f^{(i)} \|_{\infty} \rightarrow 0 \quad \text{ for } n \rightarrow \infty \]
 	for all $i \in \N_{0}$. One can proof that this concept of convergence generates a topology on $C_{0}^{\infty}$ and one usually denoted with $\mathcal{D}(\R)$ the space $C_{0}^{\infty}$ equipped with this topology. From now on, we denote with $D'(\R)$ the space of all linear functionals on $C_{0}^{\infty}$ that are continuous with respect to this topology and call those functionals distributions.
 \end{definition}
@@ -93,13 +93,13 @@ Which implies the definition
 Moreover, is easily seen that $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see \cite[Chap. 1.4]{WeisST}.
 
 \begin{definitions}
-Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \supset X$. 
+Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \subseteq X$. 
 \begin{enumerate}[label=\alph*\upshape)]
-	\item We call $A$ closed if $graph(A) \coloneqq \{ (x, Ax) : x \in \mathcal{D}(A) \} \subseteq X \times Y$ is a closed set.
+	\item We call $A$ closed if $graph(A) \coloneqq \{ (x, Ax) : x \in \mathcal{D}(A) \} \subseteq X \times Y$ is a closed set with respect to the product topology.
 	\item The operator $A^{*} : \mathcal{D}(A^{*}) \rightarrow H $ is called the adjoint of $A$ and is defined by
 		\[ \mathcal{D}(A^{*}) \coloneqq \{ u \in H : \exists u^{*} \in H ~\forall v \in \mathcal{D}(A) \langle u, A v \rangle = \langle u^{*} , v \rangle \} \]		and $A^{*} u \coloneqq u^{*}$ for $u \in \mathcal{D}(A^{*})$. Note that for $u \in \mathcal{D}(A^{*})$, $u^{*}$ is uniquely determined. 
 \end{enumerate}
-Are $X, Y$ Hilbert spaces, $\langle \cdot, \cdot \rangle$ denotes the scalar product on $Y$ and $A$ a bounded operator, we call
+Let $X$ be a Hilbert space, $\langle \cdot, \cdot \rangle$ denotes the scalar product on $X$ and $A$ a bounded operator. We call
 \begin{enumerate}[label=\alph*\upshape)]  \setcounter{enumi}{1}
 	\item $A$ symmetric, if $\langle Tx,y \rangle = \langle x ,Ty \rangle$ for all $x,y \in \mathcal{D}(A)$, and
 	\item $A$ self-adjoint, if $A$ is densely defined on $X$ and coincides with its adjoint.
