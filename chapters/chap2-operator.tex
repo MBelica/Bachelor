@@ -12,7 +12,7 @@ In general, one cannot say in which sense a solution to the formal problem
 	\begin{equation}
 		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of the Dirac delta function. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{smooth-potential}, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that  % todo smooth potential consistent
+	exists since the potential in $A$ consists of the Dirac delta function. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{smooth-potential}, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that  % todo 2 smooth potential consistent
 \begin{equation}
 	\int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v} = \int_{\R} f \overline{v} \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
@@ -145,7 +145,7 @@ and therefore
 	\end{equation} 
 Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump} that
 \[ \sum_{i=-n}^{n-1} -\int_{x_{i}}^{x_{i+1}} u'' \overline{v} + \sum_{i=-n}^{n-1} u' \overline{v} \Big|_{x_{i}}^{x_{i+1}} + \rho \sum_{i=-n}^{n-1} u(x_{i}) \overline{v(x_{j})} - \mu \int_{x_{-n}}^{x_{n}} u \overline{v} = \int_{x_{-n}}^{x_{n}} f \overline{v} \]
-\begin{equation} % todo check formular
+\begin{equation} % todo 2 check formular
 	\iff \sum_{i=-n}^{n-1} \int_{x_{i}}^{x_{i+1}} u'' \overline{v} = - \int_{x_{-n}}^{x_{n}} f \overline{v} - \mu \int_{x_{-n}}^{x_{n}} u \overline{v}. \label{refwa}
 \end{equation} 
 By defining $w_{n} \coloneqq \sum_{i=-n}^{n-1} u'' \mathds{1}_{[x_{i}, x_{i+1}]}$ we can estimate the left-hand side of \eqref{refwa} by
@@ -181,7 +181,7 @@ Consequently, we conclude that
 	The definition of $A$ is independent of $\mu$.
 \end{remark}
 
-\begin{proof} % todo do a better proof
+\begin{proof} % todo 2 do a better proof
 	 Since as seen above the domain is independent of $\mu$ and $\mu$-dependent terms cancel each other out.
 \end{proof}
 
@@ -210,7 +210,7 @@ Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can 
 	$A$ is a self-adjoint operator.
 		
 	\begin{proof}
-		We proceed by proving first that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that % todo erwähnen dass  D((R_\mu^-1)*) \subset D(R_{\mu})? bzw anders herum bin mir nicht sicher
+		We proceed by proving first that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that % todo 2 erwähnen dass  D((R_\mu^-1)*) \subset D(R_{\mu})? bzw anders herum bin mir nicht sicher
 		\begin{align}
 			\langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}), \label{*-condition}
 		\end{align}

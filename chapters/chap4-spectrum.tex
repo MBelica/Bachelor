@@ -39,7 +39,7 @@ To prove this equality we first need to characterise the dependence of $I_{s}$ o
 		\end{align*}
 		which, eventually, yields
 		\[ |\lambda_{s}(\tilde{k}) - \lambda_{s}(k)| \leq |k - \tilde{k}| \left( \lambda_{s}(k) + 1 + 2|k| + |k| + |\tilde{k}|\right). \] 
-		Now, thew eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ rather than on the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions and, as the eigenvalues for the Dirichlet boundary condition are independent of $k$, $\lambda_{s}(k)$ is uniformly bounded and hence continuous. % todo kevin dirichlet
+		Now, thew eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ rather than on the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions and, as the eigenvalues for the Dirichlet boundary condition are independent of $k$, $\lambda_{s}(k)$ is uniformly bounded and hence continuous. % todo 4 kevin dirichlet
 	\end{proof}
 \end{theorem}
 
@@ -50,7 +50,7 @@ To prove this equality we first need to characterise the dependence of $I_{s}$ o
 	\end{equation} 	
 \end{remark}
 
-From \eqref{Iisacompactrealinterval} also follows that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that % todo dirichlet oben unten gleich
+From \eqref{Iisacompactrealinterval} also follows that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that % todo 4 dirichlet oben unten gleich
 	\begin{equation}
 		\bigcup_{s \in \N} I_{s} \text{ is closed.} \label{UIclosed}
 	\end{equation}
@@ -65,7 +65,7 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 		\begin{equation}
 			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} 
 		\end{equation} 
-		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies % todo warum ist psi in D(A) siehe auch S.15
+		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies % todo 4 warum ist psi in D(A) siehe auch S.15
 		\[ A \psi_{s} = \lambda \psi_{s} \]
 		\enquote{locally}, i.e. 
 		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \Big\}, \]
@@ -96,7 +96,7 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 		  \end{axis}
 		\end{tikzpicture}
 	}
-	\caption{Example for a function $\eta$} % todo psi zeichnen
+	\caption{Example for a function $\eta$} % todo 4 psi zeichnen
 \end{figure}
 ~\newline		
 		
@@ -105,7 +105,7 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 			(A - \lambda I) u_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
-		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies % todo ist doch nicht in H^2 loc es gibt doch einen Sprung im delta-Punkt
+		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies % todo 4 ist doch nicht in H^2 loc es gibt doch einen Sprung im delta-Punkt
 		\begin{equation}
 			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
 		\end{equation}
@@ -119,7 +119,7 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 	\end{proof}
 \end{theorem}	
 
-The other inclusion can be established by using the properties of the Floquet transformation shown above and the completeness of the Bloch waves. Hence, this proof follows that for an arbitrary $m$-th order linear differential operator with periodic coefficients. Again, for the sake of completeness, we include the proof here, as given in \cite[Chap. 3.6]{Plum10}.
+The other inclusion can be established by using the properties of the Floquet transformation shown above and the completeness of the Bloch waves. Hence, this proof follows that for an arbitrary $m$-th order linear differential operator with periodic coefficients. Again, for the sake of completeness, we include the proof here, as given in \cite[Chap. 3.6]{dorfler2011photonic}.
 
  \begin{theorem} \label{4.1:thm-MainResult.SecondInclusion}
 
@@ -167,7 +167,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 		As $A$ is self-adjoint, by theorem \ref{2.3:thm-ASelfAdjoint}, this implies $u_{l} \in \mathcal{D}(A)$, and $(A - \lambda I) u_{l} = f_{l}$ for all $l \in \N$. As furthermore every self-adjoint operator is also closed, \eqref{ulflconvergence} now implies
 			\[ u \in \mathcal{D}(A) \text{ and } (A - \lambda I) u = f, \]
 		which is the desired result.
-		~\newline ~\newline % todo calculate last part of theorem
+		~\newline ~\newline % todo 4 calculate last part of theorem
 		Eventually, we are left to prove \eqref{lefttoprove}. So, let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open interval containing $\supp(\varphi)$ in its interior. By Fubini's Theorem we know that 
 		\begin{align*}
 			r_{s}(x, k) & \coloneqq \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{(A - \lambda I) \varphi(x)}, 

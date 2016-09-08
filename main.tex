@@ -1,5 +1,6 @@
 % bloch waves
 % check all formular
+% konsistente Daten
 \documentclass[10pt]{mitthesis}
 
 \usepackage[utf8]{inputenc}
@@ -60,6 +61,7 @@
 \newtheorem{atheorem}{Theorem}[chapter]
 \renewcommand{\theatheorem}{A.\arabic{atheorem}}
 
+
 \begin{document}
 
 \include{kit-cover}
@@ -74,7 +76,8 @@
 \include{chapters/chap6-concl}
 \appendix
 \include{appendix}
-\include{biblio}
+\bibliographystyle{plain} \nocite{*}
+\bibliography{bilbio.bib}
 \include{statement}
 
 \end{document}
