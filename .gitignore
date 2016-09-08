@@ -185,7 +185,9 @@ TSWLatexianTemp*
 # KBibTeX
 *~[0-9]*
 
-.DS_Store
 *.texpadtmp
 .texpadtmp
+.DS_Store
 *.DS_Store
+chapters/.DS_Store
+chapters/*.DS_Store
