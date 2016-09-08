@@ -1,6 +1,6 @@
-\chapter{The spectrum for the multi-dimensional case} \label{chap5} 
+\chapter{The spectrum for the multi-dimensional case} \label{chap5} % todo check where k cant be negative
 
-In this last chapter, we are going to examine a more complex situation. We now want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will merely give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems, as below.
+In this last chapter, we will examine a more complex situation. We now want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will merely give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems.
 ~\newline ~\newline
 To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary with the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote for any $j \in \Z^{n}$ with $Y_{j} = Y + j$ the $j$th copy of $Y$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $S_{i}^{+}$ and $S_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$.
 
@@ -29,7 +29,7 @@ The mathematical representation of the above is a multi-dimensional Schrödinger
 \begin{equation}
 	- \Delta + \rho \sum_{i \in \Z} \delta_{S_{i}} \label{md-the-operator-A-formally}
 \end{equation}
-on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Dirac delta distribution on hypersurface $S_{i}$. Let us recall that on a hypersurface $S$ the Dirac delta acts on $u \in C_{0}^{\infty}(\R^{n})$ by
+on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Dirac delta distribution on hypersurface $S_{i}$. Let us recall that on a hypersurface $S$ the Dirac delta acts on $u \in C_{0}^{\infty}(\R^{n})$ by % todo c_0 infty vs h1
 	\[ \int_{\R^{n}} \delta_{S} u \coloneqq \int_{S} u ds . \]
 where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite{HeeringEP}.
 ~\\ ~\\ % todo 6 Martin Important find that citation or whole replacement!
@@ -37,10 +37,10 @@ Again motivated by the weak-formulation, given a right-hand side $f \in L^{2}(\R
 	\begin{equation}
 		\int_{\R^{n}} \nabla u \overline{\nabla v} + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u \overline{v} ds - \mu \int_{\R^{n}} u \overline{v} = \int_{\R^{n}} f \overline{v} \label{md-weak-formulation}
 	\end{equation} 
-holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u v$ the traces. They are well defined as $u, v \in H^{1}(\R)$ and hence the trace in $L^{2}(\R)$, for a detailed explanation see \cite[page 164]{Adams}.  % todo 6 read about this traces
+holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u v$ the traces. They are well defined as $u, v \in H^{1}(\R)$ and hence the trace in $L^{2}(\R)$. For a detailed explanation see \cite[page 164]{Adams}.  % todo 6 read about this traces, andrii the trace or their trace
 
 \begin{remark}
-	The term originating from the potential is finite since
+	The term in \eqref{md-weak-formulation} originating from the potential is finite since
 	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u \overline{v} \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] % todo 6 Martin CHECK THIS
 	Both terms on the right-hand side can be finitely estimated by the trace theorem \cite[page 258]{Evans98} since
 	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq 2 \left( \frac{1}{h} \|u\|_{L^{2}(B_{j})}^{2} + h \| \nabla u \|_{L^{2}(B_{j})}^{2} \right) \]
@@ -68,6 +68,9 @@ Using similar methods as in chapter \ref{chap2} we can prove the following two r
 	The operator $A^{n}$ is self-adjoint.	
 \end{remark}
 
+\begin{proof}
+	%todo proof
+\end{proof}
 
 \begin{figure}[!ht] \centering
 	\resizebox{.38\linewidth}{!}{
@@ -98,7 +101,7 @@ such that
 	\end{equation} 
 holds for all $v \in H^{1}_{k, n}$. 
 ~\\ ~\\
-Again exerting Lax-Milgram's Theorem, the existence of a unique solution $u \in H^{1}_{k, n}$ is ensured if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined and injective. This allows us to define 
+Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined and injective. This allows us to define  % todo explanation by analgous arguments
 	\[ A_{k}^{n} \coloneqq \left(R_{\mu, k}^{n}\right)^{-1} + \mu I. \]
 as the operator considering our problem only on one periodicity cell. The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ of \eqref{md-weak-formulation-res} to satisfy furthermore
 	\[ \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{S_{j}^{-}} \quad \text{for } j = 1, 2.  \]
@@ -107,7 +110,7 @@ as the operator considering our problem only on one periodicity cell. The semi-p
 	The operator $R_{\mu, k}^{n}$ is compact.	
 
 	\begin{proof}
-		As in chapter \ref{chap3}, using the compact embedding theorem for Sobolev spaces yields the desired. % todo 6 show R_{\mu, k} bounded
+		As in chapter \ref{chap3}, using the compact embedding theorem for Sobolev spaces yields the desired. % todo 6 show R_{\mu, k} bounded, UND konkreter: Analogously to theorem... by an applicaion of Rellich.
 	\end{proof}
 \end{theorem}
 

@@ -1,6 +1,8 @@
-\chapter{The Floquet transformation and the Bloch waves}
+\chapter{The Floquet transformation and the Bloch waves} \label{chap3.5}
 
-In chapter \ref{chap4} we are going to show that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ introduced above by varying $k$ over the Brillouin zone $B$. For this purpose we will need two results involving the Floquet transformation to be able to move the problem from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is by assumption compact. For the sake of completeness, we include here the proofs of both theorems, as given in \cite[Chap. 3.4, 3.5]{Plum10}.
+In chapter \ref{chap4} we will show that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ introduced above by varying $k$ over the Brillouin zone $B$. For this purpose we will need two results involving the Floquet transformation to be able to move the problem from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$ whereas $\Omega \times B$ is compact by assumption. For the sake of completeness, we include here the proofs of both theorems, as given in \cite[Chap. 3.4, 3.5]{Plum10}.
+
+\section{Properties of the Floquet transformation}
 
 \begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
 	The Floquet transformation $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ 
@@ -11,7 +13,7 @@ In chapter \ref{chap4} we are going to show that the spectrum of the operator $A
 		\begin{equation}
 			(U^{-1}g)(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in \Z). \label{3.8}
 		\end{equation} 
-	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, the inverse simplifies to
+	If $g(\cdot, k)$ is extended to the whole of $\R$ by the semi-periodicity condition \eqref{quasi-periodic-condition}, the inverse formular simplifies to
 		\begin{equation}
 			U^{-1} g = \frac{1}{\sqrt{|B|}} \int_{B} g(\cdot, k) dk. \label{3.9}
 		\end{equation}

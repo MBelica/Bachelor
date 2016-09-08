@@ -1,25 +1,22 @@
 \chapter{The one-dimensional Schrödinger operator} \label{chap2}
 
-The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we are going to examine properties of $A$ such as its domain and show that $A$ is self-adjoint. Later, in chapters \ref{chap3} and \ref{chap4}, we will need these results to deduce characteristics of the spectrum of $A$. ~\\ ~\\
+The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we will examine properties of $A$ such as its domain and its self-adjointness. Later, in chapters \ref{chap3} and \ref{chap4}, we will need these results to deduce characteristics of the spectrum of $A$. ~\\ ~\\
 Formally the operation of $A$ is defined by
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
 \end{equation}
-on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Dirac delta distribution supported at the point $x_{i}$. $\Omega_{k}$ will hereafter identify the periodicity cell containing point $x_{k}$ and w.l.o.g. let $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$.
+on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Dirac delta distribution supported at the point $x_{i}$. The second term repre $\Omega_{k}$ will hereafter identify the periodicity cell containing point $x_{k}$ and w.l.o.g. let $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$.
 ~\\  
-In general, one cannot say, given $f \in L^{2}(\R)$, in which sense a solution to the formal problem 
+
+In general, one cannot say in which sense a solution to the formal problem 
 	\begin{equation}
-		Au = f \label{formal-problem}
+		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of a singular distribution. If we suppose for a moment that the problem is smooth, more specifically, that the potential is given by \eqref{smooth-potential}, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that 
+	exists since the potential in $A$ consists of the Dirac delta function. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{smooth-potential}, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that  % todo smooth potential consistent
 \begin{equation}
 	\int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v} = \int_{\R} f \overline{v} \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
-holds and call \eqref{weak-formulation-of-A} the weak-formulation of \eqref{formal-problem}.
-\begin{remark}
-	Since $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$, \eqref{weak-formulation-of-A} holds also for all $v \in H^{1}(\R)$.
-\end{remark}
-We should first note that the left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate
+holds and call \eqref{weak-formulation-of-A} the weak-formulation of \eqref{formal-problem}. We should note that the left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate
 \begin{align}
 	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( 2 |u( x_{i} + h )|^{2} +  2 h \int_{x_{i}}^{x_{i} + h} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
 		 & \leq 2 \sum_{i \in \Z} \left( \frac{1}{h} \int_{\Omega_{i}} |u( x )|^{2} dx + h \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right). \label{preestimation-for-potential}
@@ -29,9 +26,13 @@ The choice of $h = 1$ yields hence the estimation
 		\sum_{i \in \Z} |u(x_{i})|^{2} & \leq 2 \| u \|^{2}_{H^{1}(\R)}. \label{estimation-for-potential}
 \end{align}
 
-\section{The resolvent-mapping of $A$}
+\begin{remark}
+	Since $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$, \eqref{weak-formulation-of-A} holds also for all $v \in H^{1}(\R)$.
+\end{remark}
 
-To explicitly define the operator $A$ we will first show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution $u \in H^{1}(\R)$. 
+\section{The resolvent-mapping of the one-dimensional Schrödinger operator} \label{section:3.1}
+
+As a first step in order to define the operator $A$ explicitly, we will show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution $u \in H^{1}(\R)$. 
 \begin{definition}
 	Given $f \in L^{2}(\R)$, we define a functional $l_{f} \colon H^{1}(\R) \rightarrow \C$ by
 	\[ l_{f}(v) \coloneqq \int_{\R} f \overline{v} \]
@@ -44,27 +45,28 @@ As a result, \eqref{weak-formulation-of-A} is equivalent to finding for $\mu \in
 	\end{equation}
 The existence of a unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-of-A-for-LM} now follows from Lax-Milgram's Theorem if the sesquilinear form $B_{\mu}$ is bounded and coercive and if $l_{f}$ is a bounded linear functional on $H^{1}(\R)$, which we will prove in the next two theorems.
 \begin{theorem} \label{2.1:thm-LaxMilgram}
-	The sesquilinear form $B_{\mu}$ is (for small enough $\mu \in \R$)
-	\begin{enumerate}
-		\item[i)] bounded, i.e. there exists a constant $\alpha > 0$ such that
+	The sesquilinear form $B_{\mu}$ is (for sufficiently small $\mu \in \R$)
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item bounded, i.e. there exists a constant $\alpha > 0$ such that
 			\[ \left| B_{\mu}[u,v] \right| \leq \alpha \|u\|_{H^{1}(\R)} \|v\|_{H^{1}(\R)} \]
 			holds for all $u, v \in H^{1}(\R)$.
-		\item[ii)] coercive, i.e. there exists a constant $\beta > 0$ such that
+		\item coercive, i.e. there exists a constant $\beta > 0$ such that
 			\[ \beta \|u\|_{H^{1}(\R)}^{2} \leq Re(B_{\mu}[u, u]) \]
 			holds for all $u \in H^{1}(\R)$.
 	\end{enumerate} 
 	
 	\begin{proof} ~\\
-		i) The boundedness follows from \eqref{estimation-for-potential} as for an arbitrary $\rho \in \R$ there exists $\alpha \in \R$ such that
+		$a)$ The boundedness follows from \eqref{estimation-for-potential} as for an arbitrary $\rho \in \R$ there exists $\alpha \in \R$ such that
 		\begin{align*}
-			|B(u, \varphi)|^{2} & \leq \| u' \|_{L^{2}(\R)} \| v' \|_{L^{2}(\R)} + 2 |\rho |\sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} - \mu \| u \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} \\
-				& \leq \| u' \|_{L^{2}(\R)} \| v' \|_{L^{2}(\R)} + 8 |\rho| \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  - \mu \| u \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} \\
-				& = (8|\rho| - \mu) \| u \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} + 8 |\rho| \| u \|_{L^{2}(\R)} \| v' \|_{L^{2}(\R)} \\
+			\left| B(u, \varphi) \right|^{2} & \leq \| u' \|_{L^{2}(\R)} \| v' \|_{L^{2}(\R)} + 2 |\rho |\sum_{i \in \Z} |u(x_{i})|^{2} |v(x_{i})|^{2} + \left| \mu \right| \| u \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} \\
+				& \leq \| u' \|_{L^{2}(\R)} \| v' \|_{L^{2}(\R)} + 8 |\rho| \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  + \left| \mu \right| \| u \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} \\
+				& = (8|\rho| + \left| \mu \right|) \| u \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} + 8 |\rho| \| u \|_{L^{2}(\R)} \| v' \|_{L^{2}(\R)} \\
 				& ~\quad + 8 |\rho| \| u' \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} + (8 |\rho| + 1) \| u' \|_{L^{2}(\R)} \| v'\|_{L^{2}(\R)} \\
 				& \leq \alpha \| u \|_{H^{1}(\R)} \| \varphi \|_{H^{1}(\R)}
 		\end{align*}
-		where $\alpha = \max \left\{ 8|\rho| - \mu , 8 |\rho| + 1 \right\}$. \\
-		ii) For the coercivity, note first that for the given sesquilinear form $B[u, u] \in \R$ holds. We first assume $\rho \geq 0$, if then $\mu < -1$ we get 
+		where $\alpha = \max \left\{ 8|\rho| + \left| \mu \right| , 8 |\rho| + 1 \right\}$. \\
+		
+		$b)$ For the coercivity, we note first that for the given sesquilinear form $B[u, u] \in \R$ holds for all $u \in H^{1}(\R)$. Assuming first $\rho \geq 0$ yields for $\mu < -1$ that 
 		\begin{align*}
 			B[u, u] & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \left|u(x_{i})\right|^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
@@ -83,47 +85,53 @@ The existence of a unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-o
 	
 	\begin{proof}
 		It is easily seen that $l_{f}$ is linear, for the boundedness the Cauchy–Schwarz inequality yields
-		\[ | l_{f}(v) | \leq \| f \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} \leq \| f \|_{L^{2}(\R)} \| v \|_{H^{1}(\R)} \]
+		\begin{equation*}
+			| l_{f}(v) | \leq \| f \|_{L^{2}(\R)} \| v \|_{L^{2}(\R)} \leq \| f \|_{L^{2}(\R)} \| v \|_{H^{1}(\R)} \vspace{-1cm}
+		\end{equation*}
 	\end{proof}
 \end{theorem}
 Therefore, as used in theorem \ref{2.1:thm-LaxMilgram}, we will subsequently assume that $\mu \in \R$ is small enough. In return, Lax-Migram's Theorem proves that for any fixed $f \in L^{2}(\R)$ a unique solution $u \in H^{1}(\R)$ to the problem \eqref{weak-formulation-of-A-for-LM} exists. This on the other hand allows us to proceed as follows.
 \begin{definition}
 	Let us define $R_{\mu} \colon L^{2}(\R) \rightarrow L^{2}(\R), f \mapsto u$ with $u$ being the solution of \eqref{weak-formulation-of-A-for-LM}.
 \end{definition}
-Taking into account that $R_{\mu}$ is a linear operator, which is easy to see, there are two more properties of $R_{\mu}$ for us left to show to explicitly define the operator $A$. 
+Due to the linearity of the integral and the uniqueness of the solution, $R_{\mu}$ is a linear operator. Hence, there are two more properties of $R_{\mu}$ for us left to show to explicitly define the operator $A$. 
 \begin{theorem} \label{rmuinj}
 	The mapping $R_{\mu}$ is bounded and injective.
 	
 	\begin{proof}
-		For $f \in L^{2}(\R)$ there exists $u \in \mathcal{D}(A)$ such that
+		By theorem \ref{2.1:thm-LaxMilgram} there exists for $f \in L^{2}(\R)$ a function $u \in \mathcal{D}(A)$ as a solution of \eqref{weak-formulation-of-A-for-LM} and hence
 		\[ \| R_{\mu} f \|_{L^{2}(\R)}^{2} = \| u \|_{L^{2}(\R)}^{2} \leq \| u \|_{H^{1}(\R)}^{2}. \] 
 		Now, using \eqref{weak-formulation-of-A}, \eqref{estimation-for-potential} with a small enough $\mu \in \R$ yields with Cauchy–Schwarz's inequality
 		\[ \| R_{\mu} f \|_{L^{2}(\R)}^{2} \leq \int_{\R} |u'|^{2} + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu \int_{\R} |u|^{2} \leq \| f \|_{L^{2}(\R)}^{2} \| u \|_{L^{2}(\R)}^{2} \]	
-		This shows the boundedness of the mapping $R_{\mu}$. Taking in mind that $\mathcal{R}(R_{\mu}) \subseteq H^{1}(\R)$, we know that for $u_{1}, u_{2} \in \mathcal{R}(R_{\mu})$, there exist $f_{1}, f_{2} \in L^{2}(\R)$ with $u_{i} = R_{\mu} f_{i}$ for $i = 1, 2$. If now $u_{1} = u_{2}$ it holds that
+		This shows the boundedness of the mapping $R_{\mu}$. Taking in mind that the range $\mathcal{R}(R_{\mu}) \subseteq H^{1}(\R)$, we know that for $f_{1}, f_{2} \in L^{2}(\R)$ there exist  $u_{1}, u_{2} \in \mathcal{R}(R_{\mu})$ with $u_{i} = R_{\mu} f_{i}$ for $i = 1, 2$. If now $R_{\mu} f_{1} = R_{\mu} f_{2}$ holds \eqref{weak-formulation-of-A-for-LM} yields
 		\begin{equation}
-			0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v]= \int_{\R} (f_{1} - f_{2}) \overline{v} \quad \forall v \in C_{0}^{\infty}(\R). \label{f1f2almosteverywhere}
+			0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v] = \int_{\R} (f_{1} - f_{2}) \overline{v} \quad \forall v \in C_{0}^{\infty}(\R). \label{f1f2almosteverywhere}
 		\end{equation} 
-		As $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$ this yields that the equality \eqref{f1f2almosteverywhere} holds also for all $v \in L^{2}(\R)$, hence $f_{1} = f_{2}$ almost everywhere.
+		As $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$ the equation \eqref{f1f2almosteverywhere} we know that
+		\[ 0 = \int_{\R} (f_{1} - f_{2}) \overline{v} \quad \forall v \in L^{2}(\R),  \]
+		hence $f_{1} = f_{2}$ almost everywhere.
 	\end{proof}
 \end{theorem}
 
-\section{The domain of $A$} \label{chap-2.2}
+\section{The domain of the one-dimensional Schrödinger operator} \label{chap-2.2}
 
 Resulting from theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This allows us to define the aforementioned operator $A$ explicitly.
 \begin{definition}
 	Let $A \colon \mathcal{D}(A) \subseteq L^{2}(\R) \rightarrow L^{2}(\R)$ be the linear operator defined by
 	\[ A \coloneqq R_{\mu}^{-1} + \mu I, \quad \mathcal{D}(A) = \mathcal{R}(R_{\mu}). \]
 \end{definition}
-Note that this definition is consistent with the formal definition in \eqref{the-operator-A-formally} and as we will show below, is independent of $\mu$. 
+Note that this definition is consistent with the formal definition in \eqref{the-operator-A-formally} and as we will show is independent of $\mu$, still assuming $\mu < \min \{ -1, - \frac{2|\rho|}{h} \}$. 
 \begin{remark}
-	This allows us to draw the conclusion that $R_{\mu}$ is the resolvent of $A$.
+	Note that $R_{\mu}$ is the resolvent of $A$.
 \end{remark}
 We will now use the fact that every element $u \in \mathcal{D}(A) = \mathcal{R}(R_{\mu})$ is a solution of \eqref{weak-formulation-of-A-for-LM} to find additional necessary  characteristics of $u$ or rather $\mathcal{D}(A)$. However, we already know by Lax-Milram's Theorem that $u \in H^{1}(\R)$. First, let us for the sake of brevity define
-\[ H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) \coloneqq \Big\{ u \in L^{2}(\R) : u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i+1}), \sum_{i \in \Z} \|u\|^{2}_{H^{2}(x_{i}, x_{i+1})} < \infty \Big\}. \]
+\[ H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) \coloneqq \Big\{ u\in L^{2}(\R) : u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z, \sum_{i \in \Z} \|u\|^{2}_{H^{2}(x_{i}, x_{i+1})} < \infty \Big\}. \]
 Then, considering in \eqref{weak-formulation-of-A} any fixed $k \in \Z$ and an arbitrary test function $v \in C^{\infty}(\R)$ with $\supp v \subseteq [x_{k}, x_{k+1}]$ we get 
-	\[ \int_{x_{k}}^{x_{k + 1}} u'(x) \overline{v'(x)} dx = \int_{x_{k}}^{x_{k+1}} A u  \overline{v} \iff \int_{x_{k}}^{x_{k+1}} - u(x) \overline{v''(x)} dx = \int_{x_{k}}^{x_{k+1}} A u \overline{v}, \]
+	\begin{equation}
+		\int_{x_{k}}^{x_{k + 1}} u'(x) \overline{v'(x)} dx = \int_{x_{k}}^{x_{k+1}} A u  \overline{v} \iff \int_{x_{k}}^{x_{k+1}} - u(x) \overline{v''(x)} dx = \int_{x_{k}}^{x_{k+1}} A u \overline{v}, \label{temp-link}
+	\end{equation} 
 whence $u'' \in L^{2}(x_{k}, x_{k + 1})$ and $A u = - u''$ on $(x_{k}, x_{k + 1})$. Since we chose an arbitrary $k \in \Z$ we obtain 
-	$$ \mathcal{D}(A) \subseteq \Big\{ u \in \bigcap_{i \in \Z} H^{2}(x_{i}, x_{i+1}) \Big\}. $$
+	$$ \mathcal{D}(A) \subseteq \Big\{ u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z \Big\}. $$
 Using this, a test function $v \in C^{\infty}(\R)$ with the property $\supp v = \Omega_{k}$ yields in \eqref{weak-formulation-of-A} for any $k \in \Z$ through integration by parts on both sides of $x_{k}$ that
 	\[ -\left( \int_{x_{k}-\frac{1}{2}}^{x_{k}} + \int_{x_{k}}^{x_{k} + \frac{1}{2}}\right) u'' \overline{v} + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
 	\[ +  \rho u(x_{k})\overline{v(x_{k})} = - \int_{x_{k} - \frac{1}{2}}^{x_{k}} u'' \overline{v} - \int_{x_{k}}^{x_{k} + \frac{1}{2}} u'' \overline{v}. \]
@@ -138,7 +146,7 @@ and therefore
 Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump} that
 \[ \sum_{i=-n}^{n-1} -\int_{x_{i}}^{x_{i+1}} u'' \overline{v} + \sum_{i=-n}^{n-1} u' \overline{v} \Big|_{x_{i}}^{x_{i+1}} + \rho \sum_{i=-n}^{n-1} u(x_{i}) \overline{v(x_{j})} - \mu \int_{x_{-n}}^{x_{n}} u \overline{v} = \int_{x_{-n}}^{x_{n}} f \overline{v} \]
 \begin{equation} % todo check formular
-	\iff \sum_{i=-n}^{n-1} \int_{x_{i}}^{x_{i+1}} u'' \overline{v} = - \int_{x_{-n}}^{x_{n}} f \overline{v} - \mu \int_{x_{-n}}^{x_{n}} u \overline{v} \label{refwa}
+	\iff \sum_{i=-n}^{n-1} \int_{x_{i}}^{x_{i+1}} u'' \overline{v} = - \int_{x_{-n}}^{x_{n}} f \overline{v} - \mu \int_{x_{-n}}^{x_{n}} u \overline{v}. \label{refwa}
 \end{equation} 
 By defining $w_{n} \coloneqq \sum_{i=-n}^{n-1} u'' \mathds{1}_{[x_{i}, x_{i+1}]}$ we can estimate the left-hand side of \eqref{refwa} by
 \begin{align}
@@ -152,12 +160,12 @@ This yields
 	\begin{equation}
 		\mathcal{D}(A) \subseteq \left\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) - \rho u(x_{j}) = 0 ~\forall j \right\}. \label{firstdomaininclusion} 
 	\end{equation}
-Thus, for an arbitrary $u \in \mathcal{D}(A)$ we know from \eqref{firstdomaininclusion} that
+Hence, for an arbitrary $u \in \mathcal{D}(A)$ we know from \eqref{temp-link} and \eqref{firstdomaininclusion} that
 	\[ A u = \begin{cases}
 					- u'' & \text{ on } (x_{k} - \frac{1}{2}, x_{k}) \\
 					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
 			 \end{cases} \quad \forall k \in \Z. \]
-For the reverse inclusion of \eqref{firstdomaininclusion} we use the operator $R_{\mu}$, but first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$ we can therefore ensure $f \in L^{2}$. Hence, we have to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
+We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the operator $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$ we can therefore ensure $f \in L^{2}$. Hence, we have to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
 	\begin{align*}
 		 \int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v}= \int_{\R}(f-\mu u) \overline{v} \\
 		\iff \sum_{i \in \Z} \int_{\Omega_{i}} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i}}^{x_{i+1}} u'' \overline{v}.
@@ -170,17 +178,21 @@ Consequently, we conclude that
 		\mathcal{D}(A) & = \Big\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) - \rho u(x_{j}) = 0 ~\forall j \Big\}.
 	\end{align*}
 \begin{remark}
-	The definition of $A$ is independent of $\mu$ since as seen above the domain is independent of $\mu$ and $\mu$-dependent terms cancel each other out.
+	The definition of $A$ is independent of $\mu$.
 \end{remark}
 
-\section{The operator $A$ is self-adjoint}
+\begin{proof} % todo do a better proof
+	 Since as seen above the domain is independent of $\mu$ and $\mu$-dependent terms cancel each other out.
+\end{proof}
 
-In chapter \ref{chap4}, we will use the fact that the operator $A$ is self-adjoint, from which follows that $A$ is a closed and symmetric operator. For this we first need to show the following.
+\section{The self-adjointness of the Schrödinger operator}
+
+In chapter \ref{chap4}, we will use the fact that the operator $A$ is self-adjoint, from which follows that $A$ is a closed and symmetric operator. For this we first need to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
 \begin{theorem} \label{2.2:thm-RmuSymmetric}
 	$R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
 	
 	\begin{proof}
-		We start with $R_{\mu}^{-1} = (A - \mu I)$. As for all $v \in \mathcal{D}(A)$:
+		We start with $R_{\mu}^{-1} = (A - \mu I)$. As for all $v \in \mathcal{D}(A)$ with \eqref{weak-formulation-of-A}:
 			\begin{align*}
 				\langle R_{\mu}^{-1} u, v \rangle & = \langle (A - \mu I) u, v \rangle \\
 					& = \int_{\R} u'\overline{v'} -  \mu \int_{\R} u \overline{v} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} \\
@@ -192,22 +204,20 @@ In chapter \ref{chap4}, we will use the fact that the operator $A$ is self-adjoi
 	\end{proof}
 \end{theorem}
 
-Now, using that $R_{\mu}$, $R_{\mu}^{-1}$ are symmetric operators we can prove the main statement of this section. 
+Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can now prove the main statement of this section. Since every symmetric operator has an entirely real spectrum, this theorem yields additionally our first result about the spectrum of $A$.
 
 \begin{theorem} \label{2.3:thm-ASelfAdjoint}
 	$A$ is a self-adjoint operator.
 		
 	\begin{proof}
-		We proceed by proving first that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
+		We proceed by proving first that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that % todo erwähnen dass  D((R_\mu^-1)*) \subset D(R_{\mu})? bzw anders herum bin mir nicht sicher
 		\begin{align}
-			\langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle, \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}), \label{*-condition}
+			\langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}), \label{*-condition}
 		\end{align}
 		then $v \in \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu}^{-1} v = v^{*}$.
-		In \eqref{*-condition} we define $u \coloneqq R_{\mu} f$ for any $f \in L^{2}(\R)$ and use the fact that $R_{\mu}$ is symmetric and defined on the whole of $L^{2}(\R)$:
+		In \eqref{*-condition} for any $u \in \mathcal{D}(R_{\mu}^{-1})$ exists $f \in L^{2}(\R)$ such that $u = R_{\mu} f$; using use the fact that $R_{\mu}$ is symmetric and defined on the whole of $L^{2}(\R)$ yields
 		\[  \langle f, v \rangle = \langle R_{\mu} f, v^{*} \rangle = \langle f, R_{\mu} v^{*} \rangle, \]
 		
 		which means that $v \in \mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu}^{-1} v = v^{*}$, i.e. $R_{\mu}^{-1}$ is self-adjoint. As the operator $A$ is simply $R_{\mu}^{-1}$ shifted by $\mu \in \R$, $A$ is hence self-adjoint as well.		
 	\end{proof}
 \end{theorem}
-
-Every symmetric operator has an entirely real spectrum, therefore theorem \ref{2.3:thm-ASelfAdjoint} yields our first result about the spectrum of $A$.
