@@ -1,0 +1,78 @@
+\chapter{Preliminaries} \label{chap:2}
+
+For the upcoming analysis some basic concepts from functional analysis and spectral theory are here briefly reviewed:
+~\newline ~\newline
+Let $C_{0}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. And hereafter $\langle x, x \rangle$ will denote the scalar product in $L^{2}(\R)$.
+\begin{definition}[Weak derivative]
+Let $\Omega \subseteq \R$ be open, and $f \in L^{1}_{loc}(\Omega)$. The function $f$ is said to have the weak derivative $g \in L^{1}_{loc}(\Omega)$ in $\Omega$ if
+  \[ - \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi \]
+holds for all $\varphi \in C_{0}^{\infty}(\Omega)$.
+\end{definition}
+Let $\alpha \in \N$. We denote with $D^{\alpha} u$ the $\alpha$-th weak derivate of $u$, therewith, if two functions are weak derivatives of the same function they are equal except on a set with Lebesgue measure zero, i.e. they are equal almost everywhere, for a proof see theorem \ref{athem:uniqueness_of_weak_deriv}. A central point in this study will be a special Hilbert space the Sobolev space $H^{k}(\Omega)$. 
+
+\begin{definition} Let $\Omega \subseteq \R$ be open. The sobolev space $H^{k}(\Omega)$ is defined as
+\[ H^{k}(\Omega) \coloneqq \left\{ u \in L^{2}(\Omega) : D^{\alpha} u \text{ exists and } D^{\alpha} u \in L^{2}(\Omega) \text{ for } 0 \leq \alpha \leq k \right\} \]
+and we equipped it with the norm $\| \cdot \|_{H^{k}(\Omega)} \coloneqq \left( \sum_{0 \leq \alpha \leq k} \| D^{\alpha} \cdot \|_{L^{2}(\Omega)}^{2} \right)^{\frac{1}{2}}$.
+\end{definition}	
+
+The space $H^{k}(\Omega)$ admits an inner product which is defined in terms of the $L^{2}(\Omega)$ inner product:
+	\[  \langle u,v \rangle_{H^{k}(\Omega)} = \sum_{\alpha=0}^{k} \left\langle D^{\alpha} u, D^{\alpha} v \right \rangle_{L^2}. \]
+The space $H^{k}(\Omega)$ becomes a Hilbert space with this inner product.
+
+\begin{definition}[Distributions]
+	On $C_{0}^{\infty}$ a sequence $(f_{n})$ converges to $f \in C_{0}^{\infty}$ if the support of all members of the sequence is in a compact interval $I \subset \R$, i.e.
+	$$ \supp (f_{n}) \subseteq I \quad \forall n \in \N, $$
+	and on this interval $f_{n}$ and all its derivatives converge uniformly to $f$, i.e.
+	\[ \| f_{n}^{(i)} - f^{(i)} \|_{\infty} \rightarrow 0 \quad \text{ for } n \rightarrow \infty \]
+	for all $i \in \N_{0}$. This concept of convergence induces a topology on $C_{0}^{\infty}$, and henceforth, we denoted with $\mathfrak{D}(\R)$ the space $C_{0}^{\infty}$ equipped with this topology.
+\end{definition}
+
+From now on in the remainder of this thesis, we denote with $\mathfrak{D}'(\R)$ the space of all linear functionals on $C_{0}^{\infty}$ that are continuous with respect to this topology and call those functionals distributions. 
+~\\
+
+Of special interest in this thesis will be one distribution, the Dirac delta function $\delta_{x_{0}}$ where $x_{0} \in \R$. For a given $x_{0} \in \R$ we first define the sequence of functionals
+	\begin{equation}
+		\delta_{\epsilon}(f) \coloneqq \frac{1}{\sqrt{2 \pi} \epsilon} \int_{\R} e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} f(x) dx. \label{eq:2.1-smooth_potential}
+	\end{equation}
+ 	Every functional is symmetric around $x_{0}$ and its support converges to the point $x_{0}$ as $\epsilon$ tends to $0$. The Dirac delta function is then defined as
+ 	\[ \delta_{x_{0}}(f) \coloneqq \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f). \]
+ 	Moreover, it holds that $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ and $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see \cite[Chap. 1.4]{weis2015spektheo}.
+ 	\begin{remark}
+ 		 The Dirac delta function can even be defined equivalently either as a distribution or as a measure.
+ 	\end{remark}
+~\\
+Since our focus will be on the Schrödinger operator, we will require the following definitions and properties of operators between Banach spaces.
+\begin{definition} 
+Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \subseteq X$. We call $A$ closed if $graph(A) \coloneqq \{ (x, Ax) : x \in \mathcal{D}(A) \} \subseteq X \times Y$ is a closed set with respect to the product topology.
+\end{definition}
+
+Moreover, we will study a certain class of operators, the self-adjoint operators. For this we define:
+
+\begin{definition}
+Let $X$ be a Hilbert space and $\langle \cdot, \cdot \rangle_{X}$ denote the scalar product on $X$. Le $A \colon \mathcal{D}(A) \rightarrow X$ be a linear operator where $\mathcal{D}(A) \subseteq X$.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item If $A$ is densely defined, the adjoint $A^{*} \colon \mathcal{D}(A^{*}) \rightarrow X$ of $A$ is defined by $\mathcal{D}(A^{*}) \coloneqq \{ u \in X \colon ~\exists u^{*} \in X ~\forall v \in \mathcal{D}(A) ~\langle u, Av \rangle = \langle u^{*} , v \rangle \}$ and $A^{*} u \coloneqq u^{*}$ for $u \in \mathcal{D}(A^{*})$; note that, for $u \in \mathcal{D}(A^{*})$, $u^{*}$ is unique.
+		\item We call $A$ symmetric, if $\langle Ax,y \rangle_{X} = \langle x , Ay \rangle_{X}$ for all $x,y \in \mathcal{D}(A)$, and
+		\item We call $A$ self-adjoint, if $A$ is densely defined on $X$ and coincides with its adjoint.
+	\end{enumerate}
+\end{definition}
+
+Since every symmetric operator $A$ has the property $\mathcal{D}(A) \subseteq \mathcal{D}(A^{*})$ it follows that $A$ is self-adjoint if $A$ is a symmetric operator and $\mathcal{D}(A) \supseteq \mathcal{D}(A^{*})$, for proof refer to \cite[page 256]{reed1908methods}. Since our main result is to characterise the spectrum of the Schrödinger operator, we still need the following definitions. 
+
+\begin{definition}
+Let $I$ denote the identity operator on $X$ and $A \colon X \supseteq \mathcal{D}(A) \rightarrow Y$ be a linear, closed operator.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\lambda \in \C$ belongs in the resolvent set of $A$, $\lambda \in \rho(A)$, if $A  - \lambda I \colon \mathcal{D}(A) \rightarrow Y$ bijective, 
+			\[ \text{ then due to the closed graph theorem is } (A - \lambda I)^{-1} \colon X \rightarrow \mathcal{D}(A) \text{ a bounded linear operator,} \]
+		\item $\sigma(A) = \C \setminus \rho(A)$ is called the spectrum of $A$, and
+		\item $\rho(A) \ni \lambda \mapsto R(\lambda, A) \coloneqq (A - \lambda I)^{-1}$ is the resolvent function of $A$.
+	\end{enumerate}		
+\end{definition}
+
+Eventually, in chapters \ref{chap:4} and \ref{chap:7} we will examine so called compact operators and some of their properties.
+
+\begin{definition}
+	Let $U_{X} = \{ x \in X \colon |x| < 1 \}$. Let $X$ be a normed space and $Y$ a Banach space. A linear operator $A \colon X \rightarrow Y$ is called compact, if $T(U_{X})$ is relativ compact in $Y$.
+\end{definition}
+
+Throughout this thesis we will need some theorems and lemmata from functional analysis and spectral theory, which are listed in the appendix.

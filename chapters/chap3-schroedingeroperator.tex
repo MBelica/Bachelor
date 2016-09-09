@@ -1,6 +1,6 @@
-\chapter{The one-dimensional Schrödinger operator} \label{chap2}
+\chapter{The one-dimensional Schrödinger operator} \label{chap:3}
 
-The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we will examine properties of $A$ such as its domain and its self-adjointness. Later, in chapters \ref{chap3} and \ref{chap4}, we will need these results to deduce characteristics of the spectrum of $A$. ~\\ ~\\
+The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we will examine properties of $A$ such as its domain and its self-adjointness. Later, in chapters \ref{chap:4} and \ref{chap:6}, we will need these results to deduce characteristics of the spectrum of $A$. ~\\ ~\\
 Formally the operation of $A$ is defined by
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
@@ -12,7 +12,7 @@ In general, one cannot say in which sense a solution to the formal problem
 	\begin{equation}
 		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of the Dirac delta function. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{smooth-potential}, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that  % todo 2 smooth potential consistent
+	exists since the potential in $A$ consists of the Dirac delta function. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that  % todo 2 smooth potential consistent
 \begin{equation}
 	\int_{\R} u' \overline{v'} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u \overline{v} = \int_{\R} f \overline{v} \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
@@ -30,7 +30,7 @@ The choice of $h = 1$ yields hence the estimation
 	Since $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$, \eqref{weak-formulation-of-A} holds also for all $v \in H^{1}(\R)$.
 \end{remark}
 
-\section{The resolvent-mapping of the one-dimensional Schrödinger operator} \label{section:3.1}
+\section{The resolvent-mapping of the one-dimensional Schrödinger operator} \label{sec:3.1}
 
 As a first step in order to define the operator $A$ explicitly, we will show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution $u \in H^{1}(\R)$. 
 \begin{definition}
@@ -113,7 +113,7 @@ Due to the linearity of the integral and the uniqueness of the solution, $R_{\mu
 	\end{proof}
 \end{theorem}
 
-\section{The domain of the one-dimensional Schrödinger operator} \label{chap-2.2}
+\section{The domain of the one-dimensional Schrödinger operator} \label{sec:3.2}
 
 Resulting from theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This allows us to define the aforementioned operator $A$ explicitly.
 \begin{definition}
@@ -187,7 +187,7 @@ Consequently, we conclude that
 
 \section{The self-adjointness of the Schrödinger operator}
 
-In chapter \ref{chap4}, we will use the fact that the operator $A$ is self-adjoint, from which follows that $A$ is a closed and symmetric operator. For this we first need to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
+In chapter \ref{chap:6}, we will use the fact that the operator $A$ is self-adjoint, from which follows that $A$ is a closed and symmetric operator. For this we first need to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
 \begin{theorem} \label{2.2:thm-RmuSymmetric}
 	$R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
 	
@@ -210,7 +210,7 @@ Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can 
 	$A$ is a self-adjoint operator.
 		
 	\begin{proof}
-		We proceed by proving first that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ are symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that % todo 2 erwähnen dass  D((R_\mu^-1)*) \subset D(R_{\mu})? bzw anders herum bin mir nicht sicher
+		We proceed by proving first that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ is symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
 		\begin{align}
 			\langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}), \label{*-condition}
 		\end{align}

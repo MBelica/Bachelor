@@ -26,6 +26,7 @@
 \usepackage{mathtools}
 \usepackage{mathrsfs}
 \usepackage{microtype}
+\usepackage[square,numbers]{natbib}
 \usepackage{nicefrac}
 \usepackage{pgf}
 \usepackage{pgfplots}
@@ -33,6 +34,7 @@
 \usepackage{url}
 \usepackage{xpatch}
 
+\bibliographystyle{alpha}
 \pgfplotsset{compat=1.7}
 \usetikzlibrary{arrows}
 
@@ -63,23 +65,25 @@
 \newtheorem{atheorem}{Theorem}[chapter]
 \renewcommand{\theatheorem}{A.\arabic{atheorem}}
 
+ 
 
-\begin{document}
+\begin{document} \nocite{*} \urlstyle{rm}
 
 \include{chapters/kit-cover}
  
 \tableofcontents
 \include{chapters/chap1-introduction}
-\include{chapters/chap2-operator}
-\include{chapters/chap3-brillouin}
-\include{chapters/chap35-floquet}
-\include{chapters/chap4-spectrum}
-\include{chapters/chap5-multid}
-\include{chapters/chap6-concl}
+\include{chapters/chap2-preliminaries}
+\include{chapters/chap3-schroedingeroperator}
+\include{chapters/chap4-brillouin}
+\include{chapters/chap5-floquetbloch}
+\include{chapters/chap6-spectrumoned}
+\include{chapters/chap7-multidcase}
+\include{chapters/chap8-outlconcl}
 \appendix
 
 \include{chapters/appendix}
-\bibliographystyle{plain} \urlstyle{rm} \nocite{*} \bibliography{bilbio.bib}
+\bibliography{bilbio.bib}
 \include{chapters/statement}
 
 \end{document}

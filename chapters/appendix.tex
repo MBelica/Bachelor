@@ -18,6 +18,18 @@
 	\end{proof}
 \end{atheorem}
 
+\begin{atheorem}[Uniqueness of weak derivatives] \label{athem:uniqueness_of_weak_deriv}
+	Let $\Omega \subseteq \R$ be open, if it exists, the $\alpha$-th weak derivative of $u$ is uniquely determined up to a set of measure zero.
+	
+	\begin{proof}
+		Assume that $g, \tilde{g} \in L_{loc}^{1}(\Omega)$ satisfy
+		\[ (-1)^{\alpha} \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi  = \int_{\Omega} \tilde{g} \varphi  \]
+		for all $\varphi \in C_{0}^{\infty}(\Omega)$. Then
+		\[ \int_{\Omega} \left( g - \tilde{g} \right) \varphi = 0 \]	
+		for all $\varphi \in C_{0}^{\infty}(\Omega)$, whence $g - \tilde{g} = 0$ almost everywhere.	
+	\end{proof}
+\end{atheorem}   
+
 \begin{atheorem}[Approximation by test functions]
 	$C_{0}^{\infty}(\R)$ is dense in $L^{p}(\R)$, if $1 \leq p < \infty$.
 	
@@ -45,6 +57,22 @@
 	\end{proof}
 \end{atheorem}
 
+\begin{atheorem}[Riesz' representation theorem]
+	Let $H$ be a Hilbert space, and let $H^{*}$ denote its dual space, consisting of all continuous linear functionals from $H$ into $\R$ or $\C$. If $x$ is an element of $H$, then the function $\varphi_{x}$, for all $y$ in $H$ defined by
+	\[ \varphi_{x}(y) = \left\langle y,x\right\rangle_{H}, \]
+	where $\langle \cdot ,\cdot \rangle_{H}$ denotes the inner product of the Hilbert space, is an element of $H^{*}$. Hence, every element of $H^{*}$ can be written uniquely in this form.
+	\begin{proof}
+		See \cite[page 88]{weis2015funkana}
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Closed graph theorem]
+	Let $X$ be a Banach space. Is $A$ a closed operator and $\mathcal{D}(A) = X$, then $A$ is continuous on $X$.
+	\begin{proof}
+		See \cite[page 66]{weis2015funkana}
+	\end{proof}
+\end{atheorem}
+
 \begin{atheorem}[Eigenvectors of a compact, symmetric operator]
 	Let $H$ be a separable Hilbert space, and suppose $S \colon H \rightarrow H$ is a compact and symmetric operator. Then there exists a countable orthonormal basis of $H$ consisting of eigenvectors of $S$.
 	
@@ -63,7 +91,7 @@
 	\end{proof}
 \end{atheorem}
 
-We need the next theorem in two version, once in chapter \ref{chap3} and once in \ref{chap5}. This is also why I will separate the proofs:
+We need the next theorem in two version, once in chapter \ref{chap:4} and once in \ref{chap:7}. This is also why I will separate the proofs:
 
 \begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] % x I haveto prove this!
 Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
