@@ -1,6 +1,7 @@
 \chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix} 
 
-% todo 9 A appendix complete
+%  A appendix complete Tonelli, Monotone convergence theorem, Dominated Convergence Theorem, Poincare's min-max principle for eigenvalues, Graph Theorem, Beppo Levi's Theorem, Parseval, Fubini? define compact sets? Closed, Symmetric Operator , Closed and Symmetric follows from self-adjoint. Prove Compact embedding theorem? Cauchy–Schwarz inequality
+
 
 \begin{atheorem}[The open set of resolvent values]
 	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
@@ -39,7 +40,7 @@
 \end{atheorem}
 
 \begin{atheorem}[The spectrum of self-adjoint operators]
-	The spectrum of a self-adjoint operator $A$ is real.
+	The spectrum of a self-adjoint operator $A$ is real. \label{spectrul-sa-real}
 	
 	\begin{proof}
 		Let $\lambda$ be an eigenvalue of $A$, i.e. there exists $x \in X$ such that $A x = \lambda x$. From this it follows that $\langle A x, x \rangle = \langle \lambda x , x \rangle$. Using then the fact that $A$ is self-adjoint we can further deduce
@@ -57,7 +58,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Riesz' representation theorem]
+\begin{atheorem}[Riesz' representation theorem] % verweis darauf sollte ich
 	Let $H$ be a Hilbert space, and let $H^{*}$ denote its dual space, consisting of all continuous linear functionals from $H$ into $\R$ or $\C$. If $x$ is an element of $H$, then the function $\varphi_{x}$, for all $y$ in $H$ defined by
 	\[ \varphi_{x}(y) = \left\langle y,x\right\rangle_{H}, \]
 	where $\langle \cdot ,\cdot \rangle_{H}$ denotes the inner product of the Hilbert space, is an element of $H^{*}$. Hence, every element of $H^{*}$ can be written uniquely in this form.
@@ -93,7 +94,7 @@
 
 We need the next theorem in two version, once in chapter \ref{chap:4} and once in \ref{chap:7}. This is also why I will separate the proofs:
 
-\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] % x I haveto prove this!
+\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} % x I haveto prove this! 
 Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Suppose $n > 2$. Then $H^{1}(U) \subset\subset L^{q}(U)$ for each $1 \leq q \leq p^{*}$.
@@ -119,6 +120,6 @@ Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. De
 		hold for all $v \in H$.
 		
 		\begin{proof}
-			See \cite[Amd to prob. 51]{plum2015dglhr}. % todo 9 vielleicht noch eine seite oder so
+			See \cite[Amd to problem 51]{plum2015dglhr}.
 		\end{proof}
 \end{atheorem}

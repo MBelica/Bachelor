@@ -1,32 +1,38 @@
 \chapter{Fundamental domain of periodicity and the Brillouin zone}  \label{chap:4}
 
-In this chapter we will restrict the Kronig-Penney model to one periodicity cell and examine the spectrum of the resulting operator. Solving the eigenvalue problem on the period cell while varying specific boundary conditions for the solution functions can be used, with the help of tools we introduce in chapter \ref{chap:5}, to determine the eigenvalues of the unrestricted problem, which is exactly the approach we will use in chapter \ref{chap:6}.
-~\\ ~\\
-Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$. For fixed $k \in B$, in this chapter we consider the operator $A_{k}$ on $\Omega$ formally defined by the operation % todo 3 used in literatur quelle
-	\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}}. \]
+In this chapter we will restrict the Kronig-Penney model to one periodicity cell and examine the spectrum of the resulting operator. Solving the eigenvalue problem on the period cell while varying specific boundary conditions for the solution functions, with the help of tools we introduce in chapter \ref{chap:5}, can be used to determine the eigenvalues of the unrestricted problem. This is precisely the approach we will choose in chapter \ref{chap:6}.
+~\\ 
+
 For brevity let us introduce the following:
 \begin{definition} 
-	We define for every $k$ the set of quasi-periodic functions  
+	We define for every $k$ the set  
 	\begin{equation}
-		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition}
+		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right)  \right\}. \label{quasi-periodic-condition}
 	\end{equation}
-\end{definition}	
+\end{definition}
+Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$, see for example \cite[chapter 3]{dorfler2011photonic}. For fixed $k \in B$, we consider in this chapter the operator $A_{k}$ on $\Omega$ formally defined by the operation 
+	\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}}, \]
+subject to the space $H^{1}_{k}$.
+	
 \begin{remark}
-	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$.
+	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$ and hence a Hilbert space.
 \end{remark}
 
-\begin{proof} % todo 3 proof
+\begin{proof} % todo diesen Beweis führen
 	Due to the fact that convergence in $H^{1}$ implies the convergence on the boundary of $\Omega$.
 \end{proof}
 
-We will hereafter refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions. Analogously to section \ref{sec:3.1}, we now define $A_{k}$ by considering the problem of finding for $f \in L^{2}(\Omega)$ a function $u \in H^{1}_{k}$ such that the equation
-	\[ \int_{\Omega} u' \overline{v'} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u \overline{v} = \int_{\Omega} f \overline{v} \]
-holds for all $v \in H^{1}_{k}$. One can apply the same arguments as above to prove that 
+We will hereafter refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions. Analogously to section \ref{sec:3.1}, we now define $A_{k}$ by considering the problem to find for $f \in L^{2}(\Omega)$ a function $u \in H^{1}_{k}$ such that the equation
+	\[ \int_{\Omega} u'(x) \overline{v'(x)} dx + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \]
+holds for all $v \in H^{1}_{k}$. Using the last remark, i.e that $H^{1}_{k}$ is a Hilbert space, we can use similar arguments as above to prove that 
 	\[ R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k},  f \mapsto u \]
-is well-defined and injective. Consequently, we define
+is well-defined and injective. Consequently, we are able to define
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu I, \quad \mathcal{D}(A_{k}) = \mathcal{R}(R_{\mu, k}^{-1}). \] 
 
 In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we shall show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
+\begin{remark}
+	Note, $R_{\mu, k}$ is the resolvent of $A_{k}$.
+\end{remark}
 
 \section{The compactness of the restricted resolvent} 
 
@@ -38,26 +44,28 @@ In the remainder of this chapter we will further investigate the operator $A_{k}
 		\[ u_{j} \coloneqq R_{\mu, k} f_{j} \quad \text{ for all } j \geq 1 \]
 	is a bounded sequence with respect to the $H^{1}$-Norm as well. Each such $u_{j}$ is by definition in $H^{1}_{k}$ and has to satisfy
 		\begin{equation}
-			\int_{\Omega} u_{j}' \overline{v'} + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j} \overline{v} = \int_{\Omega} f_{j} \overline{v} \quad \forall v \in H^{1}_{k}. \label{ujsatisfy}
+			\int_{\Omega} u_{j}'(x) \overline{v'(x)} dx + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j}(x) \overline{v(x)} dx = \int_{\Omega} f_{j}(x) \overline{v(x)} dx \quad \forall v \in H^{1}_{k}. \label{ujsatisfy}
 		\end{equation} 
 	Now, the particular choice of $v = u_{j}$ in \eqref{ujsatisfy} yields with \eqref{estimation-for-potential} for small enough $\mu$
 		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)}. \]
-	Thus, $\| u_{j} \|_{H^{1}(\Omega)} \leq C$ for all $j$. The assertion follows now from the compact embedding theorem for Sobolev spaces. % todo 3 vielleicht drauf verweisen, dass das imbedding in L2 ist? Formulierung gefällt mir eh nicht
+	Thus, $\| u_{j} \|_{H^{1}(\Omega)} \leq C$ for all $j$. The assertion follows from the compact embedding theorem for Sobolev spaces, see theorem \ref{compact-embedding-theorem}.
 	\end{proof}	
 \end{theorem}		
 
 \section{The spectrum of the restricted Schrödinger operator}
-Using the compactness of $R_{\mu, k}$, we know on the one hand that every non-zero $\lambda \in \sigma(R_{\mu, k})$ is an eigenvalue of $R_{\mu, k}$ and on the other hand that the at most countable sequence of eigenvalues can only accumulate at $0$, for proofs see \cite[page 74 - 76]{weis2015funkana}. We will from now consider the eigenvalue problem to find $\psi \in H^{1}_{k}$ such that % todo 3 h^1_k ist nicht D(A_k) oder?
+Using the compactness of $R_{\mu, k}$, we know on the one hand that every non-zero $\lambda \in \sigma(R_{\mu, k})$ is an eigenvalue of $R_{\mu, k}$ and on the other hand that the at most countable sequence of eigenvalues can only accumulate at $0$, for proofs see \cite[page 74 - 76]{weis2015funkana}. We will from now consider the eigenvalue problem to find $\psi \in \mathcal{D}(A_{k}) \subseteq H_{k}^{1}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}
 	\end{equation}
-We understand $\psi$ extended by the boundary condition on $\partial \Omega$ in \eqref{quasi-periodic-condition} to the whole of $\R$ and call them Bloch waves. By considering any eigenfunction $w$ of $R_{\mu, k}$ with the corresponding eigenvalue $\lambda_{w}(k)$ we can see that
-	\[ A_{k} w = R_{\mu, k}^{-1} w + \mu w = \left(\frac{1}{\lambda_{w}(k)} + \mu\right) w, \]
+The eigenvalue $\lambda$ depends on the boundary condition we set on the domain, more specifically it is a function of $k$. We understand $\psi$ extended by the boundary condition on $\partial \Omega$ in \eqref{quasi-periodic-condition} to the whole of $\R$ and call them Bloch waves. By considering any eigenfunction $w$ of $R_{\mu, k}$ with the corresponding eigenvalue $\lambda(k)$ we can see that
+	\[ A_{k} w = R_{\mu, k}^{-1} w + \mu w = \left(\frac{1}{\lambda(k)} + \mu\right) w, \]
 	i.e. $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and then respectively
-	\[ \tilde{\lambda}_{w}(k) = \frac{1}{\lambda_{w}(k)} - \mu \]
-is an eigenvalue for the same eigenfunction $w$ except that now for the operator $A_{k}$. Using all of this we see that $A_{k}$ has a purely discrete spectrum satisfying
+	\begin{equation}
+		\tilde{\lambda}(k) = \frac{1}{\lambda(k)} - \mu \label{ewresp}
+	\end{equation} 
+is an eigenvalue for the eigenfunction $w$ except that now of the operator $A_{k}$. Using the compactness of $R_{\mu, k}$ and \eqref{ewresp}, we see that $A_{k}$ has a purely discrete spectrum satisfying
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
-and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}. ~\\ % todo 3 eigenfunctions redundand 2 mal drin und erwhnen dass die in L^2 sind? bzw in L2 das complette system ist
+and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, see \cite[page 643 and 645]{evans1998partial}.
 
 At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This allows us to show the following.
 
@@ -73,17 +81,17 @@ At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-prob
 				& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
 				& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
 		\end{align}
-		Defining the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
+		Therefore, let us define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
 			\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
- 				\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}),
+ 				\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
  			\end{cases} \] 
-		and using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
+		Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
 			\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
 		From this and from theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions to the periodic eigenvalue problem
 		\begin{align}
 			\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
-		 	\varphi(x - \frac{1}{2}) = \varphi(x + \frac{1}{2}). \label{periodic-condition}
+		 	\varphi\left(x - \frac{1}{2}\right) = \varphi\left(x + \frac{1}{2}\right). \label{periodic-condition}
 		\end{align}
-		with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem} by \eqref{transformed}. % todo 3 Warum können die Eifenfkt periodisch zueiner H^2 \subset C^1(\R) funktion fortgesetzt werden, wenn nur3.6 gefordert wird und nicht die ableitungen
+		with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem} by \eqref{transformed}.
 	\end{proof}
 \end{theorem}
