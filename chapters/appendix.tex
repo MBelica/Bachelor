@@ -11,6 +11,14 @@
 	\end{proof}
 \end{atheorem}
 
+\begin{atheorem} \label{h1kclosed}
+	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$ and hence a Hilbert space.
+
+	\begin{proof}
+		todo % todo todo.
+	\end{proof}
+\end{atheorem}
+
 \begin{atheorem}
 	For $A$ beeing a self-adjoint operator, $\lambda \in \rho(A)$, $(A - \lambda I)^{-1}$ is bounded.
 	
@@ -103,7 +111,7 @@ Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. De
 				Follows from Rellich-Kondrachov compactness theorem, see for example \cite[page 272]{evans1998partial}.
 			\end{proof}
 		\item Suppose $n \in \{1, 2\}$. Then $H^{1}(U) \subset\subset L^{2}(U)$.
-			\begin{proof} To proof the embedding for $p=2$ note that from Rellich-Kondrachov compactness theorem it follows that $p^{*} \rightarrow \infty$ if $p \rightarrow n$. It is easily seen that if $(u_{n})_{n}$ is a $H^{1}(U)$-bounded sequence, then so it is bounded in $W^{1, n-\epsilon}(U)$ for some $\epsilon > 0$. Choosing $\epsilon$ such that $(n - \epsilon)^{*} > n$ hence allows using again via part a) the Rellich-Kondrachov compactness theorem and  this provides he existence of a $L^{2}(U)$ convergent subsequence. ~\\
+			\begin{proof} To proof the embedding for $p=2$ note that from Rellich-Kondrachov compactness theorem it follows that $p^{*} \rightarrow \infty$ if $p \rightarrow n$. It is easily seen that if $(u_{n})_{n \in \N}$ is a $H^{1}(U)$-bounded sequence, then so it is bounded in $W^{1, n-\epsilon}(U)$ for some $\epsilon > 0$. Choosing $\epsilon$ such that $(n - \epsilon)^{*} > n$ hence allows using again via part a) the Rellich-Kondrachov compactness theorem and  this provides he existence of a $L^{2}(U)$ convergent subsequence. ~\\
 			For $n = 1$ this follows from Morrey's inequality and the Arzela Ascoli compactness criterion, see for example \cite[page 274]{evans1998partial}.
 			\end{proof}
 	\end{enumerate}

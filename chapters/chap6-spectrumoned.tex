@@ -10,11 +10,11 @@ To prove this equality we first need to characterise the dependence of $I_{s}$ o
 \begin{theorem} \label{6.1}
 	For all $s \in \N$ the function $k \mapsto \lambda_{s}(k)$ is continuous in $k \in \overline{B}$.
 	\begin{proof}
-		Let us define 
+		Based on \eqref{mod-eigv-problem} and eqref{periodic-condition}, let us define 
 		$$H^{1}_{per} \coloneqq \left\{ 	v \in H^{1}(\Omega) : v\left(x - \frac{1}{2}\right) = v\left(x + \frac{1}{2}\right) \right\}. $$
 		In the transformed eigenvalue problem \eqref{mod-eigv-problem} the boundary conditions \eqref{periodic-condition} are periodic and independent of $k$. By Poincare's min-max principle for eigenvalues we have
 		\begin{equation}
-			\lambda_{s}(k) = \underset{\dim U = s}{\min_{U \subseteq H^{1}_{per}(\Omega)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle A_{k} v, v \rangle_{L^{2}(\Omega)}}{\langle v, v \rangle_{L^{2}(\Omega)}}.  \label{poincare}
+			\lambda_{s}(k) = \underset{\dim U = s}{\min_{U \subseteq \mathcal{D}(\tilde{A}_{k}) \subseteq H^{1}_{per}(\Omega)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle \tilde{A}_{k} v, v \rangle_{L^{2}(\Omega)}}{\langle v, v \rangle_{L^{2}(\Omega)}}.  \label{poincare}
 		\end{equation} 
 		Now, let $k \in B$ be fixed. For all $\tilde{k} \in B$ and all $v \in H^{1}_{per}(\Omega)$ using triangular inequality we can estimate for $J \in \left\{ (x_{0} - \frac{1}{2}, x_{0}), (x_{0}, x_{0} + \frac{1}{2}) \right\}$:
 		\begin{align}
@@ -40,7 +40,7 @@ To prove this equality we first need to characterise the dependence of $I_{s}$ o
 		\end{align*}
 		which, eventually, yields
 		\[ |\lambda_{s}(\tilde{k}) - \lambda_{s}(k)| \leq |k - \tilde{k}| \left( \lambda_{s}(k) + 1 + 2|k| + |k| + |\tilde{k}|\right). \] 
-		Now, thew eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ rather than on the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions, since the domain with Dirichlet conditions is a superset of the domain with the semi-periodic boundary conditions. Since the eigenvalues for the Dirichlet boundary condition are independent of $k$, $\lambda_{s}(k)$ is uniformly bounded, and hence, $\lambda_{s}(k)$ is continuous in $k$.
+		Now, the eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ rather than on the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions, since the domain with Dirichlet conditions is a superset of the domain with the semi-periodic boundary conditions. Since the eigenvalues for the Dirichlet boundary condition are independent of $k$, $\lambda_{s}(k)$ is uniformly bounded, and hence, $\lambda_{s}(k)$ is continuous in $k$.
 	\end{proof}
 \end{theorem}
 
@@ -107,7 +107,7 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 			(A - \lambda I) u_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
-		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies % todo Nachfragen/Überprüfen st doch nicht in H^2 loc es gibt doch einen Sprung im delta-Punkt. Ist doch nur H^1_loc
+		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
 		\begin{equation}
 			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
 		\end{equation}

@@ -3,36 +3,50 @@
 In this chapter we will restrict the Kronig-Penney model to one periodicity cell and examine the spectrum of the resulting operator. Solving the eigenvalue problem on the period cell while varying specific boundary conditions for the solution functions, with the help of tools we introduce in chapter \ref{chap:5}, can be used to determine the eigenvalues of the unrestricted problem. This is precisely the approach we will choose in chapter \ref{chap:6}.
 ~\\ 
 
-For brevity let us introduce the following:
+Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$, see for example \cite[chapter 3]{dorfler2011photonic}. For brevity let us introduce the following:
 \begin{definition} 
-	We define for every $k$ the set  
-	\begin{equation}
-		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right)  \right\}. \label{quasi-periodic-condition}
+	We define for every $k \in B$ the set  
+	\begin{equation} 
+		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition}
 	\end{equation}
+	Hereafter, we will refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions.
 \end{definition}
-Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi]$, the so called one-dimensional Brillouin zone $B$, see for example \cite[chapter 3]{dorfler2011photonic}. For fixed $k \in B$, we consider in this chapter the operator $A_{k}$ on $\Omega$ formally defined by the operation 
+In this chapter, we will consider the operator $A_{k}$ on $\Omega$ formally defined by the operation 
 	\[ -\frac{d^{2}}{dx^{2}} + \rho \delta_{x_{0}}, \]
-subject to the space $H^{1}_{k}$.
+subject to the space $H^{1}_{k}$ for fixed $k \in B$.
 	
 \begin{remark}
 	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$ and hence a Hilbert space.
 \end{remark}
 
-\begin{proof} % todo diesen Beweis führen
-	Due to the fact that convergence in $H^{1}$ implies the convergence on the boundary of $\Omega$.
+\begin{proof}
+	See theorem \ref{h1kclosed}.
 \end{proof}
 
-We will hereafter refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions. Analogously to section \ref{sec:3.1}, we now define $A_{k}$ by considering the problem to find for $f \in L^{2}(\Omega)$ a function $u \in H^{1}_{k}$ such that the equation
-	\[ \int_{\Omega} u'(x) \overline{v'(x)} dx + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \]
+Analogously to section \ref{sec:3.1}, we now define $A_{k}$ by considering the problem to find for $f \in L^{2}(\Omega)$ a function $u \in H^{1}_{k}$ such that the equation
+	\begin{equation}
+		\int_{\Omega} u'(x) \overline{v'(x)} dx + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \label{weak-formulation-to-the-restricted}
+	\end{equation}
+
 holds for all $v \in H^{1}_{k}$. Using the last remark, i.e that $H^{1}_{k}$ is a Hilbert space, we can use similar arguments as above to prove that 
 	\[ R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k},  f \mapsto u \]
 is well-defined and injective. Consequently, we are able to define
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu I, \quad \mathcal{D}(A_{k}) = \mathcal{R}(R_{\mu, k}^{-1}). \] 
-
-In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we shall show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
+	
 \begin{remark}
 	Note, $R_{\mu, k}$ is the resolvent of $A_{k}$.
 \end{remark}
+
+\section{The domain of the restricted Schrödinger operator}
+
+We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Proceeding as in section \ref{sec:3.2}, by choosing specific test function $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we can show that
+\begin{align*}
+	\mathcal{D}(A_{k}) & = \Big\{ \psi \in H^{1}(\Omega) \colon ~\psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ u\big|_{\left(-\frac{1}{2}, 0\right)} \in H^{2}\left(\left(-\frac{1}{2}, 0\right)\right), ~ u\big|_{\left(0, \frac{1}{2}\right)} \in H^{2}\left(\left(0, \frac{1}{2}\right)\right),  \\
+	& ~\qquad ~\qquad ~\qquad ~\qquad u'(x_{0}-0) - u(x_{0} + 0) + \rho u(x_{0}) = 0,  ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right) \Big\}. 
+\end{align*}
+
+
+In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we shall show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
 
 \section{The compactness of the restricted resolvent} 
 
@@ -40,7 +54,7 @@ In the remainder of this chapter we will further investigate the operator $A_{k}
 	The operator $R_{\mu, k}$ is compact.
 
 	\begin{proof}
-	Let $(f_{j})_{j} \in L^{2}(\Omega)$ be a  bounded sequence. We will show that 
+	Let $(f_{j})_{j \in \N} \in L^{2}(\Omega)$ be a  bounded sequence. We will show that 
 		\[ u_{j} \coloneqq R_{\mu, k} f_{j} \quad \text{ for all } j \geq 1 \]
 	is a bounded sequence with respect to the $H^{1}$-Norm as well. Each such $u_{j}$ is by definition in $H^{1}_{k}$ and has to satisfy
 		\begin{equation}
@@ -61,11 +75,11 @@ The eigenvalue $\lambda$ depends on the boundary condition we set on the domain,
 	\[ A_{k} w = R_{\mu, k}^{-1} w + \mu w = \left(\frac{1}{\lambda(k)} + \mu\right) w, \]
 	i.e. $A_{k}$ has the same sequence of eigenfunctions as $R_{\mu, k}$, and then respectively
 	\begin{equation}
-		\tilde{\lambda}(k) = \frac{1}{\lambda(k)} - \mu \label{ewresp}
+		\tilde{\lambda}(k) \coloneqq \frac{1}{\lambda(k)} - \mu \label{ewresp}
 	\end{equation} 
 is an eigenvalue for the eigenfunction $w$ except that now of the operator $A_{k}$. Using the compactness of $R_{\mu, k}$ and \eqref{ewresp}, we see that $A_{k}$ has a purely discrete spectrum satisfying
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
-and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, see \cite[page 643 and 645]{evans1998partial}.
+and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, see \cite[page 643 - 645]{evans1998partial}.
 
 At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This allows us to show the following.
 

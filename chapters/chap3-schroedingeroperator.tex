@@ -143,7 +143,7 @@ and therefore
 	\end{equation} 
 	
 Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} for some arbitrary $n \in \N$ yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump} that
-\[ \sum_{i=-n}^{n-1} -\int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx + \sum_{i=-n}^{n-1} u' \overline{v} \Big|_{x_{i}}^{x_{i+1}} + \rho \sum_{i=-n}^{n-1} u(x_{i}) \overline{v(x_{j})} - \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx = \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx \]
+\[ \sum_{i=-n}^{n-1} -\int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx + \sum_{i=-n}^{n-1} u' \overline{v} \big|_{x_{i}}^{x_{i+1}} + \rho \sum_{i=-n}^{n-1} u(x_{i}) \overline{v(x_{j})} - \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx = \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx \]
 \begin{equation}
 	\iff \sum_{i=-n}^{n-1} \int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx = - \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx - \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx. \label{refwa}
 \end{equation} 
@@ -158,10 +158,12 @@ for some $c \in \R$, since $f \in L^{2}(\R)$ and $u \in H^{1}(\R)$. Hence, this
 		\mathcal{D}(A) \subseteq \left\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \in \Z \right\}. \label{firstdomaininclusion} 
 	\end{equation}
 Hence, for an arbitrary $u \in \mathcal{D}(A)$ we know from \eqref{temp-link} and \eqref{firstdomaininclusion} that
-	\[ A u = \begin{cases}
+	\begin{equation}
+		A u = \begin{cases}
 					- u'' & \text{ on } (x_{k} - \frac{1}{2}, x_{k}) \\
 					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
-			 \end{cases} \quad \forall k \in \Z. \]
+			 \end{cases} \quad \forall k \in \Z. \label{Aaction}
+	\end{equation} 
 We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the operator $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$ we can therefore ensure $f \in L^{2}(\R)$. Hence, we want to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
 	\begin{align*}
 		 \int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R}(f(x)-\mu u(x)) \overline{v(x)} dx \\
@@ -175,16 +177,12 @@ For each $k \in \Z$ partial integration on both side of $x_{k}$ with a function 
 which is equivalent to
 	\[ u'(x_{k}-0) - u'(x_{k}+0) + \rho u(x_{k}) = 0. \]
 Consequently, we conclude that
-	\begin{align*}
-		\mathcal{D}(A) & = \Big\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \in \Z \Big\}.
-	\end{align*}
+	\begin{equation}
+		\mathcal{D}(A) = \Big\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \in \Z \Big\}. \label{DomA}
+	\end{equation}
 \begin{remark}
-	The definition of $A$ is independent of $\mu$.
+	From \eqref{Aaction} and \eqref{DomA} follows that the definition of $A$ is independent of $\mu$.
 \end{remark}
-
-\begin{proof} % todo diesen Beweis führen
-	 Since as seen above the domain is independent of $\mu$ and $\mu$-dependent terms cancel each other out.
-\end{proof}
 
 \section{The self-adjointness of the Schrödinger operator}
 

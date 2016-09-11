@@ -40,10 +40,10 @@ Again motivated by the weak-formulation, given a right-hand side $f \in L^{2}(\R
 holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u v$ the traces. They are well defined as $u, v \in H^{1}(\R)$ and hence the trace in $L^{2}(\R)$. For a detailed explanation see \cite[page 164]{adams2003sobolev}.  
 
 \begin{remark}
-	The term in \eqref{eq:7.2-md-weak-formulation} originating from the potential is finite since
-	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] % todo diese Formel überprüfen. Vielleicht etwas ausführlicher?
+	The term in \eqref{eq:7.2-md-weak-formulation} originating from the potential is finite since the Cauchy–Schwarz inequality yields
+	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] 
 	Both terms on the right-hand side can be finitely estimated by the trace theorem \cite[page 258]{evans1998partial} for some $h > 0$ through
-	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq 2 \left( \frac{1}{h} \|u\|_{L^{2}(B_{j})}^{2} + h \| \nabla u \|_{L^{2}(B_{j})}^{2} \right). \] % todo diese Formel überprüfen. Vielleicht etwas ausführlicher?
+	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq 2 \left( \frac{1}{h} \|u\|_{L^{2}(B_{j})}^{2} + h \| \nabla u \|_{L^{2}(B_{j})}^{2} \right). \]
 \end{remark}
 
 Analogously to section \ref{sec:3.1}, we can once again chose $\mu \in \R$ small enough such that Lax-Migram's Theorem proves the existence of a unique solution $u \in H^{1}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation} for any $f \in L^{2}(\R^{n})$. Hence, we are able to define the operator $R_{\mu}^{n} \colon L^{2}(\R^{n}) \rightarrow H^{1}(\R^{n}), f \mapsto u$ where $u \in H^{1}(\R^{n})$ is the solution of \eqref{eq:7.2-md-weak-formulation}. Through the same approach as in theorem \ref{rmuinj}, we can see that $R_{\mu}^{n}$ is a injective, bounded linear operator. This on the other hand enables us to explicitly define $A^{n}$ by means of $R_{\mu}^{n}$:
@@ -52,7 +52,7 @@ Analogously to section \ref{sec:3.1}, we can once again chose $\mu \in \R$ small
 We are interested in the spectrum of the operator $A^{n}$. The basic idea is again to transfer the problem to its fundamental domain of periodicity, solving the eigenvalue problem on this bounded set, which then will allow us through the Floquet transform to solve the problem for $A^{n}$.
 
 \begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
-	\begin{enumerate}
+	\begin{enumerate} % todo gehört hier nicht das nablaweg im1.?
 		\item $\Delta u \in L^{2}(B_{j})$, $\Delta u \in L^{2}(\Omega)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
 		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$
