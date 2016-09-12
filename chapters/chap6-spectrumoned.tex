@@ -4,11 +4,11 @@ Finally, we are able to prove the main result for the one-dimensional case stati
 		\sigma(A) = \bigcup_{s \in \N} I_{s}, \label{MainResult}
 	\end{equation}
 where $I_{s} \coloneqq \{ \lambda_{s}(k) : k \in \overline{B} \} ~(s \in \N)$. We will prove that  each $I_{s}$ is a compact interval, this means that the spectrum shows a \enquote{band-gap} structure. 
-~\\ ~\\ % todo diesen Beweis noch einmal Korrekturlesen
-To prove this equality we first need to characterise the dependence of $I_{s}$ of $k$, more specifically that $\lambda_{s}(k)$ is continuous in $k$ and hence $I_{s}$ being for each $k$ a compact interval.
+~\\ ~\\ 
+To prove this equality we first need to show that $\lambda_{s}(k)$ is continuous in $k$, and hence, $I_{s}$ is for each $k$ a compact interval in $\R$.
 
 \begin{theorem} \label{6.1}
-	For all $s \in \N$ the function $k \mapsto \lambda_{s}(k)$ is continuous in $k \in \overline{B}$.
+	For all $s \in \N$ is the function $k \mapsto \lambda_{s}(k)$ continuous in $k \in \overline{B}$.
 	\begin{proof}
 		Based on \eqref{mod-eigv-problem} and eqref{periodic-condition}, let us define 
 		$$H^{1}_{per} \coloneqq \left\{ 	v \in H^{1}(\Omega) : v\left(x - \frac{1}{2}\right) = v\left(x + \frac{1}{2}\right) \right\}. $$
@@ -39,24 +39,26 @@ To prove this equality we first need to characterise the dependence of $I_{s}$ o
 				\lambda_{s}(\tilde{k}) & \geq \left( 1 - |k - \tilde{k}| \right) \lambda_{s}(k) - \left( |k - \tilde{k}| (1 + 2|k|) + \left| |k|^{2}- |\tilde{k}|^{2} \right| \right),
 		\end{align*}
 		which, eventually, yields
-		\[ |\lambda_{s}(\tilde{k}) - \lambda_{s}(k)| \leq |k - \tilde{k}| \left( \lambda_{s}(k) + 1 + 2|k| + |k| + |\tilde{k}|\right). \] 
-		Now, the eigenvalue $\lambda_{s}(k)$ is also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ rather than on the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions, since the domain with Dirichlet conditions is a superset of the domain with the semi-periodic boundary conditions. Since the eigenvalues for the Dirichlet boundary condition are independent of $k$, $\lambda_{s}(k)$ is uniformly bounded, and hence, $\lambda_{s}(k)$ is continuous in $k$.
+		\begin{equation}
+			|\lambda_{s}(\tilde{k}) - \lambda_{s}(k)| \leq |k - \tilde{k}| \left( \lambda_{s}(k) + 1 + 2|k| + |k| + |\tilde{k}|\right). \label{lambdacont}
+		\end{equation} 
+		Now, the eigenvalue $\lambda_{s}(k)$ is by construction also an eigenvalue of the problem \eqref{eigv-problem}, where the operator is dependent on $k$ rather than on the boundary conditions. However, all eigenvalues of \eqref{eigv-problem} are by the min-max-principle dominated by eigenvalues of the eigenvalue problem of $A_{k}$ with Dirichlet boundary conditions, since the domain with Dirichlet conditions is a superset of the domain with the semi-periodic boundary conditions. Since the eigenvalues for the Dirichlet boundary condition are independent of $k$, $\lambda_{s}(k)$ is uniformly bounded, and hence by \eqref{lambdacont}, $\lambda_{s}(k)$ is continuous in $k$.
 	\end{proof}
 \end{theorem}
 
 \begin{remark}
-	As $B$ is compact, connected and $\lambda_{s}(k)$ is a continuous function of $k \in B$ we derive for \eqref{MainResult}
+	As $B$ is compact and connected and $\lambda_{s}(k)$ is a continuous function of $k \in B$ we derive for \eqref{MainResult}
 	\begin{equation}
 		I_{s} \text{ is a compact real interval for each } s \in \N.\label{Iisacompactrealinterval}
 	\end{equation} 	
 \end{remark}
 
-From \eqref{poincare} and \eqref{Iisacompactrealinterval} also follows that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions, since the domain with Neumann conditions is a suberset of the domain with the semi-periodic boundary conditions.Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, hence, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that % todo diesen Beweis führen: Begründung warum \mu_s gegen unendlich strebt fehlt
+From \eqref{poincare} and \eqref{Iisacompactrealinterval} also follows that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions, since the domain with Neumann conditions is a subset of the domain with the semi-periodic boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, hence, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that % todo diesen Beweis führen: Begründung warum \mu_s gegen unendlich strebt fehlt
 	\begin{equation}
 		\bigcup_{s \in \N} I_{s} \text{ is closed.} \label{UIclosed}
 	\end{equation}
-	
-Now, we start proving \eqref{MainResult} by proving the following theorem.
+
+Using this property we are now able to prove the first inclusion of the main statement \eqref{MainResult}.	
 
 \begin{theorem} \label{4.1:thm-MainResult.FirstInclusion}
 	$\sigma(A) \supseteq \bigcup_{s \in \N} I_{s}.$
@@ -66,7 +68,7 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 		\begin{equation}
 			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} 
 		\end{equation} 
-		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies
+		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies % todo show that it \psi is in dom A
 		\[ A \psi_{s} = \lambda \psi_{s} \]
 		\enquote{locally}, i.e. 
 		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \Big\}, \]
@@ -76,9 +78,8 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 			\end{equation} 
 		and define, for each $l \in \N$,
 			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]
-
 \begin{figure}[!ht] \centering
-	\resizebox{.55\linewidth}{!}{
+	\resizebox{.3\linewidth}{!}{
 		\begin{tikzpicture}
 		  \begin{axis}[
     		axis x line*=bottom,
@@ -98,30 +99,30 @@ Now, we start proving \eqref{MainResult} by proving the following theorem.
 		\end{tikzpicture}
 	}
 	\caption{Example for a function $\eta$} 
-\end{figure}
-
-~\newline		
+\end{figure}		
 		
-	 	Then
+	 	As $u_{l} \in \mathcal{D}(A)$, we see that % todo proof domain
 		\begin{align}
 			(A - \lambda I) u_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
-		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies
+		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{2}_{loc}(\R)$, the semi-periodic structure of $\psi_{s}(\cdot, k)$ implies % todo H2loc stimmt nicht
 		\begin{equation}
 			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
 		\end{equation}
 		Now, the semi-periodic structure allows us find additionally an upper boundary for $u_{l}$:
-		\[ \| u_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l} \]
-		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, this gives
+		\begin{equation}
+			\| u_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l} \label{eq:6.11}
+		\end{equation} 
+		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, \eqref{eq:6.11} yields
 		\[ \frac{1}{\|u_{l}\|_{L^{2}(\R)}}\| (A - \lambda I) u_{l} \|_{L^{2}(\R)} \leq \frac{c}{l}. \]
-		As moreover $u_{l} \in \mathcal{D}(A)$, this results in
+		This results eventually in the property
 			\[ \frac{1}{\|u_{l} \|_{L^{2}(\R)}} \| (A - \lambda I) u_{l} \|_{L^{2}(\R)} \rightarrow 0 \text{ as } l \rightarrow \infty \]
 		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
 	\end{proof}
 \end{theorem}	
 
-The other inclusion can be established by using the properties of the Floquet transformation shown above and the completeness of the Bloch waves. Hence, this proof follows that for an arbitrary $m$-th order linear differential operator with periodic coefficients. Again, for the sake of completeness, we include the proof here, as given in \cite[section 3.6]{dorfler2011photonic}.
+The other inclusion can be established by using the properties of the Floquet transformation shown above and the completeness of the Bloch waves. Hence, this proof follows that for an general $m$-th order linear differential operator with periodic coefficients. Again, for the sake of completeness, we include the proof here, as given in \cite[section 3.6]{dorfler2011photonic}.
 
  \begin{theorem} \label{4.1:thm-MainResult.SecondInclusion}
 

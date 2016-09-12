@@ -28,7 +28,7 @@ Analogously to section \ref{sec:3.1}, we now define $A_{k}$ by considering the p
 		\int_{\Omega} u'(x) \overline{v'(x)} dx + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \label{weak-formulation-to-the-restricted}
 	\end{equation}
 
-holds for all $v \in H^{1}_{k}$. Using the last remark, i.e that $H^{1}_{k}$ is a Hilbert space, we can use similar arguments as above to prove that 
+holds for all $v \in H^{1}_{k}$. Using the last remark, i.e that $H^{1}_{k}$ is a Hilbert space, we can use similar arguments as in section \ref{sec:3.1} to prove that 
 	\[ R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k},  f \mapsto u \]
 is well-defined and injective. Consequently, we are able to define
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu I, \quad \mathcal{D}(A_{k}) = \mathcal{R}(R_{\mu, k}^{-1}). \] 
@@ -39,14 +39,14 @@ is well-defined and injective. Consequently, we are able to define
 
 \section{The domain of the restricted Schrödinger operator}
 
-We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Proceeding as in section \ref{sec:3.2}, by choosing specific test function $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we can show that
+We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Proceeding as in section \ref{sec:3.2}, by choosing specific test function $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we can show that % todo diesen Absatz überarbeiten
 \begin{align*}
 	\mathcal{D}(A_{k}) & = \Big\{ \psi \in H^{1}(\Omega) \colon ~\psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ u\big|_{\left(-\frac{1}{2}, 0\right)} \in H^{2}\left(\left(-\frac{1}{2}, 0\right)\right), ~ u\big|_{\left(0, \frac{1}{2}\right)} \in H^{2}\left(\left(0, \frac{1}{2}\right)\right),  \\
 	& ~\qquad ~\qquad ~\qquad ~\qquad u'(x_{0}-0) - u(x_{0} + 0) + \rho u(x_{0}) = 0,  ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right) \Big\}. 
 \end{align*}
 
 
-In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we shall show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
+In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we need to show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
 
 \section{The compactness of the restricted resolvent} 
 
@@ -79,33 +79,25 @@ The eigenvalue $\lambda$ depends on the boundary condition we set on the domain,
 	\end{equation} 
 is an eigenvalue for the eigenfunction $w$ except that now of the operator $A_{k}$. Using the compactness of $R_{\mu, k}$ and \eqref{ewresp}, we see that $A_{k}$ has a purely discrete spectrum satisfying
 	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
-and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, see \cite[page 643 - 645]{evans1998partial}.
+and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, for proof see \cite[page 643 - 645]{evans1998partial}.
 
-At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This allows us to show the following.
-
-\begin{theorem}
-	The eigenvalues of $A_{k}$ as function $k \mapsto \lambda_{s}(k)$ of $k$ are continuous in $k \in \overline{B}$.
-
-	\begin{proof}
-		For this, we first define
-			\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
-		Then,
-		\begin{align}
-			A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \notag \\
-				& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
-				& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
-		\end{align}
-		Therefore, let us define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
-			\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
- 				\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
- 			\end{cases} \] 
-		Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
-			\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
-		From this and from theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions to the periodic eigenvalue problem
-		\begin{align}
-			\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
-		 	\varphi\left(x - \frac{1}{2}\right) = \varphi\left(x + \frac{1}{2}\right). \label{periodic-condition}
-		\end{align}
-		with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem} by \eqref{transformed}.
-	\end{proof}
-\end{theorem}
+At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This step is needed in chapter \ref{chap:6} to show that the eigenvalues in \ref{eigv-problem} depend continuously on $k$. For this, we define first
+	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
+This yields
+	\begin{align}
+		A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \notag \\
+			& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
+			& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
+	\end{align}
+Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
+	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
+		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
+	\end{cases} \] 
+Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
+	\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
+From this and from theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the periodic eigenvalue problem % todo evans nachlesen und cite!
+	\begin{align}
+		\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
+		\varphi\left(x - \frac{1}{2}\right) = \varphi\left(x + \frac{1}{2}\right). \label{periodic-condition}
+	\end{align}
+with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem} by \eqref{transformed}.

@@ -1,3 +1,5 @@
+% groß klein chapter
+% volume Omega ersetzen?
 \documentclass[10pt]{mitthesis}
 
 
@@ -41,6 +43,7 @@
   \DeclareUnicodeCharacter{00A0}{ } 
   \def\supp{\operatorname{supp}}
   \setlength{\parindent}{0pt}
+  \@ifundefined{thechapter}{}{\def\thefigure{\thechapter.\arabic{figure}}} 
   \@ifundefined{thechapter}{}{\def\thefigure{\thechapter.\arabic{figure}}} 
 \makeatother
 
