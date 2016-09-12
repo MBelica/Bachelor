@@ -1,8 +1,8 @@
-\chapter{The spectrum of the multi-dimensional Schrödinger operator}  \label{chap:7} % todo 6 check where k cant be negative
+\chapter{The spectrum of the multi-dimensional Schrödinger operator}  \label{chap:7} 
 
 In this last chapter, we want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems.
 ~\newline ~\newline
-To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary with the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote for any $j \in \Z^{n}$ with $Y_{j} = Y + j$ the $j$th copy of $Y$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $S_{i}^{+}$ and $S_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$.
+To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote with $Y_{j} = Y + j$ the $j$th copy of $Y$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $S_{i}^{+}$ and $S_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$.
 
 \begin{figure}[!ht] \centering
 	\resizebox{.33\linewidth}{!}{
@@ -13,7 +13,7 @@ To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the cor
 	  \draw [line width=0.4pt] (-1.,-1.)-- (1.,-1.);
 	  \draw [line width=0.4pt] (1.,-1.)-- (1.,1.);
 	  \draw [line width=0.4pt] (1.,1.)-- (-1.,1.);
-	  \draw [rotate around={-166.60970691015552:(-0.017884043865981074,0.012185928443575623)}] (-0.017884043865981074,0.012185928443575623) ellipse (2.915306454226339cm and 1.8911924645535707cm);
+	  \draw [rotate around={-166.61:(-0.018,0.012)}] (-0.0179,0.0122) ellipse (2.9153cm and 1.891cm);
 	  \draw ( 0.18, 0.35) node[anchor=north west] {$S$};
 	  \draw (-0.85,-0.56) node[anchor=north west] {$Y$};
 	  \draw (-1.2,0.125) node[anchor=north west] {$S_1^-$};
@@ -24,7 +24,7 @@ To start with, let $Y$ denote a periodicity cell in $\R^{n}$ and $B^{n}$ the cor
 	}
 	\caption{Periodicity cell for the multi-dimensional potential}
 \end{figure}
-
+% todo ENDE check where k cant be negative
 The mathematical representation of the above is a multi-dimensional Schrödinger operator $A^{n}$ whose operation is formally defined by
 \begin{equation}
 	- \Delta + \rho \sum_{i \in \Z} \delta_{S_{i}} \label{eq:7.1-md_the_operator_A_formallyy}
@@ -110,11 +110,11 @@ as the operator considering our problem only on the fundamental cell of periodic
 	The operator $R_{\mu, k}^{n}$ is compact.	
 
 	\begin{proof}
-		As in chapter \ref{chap:4}, using the compact embedding theorem for Sobolev spaces yields the desired. % todo 6 show R_{\mu, k} bounded, UND konkreter: Analogously to theorem... by an applicaion of Rellich.
+		As in Chapter \ref{chap:4}, using the compact embedding theorem for Sobolev spaces yields the desired. % todo 6 show R_{\mu, k} bounded, UND konkreter: Analogously to theorem... by an applicaion of Rellich.
 	\end{proof}
 \end{theorem}
 
 By a transformations of the problem \eqref{eq:7.3-md_weak_formulation_res} as in \eqref{mod-eigv-problem} and \eqref{periodic-condition} we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B} \}$ is again a compact real interval for each $s \in \N$.  % todo zeige transformiertes problem und eigenwerte dazu
 ~\newline ~\newline
-Ultimately, the main result for this multi-dimensional case follows from using the same arguments as in Chapter 4 based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}. We are namely able to show that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the  compact intervals $I^{n}_{s}$, i.e.
+Ultimately, the main result for this multi-dimensional case follows from using the same arguments as in chapter \ref{**-condition} based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}. We are namely able to show that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the  compact intervals $I^{n}_{s}$, i.e.
 	\[ \sigma(A^{n}) = \bigcup_{s \in \N} I^{k}_{s}. \]

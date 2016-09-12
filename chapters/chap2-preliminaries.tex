@@ -30,17 +30,17 @@ The space $H^{k}(\Omega)$ becomes a Hilbert space with this inner product.
 From now on in the remainder of this thesis, we denote with $\mathfrak{D}'(\R)$ the space of all linear functionals on $C_{0}^{\infty}$ that are continuous with respect to this topology and call those functionals distributions.  
 ~\\
 
-Of special interest in this thesis will be one distribution, the Delta-Distribution $\delta_{x_{0}}$ where $x_{0} \in \R$. For a given $x_{0} \in \R$ we first define the sequence of functionals % todo anders herum definieren
+Of special interest in this thesis will be one distribution, the Delta-Distribution $\delta_{x_{0}}$ where $x_{0} \in \R$. For a given $x_{0} \in \R$ we define the Delta-Distribution $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ for $f \in \mathfrak{D}(\R)$ through
+		\[  \delta_{x_{0}}(f) \coloneqq f(x_{0}), \]
+	see also \cite[section 1.4]{weis2015spektheo}. However, for our analysis there is another, equivalent definition of the Delta-Distribution handy. Let us define the sequence of functionals $\delta_{\epsilon}$ for $\epsilon > 0$ and $f \in \mathfrak{D}(\R)$ through
 	\begin{equation}
 		\delta_{\epsilon}(f) \coloneqq \frac{1}{\sqrt{2 \pi} \epsilon} \int_{\R} e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} f(x) dx. \label{eq:2.1-smooth_potential}
 	\end{equation}
- 	Every functional is symmetric around $x_{0}$ and its support converges to the point $x_{0}$ as $\epsilon$ tends to $0$. The Delta-Distribution is then defined as
- 	\[ \delta_{x_{0}}(f) \coloneqq \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f). \]
- 	This limit exists and it holds that $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ and $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see \cite[section 1.4]{weis2015spektheo}.
- 	\begin{remark}
- 		 The Delta-Distribution can also be defined equivalently either as a distribution or as a measure.
- 	\end{remark}
+ 	Each functional is symmetric around $x_{0}$ and its support \enquote{converges} to the point $x_{0}$ as $\epsilon$ tends to $0$. Furthermore, we can show that 
+ 	\[ \delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f), \]
+ 	for proof see Theorem \ref{athem:delta}.
 ~\\
+
 Since our focus will be on the Schrödinger operator, we will require the following definitions and properties of operators between Banach spaces.
 \begin{definition} 
 Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \subseteq X$. We call $A$ closed if $graph(A) \coloneqq \{ (x, Ax) : x \in \mathcal{D}(A) \} \subseteq X \times Y$ is a closed set with respect to the product topology.

@@ -7,7 +7,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 \begin{definition} 
 	We define for every $k \in B$ the set  
 	\begin{equation} 
-		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition}
+		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition} % todo gehört die Ableitung hier rein oder erst in die Domain
 	\end{equation}
 	Hereafter, we will refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions.
 \end{definition}
@@ -78,8 +78,11 @@ The eigenvalue $\lambda$ depends on the boundary condition we set on the domain,
 		\tilde{\lambda}(k) \coloneqq \frac{1}{\lambda(k)} - \mu \label{ewresp}
 	\end{equation} 
 is an eigenvalue for the eigenfunction $w$ except that now of the operator $A_{k}$. Using the compactness of $R_{\mu, k}$ and \eqref{ewresp}, we see that $A_{k}$ has a purely discrete spectrum satisfying
-	\[ \lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \]
+	\begin{equation}
+		\lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{comment-after}
+	\end{equation} 
 and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, for proof see \cite[page 643 - 645]{evans1998partial}.
+~\\
 
 At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This step is needed in chapter \ref{chap:6} to show that the eigenvalues in \ref{eigv-problem} depend continuously on $k$. For this, we define first
 	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
@@ -89,13 +92,13 @@ This yields
 			& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
 			& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
 	\end{align}
-Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
+Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through  % todo stimmt definitionsbereich?
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
 	\end{cases} \] 
 Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
 	\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
-From this and from theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the periodic eigenvalue problem % todo evans nachlesen und cite!
+From this, \eqref{comment-after} and from theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the periodic eigenvalue problem
 	\begin{align}
 		\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
 		\varphi\left(x - \frac{1}{2}\right) = \varphi\left(x + \frac{1}{2}\right). \label{periodic-condition}
