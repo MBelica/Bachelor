@@ -7,7 +7,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 \begin{definition} 
 	We define for every $k \in B$ the set  
 	\begin{equation} 
-		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition} % todo gehört die Ableitung hier rein oder erst in die Domain
+		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition} % todo gehört die Ableitung hier rein oder erst in die Domain
 	\end{equation}
 	Hereafter, we will refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions.
 \end{definition}
@@ -39,7 +39,7 @@ is well-defined and injective. Consequently, we are able to define
 
 \section{The domain of the restricted Schrödinger operator}
 
-We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Proceeding as in section \ref{sec:3.2}, by choosing specific test function $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we can show that % todo diesen Absatz überarbeiten
+We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Therefore, proceeding as in section \ref{sec:3.2}, by choosing specific test function $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we are abel to show that % todo diesen Absatz überarbeiten
 \begin{align*}
 	\mathcal{D}(A_{k}) & = \Big\{ \psi \in H^{1}(\Omega) \colon ~\psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ u\big|_{\left(-\frac{1}{2}, 0\right)} \in H^{2}\left(\left(-\frac{1}{2}, 0\right)\right), ~ u\big|_{\left(0, \frac{1}{2}\right)} \in H^{2}\left(\left(0, \frac{1}{2}\right)\right),  \\
 	& ~\qquad ~\qquad ~\qquad ~\qquad u'(x_{0}-0) - u(x_{0} + 0) + \rho u(x_{0}) = 0,  ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right) \Big\}. 
