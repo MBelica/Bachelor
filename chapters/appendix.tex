@@ -1,6 +1,6 @@
 \chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix} 
 
-%  A appendix complete Tonelli, Monotone convergence theorem, Dominated Convergence Theorem, Poincare's min-max principle for eigenvalues, Graph Theorem, Beppo Levi's Theorem, Parseval, Fubini? define compact sets? Closed, Symmetric Operator , Closed and Symmetric follows from self-adjoint. Prove Compact embedding theorem? Cauchy–Schwarz inequality
+%  A appendix complete Tonelli, Monotone Convergence Theorem, Dominated Convergence Theorem, Poincare's min-max principle for eigenvalues, Graph Theorem, Beppo Levi's Theorem, Parseval, Fubini? define compact sets? Closed, Symmetric Operator , Closed and Symmetric follows from self-adjoint. Prove Compact Embedding Theorem? Cauchy–Schwarz inequality C_0infty dense
 
 
 \begin{atheorem}[The open set of resolvent values]
@@ -72,7 +72,7 @@
 	
 	\begin{proof} % x martin do the proof
 		coming
-%		: Let (fn)n∈N be a sequence of elements in Hφ1(Ω) converging to%f ∈ H1(Ω). Due to the Sobolev embedding of H1-functions into the space of continuous 1 ̃ ̃%functions, we can identify the H -functions fn and f with continuous functions f,fn. Since convergence with respect to the H1-norm implies pointwise convergence almost% ̃ ̃%everywhere, we can conclude that f(x) converges everywhere to f(x). In the following% ̃%let us denote f again instead of f. Thus, for k = 1,2:%f(ξk+) = lim fn(ξk+) = lim eiφk fn(ξk−) = eiφk lim fn(ξk−) = eiφk f(ξk−), n→∞ n→∞ n→∞%which shows the closer of Hφ1(Ω).%Analogously as in chapter (2.1) let us regard the equation% Aφu + μu = f%with f being an element of L2(Ω) and μ having the same properties as before. Then we%are able to formulate a weak formulation what we will write down in the following
+%		: Let (fn)n∈N be a sequence of elements in Hφ1(Ω) converging to%f ∈ H1(Ω). Due to the Sobolev embedding of H1-functions into the space of continuous 1 ̃ ̃%functions, we can identify the H -functions fn and f with continuous functions f,fn. Since convergence with respect to the H1-norm implies pointwise convergence almost% ̃ ̃%everywhere, we can conclude that f(x) converges everywhere to f(x). In the following% ̃%let us denote f again instead of f. Thus, for k = 1,2:%f(ξk+) = lim fn(ξk+) = lim eiφk fn(ξk−) = eiφk lim fn(ξk−) = eiφk f(ξk−), n→∞ n→∞ n→∞%which shows the closer of Hφ1(Ω).%Analogously as in Chapter (2.1) let us regard the equation% Aφu + μu = f%with f being an element of L2(Ω) and μ having the same properties as before. Then we%are able to formulate a weak formulation what we will write down in the following
 	\end{proof}
 \end{atheorem}
 
@@ -110,7 +110,7 @@
 	\end{proof}
 \end{atheorem}
 
-We need the next theorem in two version, once in chapter \ref{chap:4} and once in \ref{chap:7}. This is also why I will separate the proofs:
+We need the next theorem in two versions, once in Chapter \ref{chap:4} and once in \ref{chap:7}. This is also why I will separate the proofs:
 
 \begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} % x I have to prove this! 
 Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
@@ -118,10 +118,10 @@ Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. De
 		\item Suppose $n > 2$. Then $H^{1}(U) \subset\subset L^{q}(U)$ for each $1 \leq q \leq p^{*}$.
 		
 			\begin{proof}
-				Follows from Rellich-Kondrachov compactness theorem, see for example \cite[page 272]{evans1998partial}.
+				Follows from Rellich-Kondrachov Compactness Theorem, see for example \cite[page 272]{evans1998partial}.
 			\end{proof}
 		\item Suppose $n \in \{1, 2\}$. Then $H^{1}(U) \subset\subset L^{2}(U)$.
-			\begin{proof} To proof the embedding for $p=2$ note that from Rellich-Kondrachov compactness theorem it follows that $p^{*} \rightarrow \infty$ if $p \rightarrow n$. It is easily seen that if $(u_{n})_{n \in \N}$ is a $H^{1}(U)$-bounded sequence, then so it is bounded in $W^{1, n-\epsilon}(U)$ for some $\epsilon > 0$. Choosing $\epsilon$ such that $(n - \epsilon)^{*} > n$ hence allows using again via part a) the Rellich-Kondrachov compactness theorem and  this provides he existence of a $L^{2}(U)$ convergent subsequence. ~\\
+			\begin{proof} To proof the embedding for $p=2$ note that from Rellich-Kondrachov Compactness Theorem it follows that $p^{*} \rightarrow \infty$ if $p \rightarrow n$. It is easily seen that if $(u_{n})_{n \in \N}$ is a $H^{1}(U)$-bounded sequence, then so it is bounded in $W^{1, n-\epsilon}(U)$ for some $\epsilon > 0$. Choosing $\epsilon$ such that $(n - \epsilon)^{*} > n$ hence allows using again via part a) the Rellich-Kondrachov Compactness Theorem and  this provides he existence of a $L^{2}(U)$ convergent subsequence. ~\\
 			For $n = 1$ this follows from Morrey's inequality and the Arzela Ascoli compactness criterion, see for example \cite[page 274]{evans1998partial}.
 			\end{proof}
 	\end{enumerate}

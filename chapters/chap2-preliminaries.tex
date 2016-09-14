@@ -2,13 +2,13 @@
 
 For the upcoming analysis some basic concepts from functional analysis and spectral theory are here briefly reviewed:
 ~\newline ~\newline
-Let $C_{0}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. And hereafter $\langle x, x \rangle$ will denote the scalar product in $L^{2}(\R)$.
+Let $C_{0}^{\infty}$ denote the linear space containing all smooth function $f \colon \R \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}$ there exists a compact interval $I \subseteq \R$ such that $f(x) = 0$ for all $x \notin I$. Let $I$ denote the identity operator on the respective space $I x = x$ and hereafter $\langle x, x \rangle$ will denote the scalar product in $L^{2}(\R)$.
 \begin{definition}[Weak derivative]
 Let $\Omega \subseteq \R$ be open, and $f \in L^{1}_{loc}(\Omega)$. The function $f$ is said to have the weak derivative $g \in L^{1}_{loc}(\Omega)$ in $\Omega$ if
   \[ - \int_{\Omega} f(x) \varphi'(x) dx = \int_{\Omega} g(x) \varphi(x) dx \]
 holds for all $\varphi \in C_{0}^{\infty}(\Omega)$.
 \end{definition}
-Let $\alpha \in \N$. We denote with $D^{\alpha} u$ the $\alpha$-th weak derivate of $u$, therewith, if two functions are weak derivatives of the same function they are equal except on a set with Lebesgue measure zero, i.e. they are equal almost everywhere, for a proof see theorem \ref{athem:uniqueness_of_weak_deriv}. A central point in this study will be a special Hilbert space the Sobolev space $H^{k}(\Omega)$. 
+Let $\alpha \in \N$. We denote with $D^{\alpha} u$ the $\alpha$-th weak derivate of $u$, therewith, if two functions are weak derivatives of the same function they are equal except on a set with Lebesgue measure zero, i.e. they are equal almost everywhere, for a proof see Theorem \ref{athem:uniqueness_of_weak_deriv}. A central point in this study will be a special Hilbert space the Sobolev space $H^{k}(\Omega)$. 
 
 \begin{definition} Let $\Omega \subseteq \R$ be open. The sobolev space $H^{k}(\Omega)$ is defined as
 \[ H^{k}(\Omega) \coloneqq \left\{ u \in L^{2}(\Omega) : D^{\alpha} u \text{ exists and } D^{\alpha} u \in L^{2}(\Omega) \text{ for } 0 \leq \alpha \leq k \right\} \]
@@ -63,13 +63,13 @@ Since every symmetric operator $A$ has the property $\mathcal{D}(A) \subseteq \m
 Let $I$ denote the identity operator on $X$ and $A \colon X \supseteq \mathcal{D}(A) \rightarrow Y$ be a linear, closed operator.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\lambda \in \C$ belongs in the resolvent set of $A$, $\lambda \in \rho(A)$, if $A  - \lambda I \colon \mathcal{D}(A) \rightarrow Y$ bijective, 
-			\[ \text{ then due to the closed graph theorem is } (A - \lambda I)^{-1} \colon X \rightarrow \mathcal{D}(A) \text{ a bounded linear operator,} \]
+			\[ \text{ then due to the Closed Graph Theorem is } (A - \lambda I)^{-1} \colon X \rightarrow \mathcal{D}(A) \text{ a bounded linear operator,} \]
 		\item $\sigma(A) = \C \setminus \rho(A)$ is called the spectrum of $A$, and
 		\item $\rho(A) \ni \lambda \mapsto R(\lambda, A) \coloneqq (A - \lambda I)^{-1}$ is the resolvent function of $A$.
 	\end{enumerate}		
 \end{definition}
 
-Eventually, in chapters \ref{chap:4} and \ref{chap:7} we will examine so called compact operators and some of their properties.
+Eventually, in Chapters \ref{chap:4} and \ref{chap:7} we will examine so-called compact operators and some of their properties.
 
 \begin{definition}
 	Let $U_{X} = \{ x \in X \colon |x| < 1 \}$, $X$ be a normed vector space and $Y$ a Banach space. A linear operator $A \colon X \rightarrow Y$ is called compact, if $T(U_{X})$ is relative compact in $Y$.

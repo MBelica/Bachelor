@@ -10,20 +10,18 @@ To prove this equality we first need to show that $\lambda_{s}(k)$ is continuous
 \begin{theorem} \label{6.1}
 	For all $s \in \N$ is the function $k \mapsto \lambda_{s}(k)$ continuous in $k \in \overline{B}$.
 	\begin{proof}
-		Based on \eqref{mod-eigv-problem} and eqref{periodic-condition}, let us define 
-		$$H^{1}_{per} \coloneqq \left\{ 	v \in H^{1}(\Omega) : v\left(x - \frac{1}{2}\right) = v\left(x + \frac{1}{2}\right) \right\}. $$
 		In the transformed eigenvalue problem \eqref{mod-eigv-problem} the boundary conditions \eqref{periodic-condition} are periodic and independent of $k$. By Poincare's min-max principle for eigenvalues we have
 		\begin{equation}
-			\lambda_{s}(k) = \underset{\dim U = s}{\min_{U \subseteq \mathcal{D}(\tilde{A}_{k}) \subseteq H^{1}_{per}(\Omega)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle \tilde{A}_{k} v, v \rangle_{L^{2}(\Omega)}}{\langle v, v \rangle_{L^{2}(\Omega)}}.  \label{poincare}
+			\lambda_{s}(k) = \underset{\dim U = s}{\min_{U \subseteq \mathcal{D}(\tilde{A}_{k})}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle \tilde{A}_{k} v, v \rangle_{L^{2}(\Omega)}}{\langle v, v \rangle_{L^{2}(\Omega)}}.  \label{poincare} 
 		\end{equation} 
-		Now, let $k \in B$ be fixed. For all $\tilde{k} \in B$ and all $v \in H^{1}_{per}(\Omega)$ using triangular inequality we can estimate for $J \in \left\{ (x_{0} - \frac{1}{2}, x_{0}), (x_{0}, x_{0} + \frac{1}{2}) \right\}$:
+		Now, let $k \in B$ be fixed. For all $\tilde{k} \in B$ and all $v \in \mathcal{D}(\tilde{A}_{k})$ using triangular inequality we can estimate for $J \in \left\{ (x_{0} - \frac{1}{2}, x_{0}), (x_{0}, x_{0} + \frac{1}{2}) \right\}$:
 		\begin{align}
 			 \frac{ \langle \left( \frac{d}{dx} + i\tilde{k} \right) v , \left( \frac{d}{dx} + i\tilde{k} \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} & \left\{\mathrel{\substack{\leq \\[0.1cm] \geq}}\right\} \frac{ \langle \left( \frac{d}{dx} + ik \right) v , \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)}}{\langle v , v \rangle_{L^{2}(J)}} \notag \\
 			& ~\quad \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \frac{2 |k-\tilde{k}|\|v'\|_{L^{2}(J)} \| v \|_{L^{2}(J)}}{\| v \|^{2}_{L^{2}(J)}} \left\{\mathrel{\substack{+ \\[0.1cm] -}}\right\} \left| |k|^{2} - |\tilde{k}|^{2} \right| \label{**-condition}
 		\end{align}
 		Moreover, we can estimate
 		\begin{align*}
-			2 \| v' \|_{L^{2}(J)} \| v \|_{L^{2}(J)} & \leq 2 \| \left( \frac{d}{dx} + ik \right) v\|_{L^{2}(J)} \| v \| + 2|k| \|v\|^{2}_{L^{2}(J)} \\
+			2 \| v' \|_{L^{2}(J)} \| v \|_{L^{2}(J)} & \leq 2 \| \left( \frac{d}{dx} + ik \right) v\|_{L^{2}(J)} \| v \|_{L^{2}(J)} + 2|k| \|v\|^{2}_{L^{2}(J)} \\
 			& \leq \| \left( \frac{d}{dx} + ik \right) v \|^{2}_{L^{2}(J)} + \| v \|^{2}_{L^{2}(J)} + 2 |k| \| v \|^{2}_{L^{2}(J)} \\
 			& \leq \langle  \left( \frac{d}{dx} + ik \right) v,  \left( \frac{d}{dx} + ik \right) v \rangle_{L^{2}(J)} + (1 + 2|k|) \|v\|^{2}_{L^{2}(J)}.
 		\end{align*}
@@ -151,15 +149,15 @@ The other inclusion can be established by using the properties of the Floquet tr
 			& = \sum_{s=1}^{\infty} |\lambda_{s}(k) - \lambda|^{2} |\langle v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& \geq \delta^{2} \| v(\cdot, k)\|^{2}_{L^{2}(\Omega)}.
 		\end{align*}
-		By theorem \ref{3.2:thm-UIsometricIsomorphism} we know that $f \in L^{2}(\Omega \times B)$, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{4.9} gives
+		By Theorem \ref{3.2:thm-UIsometricIsomorphism} we know that $f \in L^{2}(\Omega \times B)$, this implies $v \in L^{2}(\Omega \times B)$, and we can define $u \coloneqq U^{-1} v \in L^{2}(\R)$. Thus, \eqref{4.9} gives
 			\begin{align*}
 				\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} & = \langle (A_{k} - \lambda I)(Uu)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& = \langle (Uu)(\cdot,k), (A_{k} - \lambda I) \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \\
 					& = (\lambda_{s}(k) - \lambda) \langle Uu(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)}.
 			\end{align*}
-		Now, we are able to apply theorem \ref{3.3:thm-flConvergence} which yields for \eqref{ul} that
+		Now, we are able to apply Theorem \ref{3.3:thm-flConvergence} which yields for \eqref{ul} that
 			\[ u_{l}(x) = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uu)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk, \]
-		and whence theorem \ref{3.3:thm-flConvergence} gives
+		and whence Theorem \ref{3.3:thm-flConvergence} gives
 			\begin{equation}
 				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R) \text{ as } l \rightarrow \infty. \label{ulflconvergence}
 			\end{equation}
@@ -167,7 +165,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 		\begin{equation}
 				\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle \text{ for all } l \in \N, v \in \mathcal{D}(A); \label{lefttoprove}
 			\end{equation} 
-		As $A$ is self-adjoint, by theorem \ref{2.3:thm-ASelfAdjoint}, this implies $u_{l} \in \mathcal{D}(A)$, and $(A - \lambda I) u_{l} = f_{l}$ for all $l \in \N$. As furthermore every self-adjoint operator is also closed, \eqref{ulflconvergence} now implies
+		As $A$ is self-adjoint, by Theorem \ref{2.3:thm-ASelfAdjoint}, this implies $u_{l} \in \mathcal{D}(A)$, and $(A - \lambda I) u_{l} = f_{l}$ for all $l \in \N$. As furthermore every self-adjoint operator is also closed, \eqref{ulflconvergence} now implies
 			\[ u \in \mathcal{D}(A) \text{ and } (A - \lambda I) u = f, \]
 		which is the desired result.
 		~\newline ~\newline
@@ -180,7 +178,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 		are in $L^{2}(K \times B)$, since \eqref{lambda-distance}, $(A_{k} - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$ imply 
 		\[ \| r_{s} \|_{L^{2}(K \times B)} \leq c \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}
 		\]
-		and analogously for $t_{s}$. As $K$ is bounded there exists a finite number of copies of $\Omega$ such that they cover $K$, hence $\psi_{s}(\cdot, k)$ is in $L^{2}(K)$ as a function of $k$, and $(Uf)(\cdot, k)$ is in $L^{1}(B)$ by theorem \ref{3.2:thm-UIsometricIsomorphism}. Since $B$ is equally bounded, $r$ and $t$ are also in $L^{1}(K \times B)$. Therefore, Fubini’s Theorem implies that the order of integration with respect to $x$ and $l$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul}, the fact that $\varphi$ has compact support in the interior of $K$ and \eqref{eigv-problem} we conclude
+		and analogously for $t_{s}$. As $K$ is bounded there exists a finite number of copies of $\Omega$ such that they cover $K$, hence $\psi_{s}(\cdot, k)$ is in $L^{2}(K)$ as a function of $k$, and $(Uf)(\cdot, k)$ is in $L^{1}(B)$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}. Since $B$ is equally bounded, $r$ and $t$ are also in $L^{1}(K \times B)$. Therefore, Fubini’s Theorem implies that the order of integration with respect to $x$ and $l$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul}, the fact that $\varphi$ has compact support in the interior of $K$ and \eqref{eigv-problem} we conclude
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
 					& = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \langle \psi_{s}(\cdot, k), \varphi \rangle_{L^{2}(K)} dk \\

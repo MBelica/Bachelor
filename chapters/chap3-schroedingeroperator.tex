@@ -1,6 +1,6 @@
 \chapter{The one-dimensional Schrödinger operator} \label{chap:3}
 
-The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we will examine properties of $A$ such as its domain and show its self-adjointness. Later, in chapters \ref{chap:4} and \ref{chap:6}, we will need these results to deduce our main result, i.e. characteristics of the spectrum of $A$. ~\\ ~\\
+The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we will examine properties of $A$ such as its domain and show its self-adjointness. Later, in Chapters \ref{chap:4} and \ref{chap:6}, we will need these results to deduce our main result, i.e. characteristics of the spectrum of $A$. ~\\ ~\\
 Formally the operation of $A$ is defined by
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
@@ -12,7 +12,7 @@ In general, one cannot say in which sense a solution to the formal problem
 	\begin{equation}
 		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of the Delta-Distribution. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
+	exists since the potential in $A$ consists of the Delta-Distribution. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
 \begin{equation}
 	\int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R} f(x) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
@@ -88,7 +88,7 @@ holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ sat
 		\end{equation*}
 	\end{proof}
 \end{theorem}
-Therefore, as used in theorem \ref{2.1:thm-LaxMilgram}, we will subsequently assume that $\mu \in \R$ is small enough. In return, Lax-Migram's Theorem proves that for any fixed $f \in L^{2}(\R)$ a unique solution $u \in H^{1}(\R)$ to the problem \eqref{weak-formulation-of-A-for-LM} exists. This on the other hand allows us to proceed as follows.
+Therefore, as used in Theorem \ref{2.1:thm-LaxMilgram}, we will subsequently assume that $\mu \in \R$ is small enough. In return, Lax-Migram's Theorem proves that for any fixed $f \in L^{2}(\R)$ a unique solution $u \in H^{1}(\R)$ to the problem \eqref{weak-formulation-of-A-for-LM} exists. This on the other hand allows us to proceed as follows.
 \begin{definition}
 	Let us define $R_{\mu} \colon L^{2}(\R) \rightarrow L^{2}(\R), f \mapsto u$ with $u$ being the solution of \eqref{weak-formulation-of-A-for-LM}.
 \end{definition}
@@ -97,7 +97,7 @@ Again, due to the linearity of the integral and the uniqueness of the solution, 
 	The mapping $R_{\mu}$ is bounded and injective.
 	
 	\begin{proof}
-		By theorem \ref{2.1:thm-LaxMilgram} there exists for $f \in L^{2}(\R)$ a function $u \in \mathcal{D}(A)$ as a solution of \eqref{weak-formulation-of-A-for-LM} and hence
+		By Theorem \ref{2.1:thm-LaxMilgram} there exists for $f \in L^{2}(\R)$ a function $u \in \mathcal{D}(A)$ as a solution of \eqref{weak-formulation-of-A-for-LM} and hence
 		\[ \| R_{\mu} f \|_{L^{2}(\R)}^{2} = \| u \|_{L^{2}(\R)}^{2} \leq \| u \|_{H^{1}(\R)}^{2}. \] 
 		Now, using \eqref{weak-formulation-of-A}, \eqref{estimation-for-potential} with a small enough $\mu \in \R$ yields with Cauchy–Schwarz's inequality
 		\[ \| R_{\mu} f \|_{L^{2}(\R)}^{2} \leq \int_{\R} |u'(x)|^{2} dx + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu \int_{\R} |u(x)|^{2} dx \leq \| f \|_{L^{2}(\R)}^{2} \| u \|_{L^{2}(\R)}^{2}, \]	
@@ -113,7 +113,7 @@ Again, due to the linearity of the integral and the uniqueness of the solution, 
 
 \section{The domain of the one-dimensional Schrödinger operator} \label{sec:3.2}
 
-Resulting from theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This allows us to define the aforementioned operator $A$ explicitly.
+Resulting from Theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This allows us to define the aforementioned operator $A$ explicitly.
 \begin{definition}
 	Let $A \colon \mathcal{D}(A) \subseteq L^{2}(\R) \rightarrow L^{2}(\R)$ be the linear operator defined by
 	\[ A \coloneqq R_{\mu}^{-1} + \mu I, \quad \mathcal{D}(A) = \mathcal{R}(R_{\mu}). \]
@@ -186,7 +186,7 @@ Consequently, we conclude that
 
 \section{The self-adjointness of the Schrödinger operator}
 
-In chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjoint. For this we first have to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
+In Chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjoint. For this we first have to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
 
 \begin{theorem} \label{2.2:thm-RmuSymmetric}
 	$R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
@@ -204,7 +204,7 @@ In chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjo
 	\end{proof}
 \end{theorem}
 
-Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can now prove the main statement of this section. Since every symmetric operator has an entirely real spectrum, this theorem yields further our first result about the spectrum of $A$, for a proof see theorem \ref{spectrul-sa-real}.
+Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can now prove the main statement of this section. Since every symmetric operator has an entirely real spectrum, this theorem yields further our first result about the spectrum of $A$, for a proof see Theorem \ref{spectrul-sa-real}.
 
 \begin{theorem} \label{2.3:thm-ASelfAdjoint}
 	$A$ is a self-adjoint operator.
