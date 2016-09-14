@@ -51,7 +51,7 @@ To prove this equality we first need to show that $\lambda_{s}(k)$ is continuous
 	\end{equation} 	
 \end{remark}
 
-From \eqref{poincare} and \eqref{Iisacompactrealinterval} also follows that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions, since the domain with Neumann conditions is a subset of the domain with the quasi-periodic boundary conditions. Since $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, hence, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that % todo X diesen Beweis führen: Begründung warum \mu_s gegen unendlich strebt fehlt
+From \eqref{poincare} and \eqref{Iisacompactrealinterval} also follows that $\mu_{s} \leq \lambda_{s}(k)$ for all $s \in \N$, $k \in \overline{B}$ with $(\mu_{s})_{s \in \N}$ denoting the sequence of eigenvalues of problem \eqref{eigv-problem} with Neumann boundary conditions, since the domain with Neumann conditions is a subset of the domain with the quasi-periodic boundary conditions. By analogous calculations as in Section \ref{sec:4.3}, but now with Neumann boundary conditions in $\mathcal{D}(A_{k})$, we see that $\mu_{s} \rightarrow \infty$ as $s \rightarrow \infty$, hence, we obtain $\min I_{s} \rightarrow \infty \text{ as } s \rightarrow \infty$, which together with \eqref{Iisacompactrealinterval} implies that
 	\begin{equation}
 		\bigcup_{s \in \N} I_{s} \text{ is closed.} \label{UIclosed}
 	\end{equation}
@@ -84,13 +84,13 @@ Using this property we are now able to prove the first inclusion of the main sta
 		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. 
 		
 \begin{figure}[!ht] \centering
-	\resizebox{.5\linewidth}{!}{
+	\resizebox{.6\linewidth}{!}{
 		\begin{tikzpicture}
 		  \begin{axis}[
     		axis x line*=bottom,
     		axis y line*=middle,
 			tick label style={font=\small},
-    		xmin=-1.5, xmax=1.5,
+    		xmin=-0.8, xmax=0.8,
    		 	ymin=0, ymax=1.25,
     		width=0.8\textwidth,
     		height=0.6\textwidth,
@@ -170,7 +170,8 @@ The other inclusion can be established by using the properties of the Floquet tr
 		As $A$ is self-adjoint, by Theorem \ref{2.3:thm-ASelfAdjoint}, this implies $u_{l} \in \mathcal{D}(A)$, and $(A - \lambda I) u_{l} = f_{l}$ for all $l \in \N$. As furthermore every self-adjoint operator is also closed, \eqref{ulflconvergence} now implies
 			\[ u \in \mathcal{D}(A) \text{ and } (A - \lambda I) u = f, \]
 		which is the desired result.
-		~\newline ~\newline
+		~\\
+		
 		Eventually, we are left to prove \eqref{lefttoprove}. So, let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open interval containing $\supp(\varphi)$ in its interior. By Fubini's Theorem we know that 
 		\begin{align*}
 			r_{s}(x, k) & \coloneqq \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{(A - \lambda I) \varphi(x)}, 

@@ -1,9 +1,10 @@
 \chapter{The spectrum of the multi-dimensional Schrödinger operator}  \label{chap:7} 
 
 In this last chapter, we want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems.
-~\newline ~\newline
+~\\
+
 To start with, let $Y$ denote the periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote with $Y_{j} = Y + j$ the $j$th copy of $Y$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $Y_{i}^{+}$ and $Y_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$, as illustrated in Figure \ref{fig:md-cell}.
-~\newline
+~\\
 
 The mathematical representation of the above is a multi-dimensional Schrödinger operator $A^{n}$ whose operation is formally defined by
 \begin{equation}
@@ -14,7 +15,7 @@ on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Delta-Distribution 
 where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite[chapter 14]{forster2012analysis}. Since $C_{0}^{\infty}(\R^{n})$ is dense in $H^{1}(\R^{n})$ we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
 	\[ \delta_{S}\left(u\right) \coloneqq \lim_{n \rightarrow \infty} \delta_{S}\left(u_{n}\right) . \]
 \begin{remark}
-	This definition is independent of the chosen sequence since	 % todo X closure H1 dicht
+	This definition is independent of the chosen sequence due to the linearity of the Delta-Distribution. % todo Andrii ist das okay?
 \end{remark}
 
 \begin{figure}[!ht] \centering
@@ -76,7 +77,7 @@ This on the other hand enables us to explicitly define $A^{n}$ by means of $R_{\
 such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferring the methods used in Section \ref{sec:3.2}.
 
 \begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
-	\begin{enumerate} % todo gehört hier nicht das nablaweg im1.?
+	\begin{enumerate} % todo Martin gehört hier nicht das nablaweg im1.?
 		\item $\Delta u \in L^{2}(B_{j})$, $\Delta u \in L^{2}(\Omega)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
 		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$
@@ -115,13 +116,10 @@ We are interested in the periodic spectral problem of the operator $A^{n}$. Ther
 \end{remark}
 
 \begin{proof}
-	todo.
-	%todo 6 proof
+	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}(\left(R_{\mu}^{n}\right)^{-1})$ exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to Section \ref{sec:3.3}.
 \end{proof}
 
-We restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$. Let us consider the problem to find 
-	\[ u \in H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{Y_{j}^{+}} = w \big|_{Y_{j}^{-}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\} \] % todo X derivates?!
-such that
+We restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$ and define $H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{Y_{j}^{+}} = w \big|_{Y_{j}^{-}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\}$. Let us consider the problem to find $u \in H^{1}_{k, n}$ such that
 	\begin{equation}
 		\int_{Y} \nabla u(x) \overline{\nabla v(x)} dx + \rho \int_{S} u(s) \overline{v(s)} ds - \mu \int_{Y} u(x) \overline{v(x)} dx = \int_{Y} f(x) \overline{v(x)} dx \label{eq:7.3-md_weak_formulation_res}
 	\end{equation} 
@@ -132,27 +130,26 @@ Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H
 as the operator considering multi-dimensional case of our problem on the fundamental cell of periodicity.
 
 \begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
-	\begin{enumerate} % todo gehört hier nicht das nablaweg im1.?
+	\begin{enumerate} % todo Martin gehört hier nicht das nablaweg im1.?
 		\item $\Delta u \in L^{2}(B_{j})$, $\Delta u \in L^{2}(\Omega)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
 		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$
 	\end{enumerate}
 \end{theorem}
 	
-\begin{proof}
- 	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with similar functions for the multi-dimensional case in \eqref{eq:7.2-md-weak-formulation} the asserted follows.
+\begin{proof} % todo X 
+ 	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with similar functions for the multi-dimensional case in \eqref{eq:7.2-md-weak-formulation} the asserted follows. 
+	The quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ of \eqref{eq:7.3-md_weak_formulation_res} to satisfy furthermore
+	\[ \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{-}} \quad \text{for } j = 1, 2.  \]	
 \end{proof}
- The quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ of \eqref{eq:7.3-md_weak_formulation_res} to satisfy furthermore
-	\[ \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{-}} \quad \text{for } j = 1, 2.  \]
-	% todo beweis
+
 \begin{theorem}
 	The operator $R_{\mu, k}^{n}$ is compact.	
 
 	\begin{proof}
-		As in Chapter \ref{chap:4}, we can show that $R_{\mu, k}^{n}$ is a bounded operator. Using the Compact Embedding Theorem for Sobolev spaces yields the claim, for proof see Theorem \ref{compact-embedding-theorem} .
+		As in Chapter \ref{chap:4}, we can show that $R_{\mu, k}^{n}$ is a bounded operator. Using the Compact Embedding Theorem for Sobolev spaces yields the claim, for proof see Theorem \ref{compact-embedding-theorem}.
 	\end{proof}
 \end{theorem}
-
 
 Now, we will consider the eigenvalue problem to find $\psi \in \mathcal{D}(A^{n}_{k})$ such that
 	\begin{equation}
@@ -163,7 +160,7 @@ We understand $\psi_{s}$ extended by the boundary condition on $Y$ in $H^{1}_{k,
 		\lambda^{n}_{1}(k) \leq \lambda^{n}_{2}(k) \leq \dotsc \leq \lambda^{n}_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{md-comment-after}
 	\end{equation}
 By \cite[page 643 - 645]{evans1998partial} we know that the to \eqref{md-comment-after} corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $L^{2}(\R^{n})$. By transformations of the problem \eqref{md-eigv-problem}, similar to the one in \eqref{mod-eigv-problem} and \eqref{periodic-condition}, we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B} \}$ is again a compact real interval for each $s \in \N$.
-~\newline 
+~\\ 
 
 Ultimately, the main result for this multi-dimensional case follows from using the same arguments as in Chapter \ref{**-condition} based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}. We are namely able to show that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the compact intervals $I^{n}_{s}$, i.e.
 	\[ \sigma(A^{n}) = \bigcup_{s \in \N} I^{n}_{s}. \]

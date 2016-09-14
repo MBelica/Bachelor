@@ -69,7 +69,7 @@ In the remainder of this chapter we will further investigate the operator $A_{k}
 	\end{proof}	
 \end{theorem}		
 
-\section{The spectrum of the restricted Schrödinger operator}
+\section{The spectrum of the restricted Schrödinger operator} \label{sec:4.3}
 Using the compactness of $R_{\mu, k}$, we know on the one hand that every non-zero $\lambda \in \sigma(R_{\mu, k})$ is an eigenvalue of $R_{\mu, k}$ and on the other hand that the at most countable sequence of eigenvalues can only accumulate at $0$, for proofs see \cite[page 74 - 76]{weis2015funkana}. We will from now consider the eigenvalue problem to find $\psi \in \mathcal{D}(A_{k}) \subseteq H_{k}^{1}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}
@@ -95,7 +95,7 @@ This yields
 			& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
 			& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
 	\end{align}
-Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through  % todo Passt der Definitionsbereich?
+Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through  % todo Andrii Passt der Definitionsbereich?
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
 	\end{cases} \] 
