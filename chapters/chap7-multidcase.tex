@@ -3,7 +3,7 @@
 In this last chapter, we want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems.
 ~\\
 
-To start with, let $Y$ denote the periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote with $Y_{j} = Y + j$ the $j$th copy of $Y$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $Y_{i}^{+}$ and $Y_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$, as illustrated in Figure \ref{fig:md-cell}.
+To start with, let $\Omega$ denote the periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $\Omega$ being the unit cube $[0, 1]^{n}$. Contained in $\Omega$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{\Omega}$. Furthermore, let $D \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial D$. We will denote with $\Omega_{j} = Y + j$ the $j$th copy of $\Omega$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $S_{j} = S + j$. Finally, we denote with $\Omega_{i}^{+}$ and $\Omega_{i}^{-}$ the opposing edges of $\Omega$ for $i = 1, 2$, as illustrated in Figure \ref{fig:md-cell}.
 ~\\
 
 The mathematical representation of the above is a multi-dimensional Schrödinger operator $A^{n}$ whose operation is formally defined by
@@ -28,12 +28,12 @@ where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed
 	  \draw [line width=0.4pt] (1.,-1.)-- (1.,1.);
 	  \draw [line width=0.4pt] (1.,1.)-- (-1.,1.);
 	  \draw [rotate around={-166.61:(-0.018,0.012)}] (-0.0179,0.0122) ellipse (2.9153cm and 1.891cm);
-	  \draw ( 0.18, 0.35) node[anchor=north west] {\large $S$};
-	  \draw (-0.85,-0.56) node[anchor=north west] {\large $Y$};
-	  \draw (-1.2,0.125) node[anchor=north west] {\large $Y_1^-$};
-	  \draw (1.05,0.125) node[anchor=north west] {\large $Y_1^+$};
-	  \draw (-0.125,-1.05) node[anchor=north west] {\large $Y_2^-$};
-	  \draw (-0.125, 1.2) node[anchor=north west] {\large $Y_2^+$};
+	  \draw ( 0.2, 0.4) node[anchor=north west] {\large $S$};
+	  \draw (-0.8,-0.6) node[anchor=north west] {\large $\Omega$};
+	  \draw (-1.2,0.125) node[anchor=north west] {\large $\Omega_1^-$};
+	  \draw (1.05,0.125) node[anchor=north west] {\large $\Omega_1^+$};
+	  \draw (-0.125,-1.05) node[anchor=north west] {\large $\Omega_2^-$};
+	  \draw (-0.125, 1.2) node[anchor=north west] {\large $\Omega_2^+$};
 	  \end{tikzpicture}
 	}
 	\caption{Periodicity cell for the multi-dimensional potential} \label{fig:md-cell}
@@ -43,7 +43,7 @@ Again motivated by the weak-formulation, given a right-hand side $f \in L^{2}(\R
 	\begin{equation}
 		\int_{\R^{n}} \nabla u(x) \overline{\nabla v(x)} dx + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds - \mu \int_{\R^{n}} u(x) \overline{v(x)} dx = \int_{\R^{n}} f(x) \overline{v(x)} dx \label{eq:7.2-md-weak-formulation}
 	\end{equation} 
-holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u, v$ the traces. As $u, v \in H^{1}(\R)$, the traces they are in $L^{2}(\R)$ by \cite[page 251, Theorem 5.1]{evans1998partial} and \cite[page 164]{adams2003sobolev}, and thus, the second term on the left-hand side in \eqref{eq:7.2-md-weak-formulation} is well defined by the next remark.
+holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u, v$ the traces. As $u, v \in H^{1}(\R)$, the traces they are in $L^{2}(\R^{n})$ by \cite[page 251, Theorem 5.1]{evans1998partial} and \cite[page 164]{adams2003sobolev}, and thus, the second term on the left-hand side in \eqref{eq:7.2-md-weak-formulation} is well defined by the next remark.
 
 \begin{remark} 
 	The term in \eqref{eq:7.2-md-weak-formulation} originating from the potential is finite.
@@ -52,7 +52,7 @@ holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $
 	 First, the Cauchy–Schwarz inequality yields
 	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] 
 	Both terms on the right-hand side can then be finitely estimated by the Trace Theorem \cite[page 258]{evans1998partial} and Poincaré inequality for some $h > 0$ through
-	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq c \left( \frac{1}{h} \|u\|_{L^{2}(B_{j})}^{2} + h \| \nabla u \|_{L^{2}(B_{j})}^{2} \right), \]	
+	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq c \left( \frac{1}{h} \|u\|_{L^{2}(D_{j})}^{2} + h \| \nabla u \|_{L^{2}(D_{j})}^{2} \right), \]	
 	for some $c \in \R$.
 	\end{proof}
 \end{remark}
@@ -76,9 +76,9 @@ This on the other hand enables us to explicitly define $A^{n}$ by means of $R_{\
 
 such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferring the methods used in Section \ref{sec:3.2}.
 
-\begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
+\begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
 	\begin{enumerate} % todo Martin gehört hier nicht das nablaweg im1.?
-		\item $\Delta u \in L^{2}(B_{j})$, $\Delta u \in L^{2}(\Omega)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
+		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(D_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
 		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$
 	\end{enumerate}
@@ -94,12 +94,12 @@ such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferr
 		\draw [line width=0.4pt] (1.,-1.)-- (1.,1.);
 		\draw [line width=0.4pt] (1.,1.)-- (-1.,1.);
 		\draw [rotate around={-166.6097:(-0.0179,0.0122)}] (-0.0179,0.0122) ellipse (3.4012cm and 2.2064cm);
-		\draw (0.178,0.358) node[anchor=north west] {\large $S$};
-		\draw (-0.852,-0.546) node[anchor=north west] {\large $Y$};
+		\draw (0.2,0.4) node[anchor=north west] {\large $S$};
+		\draw (-0.8,-0.6) node[anchor=north west] {\large $\Omega$};
 		\draw [->] (0.1416,0.469) -- (0.2034,0.7943);
 		\draw (0.18,0.65) node[anchor=north west] {\large $\eta$};
 		\draw (-0.015,-0.240) node[anchor=north west] {\large $-$};
-		\draw (0.151,-0.493) node[anchor=north west] {\large $+$};
+		\draw (0.151,-0.475) node[anchor=north west] {\large $+$};
 	  \end{tikzpicture}
 	}
 	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}
@@ -129,9 +129,9 @@ Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H
 	\[ A_{k}^{n} \coloneqq \left(R_{\mu, k}^{n}\right)^{-1} + \mu I, \quad \mathcal{D}(A_{k}^{n}) = \mathcal{R}(R_{\mu, k}^{n}), \]
 as the operator considering multi-dimensional case of our problem on the fundamental cell of periodicity.
 
-\begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
+\begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
 	\begin{enumerate} % todo Martin gehört hier nicht das nablaweg im1.?
-		\item $\Delta u \in L^{2}(B_{j})$, $\Delta u \in L^{2}(\Omega)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
+		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
 		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$
 	\end{enumerate}
@@ -140,7 +140,7 @@ as the operator considering multi-dimensional case of our problem on the fundame
 \begin{proof} % todo X 
  	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with similar functions for the multi-dimensional case in \eqref{eq:7.2-md-weak-formulation} the asserted follows. 
 	The quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ of \eqref{eq:7.3-md_weak_formulation_res} to satisfy furthermore
-	\[ \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{-}} \quad \text{for } j = 1, 2.  \]	
+	\[ \frac{\partial u}{\partial x_{j}}\big|_{\Omega_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{\Omega_{j}^{-}} \quad \text{for } j = 1, 2.  \]	
 \end{proof} \vspace{-0.75cm}
 
 \begin{theorem}
@@ -155,7 +155,7 @@ Now, we will consider the eigenvalue problem to find $\psi \in \mathcal{D}(A^{n}
 	\begin{equation}
 		A^{n}_{k} \psi_{s} = \lambda^{n}_{s}(k) \psi_{s} \text{ on } Y. \label{md-eigv-problem}
 	\end{equation}
-We understand $\psi_{s}$ extended by the boundary condition on $Y$ in $H^{1}_{k, n}$ to the whole of $\R^{n}$ and call them Bloch waves. Using the compactness of $R_{\mu, k}^{n}$, we know on the one hand that every non-zero $\lambda \in \sigma(A_{k}^{n})$ is an eigenvalue of $A_{k}^{n}$ and that the purely discrete spectrum satisfies
+We understand $\psi_{s}$ extended by the boundary condition on $\Omega$ in $H^{1}_{k, n}$ to the whole of $\R^{n}$ and call them Bloch waves. Using the compactness of $R_{\mu, k}^{n}$, we know on the one hand that every non-zero $\lambda \in \sigma(A_{k}^{n})$ is an eigenvalue of $A_{k}^{n}$ and that the purely discrete spectrum satisfies
 	\begin{equation}
 		\lambda^{n}_{1}(k) \leq \lambda^{n}_{2}(k) \leq \dotsc \leq \lambda^{n}_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{md-comment-after}
 	\end{equation}
