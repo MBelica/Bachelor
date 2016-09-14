@@ -2,7 +2,7 @@
 
 In this last chapter, we want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems.
 ~\newline ~\newline
-To start with, let $Y$ denote the periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote with $Y_{j} = Y + j$ the $j$th copy of $Y$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $Y_{i}^{+}$ and $Y_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$. For an illustration see Figure \ref{fig:md-cell}.
+To start with, let $Y$ denote the periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $Y$ being the unit cube $Y = [0, 1]^{n}$. Contained in $Y$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{Y}$. Furthermore, let $B \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial B$. We will denote with $Y_{j} = Y + j$ the $j$th copy of $Y$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $B_{j} = B + j$. Finally, we denote with $Y_{i}^{+}$ and $Y_{i}^{-}$ the opposing edges of $Y$ for $i = 1, 2$, as illustrated in Figure \ref{fig:md-cell}.
 ~\newline
 
 The mathematical representation of the above is a multi-dimensional Schrödinger operator $A^{n}$ whose operation is formally defined by
@@ -14,12 +14,12 @@ on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Delta-Distribution 
 where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite[chapter 14]{forster2012analysis}. Since $C_{0}^{\infty}(\R^{n})$ is dense in $H^{1}(\R^{n})$ we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
 	\[ \delta_{S}\left(u\right) \coloneqq \lim_{n \rightarrow \infty} \delta_{S}\left(u_{n}\right) . \]
 \begin{remark}
-	This definition is independent of the chosen sequence since	 % todo closure H1 dicht
+	This definition is independent of the chosen sequence since	 % todo X closure H1 dicht
 \end{remark}
 
 \begin{figure}[!ht] \centering
-	\resizebox{.35\linewidth}{!}{
-	  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=4.285714285714286cm,y=4.285714285714286cm]
+	\resizebox{.5\linewidth}{!}{
+	  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=4.286cm,y=4.286cm]
 	  \clip(-1.2,-1.2) rectangle (1.2,1.3);
 	  \fill[transparent,line width=0.4pt] (-1.,1.) -- (-1.,-1.) -- (1.,-1.) -- (1.,1.) -- cycle;
 	  \draw [line width=0.4pt] (-1.,1.)-- (-1.,-1.);
@@ -27,12 +27,12 @@ where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed
 	  \draw [line width=0.4pt] (1.,-1.)-- (1.,1.);
 	  \draw [line width=0.4pt] (1.,1.)-- (-1.,1.);
 	  \draw [rotate around={-166.61:(-0.018,0.012)}] (-0.0179,0.0122) ellipse (2.9153cm and 1.891cm);
-	  \draw ( 0.18, 0.35) node[anchor=north west] {$S$};
-	  \draw (-0.85,-0.56) node[anchor=north west] {$Y$};
-	  \draw (-1.2,0.125) node[anchor=north west] {$Y_1^-$};
-	  \draw (1.05,0.125) node[anchor=north west] {$Y_1^+$};
-	  \draw (-0.125,-1.05) node[anchor=north west] {$Y_2^-$};
-	  \draw (-0.125, 1.25) node[anchor=north west] {$Y_2^+$};
+	  \draw ( 0.18, 0.35) node[anchor=north west] {\large $S$};
+	  \draw (-0.85,-0.56) node[anchor=north west] {\large $Y$};
+	  \draw (-1.2,0.125) node[anchor=north west] {\large $Y_1^-$};
+	  \draw (1.05,0.125) node[anchor=north west] {\large $Y_1^+$};
+	  \draw (-0.125,-1.05) node[anchor=north west] {\large $Y_2^-$};
+	  \draw (-0.125, 1.2) node[anchor=north west] {\large $Y_2^+$};
 	  \end{tikzpicture}
 	}
 	\caption{Periodicity cell for the multi-dimensional potential} \label{fig:md-cell}
@@ -50,7 +50,7 @@ holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $
 	\begin{proof}
 	 First, the Cauchy–Schwarz inequality yields
 	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] 
-	Both terms on the right-hand side can then be finitely estimated by the Trace Theorem \cite[page 258]{evans1998partial} and Poincaré inequality for some $h > 0$ through % todo diese Abschötzung
+	Both terms on the right-hand side can then be finitely estimated by the Trace Theorem \cite[page 258]{evans1998partial} and Poincaré inequality for some $h > 0$ through
 	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq c \left( \frac{1}{h} \|u\|_{L^{2}(B_{j})}^{2} + h \| \nabla u \|_{L^{2}(B_{j})}^{2} \right), \]	
 	for some $c \in \R$.
 	\end{proof}
@@ -84,7 +84,7 @@ such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferr
 \end{theorem}
 
 \begin{figure}[!ht] \centering
-	\resizebox{.40\linewidth}{!}{
+	\resizebox{.45\linewidth}{!}{
 	  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=5.0cm,y=5.0cm]
 		\clip(-1,-1) rectangle (1.1,1.1);
 		\fill[transparent,line width=0.4pt] (-1.,1.) -- (-1.,-1.) -- (1.,-1.) -- (1.,1.) -- cycle;
@@ -93,19 +93,19 @@ such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferr
 		\draw [line width=0.4pt] (1.,-1.)-- (1.,1.);
 		\draw [line width=0.4pt] (1.,1.)-- (-1.,1.);
 		\draw [rotate around={-166.6097:(-0.0179,0.0122)}] (-0.0179,0.0122) ellipse (3.4012cm and 2.2064cm);
-		\draw (0.178,0.358) node[anchor=north west] {$S$};
-		\draw (-0.852,-0.546) node[anchor=north west] {$Y$};
+		\draw (0.178,0.358) node[anchor=north west] {\large $S$};
+		\draw (-0.852,-0.546) node[anchor=north west] {\large $Y$};
 		\draw [->] (0.1416,0.469) -- (0.2034,0.7943);
-		\draw (0.204,0.769) node[anchor=north west] {$\eta$};
-		\draw (-0.015,-0.240) node[anchor=north west] {$-$};
-		\draw (0.151,-0.493) node[anchor=north west] {$+$};
+		\draw (0.18,0.65) node[anchor=north west] {\large $\eta$};
+		\draw (-0.015,-0.240) node[anchor=north west] {\large $-$};
+		\draw (0.151,-0.493) node[anchor=north west] {\large $+$};
 	  \end{tikzpicture}
 	}
 	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}
 \end{figure}
 	
 \begin{proof}
- 	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with equivalent functions for the multi-dimensional case ing in \eqref{eq:7.2-md-weak-formulation} asserted follows.
+ 	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with similar functions for the multi-dimensional case in \eqref{eq:7.2-md-weak-formulation} the asserted follows.
 \end{proof}
 
 We are interested in the periodic spectral problem of the operator $A^{n}$. Therefore, we will again relate the spectrum of the operator $A^{n}$ on the whole of $\R^{n}$ via the Floquet transform to a family of eigenvalue problems on the periodicity cell. First, we need the self-adjointness of the operator $A^{n}$.
@@ -120,7 +120,7 @@ We are interested in the periodic spectral problem of the operator $A^{n}$. Ther
 \end{proof}
 
 We restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$. Let us consider the problem to find 
-	\[ u \in H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{Y_{j}^{+}} = w \big|_{Y_{j}^{-}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\} \] % todo derivates?!
+	\[ u \in H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{Y_{j}^{+}} = w \big|_{Y_{j}^{-}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\} \] % todo X derivates?!
 such that
 	\begin{equation}
 		\int_{Y} \nabla u(x) \overline{\nabla v(x)} dx + \rho \int_{S} u(s) \overline{v(s)} ds - \mu \int_{Y} u(x) \overline{v(x)} dx = \int_{Y} f(x) \overline{v(x)} dx \label{eq:7.3-md_weak_formulation_res}
@@ -129,7 +129,20 @@ holds for all $v \in H^{1}_{k, n}$.
 ~\\ ~\\
 Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined, and we can show that $R_{\mu, k}$ is injective. This allows the definition 
 	\[ A_{k}^{n} \coloneqq \left(R_{\mu, k}^{n}\right)^{-1} + \mu I, \quad \mathcal{D}(A_{k}^{n}) = \mathcal{R}(R_{\mu, k}^{n}), \]
-as the operator considering multi-dimensional case of our problem on the fundamental cell of periodicity. The semi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ of \eqref{eq:7.3-md_weak_formulation_res} to satisfy furthermore
+as the operator considering multi-dimensional case of our problem on the fundamental cell of periodicity.
+
+\begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $\Omega \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} B_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
+	\begin{enumerate} % todo gehört hier nicht das nablaweg im1.?
+		\item $\Delta u \in L^{2}(B_{j})$, $\Delta u \in L^{2}(\Omega)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
+		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
+		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$
+	\end{enumerate}
+\end{theorem}
+	
+\begin{proof}
+ 	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with similar functions for the multi-dimensional case in \eqref{eq:7.2-md-weak-formulation} the asserted follows.
+\end{proof}
+ The quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ of \eqref{eq:7.3-md_weak_formulation_res} to satisfy furthermore
 	\[ \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{Y_{j}^{-}} \quad \text{for } j = 1, 2.  \]
 	% todo beweis
 \begin{theorem}

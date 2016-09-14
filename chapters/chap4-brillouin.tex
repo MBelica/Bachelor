@@ -7,7 +7,7 @@ Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the
 \begin{definition} 
 	We define for every $k \in B$ the set  
 	\begin{equation} 
-		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition} % todo gehört die Ableitung hier rein oder erst in die Domain. Wenn die reingehören, dann muss ich im Beweis auch zeigen, dass auch das abgeschlossen ist.
+		H^{1}_{k} \coloneqq \left\{ \psi \in H^{1}(\Omega): ~ \psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right) \right\}. \label{quasi-periodic-condition}
 	\end{equation}
 	Hereafter, we will refer to the boundary conditions in \eqref{quasi-periodic-condition} as quasi-periodic boundary conditions.
 \end{definition}
@@ -39,12 +39,15 @@ is well-defined and injective. Consequently, we are able to define
 
 \section{The domain of the restricted Schrödinger operator}
 
-We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Therefore, proceeding as in Section \ref{sec:3.2}, by choosing the same test functions $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we are able to show that
+We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Therefore, proceeding as in Section \ref{sec:3.2}, by choosing the similar test functions $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we are able to show that
 \begin{align*}
-	\mathcal{D}(A_{k}) & = \Big\{ \psi \in H^{1}(\Omega) \colon ~\psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ u\big|_{\left(-\frac{1}{2}, 0\right)} \in H^{2}\left(\left(-\frac{1}{2}, 0\right)\right), ~ u\big|_{\left(0, \frac{1}{2}\right)} \in H^{2}\left(\left(0, \frac{1}{2}\right)\right),  \\
-	& ~\qquad ~\qquad ~\qquad ~\qquad u'(x_{0}-0) - u(x_{0} + 0) + \rho u(x_{0}) = 0,  ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right) \Big\}. 
+	\mathcal{D}(A_{k}) & = \Big\{ \psi \in H^{1}(\Omega) \colon ~\psi\left(\frac{1}{2}\right) = e^{ik} \psi\left(-\frac{1}{2}\right), ~ \psi'\left(\frac{1}{2}\right) = e^{ik} \psi'\left(-\frac{1}{2}\right), ~ u\big|_{\left(-\frac{1}{2}, 0\right)} \in H^{2}\left(\left(-\frac{1}{2}, 0\right)\right) \\	
+	 & ~\qquad ~\qquad ~\qquad ~\qquad ~ u\big|_{\left(0, \frac{1}{2}\right)} \in H^{2}\left(\left(0, \frac{1}{2}\right)\right), ~ u'(x_{0}-0) - u(x_{0} + 0) + \rho u(x_{0}) = 0 \Big\}. 
 \end{align*}
 
+The last three properties follow directly through the same approach as in Section \ref{sec:3.2}. The quasi-periodic condition for $\psi$ comes from the boundary condition on $H^{1}_{k}$. Therefore, new is only the quasi-condition condition for $\psi'$ which we can see through the following. Choosing in \eqref{weak-formulation-to-the-restricted} a function $v \in C_{0}^{\infty} \cap \mathcal{D}(A_{k})$ and partial integration while $\supp v \supseteq \Omega$ and $v\left(\frac{1}{2}\right) \neq 0$ yields
+\[ - \int_{\Omega} u''(x) \overline{v(x)} dx +  u'(x) \overline{v(x)} \big|_{-\frac{1}{2}}^{\frac{1}{2}} + \rho u(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \] 
+\[ \iff u'\left(\frac{1}{2}\right) e^{-ik} = u'\left(-\frac{1}{2}\right). \] % todo Andrii noch einmal fragen, ob das passt
 
 In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we need to show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
 
@@ -92,7 +95,7 @@ This yields
 			& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
 			& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
 	\end{align}
-Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through  % todo stimmt definitionsbereich?
+Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through  % todo Passt der Definitionsbereich?
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
 	\end{cases} \] 
