@@ -1,17 +1,81 @@
-\chapter{Outlook and conclusion}	 \label{chap:8}
+\chapter{Conclusion} \label{chap:8}
+	
+This thesis describes three distinct approaches to parallel linear programming,
+the parallel standard simplex method (i6 and i8), the parallel revised, blockangular
+simplex method (i7), and a parallel matrix-free interior point method
+(hmf). The same conclusion results from considering any of these codes: that
+available memory bandwidth bounds speed-up at a low multiple of the number of
+threads used. Given that parallelism has costs in code complexity and overhead,
+the introduction of significant parallel elements into linear programming solvers
+of these types appears unattractive at present.
+This thesis nevertheless contains some contributions believed to be novel.
+Without exception, the following statements should be considered qualified to
+indicate the possibility of pre-existing material of which the author is unaware.
+In Chapter 2, a novel update for a parallel standard simplex solver was described,
+which enables limited maximum improvement pricing. This might be
+generalised to other forms of pricing which are typically considered impractical.
+A strategy for minimising the memory traffic during the operation of such a
+solver was also presented. The GPU code in this chapter is the first to demonstrate
+the ability to solve real, numerically difficult problems.
+In Chapter 3, new techniques for working with permutation matrices, for
+updating a Schur complement, and for maintaining a structured basis, were
+described. The practicality of Kaul’s method was demonstrated, with new observations
+on its sparsity and numerical performance, and results were provided
+from the first known implementation showing that it is capable of reliably solving
+real problems. This work also contains the first description of a means to
+parse standard multi-commodity flow problem files without recourse to additional
+information.
+In Chapter 4, a new representation for sparse matrices, transposed ELLPACK,
+and improved kernels for sparse matrix-vector multiplication with the
+constraint matrices of two problem classes were described. This work also
+demonstrated the use of an oracle for a constraint matrix in a matrix-free interior
+point method.
+In the appendices, a new practical dual phase one method was described
+which simplifies recovery from infeasibility. A preliminary description of a
+bound-flipping ratio test for the primal simplex method was provided, including
+considerations of post-solve. The appendices also include computational studies
+of basis updates and pricing which are more comprehensive in their range than
+those which have been previously published.
+
+In this thesis, we discussed the concept of PCCs. The R-Vine and its representation as a
+matrix were covered and used to organize PCCs. Following, we showed how the likelihood
+of an R-Vine based copula can be calculated using the matrix representation. Subsequent
+to the theoretical basics we proposed our sequential model selection method that is based
+on Kendall’s tau. An MST algorithm was used to find the tree that maximizes the sum
+of Kendall’s tau in each tree of the R-Vine definition. Finally, we applied the theory and
+methods derived in the thesis to three different datasets exhibiting different dependence
+structures. Table 7.1 gives an overview of the characteristics of the datasets and includes
+the results of the model selection.	
 	
 Auf jeden Fall zunächst verbale summary of the main findings of this thesis.	
 ~\\
 	
+The main mathematical tool for treating spectral problems for differential operators with periodic coefficients is the so-called Floquet–Bloch theory. It relates the spectrum of a self-adjoint operator realising a periodic spectral problem on the whole of Rn to a family of eigenvalue problems on the periodicity cell. Here, the eigenfunctions (Bloch waves) are subject to semi-periodic boundary conditions depending on an additional parameter which varies over the so-called Brillouin zone. The result is the “band-gap” structure of the spectrum of the whole-space operator. Floquet–Bloch theory applies, in particular, to periodic Schrodinger equations and — what is most important within the scope of this book — to periodic Maxwell eigenvalue problems, i. e. to photonic crystals.
+~\\
+
+This theory is well-known to all experts, but it is not easy to find a self- contained exposition which moreover uses elementary arguments giving an easy access also for (doctoral) students. Since this book is mainly aiming at educating doctoral students, such a self-contained description is given here. On one hand, it is rather general because periodic differential operators of arbitrary even order are considered (which actually does not complicate the arguments), but on the other hand the coefficients are assumed to be “smooth”, in order to satisfy our requirement of easy access. A more general exposition for non-smooth coefficients has been published in [2]. Important contributions to Floquet–Bloch theory have been made e. g. in [9, 10, 11].
+~\\
+
+Floquet–Bloch theory does not give an answer to the question if there are really gaps in the spectrum or if the bands actually overlap. An asymptotic answer (for sufficiently “high contrast” in the coefficients) has been given in [5]. In a more concrete case, existence of a gap has been proved by computer-assisted means in [8].	
+~\\
+
+Theorems 3.6.1 and 3.6.2 give the result (3.23). It is however difficult to decide, whether there are really gaps in the union (3.23). Moreover, it is not easy to make statements about the nature of the spectrum, for example to decide if (i. e. no eigenvalues occur). The only easy result is	
+~\\
+	
 We have to notice that we haven't determined the nature of the spectrum that is if there are possible gaps in the spectrum. However,... 
+~\\
 
 Floquet–Bloch theory does not give an answer to the question if there are really gaps in the spectrum or if the bands actually overlap. An asymptotic answer (for sufficiently “high contrast” in the coefficients) has been given in 'A. Figotin and P. Kuchment. Band gap structure of spectra of periodic dielectric and acoustic media. II. Two-dimensional photonic crystals. SIAM J. Appl. Math., 56:1561–1620, 1996'. 
+~\\
 
 In a more concrete case, existence of a gap has been proved by computer-assisted means in 'V. Hoang, M. Plum, and C. Wieners. A computer-assisted proof for photonic band gaps. 
 Zeitschrift für Angewandte Mathematik und Physik, 60:1–18, 2009'.
+~\\
 
 'S. Albeverio, F. Gesztesy, R. Hoegh-Krohn, H. Holden {\it Solvable Models in Quantum Mechanics}. Second edition, with an appendix by P. Exner xvi+488 p.; AMS Chelsea Publishing, volume 350, Providence, R.I., 2005'
 ~\\
  
-Hier auf Literatur verwiesen, die aktuell daran ansetzt.
+Kuchment: The article surveys the main topics, techniques, and results of the theory of periodic operators arising in mathematical physics and other areas. Close attention is paid to studying analytic properties of Bloch and Fermi varieties, which significantly influence most spectral features of such operators. The approaches described are applicable not only to the standard model example of Schrodinger operator with periodic electric potential but to a wide variety of elliptic periodic equations and systems, equations on graphs, operator, and other operators on abelian coverings of compact bases. Important applications are mentioned. However, due to the size restrictions, they are not dealt with in detail.
+~\\
 
+Spectral properties of elliptic operator with double-contrast coefficients near a hyperplane: In this paper we study the asymptotic behaviour as of the spectrum of the elliptic operator posed in a bounded domain subject to Dirichlet boundary conditions on. When both coefficients a become high contrast in a small neighbourhood of a hyperplane intersecting. We prove that the spectrum of converges to the spectrum of an operator acting in L and generated by the operation, the Dirichlet boundary conditions on certain interface conditions on containing the spectral parameter in a nonlinear manner. The eigenvalues of this operator may accumulate at a finite point. Then we study the same problem, when is an infinite straight strip (waveguide) and is parallel to its boundary. We show that has at least one gap in the spectrum when is small enough and describe the asymptotic behaviour of this gap as. The proofs are based on methods of homogenisation theory.
