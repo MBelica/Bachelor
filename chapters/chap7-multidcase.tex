@@ -15,8 +15,15 @@ on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Delta-Distribution 
 where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite[chapter 14]{forster2012analysis}. Since $C_{0}^{\infty}(\R^{n})$ is dense in $H^{1}(\R^{n})$ we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
 	\[ \delta_{S}\left(u\right) \coloneqq \lim_{n \rightarrow \infty} \delta_{S}\left(u_{n}\right) . \]
 \begin{remark}
-	This definition is independent of the chosen sequence due to the linearity of the Delta-Distribution. % todo Andrii ist das okay?
+	This definition independent of the chosen sequence in $C_{0}^{\infty}(\R^{n})$.
 \end{remark}
+
+\begin{proof}
+	For $u \in H^{1}(\R^{n})$ let $(u_{n})_{n \in \N}, (v_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that
+	\[ \lim_{n \rightarrow \infty} \| u_{n} - u \|_{H^{1}(\R^{n})} = 0 \quad \text{ and } \lim_{n \rightarrow \infty} \| v_{n} - u\|_{H^{1}(\R^{n})} = 0.  \]
+	As $(u_{n} - v_{n}) \in C_{0}^{\infty}(\R^{n})$, we then get with the help of Hölder's inequality, the triangle inqueality and the trace theorem
+	\[ \lim_{n \rightarrow \infty} \int_{S} \left| u_{n}(s) - v_{n}(s) \right| ds \leq |S| \lim_{n \rightarrow \infty} \| u_{n} - v_{n} \|_{H^{1}(\Omega)} = 0. \] 
+\end{proof}
 
 \begin{figure}[!ht] \centering
 	\resizebox{.5\linewidth}{!}{

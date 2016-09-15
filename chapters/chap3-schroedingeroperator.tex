@@ -16,7 +16,7 @@ In general, one cannot say in which sense a solution to the formal problem
 \begin{equation}
 	\int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R} f(x) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
-holds and call \eqref{weak-formulation-of-A} the weak-formulation of \eqref{formal-problem}. We should note that the left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate
+holds and call \eqref{weak-formulation-of-A} the weak-formulation of \eqref{formal-problem}. We should note that the left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate the norm with the help of some integration methods via
 \begin{align}
 	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( 2 |u( x_{i} + h )|^{2} +  2 h \int_{x_{i}}^{x_{i} + h} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
 		 & \leq 2 \sum_{i \in \Z} \left( \frac{1}{h} \int_{\Omega_{i}} |u( x )|^{2} dx + h \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right). \label{preestimation-for-potential}

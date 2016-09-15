@@ -72,13 +72,13 @@ Using this property we are now able to prove the first inclusion of the main sta
 		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \in \Z \Big\}, \]
 		and $ -\psi_{s}'' = \lambda \psi_{s}$ on $\R \setminus \bigcup_{i \in \Z} x_{i}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that 
 			\begin{equation}
-				\eta(x) = 1 \text{ for } |x| \leq \frac{1}{4}, \quad \eta(x) = 0 \text{ for } |x| \geq \frac{1}{2}, \label{eta}
+				\eta(x) = 1 \text{ for } |x| \leq \frac{1}{2}, \quad \eta(x) = 0 \text{ for } |x| \geq 1, \label{eta}
 			\end{equation} 
 		and define, for each $l \in \N$,
-			\[ u_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]		
-	 	As $\psi_{s} \in \mathcal{D}(A)$ we know $u_{l} \in \mathcal{D}(A)$, hence, we see that
+			\[ \kappa_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]		
+	 	As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
 		\begin{align}
-			(A - \lambda I) u_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
+			(A - \lambda I) \kappa_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
 		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. 
@@ -106,18 +106,18 @@ Using this property we are now able to prove the first inclusion of the main sta
 	\caption{Example for a function $\eta$} 
 \end{figure}		
 		
-		Let use denote with $B_{l}$ the ball around $0$ with radius $\frac{l}{2}$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{1}_{loc}(\R)$, the quasi-periodic structure of $\psi_{s}(\cdot, k)$ implies
+		Let use denote with $B_{l}$ the ball around $0$ with radius $l$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{1}_{loc}(\R)$, the quasi-periodic structure of $\psi_{s}(\cdot, k)$ implies
 		\begin{equation}
 			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
 		\end{equation}
-		Now, the quasi-periodic structure allows us find additionally an upper boundary for $u_{l}$:
+		Now, the quasi-periodic structure allows us find additionally an upper boundary for $\kappa_{l}$:
 		\begin{equation}
-			\| u_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l} \label{eq:6.11}
+			\| \kappa_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l} \label{eq:6.11}
 		\end{equation} 
 		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, \eqref{eq:6.11} yields
-		\[ \frac{1}{\|u_{l}\|_{L^{2}(\R)}}\| (A - \lambda I) u_{l} \|_{L^{2}(\R)} \leq \frac{c}{l}. \]
+		\[ \frac{1}{\|\kappa_{l}\|_{L^{2}(\R)}}\| (A - \lambda I) \kappa_{l} \|_{L^{2}(\R)} \leq \frac{c}{l}. \]
 		This results eventually in the property
-			\[ \frac{1}{\|u_{l} \|_{L^{2}(\R)}} \| (A - \lambda I) u_{l} \|_{L^{2}(\R)} \rightarrow 0 \text{ as } l \rightarrow \infty \]
+			\[ \frac{1}{\|\kappa_{l} \|_{L^{2}(\R)}} \| (A - \lambda I) \kappa_{l} \|_{L^{2}(\R)} \rightarrow 0 \text{ as } l \rightarrow \infty \]
 		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
 	\end{proof}
 \end{theorem}	
@@ -163,15 +163,15 @@ The other inclusion can be established by using the properties of the Floquet tr
 			\begin{equation}
 				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R) \text{ as } l \rightarrow \infty. \label{ulflconvergence}
 			\end{equation}
-		We will now prove that
+		We will now prove that  % Zurück Ist distributionell Lösung okay? also meine Änderung in Kapitel 6.3
 		\begin{equation}
 				\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle \text{ for all } l \in \N, v \in \mathcal{D}(A); \label{lefttoprove}
 			\end{equation} 
 		As $A$ is self-adjoint, by Theorem \ref{2.3:thm-ASelfAdjoint}, this implies $u_{l} \in \mathcal{D}(A)$, and $(A - \lambda I) u_{l} = f_{l}$ for all $l \in \N$. As furthermore every self-adjoint operator is also closed, \eqref{ulflconvergence} now implies
 			\[ u \in \mathcal{D}(A) \text{ and } (A - \lambda I) u = f, \]
-		which is the desired result.
+		which is the desired result. 
 		~\\
-		
+				
 		Eventually, we are left to prove \eqref{lefttoprove}. So, let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open interval containing $\supp(\varphi)$ in its interior. By Fubini's Theorem we know that 
 		\begin{align*}
 			r_{s}(x, k) & \coloneqq \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{(A - \lambda I) \varphi(x)}, 
@@ -179,8 +179,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 			t_{s}(x, k) & \coloneqq \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{\varphi(x)}
 		\end{align*}
 		are in $L^{2}(K \times B)$, since \eqref{lambda-distance}, $(A_{k} - \lambda I) \varphi \in L^{\infty}(K)$ and $\varphi \in L^{\infty}(K)$ imply 
-		\[ \| r_{s} \|_{L^{2}(K \times B)} \leq c \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}
-		\]
+		\[ \| r_{s} \|_{L^{2}(K \times B)} \leq c \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)} \| \psi_{s}(\cdot, k) \|^{2}_{L^{2}(K)}\]
 		and analogously for $t_{s}$. As $K$ is bounded there exists a finite number of copies of $\Omega$ such that they cover $K$, hence $\psi_{s}(\cdot, k)$ is in $L^{2}(K)$ as a function of $k$, and $(Uf)(\cdot, k)$ is in $L^{1}(B)$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}. Since $B$ is equally bounded, $r$ and $t$ are also in $L^{1}(K \times B)$. Therefore, Fubini’s Theorem implies that the order of integration with respect to $x$ and $l$ may be exchanged for $r$ and $t$. Thus, by \eqref{ul}, the fact that $\varphi$ has compact support in the interior of $K$ and \eqref{eigv-problem} we conclude
 			\begin{align*}
 				\int_{K} u_{l}(x) \overline{(A - \lambda I) \varphi(x)} dx & = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{K} \left( \int_{B} r_{s}(x, k) dk \right) dx \\
