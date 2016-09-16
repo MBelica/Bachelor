@@ -21,7 +21,7 @@ where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed
 \begin{proof}
 	For $u \in H^{1}(\R^{n})$ let $(u_{n})_{n \in \N}, (v_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that
 	\[ \lim_{n \rightarrow \infty} \| u_{n} - u \|_{H^{1}(\R^{n})} = 0 \quad \text{ and } \lim_{n \rightarrow \infty} \| v_{n} - u\|_{H^{1}(\R^{n})} = 0.  \]
-	As $(u_{n} - v_{n}) \in C_{0}^{\infty}(\R^{n})$, we then get with the help of Hölder's inequality, the triangle inqueality and the trace theorem
+	As $(u_{n} - v_{n}) \in C_{0}^{\infty}(\R^{n})$, we then get with the help of Hölder's inequality, the triangle inequality and the trace theorem
 	\[ \lim_{n \rightarrow \infty} \int_{S} \left| u_{n}(s) - v_{n}(s) \right| ds \leq |S| \lim_{n \rightarrow \infty} \| u_{n} - v_{n} \|_{H^{1}(\Omega)} = 0. \] 
 \end{proof}
 
@@ -113,7 +113,7 @@ such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferr
 \end{figure}
 	
 \begin{proof}
- 	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with similar functions for the multi-dimensional case in \eqref{eq:7.2-md-weak-formulation} the asserted follows.
+ 	In Section \ref{sec:3.2} we used particular functions $v \in C^{\infty}(\R)$ to prove equivalent properties of $\mathcal{D}(A)$. By using the same approach with similar functions for the multi-dimensional case in \eqref{eq:7.2-md-weak-formulation} the asserted follows. % todo expliziter
 \end{proof}
 
 We are interested in the periodic spectral problem of the operator $A^{n}$. Therefore, we will again relate the spectrum of the operator $A^{n}$ on the whole of $\R^{n}$ via the Floquet transform to a family of eigenvalue problems on the periodicity cell. First, we need the self-adjointness of the operator $A^{n}$.
@@ -123,10 +123,12 @@ We are interested in the periodic spectral problem of the operator $A^{n}$. Ther
 \end{remark}
 
 \begin{proof}
-	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}(\left(R_{\mu}^{n}\right)^{-1})$ exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to Section \ref{sec:3.3}.
+	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}\left(\left(R_{\mu}^{n}\right)^{-1}\right)$ exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to Section \ref{sec:3.3}.
 \end{proof}
 
-We restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$ and define $H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{Y_{j}^{+}} = w \big|_{Y_{j}^{-}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\}$. Let us consider the problem to find $u \in H^{1}_{k, n}$ such that
+We restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$ and for $k \in \overline{B^{n}}$ define 
+\[ H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{Y_{j}^{+}} = w \big|_{Y_{j}^{-}} e^{i k_{j}} \text{ for } k \in [-\pi, \pi]^{2}, j = 1,2 \right\}. \]
+ Let us consider the problem to find $u \in H^{1}_{k, n}$ such that
 	\begin{equation}
 		\int_{Y} \nabla u(x) \overline{\nabla v(x)} dx + \rho \int_{S} u(s) \overline{v(s)} ds - \mu \int_{Y} u(x) \overline{v(x)} dx = \int_{Y} f(x) \overline{v(x)} dx \label{eq:7.3-md_weak_formulation_res}
 	\end{equation} 
@@ -135,7 +137,7 @@ holds for all $v \in H^{1}_{k, n}$.
 Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined, and we can show that $R_{\mu, k}$ is injective. This allows the definition 
 	\[ A_{k}^{n} \coloneqq \left(R_{\mu, k}^{n}\right)^{-1} + \mu I, \quad \mathcal{D}(A_{k}^{n}) = \mathcal{R}(R_{\mu, k}^{n}), \]
 as the operator considering multi-dimensional case of our problem on the fundamental cell of periodicity.
-
+% todo k in Bn uberall einfügen
 \begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
 	\begin{enumerate} % todo Martin gehört hier nicht das nablaweg im1.?
 		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
@@ -166,7 +168,7 @@ We understand $\psi_{s}$ extended by the boundary condition on $\Omega$ in $H^{1
 	\begin{equation}
 		\lambda^{n}_{1}(k) \leq \lambda^{n}_{2}(k) \leq \dotsc \leq \lambda^{n}_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{md-comment-after}
 	\end{equation}
-By \cite[page 643 - 645]{evans1998partial} we know that the to \eqref{md-comment-after} corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $L^{2}(\R^{n})$. By transformations of the problem \eqref{md-eigv-problem}, similar to the one in \eqref{mod-eigv-problem} and \eqref{periodic-condition}, we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B} \}$ is again a compact real interval for each $s \in \N$.
+By \cite[page 643 - 645]{evans1998partial} we know that the to \eqref{md-comment-after} corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $L^{2}(\R^{n})$. By transformations of the problem \eqref{md-eigv-problem}, similar to the one in \eqref{mod-eigv-problem} and \eqref{periodic-condition}, we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B^{n}}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B^{n}} \}$ is again a compact real interval for each $s \in \N$.
 ~\\ 
 
 Ultimately, the main result for this multi-dimensional case follows from using the same arguments as in Chapter \ref{**-condition} based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}. We are namely able to show that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the compact intervals $I^{n}_{s}$, i.e.
