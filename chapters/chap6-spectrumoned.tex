@@ -74,17 +74,16 @@ Using this property we are now able to prove the first inclusion of the main sta
 			\begin{equation}
 				\eta(x) = 1 \text{ for } |x| \leq \frac{1}{2}, \quad \eta(x) = 0 \text{ for } |x| \geq 1, \label{eta}
 			\end{equation} 
-		and define, for each $l \in \N$,
-			\[ \kappa_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k). \]		
-	 	As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
+		we are able to define, for each $l \in \N$,
+			\[ \kappa_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k), \]		
+	 	for an illustration see Figures \ref{fig:6.1}, \ref{fig:6.2} and \ref{fig:6.3}. As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
 		\begin{align}
 			(A - \lambda I) \kappa_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
-		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$, and derivatives of order $\leq 1$ of $\psi_{s}(\cdot, k)$. 
+		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$ and of order $\leq 1$ of $\psi_{s}(\cdot, k)$. 
 		
 \definecolor{lightblue}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
 \begin{figure}
  \begin{tikzpicture}
   \begin{axis}[ width=6in, height=2.25in, at={(1.011in,2.39in)}, scale only axis, xmin=-2.5, xmax=2.5, ymin=-0.5, ymax=1.25, ticks=none, axis x line=middle,
@@ -116,7 +115,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 	};
  \end{axis}
  \end{tikzpicture}%	
- \caption{Example for the function $\eta$}
+ \caption{Example for the function $\eta$} \label{fig:6.1}
 \end{figure}
 	
 \begin{figure}
@@ -148,7 +147,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 	};
   \end{axis}
  \end{tikzpicture}%
- \caption{A schematic of the real part of the Bloch wave in one dimension.}
+ \caption{A schematic of the real part of a Bloch wave in one dimension.} \label{fig:6.2}
 \end{figure}
 
 \begin{figure}
@@ -180,8 +179,9 @@ Using this property we are now able to prove the first inclusion of the main sta
 		};
   \end{axis}
  \end{tikzpicture}%
- \caption{Resulting real-part of the function $u_{l}$}
+ \caption{Resulting real-part of the function $u_{l}$} \label{fig:6.3}
 \end{figure}		
+
 		Let use denote with $B_{l}$ the ball around $0$ with radius $l$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{1}_{loc}(\R)$, the quasi-periodic structure of $\psi_{s}(\cdot, k)$ implies
 		\begin{equation}
 			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}

@@ -3,7 +3,7 @@
 In this last chapter, we want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems.
 ~\\
 
-To start with, let $\Omega$ denote the periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $\Omega$ being the unit cube $[0, 1]^{n}$. Contained in $\Omega$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{\Omega}$. Furthermore, let $D \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial D$. We will denote with $\Omega_{j} = Y + j$ the $j$th copy of $\Omega$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $S_{j} = S + j$. Finally, we denote with $\Omega_{i}^{+}$ and $\Omega_{i}^{-}$ the opposing edges of $\Omega$ for $i = 1, 2$, as illustrated in Figure \ref{fig:md-cell}.
+To start with, let $\Omega$ denote the periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $\Omega$ being the unit cube $[0, 1]^{n}$. Contained in $\Omega$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{\Omega}$. Furthermore, let $D \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial D$. We will denote with $\Omega_{j} = Y + j$ the $j$th copy of $\Omega$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $S_{j} = S + j$. Finally, we denote with $\Omega_{i}^{+}$ and $\Omega_{i}^{-}$ the opposing edges of $\Omega$ for $i = 1, 2$, as illustrated in Figure \ref{fig:7.1}.
 ~\\
 
 The mathematical representation of the above is a multi-dimensional Schrödinger operator $A^{n}$ whose operation is formally defined by
@@ -43,7 +43,7 @@ where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed
 	  \draw (-0.125, 1.2) node[anchor=north west] {\large $\Omega_2^+$};
 	  \end{tikzpicture}
 	}
-	\caption{Periodicity cell for the multi-dimensional potential} \label{fig:md-cell}
+	\caption{Periodicity cell for the multi-dimensional potential} \label{fig:md-cell}  \label{fig:7.1}
 \end{figure}
 
 Again motivated by the weak-formulation, given a right-hand side $f \in L^{2}(\R^{n})$ we consider for some	 $\mu \in \R$ the problem to find $u \in H^{1}(\R^{n})$ such that
@@ -83,7 +83,7 @@ This on the other hand enables us to explicitly define $A^{n}$ by means of $R_{\
 
 such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferring the methods used in Section \ref{sec:3.2}.
 
-\begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
+\begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, on the fundamental domain of periodicity as depicted in  Figure \ref{fig:7.2}, namely for all $j \in \Z^{n}$ it holds:
 	\begin{enumerate} % todo Martin gehört hier nicht das nablaweg im1.?
 		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(D_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
@@ -109,7 +109,7 @@ such that we can again characterise $\mathcal{D}(A^{n})$ explicitly by transferr
 		\draw (0.151,-0.475) node[anchor=north west] {\large $+$};
 	  \end{tikzpicture}
 	}
-	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}
+	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}  \label{fig:7.2}
 \end{figure}
 	
 \begin{proof}
