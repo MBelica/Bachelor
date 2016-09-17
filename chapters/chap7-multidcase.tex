@@ -12,7 +12,7 @@ The mathematical representation of the above is a multi-dimensional Schrödinger
 \end{equation}
 on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Delta-Distribution on hypersurface $S_{i}$. Let us recall that on a hypersurface $S$ the Delta-Distribution acts on $\varphi \in C_{0}^{\infty}(\R^{n})$ by 
 	\[ \delta_{S}\left(\varphi\right) \coloneqq \int_{S} \varphi(s) ds . \]
-where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite[chapter 14]{forster2012analysis}. Since $C_{0}^{\infty}(\R^{n})$ is dense in $H^{1}(\R^{n})$ we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
+where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite[Chapter 14]{forster2012analysis}. Since $C_{0}^{\infty}(\R^{n})$ is dense in $H^{1}(\R^{n})$ we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
 	\[ \delta_{S}\left(u\right) \coloneqq \lim_{n \rightarrow \infty} \delta_{S}\left(u_{n}\right) . \]
 \begin{remark}
 	This definition independent of the chosen sequence in $C_{0}^{\infty}(\R^{n})$.
@@ -50,7 +50,7 @@ Again motivated by the weak-formulation, given a right-hand side $f \in L^{2}(\R
 	\begin{equation}
 		\int_{\R^{n}} \nabla u(x) \overline{\nabla v(x)} dx + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds - \mu \int_{\R^{n}} u(x) \overline{v(x)} dx = \int_{\R^{n}} f(x) \overline{v(x)} dx \label{eq:7.2-md-weak-formulation}
 	\end{equation} 
-holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u, v$ the traces. As $u, v \in H^{1}(\R)$, the traces they are in $L^{2}(\R^{n})$ by \cite[page 251, Theorem 5.1]{evans1998partial} and \cite[page 164]{adams2003sobolev}, and thus, the second term on the left-hand side in \eqref{eq:7.2-md-weak-formulation} is well defined by the next remark.
+holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u, v$ the traces. As $u, v \in H^{1}(\R)$, the traces they are in $L^{2}(\R^{n})$ by \cite[p. 251, Theorem 5.1]{evans1998partial} and \cite[p. 164]{adams2003sobolev}, and thus, the second term on the left-hand side in \eqref{eq:7.2-md-weak-formulation} is well defined by the next remark.
 
 \begin{remark} 
 	The term in \eqref{eq:7.2-md-weak-formulation} originating from the potential is finite.
@@ -58,7 +58,7 @@ holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $
 	\begin{proof}
 	 First, the Cauchy–Schwarz inequality yields
 	\[ \left| \sum_{j \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds \right|^{2} \leq \left( \sum_{j \in \Z^{n}} \| u \|_{L^{2}(S_{j})}^{2} \right) \left( \sum_{j \in \Z^{n}} \| v \|_{L^{2}(S_{j})}^{2} \right). \] 
-	Both terms on the right-hand side can then be finitely estimated by the Trace Theorem \cite[page 258]{evans1998partial} and Poincaré inequality for some $h > 0$ through
+	Both terms on the right-hand side can then be finitely estimated by the Trace Theorem \cite[p. 258]{evans1998partial} and Poincaré inequality for some $h > 0$ through
 	\[ \| u \|_{L^{2}(S_{j})}^{2} \leq c \left( \frac{1}{h} \|u\|_{L^{2}(D_{j})}^{2} + h \| \nabla u \|_{L^{2}(D_{j})}^{2} \right), \]	
 	for some $c \in \R$.
 	\end{proof}
