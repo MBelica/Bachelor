@@ -78,7 +78,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 			\[ \kappa_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k), \]		
 	 	for an illustration see Figures \ref{fig:6.1}, \ref{fig:6.2} and \ref{fig:6.3}. As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
 		\begin{align}
-			(A - \lambda I) \kappa_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) u_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
+			(A - \lambda I) \kappa_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) \kappa_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
 		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$ and of order $\leq 1$ of $\psi_{s}(\cdot, k)$. 
@@ -187,7 +187,7 @@ is analogous).} \label{fig:6.3}
 		\begin{equation}
 			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
 		\end{equation}
-		Now, the quasi-periodic structure allows us find additionally an upper boundary for $\kappa_{l}$:
+		Now, the quasi-periodic structure allows us to find additionally an upper boundary for $\kappa_{l}$:
 		\begin{equation}
 			\| \kappa_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l} \label{eq:6.11}
 		\end{equation} 
