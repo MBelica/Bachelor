@@ -45,11 +45,10 @@ We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Therefore, procee
 	 & ~\qquad ~\qquad ~\qquad ~\qquad ~ u\big|_{\left(0, \frac{1}{2}\right)} \in H^{2}\left(\left(0, \frac{1}{2}\right)\right), ~ u'(x_{0}-0) - u(x_{0} + 0) + \rho u(x_{0}) = 0 \Big\}. 
 \end{align*}
 
-The last three properties follow directly through the same approach as in Section \ref{sec:3.2}. The quasi-periodic condition for $\psi$ comes from the boundary condition on $H^{1}_{k}$. Therefore, new is only the quasi-condition condition for $\psi'$ which we can see through the following. Choosing in \eqref{weak-formulation-to-the-restricted} a function $v \in \mathcal{D}(A_{k})$ and partial integration while $\supp v = \Omega$, $v\left(x_{0}\right) = 0$ and $v\left(\frac{1}{2}\right) \neq 0$ yields
+The last three properties follow directly through the same approach as in Section \ref{sec:3.2}. The quasi-periodic condition for $\psi$ comes from the boundary condition on $H^{1}_{k}$. Therefore, new is only the quasi-condition condition for $\psi'$ which we can see through the following. The first inclusion follows from choosing in \eqref{weak-formulation-to-the-restricted} a function $v \in \mathcal{D}(A_{k})$ and partial integration while $\supp v = \Omega$, $v\left(x_{0}\right) = 0$ and $v\left(\frac{1}{2}\right) \neq 0$ yields
 \[ - \int_{\Omega} u''(x) \overline{v(x)} dx +  u'(x) \overline{v(x)} \big|_{-\frac{1}{2}}^{\frac{1}{2}} + - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \] 
 \[ \iff u'\left(\frac{1}{2}\right) e^{-ik} = u'\left(-\frac{1}{2}\right), \] 
-% todo the other inclusion?
-whereas we used in the last step that $A_{k} u = f$ and that $v$ is quasi-periodic on the boundary. In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we need to show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
+whereas we used in the last step that $A_{k} u = f$ and that $v$ is quasi-periodic on the boundary, while the other follows analogously as in Section \ref{sec:3.2}. In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we need to show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
 
 \section{The compactness of the restricted resolvent} \label{sec:4.2}
 
