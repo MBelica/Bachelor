@@ -1,9 +1,16 @@
 \chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix} 
 
 \begin{atheorem}[Alternative definition of the Delta-Distribution] \label{athem:delta}
+	For the sequence of functionals $\delta_{\epsilon}$ for $\epsilon > 0$, $x_{0} \in \R$ and $f \in \mathfrak{D}(\R)$ defined through $\delta_{\epsilon}(f) \coloneqq \frac{1}{\sqrt{2 \pi} \epsilon} \int_{\R} e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} f(x) dx$ it holds that  
+ 		\[ \delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f). \]
 	
 	\begin{proof}
-		This limit exists and it holds that $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ and $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see  % todo proof
+		Given $\delta_{\epsilon}$ and $x_{0} \in \R$ we have
+			\[ \delta_{\epsilon}(f) = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}} dx} \]
+		Substituting $z \coloneqq \frac{x - x_{0}}{\sqrt{2} \epsilon}$ yields
+			\[ \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}} dx} = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(\sqrt{2} \epsilon z + x_{0}) e^{-z^{2}} dz \]
+		Using the Taylor series around $x_{0}$ and the Gaussian integral we then get
+			\[ \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} \left( f(x_{0}) + \mathcal{O}(\epsilon) \right) = f(x_{0}) \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} = f(x_{0}). \]
 	\end{proof}
 \end{atheorem}
 
@@ -53,17 +60,17 @@
 \end{atheorem}
 
 \begin{atheorem}[Closeness of $H^{1}_{k}$ in $H^{1}(\Omega)$] \label{h1kclosed}
-	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$ and hence a Hilbert space.
-
-	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$, and therefore a  Hilbert space with respect to the norm of $H^{1}(\Omega)$.
+	$H^{1}_{k}$ is a closed subset1 of $H^{1}(\Omega)$, and therefore a Hilbert space with respect to the norm of $H^{1}(\Omega)$.
 	
-	\begin{proof} % x martin do the proof
-		coming
-%		: Let (fn)n∈N be a sequence of elements in Hφ1(Ω) converging to%f ∈ H1(Ω). Due to the Sobolev embedding of H1-functions into the space of continuous 1 ̃ ̃%functions, we can identify the H -functions fn and f with continuous functions f,fn. Since convergence with respect to the H1-norm implies pointwise convergence almost% ̃ ̃%everywhere, we can conclude that f(x) converges everywhere to f(x). In the following% ̃%let us denote f again instead of f. Thus, for k = 1,2:%f(ξk+) = lim fn(ξk+) = lim eiφk fn(ξk−) = eiφk lim fn(ξk−) = eiφk f(ξk−), n→∞ n→∞ n→∞%which shows the closer of Hφ1(Ω).%Analogously as in Chapter (2.1) let us regard the equation% Aφu + μu = f%with f being an element of L2(Ω) and μ having the same properties as before. Then we%are able to formulate a weak formulation what we will write down in the following
-	\end{proof}
-
-	\begin{proof} % todo proof
-		due to the fact that convergence in H1k impliese convergence of traces at -1/2 and 1/2 h1k is a closed subspace of H1
+	\begin{proof} 
+		Let $(f_{n})_{n \in \N}$ be a sequence in $H^{1}_{k}$ converging to $f \in H^{1}(\Omega)$. We already know that convergence with respect to the $H^{1}$-Norm implies convergence of the function and its derivative almost everywhere. Let us therefore define $g \coloneqq f - f_{n}$ then
+		\begin{align*}
+			\left| g \left(- \frac{1}{2} \right) \right|^{2} & \leq 2 |g(x)|^{2} + 2 \left( \int_{-\frac{1}{2}}^{x} |g'(\tau)| d\tau \right)^{2} \\
+			& \leq 2 |g(x)|^{2} + 2 \int_{-\frac{1}{2}}^{\frac{1}{2}} |g'(\tau)|^{2} d\tau \\
+			& \leq 2 \int_{-\frac{1}{2}}^{\frac{1}{2}} |g(\tau)|^{2} d\tau + 2 \int_{-\frac{1}{2}}^{\frac{1}{2}} |g'(\tau)|^{2} d\tau \\
+			& = 2 \| g \|_{H^{1}(-\frac{1}{2}, \frac{1}{2})}^{2} \longrightarrow 0
+		\end{align*}
+		for $j \rightarrow \infty$, and analogously on the other boundary.
 	\end{proof}
 \end{atheorem}
 
@@ -106,17 +113,17 @@
 	Let $[a, b]$ be a compact interval in $\R$. Then, $H^{1}([a, b])$ is embedded in $C([a, b])$
 	
 	\begin{proof}
-		Let $f$ be a smooth function and $x, y \in [a, b]$ such that $x \leq y$, then:
-		~\\ ~\\ % todo proof
-		Thus, the supremum norm is dominated by the $H^{1}$-norm, which implies that, which means that this estimation holds for the completion H1([a, b]) as well.
+		See \cite[p. 266seq]{evans1998partial}.
 	\end{proof}
 \end{atheorem}
 
 \begin{atheorem}[Equivalent definitions of closed operators]
-	Equivalent Definition von Closed und Zeigen dass und 
+	Let X, Y be two Banach spaces. A linear operator $A \colon X \supset \mathcal{D}(A)  \rightarrow Y$ is closed if for every sequence $(x_n)_{n \in \N}$ in $\mathcal{D}(A)$ from
+	\[ x_{n} \rightarrow x \in X \text{ and } Tx_{n} \rightarrow y \in Y \]
+	follows that $x \in D$ and $Tx = y$.
 
 	\begin{proof}
-		 % todo proof
+		 See \cite[p. 156]{werner2006funkana}.
 	\end{proof}
 \end{atheorem}	
 
@@ -161,10 +168,14 @@
 \end{atheorem}
 
 \begin{atheorem}[Orthonormality of $\vartheta$]
-	\[ \vartheta_{n}(k) \coloneqq \frac{1}{\sqrt{|B|}} e^{ikn} \]
+	The sequence
+		\[ \vartheta_{n}(k) \coloneqq \frac{1}{\sqrt{|B|}} e^{ikn} \]
+	forms an orthonormal basis of $L^{2}(B)$.
 
 	\begin{proof}
-		 % todo proof
+		 For $m, n \in \N$ we see that
+		 \[ \langle \vartheta_{n}, \vartheta_{m} \rangle_{L^{2}(B)} = \frac{1}{|B|} \int_{B} e^{ikn} \overline{e^{ikm}} dk = \frac{1}{|B|} \int_{B} e^{ik(n-m)} dk = \begin{cases} 0 & \text{ for } n \neq m \\ 1 & \text{ for } n = m, \end{cases} \]
+		 hence the asserted follows.
 	\end{proof}
 \end{atheorem}
 
@@ -187,23 +198,15 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Properties of compact operators]
-	aus kompakt folgt bounded,	
-
-	\begin{proof}
-		 % todo proof
-	\end{proof}
-\end{atheorem}
-
 \begin{atheorem}[Properties of self-adjoint operators]
 	\begin{enumerate}
-		\item Self-Adjoint $\Rightarrow$ Symmetric und closed
+		\item Every self-adjoint is symmetric and closed.
 			\begin{proof}
-				 % todo proof
+				 Follows directly from the definitions for self-adjoint and closed operators.
 			\end{proof}
 		\item For $A$ being a self-adjoint operator, $\lambda \in \rho(A)$, $(A - \lambda I)^{-1}$ is bounded.
 			\begin{proof}
-				Since every self-adjoint is closed, $(A - \lambda I)$ is as the shift also closed. Furthermore, the graph of $(A - \lambda I)^{-1}$ is simply the graph of $(A - \lambda I)$ rotated and hence $(A - \lambda I)^{-1}$ is closed as well. The closed Graph Theorem now yields the desired result.
+				Since every self-adjoint is closed, $(A - \lambda I)$ is as the shift with $\lambda \in \R$ also closed. Furthermore, the graph of $(A - \lambda I)^{-1}$ is simply the graph of $(A - \lambda I)$ rotated and hence $(A - \lambda I)^{-1}$ is closed as well. The closed Graph Theorem now yields the desired result.
 			\end{proof}
 	\end{enumerate}
 \end{atheorem}
@@ -237,10 +240,17 @@
 \end{atheorem}
 
 \begin{atheorem}[Trace Theorem]
-	b % todo todo
-
+	Assume $U$ is bounded and $\partial U$ is $C^{1}$. Then there exists a bounded linear operator
+		\[ T \colon H^{1}(U) \rightarrow L^{2}(\partial U) \]
+	such that
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $Tu = u\big|_{\partial U}$ if $u \in H^{1}(U) \cap C(\overline{U})$
+		\item $\|Tu\|_{L^{2}(\partial U)} \leq C \|u\|_{H^{1}(U)}$
+	\end{enumerate}
+	for each $u \in H^{1}(U)$, with the constant $C$ depending only on $U$.
+	
 	\begin{proof}
-		a
+		See \cite[p. 258]{evans1998partial}.
 	\end{proof}
 \end{atheorem}
 

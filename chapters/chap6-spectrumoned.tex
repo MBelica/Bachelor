@@ -68,15 +68,13 @@ Using this property we are now able to prove the first inclusion of the main sta
 		\end{equation} 
 		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies
 		\[ A \psi_{s} = \lambda \psi_{s} \]
-		\enquote{locally}, i.e. 
-		\[ \psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}_{loc}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \in \Z \Big\}, \]
-		and $ -\psi_{s}'' = \lambda \psi_{s}$ on $\R \setminus \bigcup_{i \in \Z} x_{i}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that 
+		\enquote{locally}, i.e. $\psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}_{loc}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \in \Z \Big\}$, and $ -\psi_{s}'' = \lambda \psi_{s}$ on $\R \setminus \bigcup_{i \in \Z} x_{i}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that 
 			\begin{equation}
 				\eta(x) = 1 \text{ for } |x| \leq \frac{1}{2}, \quad \eta(x) = 0 \text{ for } |x| \geq 1, \label{eta}
 			\end{equation} 
 		we are able to define, for each $l \in \N$,
 			\[ \kappa_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k), \]		
-	 	for an illustration see Figures \ref{fig:6.1}, \ref{fig:6.2} and \ref{fig:6.3}. As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
+	 	for an illustration see Figures \ref{fig:6.1}, \ref{fig:6.2} and \ref{fig:6.3} where a schematic of the real-part is depicted, the complex-part goes analogously. As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
 		\begin{align}
 			(A - \lambda I) \kappa_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) \kappa_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
@@ -179,9 +177,9 @@ Using this property we are now able to prove the first inclusion of the main sta
 		};
   \end{axis}
  \end{tikzpicture}%
- \caption{Resulting real-part of the function $u_{l}$ (the complex-part 
-is analogous).} \label{fig:6.3}
+ \caption{Resulting real-part of the function $u_{l}$.} \label{fig:6.3}
 \end{figure}		
+~\newline
 
 		Let use denote with $B_{l}$ the ball around $0$ with radius $l$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, note that $\psi_{s}(\cdot, k) \in H^{1}_{loc}(\R)$, the quasi-periodic structure of $\psi_{s}(\cdot, k)$ implies
 		\begin{equation}
