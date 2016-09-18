@@ -1,220 +1,74 @@
 \chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix} 
 
-\begin{atheorem}[Properties of the set of resolvent values]
-	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
+\begin{atheorem}[Alternative definition of the Delta-Distribution] \label{athem:delta}
 	
 	\begin{proof}
-		See \cite[p. 259]{werner2006funkana}.
+		This limit exists and it holds that $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ and $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see  % todo proof
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[$L^{p}$-Approximation by test functions]
+	For $U \subseteq \R^{n}$ open, $C_{0}^{\infty}(U)$ is dense in $L^{p}(U)$, if $1 \leq p < \infty$.
+	
+	\begin{proof}
+		See \cite[p. 31]{adams2003sobolev}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[$H^{k}$-Approximation by test functions] 
+	Let $\Omega \subseteq \R^{n}$ be an open set. Let $u \in H^{k}(\Omega)$, then there exists a sequence of functions $u_{k} \in C^{\infty}(\Omega)$ such that $\| u_{k} - u \|_{H^{k}(\Omega)}$ as $n \rightarrow \infty$.
+	
+	\begin{proof}
+		See \cite[p. 138]{adams2003sobolev}.
+	\end{proof}	
+\end{atheorem}
+
+
+\begin{atheorem}[Bessel's inequality]
+	Let $H$ be a Hilbert space, and suppose that $e_1, e_2, ...$ is an orthonormal sequence in $H$. Then, for any $x \in H$ one has
+	\[ \sum_{k=1}^{\infty}\left\vert\left\langle x,e_k\right\rangle \right\vert^2 \le \left\Vert x\right\Vert^2 \]
+	where $\langle \cdot,\cdot \rangle$ denotes the inner product in the Hilbert space $H$.
+
+	\begin{proof}
+		See \cite[p. 233]{werner2006funkana}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Cauchy–Schwarz inequality]
+	Fr all vectors $u$ and $v$ of an inner product space it is true that
+		\[ \left| \langle u,v \rangle \right|^{2} \leq \langle u,u \rangle \cdot \langle v,v \rangle, \]
+	where $\langle \cdot ,\cdot \rangle$ is the inner product. 
+
+	\begin{proof}
+		See \cite[p. 20]{werner2006funkana}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Closed graph theorem]
+	Let $X$ be a Banach space. Is $A$ a closed operator and $\mathcal{D}(A) = X$, then $A$ is continuous on $X$.
+
+	\begin{proof}
+		See \cite[p. 417]{evans1998partial}.
 	\end{proof}
 \end{atheorem}
 
 \begin{atheorem}[Closeness of $H^{1}_{k}$ in $H^{1}(\Omega)$] \label{h1kclosed}
 	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$ and hence a Hilbert space.
 
-	\begin{proof}
-		due to the fact that convergence in H1k impliese convergence of traces at -1/2 and 1/2 h1k is a closed subspace of H1
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[Dominated Convergence Theorem]
-The Cauchy–Schwarz inequality states that for all vectors $u$ and $v$ of an inner product space it is true that
-	\[ {\displaystyle |\langle \mathbf {u} ,\mathbf {v} \rangle |^{2}\leq \langle \mathbf {u} ,\mathbf {u} \rangle \cdot \langle \mathbf {v} ,\mathbf {v} \rangle } \]
-where $\langle \cdot ,\cdot \rangle$ is the inner product. 
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[Poincare's min-max principle for eigenvalues]
-	b
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}
-	Self-Adjoint $\Rightarrow$ Symmetric und closed
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}
-	Orthonormale system	
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}	
-	aus kompakt folgt bounded,	
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}	
-
-\begin{atheorem}
-	Equivalent Definition von Closed und Zeigen dass und 
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}	
-	
-\begin{atheorem}
-	deswegen die Eigenwerte das complete system bilden
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}	
-	
-\begin{atheorem}[Dominated Convergence Theorem]
-Let ${f_n}$ be a sequence of real-valued measurable functions on a measure space $(S, \Sigma, \mu)$. Suppose that the sequence converges pointwise to a function $f$ and is dominated by some integrable function $g$ in the sense that
-	\[ |f_n(x)| \le g(x) \]
-for all numbers n in the index set of the sequence and all points $x \in S$. Then f is integrable and
-	\[ \lim_{n\to\infty} \int_S |f_n-f|\,d\mu = 0 \]
-which also implies $\lim_{n\to\infty} \int_S f_n\,d\mu = \int_S f\,d\mu$.
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[Monotone Convergence Theorem]
-Suppose that $H$ is a Hilbert space with inner product $\langle \cdot,\cdot \rangle$. Let $(e_{n})$ be an orthonormal basis of $H$; i.e., the linear span of the en is dense in $H$, and the $e_n$ are mutually orthonormal:
-	\[ \langle e_{m},e_{n}\rangle ={\begin{cases}1&{\mbox{if}}\ m=n\\0&{\mbox{if}}\ m\not =n.\end{cases}} \]
-Then Parseval's identity asserts that for every $x \in H$,
-	\[ \sum _{n}|\langle x,e_{n}\rangle |^{2}=\|x\|^{2}.\]
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[Monotone Convergence Theorem]
-Let $(X, \Sigma, \mu)$ be a measure space. Let $f_1, f_2, \ldots$  be a pointwise non-decreasing sequence of $[0, \infty]$-valued $\Sigma$–measurable functions, i.e. for every $k \geq 1$ and every $x$ in $X$,
-	\[ 0 \leq f_k(x) \leq f_{k+1}(x). \] 
-Next, set the pointwise limit of the sequence $(f_{n})$ to be $f$. That is, for every $x$ in $X$,
-	\[ f(x):= \lim_{k\to\infty} f_k(x). \]
-Then $f$ is $\Sigma$–measurable and
-	\[ \lim_{k\to\infty} \int f_k \, \mathrm{d}\mu = \int f \, \mathrm{d}\mu. \]
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-
-\begin{atheorem}[Fubini's theorem for integrable functions]
-	Suppose $X$ and $Y$ are $\sigma$-finite measure spaces, and suppose that $X \times Y$ is given the product measure (which is unique as $X$ and $Y$ are $\sigma$-finite). Fubini's theorem states that if $f(x,y)$ is $X \times Y$ integrable, meaning that it is measurable and
-		\[  \int_{X\times Y} |f(x,y)|\,\text{d}(x,y)<\infty, \]
-	then
-		\[ \int_X\left(\int_Y f(x,y)\,\text{d}y\right)\,\text{d}x=\int_Y\left(\int_X f(x,y)\,\text{d}x\right)\,\text{d}y=\int_{X\times Y} f(x,y)\,\text{d}(x,y). \]
-	The first two integrals are iterated integrals with respect to two measures, respectively, and the third is an integral with respect to the product measure
-
-	\begin{proof}
-		a
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem} \label{athem:delta}
-	
-	\begin{proof}
-		This limit exists and it holds that $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ and $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}
-	For $A$ beeing a self-adjoint operator, $\lambda \in \rho(A)$, $(A - \lambda I)^{-1}$ is bounded.
-	
-	\begin{proof}
-		Since every self-adjoint is closed, $(A - \lambda I)$ is as the shift also closed. Furthermore, the graph of $(A - \lambda I)^{-1}$ is simply the graph of $(A - \lambda I)$ rotated and hence $(A - \lambda I)^{-1}$ is closed as well. The closed Graph Theorem now yields the desired result.
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[Uniqueness of weak derivatives] \label{athem:uniqueness_of_weak_deriv}
-	Let $\Omega \subseteq \R$ be open, if it exists, the $\alpha$-th weak derivative of $u$ is uniquely determined up to a set of measure zero.
-	
-	\begin{proof}
-		Assume that $g, \tilde{g} \in L_{loc}^{1}(\Omega)$ satisfy
-		\[ (-1)^{\alpha} \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi  = \int_{\Omega} \tilde{g} \varphi  \]
-		for all $\varphi \in C_{0}^{\infty}(\Omega)$. Then
-		\[ \int_{\Omega} \left( g - \tilde{g} \right) \varphi = 0 \]	
-		for all $\varphi \in C_{0}^{\infty}(\Omega)$, whence $g - \tilde{g} = 0$ almost everywhere.	
-	\end{proof}
-\end{atheorem}   
-
-\begin{atheorem}[Approximation by test functions]
-	$C_{0}^{\infty}(\R)$ is dense in $L^{p}(\R)$, if $1 \leq p < \infty$. % C_0infty dense  In H1 und Cinfty in LP???
-	
-	\begin{proof}
-		See \cite[p. 82]{werner2006funkana}. % x check this again
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[The spectrum of self-adjoint operators]
-	The spectrum of a self-adjoint operator $A$ is real. \label{spectrul-sa-real}
-	
-	\begin{proof}
-		Let $\lambda$ be an eigenvalue of $A$, i.e. there exists $x \in X$ such that $A x = \lambda x$. From this it follows that $\langle A x, x \rangle = \langle \lambda x , x \rangle$. Using then the fact that $A$ is self-adjoint we can further deduce
-		\[ \lambda \langle x , x \rangle = \langle \lambda x , x \rangle = \langle A x, x \rangle = \langle x, A x \rangle = \langle x , \lambda x \rangle = \overline{\lambda} \langle  x , x \rangle \]
-		Hence, $\lambda = \overline{\lambda}$, which shows the desired result.
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}
 	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$, and therefore a  Hilbert space with respect to the norm of $H^{1}(\Omega)$.
 	
 	\begin{proof} % x martin do the proof
 		coming
 %		: Let (fn)n∈N be a sequence of elements in Hφ1(Ω) converging to%f ∈ H1(Ω). Due to the Sobolev embedding of H1-functions into the space of continuous 1 ̃ ̃%functions, we can identify the H -functions fn and f with continuous functions f,fn. Since convergence with respect to the H1-norm implies pointwise convergence almost% ̃ ̃%everywhere, we can conclude that f(x) converges everywhere to f(x). In the following% ̃%let us denote f again instead of f. Thus, for k = 1,2:%f(ξk+) = lim fn(ξk+) = lim eiφk fn(ξk−) = eiφk lim fn(ξk−) = eiφk f(ξk−), n→∞ n→∞ n→∞%which shows the closer of Hφ1(Ω).%Analogously as in Chapter (2.1) let us regard the equation% Aφu + μu = f%with f being an element of L2(Ω) and μ having the same properties as before. Then we%are able to formulate a weak formulation what we will write down in the following
 	\end{proof}
-\end{atheorem}
 
-\begin{atheorem}[Riesz' representation theorem] % verweis darauf sollte ich
-	Let $H$ be a Hilbert space, and let $H^{*}$ denote its dual space, consisting of all continuous linear functionals from $H$ into $\R$ or $\C$. If $x$ is an element of $H$, then the function $\varphi_{x}$, for all $y$ in $H$ defined by
-	\[ \varphi_{x}(y) = \left\langle y,x\right\rangle_{H}, \]
-	where $\langle \cdot ,\cdot \rangle_{H}$ denotes the inner product of the Hilbert space, is an element of $H^{*}$. Hence, every element of $H^{*}$ can be written uniquely in this form.
-	\begin{proof}
-		See \cite[p. 88]{weis2015funkana}
+	\begin{proof} % todo proof
+		due to the fact that convergence in H1k impliese convergence of traces at -1/2 and 1/2 h1k is a closed subspace of H1
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Closed graph theorem]
-	Let $X$ be a Banach space. Is $A$ a closed operator and $\mathcal{D}(A) = X$, then $A$ is continuous on $X$.
-	\begin{proof}
-		See \cite[p. 66]{weis2015funkana}
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[Eigenvectors of a compact, symmetric operator]
-	Let $H$ be a separable Hilbert space, and suppose $S \colon H \rightarrow H$ is a compact and symmetric operator. Then there exists a countable orthonormal basis of $H$ consisting of eigenvectors of $S$.
-	
-	\begin{proof}
-		See \cite[p. 645]{evans1998partial}
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}
-	Let $[a, b]$ be a compact interval in $\R$. Then, $H^{1}([a, b])$ is embedded in $C([a, b])$
-	
-	\begin{proof}
-		Let $f$ be a smooth function and $x, y \in [a, b]$ such that $x \leq y$, then:
-		~\\ ~\\ % x martin todo
-		Thus, the supremum norm is dominated by the $H^{1}$-norm, which implies that, which means that this estimation holds for the completion H1([a, b]) as well.
-	\end{proof}
-\end{atheorem}
-
-We need the next theorem in two versions, once in Chapter \ref{chap:4} and once in \ref{chap:7}. This is also why I will separate the proofs:
-
-\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} % x I have to prove this!  Prove Compact Embedding Theorem? 
-Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
+\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} % todo proof 
+	Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Suppose $n > 2$. Then $H^{1}(U) \subset\subset L^{q}(U)$ for each $1 \leq q \leq p^{*}$.
 		
@@ -228,17 +82,176 @@ Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. De
 	\end{enumerate}
 \end{atheorem}
 
+\begin{atheorem}[Dominated Convergence Theorem]
+	Let ${f_n}$ be a sequence of real-valued measurable functions on a measure space $(S, \Sigma, \mu)$. Suppose that the sequence converges pointwise to a function $f$ and is dominated by some integrable function $g$ in the sense that
+		\[ |f_n(x)| \le g(x) \]
+	for all numbers n in the index set of the sequence and all points $x \in S$. Then f is integrable and
+		\[ \lim_{n\to\infty} \int_S |f_n-f|\,d\mu = 0 \]
+	which also implies $\lim_{n\to\infty} \int_S f_n\,d\mu = \int_S f\,d\mu$.
+
+	\begin{proof}
+		See \cite[p. 516]{werner2006funkana}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Eigenvectors of a compact, symmetric operator]
+	Let $H$ be a separable Hilbert space, and suppose $S \colon H \rightarrow H$ is a compact and symmetric operator. Then there exists a countable orthonormal basis of $H$ consisting of eigenvectors of $S$.
+	
+	\begin{proof}
+		See \cite[p. 645]{evans1998partial}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Embedding of $H^{1}$ in $C$]
+	Let $[a, b]$ be a compact interval in $\R$. Then, $H^{1}([a, b])$ is embedded in $C([a, b])$
+	
+	\begin{proof}
+		Let $f$ be a smooth function and $x, y \in [a, b]$ such that $x \leq y$, then:
+		~\\ ~\\ % todo proof
+		Thus, the supremum norm is dominated by the $H^{1}$-norm, which implies that, which means that this estimation holds for the completion H1([a, b]) as well.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Equivalent definitions of closed operators]
+	Equivalent Definition von Closed und Zeigen dass und 
+
+	\begin{proof}
+		 % todo proof
+	\end{proof}
+\end{atheorem}	
+
+\begin{atheorem}[Fubini's theorem for integrable functions]
+	Suppose $X$ and $Y$ are $\sigma$-finite measure spaces, and suppose that $X \times Y$ is given the product measure (which is unique as $X$ and $Y$ are $\sigma$-finite). Fubini's theorem states that if $f(x,y)$ is $X \times Y$ integrable, meaning that it is measurable and
+		\[  \int_{X\times Y} |f(x,y)|\,\text{d}(x,y)<\infty, \]
+	then
+		\[ \int_X\left(\int_Y f(x,y)\,\text{d}y\right)\,\text{d}x=\int_Y\left(\int_X f(x,y)\,\text{d}x\right)\,\text{d}y=\int_{X\times Y} f(x,y)\,\text{d}(x,y). \]
+	The first two integrals are iterated integrals with respect to two measures, respectively, and the third is an integral with respect to the product measure
+
+	\begin{proof}
+		See \cite[p. 514]{werner2006funkana}.
+	\end{proof}
+\end{atheorem}
+
 \begin{atheorem}[Lax-Milgram]
 	Let $H$ be a Hilbert space where $\| \cdot \|$ denotes the norm on $H$, and let $B \colon H \times H \rightarrow \C$ be a sesquilinear form. If there exist constants $\alpha, \beta > 0$ such that
-		\begin{itemize}
-			\item $\left| B[u, v] \right| \leq \alpha \| u \| \|v \| \quad (u, v \in H)$ and
-			\item $Re(B[u,u]) \geq \beta \|u\|^{2} \quad (u \in H)$,
-		\end{itemize}
-		then there exists to each $l \in H^{*}$ a unique $w \in H$ such that
+	\begin{itemize}
+		\item $\left| B[u, v] \right| \leq \alpha \| u \| \|v \| \quad (u, v \in H)$ and
+		\item $Re(B[u,u]) \geq \beta \|u\|^{2} \quad (u \in H)$,
+	\end{itemize}
+	then there exists to each $l \in H^{*}$ a unique $w \in H$ such that
 		\[ B[v, w] = l(v) \]
-		hold for all $v \in H$.
+	hold for all $v \in H$.
 		
-		\begin{proof}
-			See \cite[Amd to problem 51]{plum2015dglhr}.
-		\end{proof}
+	\begin{proof}
+		See \cite[Amd to problem 51]{plum2015dglhr}.
+	\end{proof}
 \end{atheorem}
+
+\begin{atheorem}[Monotone Convergence Theorem]
+	Let $(X, \Sigma, \mu)$ be a measure space. Let $f_1, f_2, \ldots$  be a pointwise non-decreasing sequence of $[0, \infty]$-valued $\Sigma$–measurable functions, i.e. for every $k \geq 1$ and every $x$ in $X$,
+		\[ 0 \leq f_k(x) \leq f_{k+1}(x). \] 
+	Next, set the pointwise limit of the sequence $(f_{n})$ to be $f$. That is, for every $x$ in $X$,
+		\[ f(x):= \lim_{k\to\infty} f_k(x). \]
+	Then $f$ is $\Sigma$–measurable and
+		\[ \lim_{k\to\infty} \int f_k \, \mathrm{d}\mu = \int f \, \mathrm{d}\mu. \]
+
+	\begin{proof}
+		See \cite[p. 516]{werner2006funkana}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Orthonormality of $\vartheta$]
+	\[ \vartheta_{n}(k) \coloneqq \frac{1}{\sqrt{|B|}} e^{ikn} \]
+
+	\begin{proof}
+		 % todo proof
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Parseval's identity]
+	Suppose that $H$ is a Hilbert space with inner product $\langle \cdot,\cdot \rangle$. Let $(e_{n})$ be an orthonormal basis of $H$; i.e., the linear span of the en is dense in $H$, and the $e_n$ are mutually orthonormal:
+		\[ \langle e_{m},e_{n}\rangle ={\begin{cases}1&{\mbox{if}}\ m=n\\0&{\mbox{if}}\ m\not =n.\end{cases}} \]
+	Then Parseval's identity asserts that for every $x \in H$,
+		\[ \sum _{n}|\langle x,e_{n}\rangle |^{2}=\|x\|^{2}.\]
+
+	\begin{proof}
+		See \cite[p. 236]{werner2006funkana}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Poincare's min-max principle for eigenvalues]
+	a % todo todo
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Properties of compact operators]
+	aus kompakt folgt bounded,	
+
+	\begin{proof}
+		 % todo proof
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Properties of self-adjoint operators]
+	\begin{enumerate}
+		\item Self-Adjoint $\Rightarrow$ Symmetric und closed
+			\begin{proof}
+				 % todo proof
+			\end{proof}
+		\item For $A$ being a self-adjoint operator, $\lambda \in \rho(A)$, $(A - \lambda I)^{-1}$ is bounded.
+			\begin{proof}
+				Since every self-adjoint is closed, $(A - \lambda I)$ is as the shift also closed. Furthermore, the graph of $(A - \lambda I)^{-1}$ is simply the graph of $(A - \lambda I)$ rotated and hence $(A - \lambda I)^{-1}$ is closed as well. The closed Graph Theorem now yields the desired result.
+			\end{proof}
+	\end{enumerate}
+\end{atheorem}
+
+\begin{atheorem}[Properties of the set of resolvent values]
+	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
+	
+	\begin{proof}
+		See \cite[p. 259]{werner2006funkana}.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Riesz' representation theorem]
+	Let $H$ be a Hilbert space, and let $H^{*}$ denote its dual space, consisting of all continuous linear functionals from $H$ into $\R$ or $\C$. If $x$ is an element of $H$, then the function $\varphi_{x}$, for all $y$ in $H$ defined by
+	\[ \varphi_{x}(y) = \left\langle y,x\right\rangle_{H}, \]
+	where $\langle \cdot ,\cdot \rangle_{H}$ denotes the inner product of the Hilbert space, is an element of $H^{*}$. Hence, every element of $H^{*}$ can be written uniquely in this form.
+	
+	\begin{proof}
+		See \cite[p. 284]{evans1998partial}
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[The spectrum of self-adjoint operators] \label{spectrul-sa-real}
+	The spectrum of a self-adjoint operator $A$ is real. 
+	
+	\begin{proof}
+		Let $\lambda$ be an eigenvalue of $A$, i.e. there exists $x \in X$ such that $A x = \lambda x$. From this it follows that $\langle A x, x \rangle = \langle \lambda x , x \rangle$. Using then the fact that $A$ is self-adjoint we can further deduce
+		\[ \lambda \langle x , x \rangle = \langle \lambda x , x \rangle = \langle A x, x \rangle = \langle x, A x \rangle = \langle x , \lambda x \rangle = \overline{\lambda} \langle  x , x \rangle \]
+		Hence, $\lambda = \overline{\lambda}$, which shows the desired result.
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Trace Theorem]
+	b % todo todo
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Uniqueness of weak derivatives] \label{athem:uniqueness_of_weak_deriv}
+	Let $\Omega \subseteq \R$ be open, if it exists, the $\alpha$-th weak derivative of $u$ is uniquely determined up to a set of measure zero.
+	
+	\begin{proof}
+		Assume that $g, \tilde{g} \in L_{loc}^{1}(\Omega)$ satisfy
+		\[ (-1)^{\alpha} \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi  = \int_{\Omega} \tilde{g} \varphi  \]
+		for all $\varphi \in C_{0}^{\infty}(\Omega)$. Then
+		\[ \int_{\Omega} \left( g - \tilde{g} \right) \varphi = 0 \]	
+		for all $\varphi \in C_{0}^{\infty}(\Omega)$, whence $g - \tilde{g} = 0$ almost everywhere.	
+	\end{proof}
+\end{atheorem}  
