@@ -1,18 +1,18 @@
 \chapter{The one-dimensional Schrödinger operator} \label{chap:3}
 
-The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic delta-distribution. In this chapter we will examine properties of $A$ such as its domain and show its self-adjointness. Later, in Chapters \ref{chap:4} and \ref{chap:6}, we will need these results to deduce our main result, i.e. characteristics of the spectrum of $A$. ~\\ ~\\
+The mathematical representation of the problem stated above can be done by introducing a one-dimensional Schrödinger operator $A$ where the potential is given by a periodic Delta-Distribution. In this chapter we will examine properties of $A$ such as its domain and show its self-adjointness. Later, in Chapters \ref{chap:4} and \ref{chap:6}, we will need these results to deduce our main result, i.e. characteristics of the spectrum of $A$. ~\\ ~\\
 Formally the operation of $A$ is defined by
 \begin{equation}
 	- \frac{d^{2}}{dx^{2}} + \rho \sum_{i \in \Z} \delta_{x_{i}} \label{the-operator-A-formally}
 \end{equation}
-on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Delta-Distribution supported at the point $x_{i}$. $\Omega_{k}$ will hereafter identify the periodicity cell containing point $x_{k}$ and w.l.o.g. let $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$. By this assumption, we then can rearrange all other points where the Delta-Distribution function is supported $(x_{i})_{i \in \Z \setminus \{0\}}$ such that $x_{i} = x_{0} + i$ for all $i \in \Z \setminus \{0\}$. 
+on the whole of $\R$, where $\delta_{x_{i}}$ denotes the Delta-Distribution supported at the point $x_{i}$. $\Omega_{k}$ will hereafter identify the periodicity cell containing point $x_{k}$ and w.l.o.g. let $x_{0} = 0$ and $|\Omega_{i}| = 1$ for all $i \in \Z$. By this assumption, we then can rearrange all other points where the Delta-Distribution is supported $(x_{i})_{i \in \Z \setminus \{0\}}$ such that $x_{i} = x_{0} + i$ for all $i \in \Z \setminus \{0\}$. 
 ~\\  
 
 In general, one cannot say in which sense a solution to the formal problem 
 	\begin{equation}
 		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of the Delta-Distribution. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
+	exists since the potential in $A$ consists of the Delta-Distribution. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the smooth problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
 \begin{equation}
 	\int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R} f(x) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
@@ -21,7 +21,7 @@ holds and call \eqref{weak-formulation-of-A} the weak-formulation of \eqref{form
 	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( 2 |u( x_{i} + h )|^{2} +  2 h \int_{x_{i}}^{x_{i} + h} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
 		 & \leq 2 \sum_{i \in \Z} \left( \frac{1}{h} \int_{\Omega_{i}} |u( x )|^{2} dx + h \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right). \label{preestimation-for-potential}
 \end{align}
-The choice of $h = 1$ yields hence the bound
+The choice of $h = 1$ yields hence the estimation
 \begin{align} 
 		\sum_{i \in \Z} |u(x_{i})|^{2} & \leq 2 \| u \|^{2}_{H^{1}(\R)}. \label{estimation-for-potential}
 \end{align}
@@ -124,13 +124,13 @@ Note that this definition is consistent with the formal definition in \eqref{the
 \end{remark}
 We will now use the fact that every element $u \in \mathcal{D}(A) = \mathcal{R}(R_{\mu})$ is a solution of \eqref{weak-formulation-of-A-for-LM} to find additional necessary  characteristics of $\mathcal{D}(A)$. However, we already know by Lax-Milram's Theorem that $u \in H^{1}(\R)$. Let us first for the sake of brevity define
 \[ H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) \coloneqq \Big\{ u\in L^{2}(\R) : u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z, \sum_{i \in \Z} \|u\|^{2}_{H^{2}(x_{i}, x_{i+1})} < \infty \Big\}. \]
-Then, considering in \eqref{weak-formulation-of-A} any fixed $k \in \Z$ and an arbitrary test function $v \in C^{\infty}(\R)$ with $\supp v \subseteq [x_{k}, x_{k+1}]$ we get 
+Then, considering in \eqref{weak-formulation-of-A} any fixed $k \in \Z$ and an arbitrary test function $v \in C_{0}^{\infty}(\R)$ with $\supp v \subseteq [x_{k}, x_{k+1}]$ we get 
 	\begin{equation}
 		\int_{x_{k}}^{x_{k + 1}} u'(x) \overline{v'(x)} dx = \int_{x_{k}}^{x_{k+1}} \left(Au\right)(x) \overline{v(x)} dx \iff \int_{x_{k}}^{x_{k+1}} - u(x) \overline{v''(x)} dx = \int_{x_{k}}^{x_{k+1}} \left(Au\right)(x) \overline{v(x)} dx, \label{temp-link}
 	\end{equation} 
 whence $u'' \in L^{2}(x_{k}, x_{k + 1})$ and $A u = - u''$ on $(x_{k}, x_{k + 1})$. Since we chose an arbitrary $k \in \Z$, we can note 
 	$$ \mathcal{D}(A) \subseteq \Big\{ u \in H^{1}(\R) \colon u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z \Big\}. $$
-Using this, a test function $v \in C^{\infty}(\R)$ with the property $\supp v = \Omega_{k}$ yields in \eqref{weak-formulation-of-A} for any $k \in \Z$ through integration by parts on both sides of $x_{k}$ that
+Using this, a test function $v \in C_{0}^{\infty}(\R)$ with the property $\supp v = \Omega_{k}$ yields in \eqref{weak-formulation-of-A} for any $k \in \Z$ through integration by parts on both sides of $x_{k}$ that
 	\[ - \int_{x_{k}-\frac{1}{2}}^{x_{k}} u''(x) \overline{v(x)} dx - \int_{x_{k}}^{x_{k} + \frac{1}{2}} u''(x) \overline{v(x)} dx + \left( u'(x_{k}-0) \overline{v(x_{k})} - u'(x_{k} + 0) \overline{v(x_{k})} \right) \\ \]
 	\[ +  \rho u(x_{k})\overline{v(x_{k})} = - \int_{x_{k} - \frac{1}{2}}^{x_{k}} u''(x) \overline{v(x)} dx - \int_{x_{k}}^{x_{k} + \frac{1}{2}} u''(x) \overline{v(x)} dx. \]
 Now, choosing in addition $v$ to be non-zero in $x_{k}$ yields 
@@ -204,13 +204,13 @@ In Chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjo
 	\end{proof}
 \end{theorem}
 
-Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can now prove the main statement of this section. Since every symmetric operator has an entirely real spectrum, this theorem yields further our first result about the spectrum of $A$, for a proof see Theorem \ref{spectrul-sa-real}.
+Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can now prove the main statement of this section. Since every self-adjoint operator has an entirely real spectrum, this theorem yields further our first result about the spectrum of $A$, for a proof see Theorem \ref{spectrul-sa-real}.
 
 \begin{theorem} \label{2.3:thm-ASelfAdjoint}
 	$A$ is a self-adjoint operator.
 		
 	\begin{proof}
-		We proceed by proving first that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ is symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
+		We begin by proving that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ is symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
 		\begin{align}
 			\langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}), \label{*-condition}
 		\end{align}
