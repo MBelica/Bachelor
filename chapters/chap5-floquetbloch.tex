@@ -23,17 +23,17 @@ In Chapter \ref{chap:6} we will show that the spectrum of the operator $A$ can b
 		\begin{equation}
 			\| f \|_{L^{2}(\R)}^{2} = \int_{\R} |f(x)|^{2} dx = \sum_{n \in \Z} \int_{\Omega} |f(x - n)|^{2} dx.\label{functionoverperiodicity}
 		\end{equation} 
-		We can apply Beppo Levi's Theorem which shows that
+		We can apply the Monotone Convergence Theorem which shows that
 		\[ \sum_{n \in \Z} |f(x - n)|^{2} < \infty \text{ for almost every } x \in \Omega.\]
 		Thus, $(Uf)(x, k)$ is well-defined by \eqref{floquet-transformation} (as a Fourier series with variable $k$) for almost every $x \in \Omega$. Using the fact that 
 		\[ \vartheta_{n}(k) \coloneqq \frac{1}{\sqrt{|B|}} e^{ikn} \]
-		forms an orthonormal basis of $L^{2}(B)$ and Parseval's equality gives for these $x$
+		forms an orthonormal basis of $L^{2}(B)$ and Parseval's identity gives for these $x$
 		\[ \int_{B}|(Uf)(x,k)|^{2} dk = \sum_{n \in \Z} |f(x - n)|^{2}. \]
-	 	This expression is in $L^{2}(\Omega)$ by \eqref{functionoverperiodicity} and Tonelli's theorem, and we conclude $\| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}$. It is for us still left to show that the mapping $U$ is surjective, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. For $g \in L^{2}(\Omega \times B)$, let us define
+	 	This expression is in $L^{2}(\Omega)$ by \eqref{functionoverperiodicity} and Fubini's theorem, and we conclude $\| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}$. It is for us still left to show that the mapping $U$ is surjective, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. For $g \in L^{2}(\Omega \times B)$, let us define
 		\begin{equation}
 			f(x - n) \coloneqq \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in\Z).\label{3.11}
 		\end{equation}
-		Using Fubini's theorem we know that for almost every $x \in \Omega$ we have $g(x, k) \in L^{2}(B)$, and with this, Parseval's theorem states for fixed $x \in \Omega$ that $\sum_{n \in \Z} |f(x - n)|^{2} = \int_{B} |g(x, k)|^{2} dk$. Integrating this equality over $\Omega$ and using Tonelli's theorem and the Monotone Convergence Theorem then yields
+		Using Fubini's theorem we know that for almost every $x \in \Omega$ we have $g(x, k) \in L^{2}(B)$, and with this, Parseval's identity states for fixed $x \in \Omega$ that $\sum_{n \in \Z} |f(x - n)|^{2} = \int_{B} |g(x, k)|^{2} dk$. Integrating this equality over $\Omega$ and using Fubini's theorem and the Monotone Convergence Theorem then yields
 		\begin{align*}
 			\int_{\Omega \times B} |g(x, k)|^{2} dx dk & = \int_{\Omega} \sum_{n \in \Z} |f(x - n)|^{2} dx  = \sum_{n \in\Z} \int_{\Omega} |f(x-n)|^{2} dx = \int_{\R} |f(x)|^{2} dx,	
 		\end{align*}
@@ -65,7 +65,7 @@ Using the Floquet transformation $U$, we can now prove the property of completen
 			\[ \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)}  \]
 		for all $l \in \N$ and almost every $k \in B$. Next, $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}, thus by the Dominated Convergence Theorem
 		\[ \lim_{l \rightarrow \infty} \int_{B} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk  = \int_{B} \lim_{l \rightarrow \infty}  \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk = 0. \]
-		  All in all, this means by Tonelli's Theorem
+		  All in all, this means by Fubini's Theorem
 			\begin{equation}
 				\| U f - g_{l} \|_{L^{2}(\Omega \times B)} = \int_{B} \int_{\Omega} \left| (Uf)(x, k) - g_{l}(d, k) \right|^{2} dx dk \rightarrow 0 \text{ as } l \rightarrow \infty \label{3.17}
 			\end{equation} 

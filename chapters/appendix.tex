@@ -1,8 +1,4 @@
 \chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix} 
-% cites and refs throughout script! Beweise überprüfen
-%  A appendix complete Tonelli, Monotone Convergence Theorem, Dominated Convergence Theorem, Poincare's min-max principle for eigenvalues, Graph Theorem, Beppo Levi's Theorem, Parseval, Fubini? define compact sets? Closed, Symmetric Operator , Closed and Symmetric follows from self-adjoint. Prove Compact Embedding Theorem? Cauchy–Schwarz inequality C_0infty dense
-% Aquivalente Definition von Closed und Zeigen dass Self-Adjoint = Symmetric und closed und deswegen die Eigenwerte das complette system bilden
-% beweis orthonormale system	, aus kompakt oflgt bounded, Definition of resolvent
 
 \begin{atheorem}[The open set of resolvent values]
 	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
@@ -12,21 +8,125 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem} \label{h1kclosed}
+\begin{atheorem}[Closeness of $H^{1}_{k}$ in $H^{1}(\Omega)$] \label{h1kclosed}
 	$H^{1}_{k}$ is a closed subspace of $H^{1}(\Omega)$ and hence a Hilbert space.
 
 	\begin{proof}
-		todo % due to the fact that convergence in H1k impliese convergence of traces at -1/2 and 1/2 h1k is a closed subspace of H1
+		due to the fact that convergence in H1k impliese convergence of traces at -1/2 and 1/2 h1k is a closed subspace of H1
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Dominated Convergence Theorem]
+The Cauchy–Schwarz inequality states that for all vectors $u$ and $v$ of an inner product space it is true that
+	\[ {\displaystyle |\langle \mathbf {u} ,\mathbf {v} \rangle |^{2}\leq \langle \mathbf {u} ,\mathbf {u} \rangle \cdot \langle \mathbf {v} ,\mathbf {v} \rangle } \]
+where $\langle \cdot ,\cdot \rangle$ is the inner product. 
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Poincare's min-max principle for eigenvalues]
+	b
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}
+	Self-Adjoint $\Rightarrow$ Symmetric und closed
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}
+	Orthonormale system	
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}	
+	aus kompakt folgt bounded,	
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}	
+
+\begin{atheorem}
+	Equivalent Definition von Closed und Zeigen dass und 
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}	
+	
+\begin{atheorem}
+	deswegen die Eigenwerte das complete system bilden
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}	
+	
+\begin{atheorem}[Dominated Convergence Theorem]
+Let ${f_n}$ be a sequence of real-valued measurable functions on a measure space $(S, \Sigma, \mu)$. Suppose that the sequence converges pointwise to a function $f$ and is dominated by some integrable function $g$ in the sense that
+	\[ |f_n(x)| \le g(x) \]
+for all numbers n in the index set of the sequence and all points $x \in S$. Then f is integrable and
+	\[ \lim_{n\to\infty} \int_S |f_n-f|\,d\mu = 0 \]
+which also implies $\lim_{n\to\infty} \int_S f_n\,d\mu = \int_S f\,d\mu$.
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Monotone Convergence Theorem]
+Suppose that $H$ is a Hilbert space with inner product $\langle \cdot,\cdot \rangle$. Let $(e_{n})$ be an orthonormal basis of $H$; i.e., the linear span of the en is dense in $H$, and the $e_n$ are mutually orthonormal:
+	\[ \langle e_{m},e_{n}\rangle ={\begin{cases}1&{\mbox{if}}\ m=n\\0&{\mbox{if}}\ m\not =n.\end{cases}} \]
+Then Parseval's identity asserts that for every $x \in H$,
+	\[ \sum _{n}|\langle x,e_{n}\rangle |^{2}=\|x\|^{2}.\]
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+\begin{atheorem}[Monotone Convergence Theorem]
+Let $(X, \Sigma, \mu)$ be a measure space. Let $f_1, f_2, \ldots$  be a pointwise non-decreasing sequence of $[0, \infty]$-valued $\Sigma$–measurable functions, i.e. for every $k \geq 1$ and every $x$ in $X$,
+	\[ 0 \leq f_k(x) \leq f_{k+1}(x). \] 
+Next, set the pointwise limit of the sequence $(f_{n})$ to be $f$. That is, for every $x$ in $X$,
+	\[ f(x):= \lim_{k\to\infty} f_k(x). \]
+Then $f$ is $\Sigma$–measurable and
+	\[ \lim_{k\to\infty} \int f_k \, \mathrm{d}\mu = \int f \, \mathrm{d}\mu. \]
+
+	\begin{proof}
+		a
+	\end{proof}
+\end{atheorem}
+
+
+\begin{atheorem}[Fubini's theorem for integrable functions]
+	Suppose $X$ and $Y$ are $\sigma$-finite measure spaces, and suppose that $X \times Y$ is given the product measure (which is unique as $X$ and $Y$ are $\sigma$-finite). Fubini's theorem states that if $f(x,y)$ is $X \times Y$ integrable, meaning that it is measurable and
+		\[  \int_{X\times Y} |f(x,y)|\,\text{d}(x,y)<\infty, \]
+	then
+		\[ \int_X\left(\int_Y f(x,y)\,\text{d}y\right)\,\text{d}x=\int_Y\left(\int_X f(x,y)\,\text{d}x\right)\,\text{d}y=\int_{X\times Y} f(x,y)\,\text{d}(x,y). \]
+	The first two integrals are iterated integrals with respect to two measures, respectively, and the third is an integral with respect to the product measure
+
+	\begin{proof}
+		a
 	\end{proof}
 \end{atheorem}
 
 \begin{atheorem} \label{athem:delta}
 	
 	\begin{proof}
-		 	This limit exists and it holds that $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ and $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see
- 		\begin{remark}
- 		 The Delta-Distribution can also be defined equivalently either as a 	distribution or as a measure.
- 		\end{remark}
+		This limit exists and it holds that $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ and $\delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f) = f(x_{0})$, for a proof see
 	\end{proof}
 \end{atheorem}
 
@@ -51,7 +151,7 @@
 \end{atheorem}   
 
 \begin{atheorem}[Approximation by test functions]
-	$C_{0}^{\infty}(\R)$ is dense in $L^{p}(\R)$, if $1 \leq p < \infty$.
+	$C_{0}^{\infty}(\R)$ is dense in $L^{p}(\R)$, if $1 \leq p < \infty$. % C_0infty dense  In H1 und Cinfty in LP???
 	
 	\begin{proof}
 		See \cite[p. 82]{werner2006funkana}. % x check this again
@@ -113,7 +213,7 @@
 
 We need the next theorem in two versions, once in Chapter \ref{chap:4} and once in \ref{chap:7}. This is also why I will separate the proofs:
 
-\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} % x I have to prove this! 
+\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} % x I have to prove this!  Prove Compact Embedding Theorem? 
 Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Suppose $n > 2$. Then $H^{1}(U) \subset\subset L^{q}(U)$ for each $1 \leq q \leq p^{*}$.
