@@ -73,6 +73,10 @@
 \newtheorem{atheorem}{Theorem}[chapter]
 \renewcommand{\theatheorem}{A.\arabic{atheorem}}
  
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
+\setlength{\itemsep}{0.45em}}  
+ 
 
 \begin{document} \urlstyle{rm}
 

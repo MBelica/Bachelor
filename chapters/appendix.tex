@@ -180,7 +180,7 @@
 \end{atheorem}
 
 \begin{atheorem}[Parseval's identity]
-	Suppose that $H$ is a Hilbert space with inner product $\langle \cdot,\cdot \rangle$. Let $(e_{n})$ be an orthonormal basis of $H$; i.e., the linear span of the en is dense in $H$, and the $e_n$ are mutually orthonormal:
+	Suppose that $H$ is a Hilbert space with inner product $\langle \cdot,\cdot \rangle$. Let $(e_{n})$ be an orthonormal basis of $H$; i.e., the linear span of the $e_n$ is dense in $H$, and the $e_n$ are mutually orthonormal:
 		\[ \langle e_{m},e_{n}\rangle ={\begin{cases}1&{\mbox{if}}\ m=n\\0&{\mbox{if}}\ m\not =n.\end{cases}} \]
 	Then Parseval's identity asserts that for every $x \in H$,
 		\[ \sum _{n}|\langle x,e_{n}\rangle |^{2}=\|x\|^{2}.\]
@@ -191,14 +191,17 @@
 \end{atheorem}
 
 \begin{atheorem}[Poincare's min-max principle for eigenvalues]
-	a % todo todo
+	Let $X$ be a Hilbert space and $\langle \cdot, \cdot \rangle_{X}$ denote the scalar product on $X$. Let $A \colon \mathcal{D}(A) \rightarrow X$ be a self-adjoint operator where $\mathcal{D}(A) \subseteq X$. Then,
+	\begin{equation}
+			\lambda_{s} = \underset{\dim U = s}{\min_{U \subseteq \mathcal{D}(A)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle A v, v \rangle_{X}}{\langle v, v \rangle_{X}}.  \label{poincare} 
+	\end{equation} 
 
 	\begin{proof}
-		a
+		See \cite[p. 107]{godunov1998modern}. % todo Andrii/Markus
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Properties of self-adjoint operators]
+\begin{atheorem}[Properties of self-adjoint operators] ~\
 	\begin{enumerate}
 		\item Every self-adjoint is symmetric and closed.
 			\begin{proof}
@@ -258,10 +261,8 @@
 	Let $\Omega \subseteq \R$ be open, if it exists, the $\alpha$-th weak derivative of $u$ is uniquely determined up to a set of measure zero.
 	
 	\begin{proof}
-		Assume that $g, \tilde{g} \in L_{loc}^{1}(\Omega)$ satisfy
-		\[ (-1)^{\alpha} \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi  = \int_{\Omega} \tilde{g} \varphi  \]
-		for all $\varphi \in C_{0}^{\infty}(\Omega)$. Then
-		\[ \int_{\Omega} \left( g - \tilde{g} \right) \varphi = 0 \]	
-		for all $\varphi \in C_{0}^{\infty}(\Omega)$, whence $g - \tilde{g} = 0$ almost everywhere.	
+		Assume that $g, \tilde{g} \in L_{loc}^{1}(\Omega)$ satisfy for all $\varphi \in C_{0}^{\infty}(\Omega)$
+		\[ (-1)^{\alpha} \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi  = \int_{\Omega} \tilde{g} \varphi. \]
+		Then $\int_{\Omega} \left( g - \tilde{g} \right) \varphi = 0$ for all $\varphi \in C_{0}^{\infty}(\Omega)$, whence $g - \tilde{g} = 0$ almost everywhere.	
 	\end{proof}
 \end{atheorem}  
