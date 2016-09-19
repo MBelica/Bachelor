@@ -78,10 +78,10 @@ is a bounded, linear functional. Hence, Lax-Migram's Theorem ensures the existen
 	\end{proof}
 \end{theorem}
 
-This on the other hand enables us to explicitly define $A^{n}$ by means of $R_{\mu}^{n}$:
+This, on the other hand, enables us to explicitly define $A^{n}$ by means of $R_{\mu}^{n}$:
 \[ A^{n} \coloneqq \left(R_{\mu}^{n}\right)^{-1} + \mu I, \quad \mathcal{D}(A^{n}) = \mathcal{R}(R_{\mu}^{n}), \]
 
-such that $R_{\mu}^{n}$ is the resolvent of $A^{n}$. Therefore, we can characterise $\mathcal{D}(A^{n})$ by transferring the methods used in Section \ref{sec:3.2}.
+such that $R_{\mu}^{n}$ is the resolvent of $A^{n}$. Therefore, we can characterise $\mathcal{D}(A^{n})$ by employing the same methods as used in Section \ref{sec:3.2}.
 
 \begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] \label{thrm:7.2}
 Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, on the fundamental domain of periodicity as depicted in  Figure \ref{fig:7.2}, namely for all $j \in \Z^{n}$ it holds:
@@ -93,7 +93,7 @@ Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We c
 \end{theorem}
 
 \begin{proof}
- 	Comparing the three properties in Theorem \ref{thrm:7.2} to those in $\mathcal{D}(A)$ in Section \ref{sec:3.2} we can see the similarity. Hence, using the same approach as for the operator $A$ by choosing particular functions $v \in C_{0}^{\infty}(\R^{n})$ now in \eqref{eq:7.2-md-weak-formulation} the asserted follows analogously. The first is the equivalent to \eqref{Aaction}, the second is a consequence of $u \in H^{1}(\R^{n})$ and the third follows from partial integration in \eqref{eq:7.2-md-weak-formulation} with a $v \in C_{0}^{\infty}(\R^{n})$ such that $\supp v = \Omega$.
+ 	Comparing the three properties in Theorem \ref{thrm:7.2} to those in $\mathcal{D}(A)$ in Section \ref{sec:3.2} we can see the similarity. Hence, using the same approach as for the operator $A$, i.e. by choosing particular functions $v \in C_{0}^{\infty}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation}, the three asserted properties follow analogously. The first is the equivalent to \eqref{Aaction}, the second is a consequence of $u \in H^{1}(\R^{n})$ and the third follows from partial integration in \eqref{eq:7.2-md-weak-formulation} with a $v \in C_{0}^{\infty}(\R^{n})$ such that $\supp v = \Omega$.
 \end{proof}
 
 \begin{figure}[!ht] \centering
@@ -122,14 +122,14 @@ Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We c
 	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}  \label{fig:7.2}
 \end{figure}
 	
-We are interested in the periodic spectral problem of the operator $A^{n}$. Therefore, we will again relate the spectrum of the operator $A^{n}$ on the whole of $\R^{n}$ via the Floquet transform to a family of eigenvalue problems on the periodicity cell. First, we need the self-adjointness of the operator $A^{n}$.
+We are interested in the periodic spectral problem of the operator $A^{n}$. Therefore, we will again relate the spectrum of the operator $A^{n}$ on the whole of $\R^{n}$ via the Floquet transform to a family of eigenvalue problems on the periodicity cell. First, we need to show the self-adjointness of the operator $A^{n}$.
 
 \begin{remark}
 	The operator $A^{n}$ is self-adjoint.	
 \end{remark}
 
 \begin{proof}
-	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}\left(\left(R_{\mu}^{n}\right)^{-1}\right)$ exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to Section \ref{sec:3.3}.
+	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}\left(\left(R_{\mu}^{n}\right)^{-1}\right)$ there exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to Section \ref{sec:3.3}.
 \end{proof}
 
 We restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$ and for $k \in \overline{B^{n}}$ we define 
@@ -140,11 +140,11 @@ We restrict this multi-dimensional problem to a corresponding fundamental domain
 	\end{equation} 
 holds for all $v \in H^{1}_{k, n}$. 
 ~\\ ~\\
-Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined, and we can show that $R_{\mu, k}$ is injective. This allows the definition 
+Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined, and we can show that $R_{\mu, k}$ is injective. This allows us to define 
 	\[ A_{k}^{n} \coloneqq \left(R_{\mu, k}^{n}\right)^{-1} + \mu I, \quad \mathcal{D}(A_{k}^{n}) = \mathcal{R}(R_{\mu, k}^{n}), \]
-as the operator considering multi-dimensional case of our problem on the fundamental domain of periodicity.
+as the operator for the multi-dimensional case of our problem on the fundamental domain of periodicity.
 
-\begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can characterise the solution $u \in \mathcal{D}(A^{n}_{k}) \subseteq H^{1}_{k, n}$ from \eqref{eq:7.2-md-weak-formulation}, namely for all $j \in \Z^{n}$ it holds:
+\begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can characterise the solution $u \in \mathcal{D}(A^{n}_{k}) \subseteq H^{1}_{k, n}$ from \eqref{eq:7.2-md-weak-formulation}, namely that for all $j \in \Z^{n}$ it holds:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
@@ -154,16 +154,16 @@ as the operator considering multi-dimensional case of our problem on the fundame
 \end{theorem}
 	
 \begin{proof}
- 	The first three properties follow as in Theorem \ref{thrm:7.2}. The quasi-periodic condition on the function $u \in \mathcal{D}(A^{n}_{k})$ follows from the boundary condition in $H^{1}_{k, n}$. Additionally, the quasi-periodic boundary conditions on $H^{1}_{k,n}$ requires a solution $u \in H^{1}_{k, n}$ to satisfy furthermore quasi-periodic conditions for their weak derivative
+ 	The first three properties follow as in Theorem \ref{thrm:7.2}. The quasi-periodic condition on the function $u \in \mathcal{D}(A^{n}_{k})$ follows from the boundary condition in $H^{1}_{k, n}$. Additionally, the quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to satisfy furthermore quasi-periodic conditions for their weak derivative
  		\[ \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{+}} = e^{ik_{1}} \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{-}} \]
- 		We can see this see by partial integration in \eqref{eq:7.3-md_weak_formulation_res} with a function $v \in C_{0}^{\infty}(\R^{n})$ such that $U^{+}_{j}, U^{-}_{j} \not\subset \supp v$ where $U^{+}_{j} \supset \Omega_{j}^{+}$ and $U^{-}_{j} \supset \Omega_{j}^{-}$ are neighbourhoods of the opposing edges for $j = 2, \dotsc, n$, and analogous for the other coordinates.
+ 		We can see this by partial integration in \eqref{eq:7.3-md_weak_formulation_res} with a function $v \in C_{0}^{\infty}(\R^{n})$ such that $U^{+}_{j}, U^{-}_{j} \not\subset \supp v$ where $U^{+}_{j} \supset \Omega_{j}^{+}$ and $U^{-}_{j} \supset \Omega_{j}^{-}$ are neighbourhoods of the opposing edges for $j = 2, \dotsc, n$, and analogously for the other coordinates.
 \end{proof}
 
 \begin{theorem}
 	The operator $R_{\mu, k}^{n}$ is compact.	
 
 	\begin{proof}
-		As in Chapter \ref{chap:4}, we can show that $R_{\mu, k}^{n}$ is a bounded operator. Using the Compact Embedding Theorem for Sobolev spaces yields the claim, for proof see Theorem \ref{compact-embedding-theorem}.
+		As in Chapter \ref{chap:4}, we can show that $R_{\mu, k}^{n}$ is a bounded operator. The claim follows from the Compact Embedding Theorem for Sobolev spaces, for proof see Theorem \ref{compact-embedding-theorem}.
 	\end{proof}
 \end{theorem}
 
@@ -175,8 +175,8 @@ We understand $\psi_{s}$ extended by the boundary condition on $\Omega$ in $H^{1
 	\begin{equation}
 		\lambda^{n}_{1}(k) \leq \lambda^{n}_{2}(k) \leq \dotsc \leq \lambda^{n}_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{md-comment-after}
 	\end{equation}
-By \cite[page 643 - 645]{evans1998partial} we know that the to \eqref{md-comment-after} corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $L^{2}(\R^{n})$. By transformations of the problem \eqref{md-eigv-problem}, similar to the one in \eqref{mod-eigv-problem} and \eqref{periodic-condition}, we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B^{n}}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B^{n}} \}$ is again a compact real interval for each $s \in \N$.
+Taking into accoung \cite[pages 643 - 645]{evans1998partial} we know that the to \eqref{md-eigv-problem} corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $L^{2}(\R^{n})$. By transformations of the problem \eqref{md-eigv-problem}, similar to the one in \eqref{mod-eigv-problem} and \eqref{periodic-condition}, we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B^{n}}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B^{n}} \}$ is again a compact real interval for each $s \in \N$.
 ~\\
 
-Ultimately, the main result for this multi-dimensional case follows from using the same arguments as in Chapter \ref{**-condition} based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}, to relate the spectrum the operator on the whole of $\R^{n}$ to a family of eigenvalue problems on the periodicity cell while varying the boundary condition. We are namely able to show that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the compact intervals $I^{n}_{s}$, i.e.
+Finally, our main result for the multi-dimensional case follows from using the same arguments as in Chapter \ref{**-condition} based on Bloch waves, Floquet transform and a similar cut-off function $\eta$ as in \eqref{eta}, to relate the spectrum of the operator on the whole of $\R^{n}$ to a family of eigenvalue problems on the periodicity cell while varying the boundary condition. We claim that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the compact intervals $I^{n}_{s}$, i.e.
 	\[ \sigma(A^{n}) = \bigcup_{s \in \N} I^{n}_{s}. \]
