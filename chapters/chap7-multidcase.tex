@@ -68,20 +68,20 @@ Given $f \in L^{2}(\R^{n})$, following the proofs in Section \ref{sec:3.1} we ca
 \[ B_{\mu}[u, v] \coloneqq \int_{\R^{n}} \nabla u(x) \overline{\nabla v(x)} dx + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds - \mu \int_{\R^{n}} u(x) \overline{v(x)} dx, \]
  is  bounded and coercive. Furthermore, the functional $l_{f} \colon H^{1}(\R) \rightarrow \C$ defined by
 	\[ l_{f}(v) \coloneqq \int_{\R^{n}} f(x) \overline{v}(x) dx \]
-is a bounded, linear functional. Hence, Lax-Migram's Theorem ensures the existence of a unique solution $u \in H^{1}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation} for any $f \in L^{2}(\R^{n})$. In return, the operator $R_{\mu}^{n} \colon L^{2}(\R^{n}) \rightarrow H^{1}(\R^{n}), f \mapsto u$ where $u \in H^{1}(\R^{n})$ is the solution of \eqref{eq:7.2-md-weak-formulation} is well-defined. 
+is a bounded, linear functional. Hence, Lax-Migram's Theorem ensures the existence of a unique solution $u \in H^{1}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation} for any $f \in L^{2}(\R^{n})$. In return, the operator $R_{\mu}^{n} \colon L^{2}(\R^{n}) \rightarrow H^{1}(\R^{n}), f \mapsto u$, where $u \in H^{1}(\R^{n})$ is the solution of \eqref{eq:7.2-md-weak-formulation}, is well-defined. 
 
 \begin{theorem} 
 	$R_{\mu}^{n}$ is an injective, bounded linear operator. 
 	
 	\begin{proof}
-		The proof follows equally Theorem \ref{rmuinj}.
+		The proof follows that of Theorem \ref{rmuinj}.
 	\end{proof}
 \end{theorem}
 
 This, on the other hand, enables us to explicitly define $A^{n}$ by means of $R_{\mu}^{n}$:
 \[ A^{n} \coloneqq \left(R_{\mu}^{n}\right)^{-1} + \mu I, \quad \mathcal{D}(A^{n}) = \mathcal{R}(R_{\mu}^{n}), \]
 
-such that $R_{\mu}^{n}$ is the resolvent of $A^{n}$. Therefore, we can characterise $\mathcal{D}(A^{n})$ by employing the same methods as used in Section \ref{sec:3.2}.
+such that $R_{\mu}^{n}$ is the resolvent function of $A^{n}$. Therefore, we can characterise $\mathcal{D}(A^{n})$ by employing the same methods as used in Section \ref{sec:3.2}.
 
 \begin{theorem}[Characterisation of $\mathcal{D}(A^{n})$] \label{thrm:7.2}
 Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can further characterise the solution $u \in \mathcal{D}(A^{n})$ from \eqref{eq:7.2-md-weak-formulation}, on the fundamental domain of periodicity as depicted in  Figure \ref{fig:7.2}, namely for all $j \in \Z^{n}$ it holds:
@@ -93,7 +93,7 @@ Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We c
 \end{theorem}
 
 \begin{proof}
- 	Comparing the three properties in Theorem \ref{thrm:7.2} to those in $\mathcal{D}(A)$ in Section \ref{sec:3.2} we can see the similarity. Hence, using the same approach as for the operator $A$, i.e. by choosing particular functions $v \in C_{0}^{\infty}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation}, the three asserted properties follow analogously. The first is the equivalent to \eqref{Aaction}, the second is a consequence of $u \in H^{1}(\R^{n})$ and the third follows from partial integration in \eqref{eq:7.2-md-weak-formulation} with a $v \in C_{0}^{\infty}(\R^{n})$ such that $\supp v = \Omega$.
+ 	Comparing the three claimed properties to those in $\mathcal{D}(A)$ in Section \ref{sec:3.2} we can see that by choosing particular functions $v \in C_{0}^{\infty}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation} the three asserted properties follow analogously. The first is the equivalent to \eqref{Aaction}, the second is a consequence of $u \in H^{1}(\R^{n})$ and the third follows from partial integration in \eqref{eq:7.2-md-weak-formulation} with a $v \in C_{0}^{\infty}(\R^{n})$ such that $\supp v = \Omega$.
 \end{proof}
 
 \begin{figure}[!ht] \centering
@@ -129,12 +129,12 @@ We are interested in the periodic spectral problem of the operator $A^{n}$. Ther
 \end{remark}
 
 \begin{proof}
-	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}\left(\left(R_{\mu}^{n}\right)^{-1}\right)$ there exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to Section \ref{sec:3.3}.
+	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}\left(\left(R_{\mu}^{n}\right)^{-1}\right)$ there exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to the proof given in Section \ref{sec:3.3}.
 \end{proof}
 
-We restrict this multi-dimensional problem to a corresponding fundamental domain of periodicity, let this for simplicity be $Y$ and for $k \in \overline{B^{n}}$ we define 
-\[ H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{\Omega_{j}^{+}} = w \big|_{\Omega_{j}^{-}} e^{i k_{j}} \text{ for } k \in \overline{B^{n}}, j = 1,\dotsc, n \right\}. \]
- Let us consider the problem to find $u \in H^{1}_{k, n}$ such that
+The periodicity cell we will now focus on can be chosen arbitrary, let this for simplicity be $Y$. For brevity, let us define for $k \in \overline{B^{n}}$ 
+\[ H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{\Omega_{j}^{+}} = w \big|_{\Omega_{j}^{-}} e^{i k_{j}} \text{ for } k \in \overline{B^{n}}, j = 1,\dotsc, n \right\}, \]
+ and consider the problem to find $u \in H^{1}_{k, n}$ such that
 	\begin{equation}
 		\int_{Y} \nabla u(x) \overline{\nabla v(x)} dx + \rho \int_{S} u(s) \overline{v(s)} ds - \mu \int_{Y} u(x) \overline{v(x)} dx = \int_{Y} f(x) \overline{v(x)} dx \label{eq:7.3-md_weak_formulation_res}
 	\end{equation} 
@@ -154,8 +154,8 @@ as the operator for the multi-dimensional case of our problem on the fundamental
 \end{theorem}
 	
 \begin{proof}
- 	The first three properties follow as in Theorem \ref{thrm:7.2}. The quasi-periodic condition on the function $u \in \mathcal{D}(A^{n}_{k})$ follows from the boundary condition in $H^{1}_{k, n}$. Additionally, the quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to satisfy furthermore quasi-periodic conditions for their weak derivative
- 		\[ \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{+}} = e^{ik_{1}} \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{-}} \]
+ 	The first three properties follow as in Theorem \ref{thrm:7.2}. The quasi-periodic condition on the function $u \in \mathcal{D}(A^{n}_{k})$ follows from the boundary condition in $H^{1}_{k, n}$. Additionally, the quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to satisfy additionally quasi-periodic conditions for their weak derivative
+ 		\[ \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{+}} = e^{ik_{1}} \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{-}}. \]
  		We can see this by partial integration in \eqref{eq:7.3-md_weak_formulation_res} with a function $v \in C_{0}^{\infty}(\R^{n})$ such that $U^{+}_{j}, U^{-}_{j} \not\subset \supp v$ where $U^{+}_{j} \supset \Omega_{j}^{+}$ and $U^{-}_{j} \supset \Omega_{j}^{-}$ are neighbourhoods of the opposing edges for $j = 2, \dotsc, n$, and analogously for the other coordinates.
 \end{proof}
 
@@ -167,11 +167,11 @@ as the operator for the multi-dimensional case of our problem on the fundamental
 	\end{proof}
 \end{theorem}
 
-Defining $A^{n}_{k}$ in means of $R_{\mu, k}^{n}$, we then consider the eigenvalue problem to find $\psi \in \mathcal{D}(A^{n}_{k})$ such that
+To define $A^{n}_{k}$ by means of $R_{\mu, k}^{n}$, we then consider the eigenvalue problem to find $\psi \in \mathcal{D}(A^{n}_{k})$ such that
 	\begin{equation}
 		A^{n}_{k} \psi_{s} = \lambda^{n}_{s}(k) \psi_{s} \text{ on } Y. \label{md-eigv-problem}
 	\end{equation}
-We understand $\psi_{s}$ extended by the boundary condition on $\Omega$ in $H^{1}_{k, n}$ to the whole of $\R^{n}$ and call them Bloch waves. Using the compactness of $R_{\mu, k}^{n}$, we know furthermore that every non-zero $\lambda \in \sigma(A_{k}^{n})$ is an eigenvalue of $A_{k}^{n}$ and that the purely discrete spectrum satisfies
+Understanding $\psi_{s}$ extended by the boundary condition on $\Omega$ in $H^{1}_{k, n}$ to the whole of $\R^{n}$, we call the eigenfunctions Bloch waves. Using the compactness of $R_{\mu, k}^{n}$, we know furthermore that every non-zero $\lambda \in \sigma(A_{k}^{n})$ is an eigenvalue of $A_{k}^{n}$ and that the purely discrete spectrum satisfies
 	\begin{equation}
 		\lambda^{n}_{1}(k) \leq \lambda^{n}_{2}(k) \leq \dotsc \leq \lambda^{n}_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{md-comment-after}
 	\end{equation}

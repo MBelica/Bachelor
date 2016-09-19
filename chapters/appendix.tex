@@ -9,7 +9,7 @@
 			\[ \delta_{\epsilon}(f) = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}} dx} \]
 		Substituting $z \coloneqq \frac{x - x_{0}}{\sqrt{2} \epsilon}$ yields
 			\[ \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}} dx} = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(\sqrt{2} \epsilon z + x_{0}) e^{-z^{2}} dz \]
-		Using the Taylor series around $x_{0}$ and the Gaussian integral we then get
+		Using the Taylor series of $f$ around $x_{0}$ and a formula for the Gaussian integral we then get
 			\[ \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} \left( f(x_{0}) + \mathcal{O}(\epsilon) \right) = f(x_{0}) \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} = f(x_{0}). \]
 	\end{proof}
 \end{atheorem}
@@ -51,7 +51,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Closed graph theorem]
+\begin{atheorem}[Closed graph theorem] \label{athm:cgt}
 	Let $X$ be a Banach space. Is $A$ a closed operator and $\mathcal{D}(A) = X$, then $A$ is continuous on $X$.
 
 	\begin{proof}
@@ -72,7 +72,7 @@
 		\end{align*}
 		for $j \rightarrow \infty$, and analogously on the other boundary.
 	\end{proof}
-\end{atheorem} % todo proof
+\end{atheorem}
 
 \begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} ~\
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -87,21 +87,23 @@
 			\end{proof}
 		\item Let $U \subseteq \R$ be a bounded, connected and open set. Then the embedding $H^{1}(U) \subseteq L^{2}(U)$ is compact.
 			\begin{proof} 
-				As $H^{1}(U) \subseteq C^{\frac{1}{2}}(U)$ we can estimate
-					\[ |f(x) - f(y)| \leq c |x - y|^{\frac{1}{2}} \]
+				By Theorem \ref{embhc} $H^{1}(U) \subseteq C^{\frac{1}{2}}(U)$, hence we can estimate
+					\begin{equation}
+						|f(x) - f(y)| \leq c |x - y|^{\frac{1}{2}} \tag{$*$} \label{hoelderstet}
+					\end{equation} 
 				for some $c > 0$ and for all $x, y \in U$. Let $B_{H^{1}_{k}} \coloneqq \{ f \in H^{1}_{k}(U) : \|f\|_{H^{1}(U)} \leq 1 \}$, then for $f \in B_{H^{1}_{k}}$ it holds that
 				\begin{equation}
-					|f(x)|^{2} \leq 2 \| f\|^{2}_{L^{2}(U)} + 2 \leq 4 \quad \forall x \in U. \label{eqbounded}
+					|f(x)|^{2} \leq 2 \| f\|^{2}_{L^{2}(U)} + 2 \leq 4 \quad \forall x \in U. \tag{$**$} \label{eqbounded}
 				\end{equation} 
 				For an arbitrary $\epsilon > 0$ we now partition $U$ into $n_{\epsilon}$ equidistant, disjoint intervals $I_{k}$, i.e. $U = \bigcup_{k = 1}^{n_{\epsilon}} I_{k}$. Since all $f \in B_{H^{1}_{k}}$ are uniformly bounded on $U$ by \eqref{eqbounded}, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1, k}, \dotsc, c_{\nu_{\epsilon}, k}$ such that
-					\[ \forall f \in B_{H^{1}_{k}} ~\exists f \in \{1, \dotsc, \nu_{\epsilon} : \left| f\left(\frac{k}{n_{\epsilon}}\right) - c_{j, k} \right| < \epsilon ~\forall k \in \{ 1, \dotsc, n_{\epsilon} \}. \]
-				Hence, there are finitely many step functions such that for any $f \in L^{2}(U)$ there exists one of those step functions $g \in L^{2}(U)$, with function value $c_{k}$ on subinterval $I_{k}$ for each $k \in \{1, \dotsc, n_{\epsilon}\}$, such that
+					\[ \forall f \in B_{H^{1}_{k}} ~\exists j \in \{1, \dotsc, \nu_{\epsilon} \} : \left| f\left(\frac{k}{n_{\epsilon}}\right) - c_{j, k} \right| < \frac{1}{n_{\epsilon}} ~\forall k \in \{ 1, \dotsc, n_{\epsilon} \}. \]
+				Therefore, there are finitely many step functions such that for any $f \in L^{2}(U)$ there exists one of those step functions $g \in L^{2}(U)$, with function value $c_{k}$ on subinterval $I_{k}$ for each $k \in \{1, \dotsc, n_{\epsilon}\}$, such that by \eqref{hoelderstet}
 				\begin{align*}
-					\| f - g\|^{2}_{L^{2}(U)} & = \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} |f(x) - c_{k+1}|^{2} dx \\
-					& \leq 2 \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} \left|f(x) - f\left(\frac{k}{n}\right)\right|^{2} dx +   \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} 2 \left| f\left(\frac{k}{n}\right) - c_{k+1} \right|^{2} dx \\ 
-					& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n^{2}} \left( c + \frac{1}{n} \right) < \epsilon^{2}
+					\| f - g\|^{2}_{L^{2}(U)} & = \sum_{k=0}^{n_{\epsilon}-1} \int_{\frac{k}{n_{\epsilon}}}^{\frac{k+1}{n_{\epsilon}}} |f(x) - c_{k+1}|^{2} dx \\
+					& \leq 2 \sum_{k=0}^{n_{\epsilon}-1} \int_{\frac{k}{n_{\epsilon}}}^{\frac{k+1}{n_{\epsilon}}} \left|f(x) - f\left(\frac{k}{n_{\epsilon}}\right)\right|^{2} dx + 2 \sum_{k=0}^{n_{\epsilon}-1} \int_{\frac{k}{n_{\epsilon}}}^{\frac{k+1}{n_{\epsilon}}} \left| f\left(\frac{k}{n_{\epsilon}}\right) - c_{k+1} \right|^{2} dx \\ 
+					& \leq 2 \sum_{k = 0}^{n_{\epsilon}-1} \frac{c}{n_{\epsilon}^{2}} + 2 \sum_{k = 0}^{n_{\epsilon}-1} \frac{1}{n_{\epsilon}^{3}} = \frac{2}{n_{\epsilon}} \left( c + \frac{1}{n_{\epsilon}} \right) < \epsilon
 				\end{align*}
-				for $n$ large enough. This means, in conclusion, that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(U)$ and in return $H^{1}_{k}$ can be compactly embedded in $L^{2}(U)$.
+				for $n_{\epsilon}$ large enough. This means, in conclusion, that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(U)$ and in return, since $H^{1}_{k}$ is closed, it can be compactly embedded in $L^{2}(U)$.
 			\end{proof}
 	\end{enumerate}
 \end{atheorem}
@@ -126,7 +128,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Embedding of $H^{1}$ in $C^{\frac{1}{2}}$]
+\begin{atheorem}[Embedding of $H^{1}$ in $C^{\frac{1}{2}}$] \label{embhc}
 	Let $[a, b]$ be a compact interval in $\R$. Then, $H^{1}([a, b])$ is embedded in $C^{\frac{1}{2}}([a, b])$
 	
 	\begin{proof}
@@ -231,7 +233,7 @@
 	\end{enumerate}
 \end{atheorem}
 
-\begin{atheorem}[Properties of the set of resolvent values]
+\begin{atheorem}[Properties of the resolvent set]
 	The resolvent set $\rho(A) \subseteq \mathbb{C}$ of a bounded linear operator $A$ is an open set.
 	
 	\begin{proof}

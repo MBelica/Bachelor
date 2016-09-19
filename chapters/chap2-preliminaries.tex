@@ -3,22 +3,22 @@
 To lay the groundwork for the upcoming analysis, this chapter briefly reviews some key concepts in functional analysis and spectral theory.
 ~\\
 
-Let $\Omega \subseteq \R$ be open. Let $C_{0}^{\infty}(\Omega)$ denote the linear space containing all smooth functions $f \colon \Omega \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}(\Omega)$ there exists $I \subseteq \Omega$ such that $f(x) = 0$ for all $x \notin I$. Let $I$ denote the identity operator on the respective space, i.e. $I x = x$ for all $x$, and hereafter $\langle x, x \rangle$ will denote the scalar product in $L^{2}(\R)$.
+Let $\Omega \subseteq \R$ be open and let $C_{0}^{\infty}(\Omega)$ denote the linear space containing all smooth functions $f \colon \Omega \rightarrow \R$ with compact support, i.e. for $f \in C_{0}^{\infty}(\Omega)$ there exists $I \subseteq \Omega$ such that $f(x) = 0$ for all $x \notin I$. Furthermore, let $I$ denote the identity operator on the respective space, i.e. $I x = x$ for all $x$, and hereafter $\langle x, x \rangle$ will denote the scalar product in $L^{2}(\R)$.
 \begin{definition}[Weak derivative]
 For $f \in L^{1}_{loc}(\Omega)$, the function $f$ is said to have the weak derivative $g \in L^{1}_{loc}(\Omega)$ in $\Omega$ if
   \[ - \int_{\Omega} f(x) \varphi'(x) dx = \int_{\Omega} g(x) \varphi(x) dx \]
 holds for all $\varphi \in C_{0}^{\infty}(\Omega)$.
 \end{definition}
-Let $\alpha \in \N$. We denote with $D^{\alpha} u$ the $\alpha$-th weak derivate of $u$, therewith, if two functions are weak derivatives of the same function they are equal except on a set with Lebesgue measure zero, i.e. they are equal almost everywhere, for a proof see Theorem \ref{athem:uniqueness_of_weak_deriv}. A central point in this study will be a special Hilbert space known as the Sobolev space $H^{k}(\Omega)$. 
+For $\alpha \in \N$, we denote with $D^{\alpha} u$ the $\alpha$-th weak derivate of $u$, therewith, if two functions are weak derivatives of the same function they are equal except on a set with Lebesgue measure zero, i.e. they are equal almost everywhere, for a proof see Theorem \ref{athem:uniqueness_of_weak_deriv}. A central point in this study will be a special Hilbert space known as the Sobolev space $H^{k}(\Omega)$. 
 
-\begin{definition} Let $\Omega \subseteq \R$ be open. The Sobolev space $H^{k}(\Omega)$ is defined as
+\begin{definition} The Sobolev space $H^{k}(\Omega)$ is defined as
 \[ H^{k}(\Omega) \coloneqq \left\{ u \in L^{2}(\Omega) : D^{\alpha} u \text{ exists and } D^{\alpha} u \in L^{2}(\Omega) \text{ for } 0 \leq \alpha \leq k \right\} \]
 The space is equipped with the norm $\| \cdot \|_{H^{k}(\Omega)} \coloneqq \left( \sum_{0 \leq \alpha \leq k} \| D^{\alpha} \cdot \|_{L^{2}(\Omega)}^{2} \right)^{\frac{1}{2}}$.
 \end{definition}	
 
 The space $H^{k}(\Omega)$ admits an inner product which is defined in terms of the $L^{2}(\Omega)$ inner product:
 	\[  \langle u,v \rangle_{H^{k}(\Omega)} = \sum_{\alpha=0}^{k} \left\langle D^{\alpha} u, D^{\alpha} v \right \rangle_{L^2}. \]
-The space $H^{k}(\Omega)$ becomes a Hilbert space with this inner product.
+Moreover, $H^{k}(\Omega)$ becomes a Hilbert space with this inner product.
 
 \begin{definition}[Distributions]
 	On $C_{0}^{\infty}(\Omega)$ a sequence $(f_{n})$ converges to $f \in C_{0}^{\infty}(\Omega)$ if the support of all members of the sequence is in a compact interval $I \subset \R$, i.e.
@@ -26,12 +26,12 @@ The space $H^{k}(\Omega)$ becomes a Hilbert space with this inner product.
 	and on this interval $f_{n}$ and all its derivatives converge uniformly to $f$, i.e.
 	\[ \| f_{n}^{(i)} - f^{(i)} \|_{\infty} \rightarrow 0 \quad \text{ for } n \rightarrow \infty \]
 	for all $i \in \N_{0}$. This concept of convergence induces a topology on $C_{0}^{\infty}(\Omega)$, and henceforth, we denote with $\mathfrak{D}(\Omega)$ the space $C_{0}^{\infty}(\Omega)$ equipped with this topology.
-\end{definition}
-
-In the remainder of this thesis, we denote with $\mathfrak{D}'(\Omega)$ the space of all linear functionals on $C_{0}^{\infty}(\Omega)$ that are continuous with respect to this topology and call those functionals distributions.  
 ~\\
 
-In this thesis, the Delta-Distribution $\delta_{x_{0}}$ where $x_{0} \in \R$, will be of special interest. For a given $x_{0} \in \R$ we define the Delta-Distribution $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ for $f \in \mathfrak{D}(\R)$ through
+	In the remainder of this thesis, we denote with $\mathfrak{D}'(\Omega)$ the space of all linear functionals on $C_{0}^{\infty}(\Omega)$ that are continuous with respect to this topology and call those functionals distributions.  
+\end{definition}
+
+The Delta-Distribution $\delta_{x_{0}}$ where $x_{0} \in \R$, will be of special interest in this thesis. For a given $x_{0} \in \R$ we define the Delta-Distribution $\delta_{x_{0}} \in \mathfrak{D}'(\R)$ for $f \in \mathfrak{D}(\R)$ through
 		\[  \delta_{x_{0}}(f) \coloneqq f(x_{0}), \]
 	see also \cite[p. 429]{werner2006funkana}. For our analysis, however, another, equivalent definition of the Delta-Distribution is more convenient. Let us define the sequence of functionals $\delta_{\epsilon}$ for $\epsilon > 0$ and $f \in \mathfrak{D}(\R)$ through
 	\begin{equation}
@@ -44,7 +44,7 @@ In this thesis, the Delta-Distribution $\delta_{x_{0}}$ where $x_{0} \in \R$, wi
 
 Since our focus will be on the Schrödinger operator, we will need the following definitions and properties of operators between Banach spaces.
 \begin{definition} 
-Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \subseteq X$. We call $A$ closed if $graph(A) \coloneqq \{ (x, Ax) : x \in \mathcal{D}(A) \} \subseteq X \times Y$ is a closed set with respect to the product topology.
+Let $X, Y$ be Banach spaces and let $A \colon \mathcal{D}(A) \rightarrow Y$ be a linear operator with domain $\mathcal{D}(A) \subseteq X$. We call $A$ closed if $graph(A) \coloneqq \left\{ (x, Ax) : x \in \mathcal{D}(A) \right\} \subseteq X \times Y$ is a closed set with respect to the product topology.
 \end{definition}
 
 Moreover, we are concerned with the self-adjoint operators. Thus, we define:
@@ -52,20 +52,21 @@ Moreover, we are concerned with the self-adjoint operators. Thus, we define:
 \begin{definition}
 Let $X$ be a Hilbert space and $\langle \cdot, \cdot \rangle_{X}$ denote the scalar product on $X$. Let $A \colon \mathcal{D}(A) \rightarrow X$ be a linear operator where $\mathcal{D}(A) \subseteq X$.
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item If $A$ is densely defined, the adjoint $A^{*} \colon \mathcal{D}(A^{*}) \rightarrow X$ of $A$ is defined by $\mathcal{D}(A^{*}) \coloneqq \{ u \in X \colon ~\exists u^{*} \in X ~\forall v \in \mathcal{D}(A) ~\langle u, Av \rangle = \langle u^{*} , v \rangle \}$ and $A^{*} u \coloneqq u^{*}$ for $u \in \mathcal{D}(A^{*})$; note that, for $u \in \mathcal{D}(A^{*})$, $u^{*}$ is unique.
+		\item If $A$ is densely defined, the adjoint $A^{*} \colon \mathcal{D}(A^{*}) \rightarrow X$ of $A$ is defined by 
+		\[ \mathcal{D}(A^{*}) \coloneqq \{ u \in X \colon ~\exists u^{*} \in X ~\forall v \in \mathcal{D}(A) ~\langle u, Av \rangle = \langle u^{*} , v \rangle \} \text{ and } A^{*} u \coloneqq u^{*} \] for $u \in \mathcal{D}(A^{*})$; note that, for $u \in \mathcal{D}(A^{*})$, $u^{*}$ is unique.
 		\item We call $A$ symmetric, if $\langle Ax,y \rangle_{X} = \langle x , Ay \rangle_{X}$ for all $x,y \in \mathcal{D}(A)$, and
 		\item We call $A$ self-adjoint, if $A$ is densely defined on $X$ and coincides with its adjoint.
 	\end{enumerate}
 \end{definition}
 
-Since every symmetric operator $A$ has the property $\mathcal{D}(A) \subseteq \mathcal{D}(A^{*})$ it follows that $A$ is self-adjoint if $A$ is a symmetric operator and $\mathcal{D}(A) \supseteq \mathcal{D}(A^{*})$, for proof refer to \cite[p. 256]{reed1908methods}. Our main objective is to characterise the spectrum of the Schrödinger operator, hence we also need the following definitions.
+Since every symmetric operator $A$ has the property $\mathcal{D}(A) \subseteq \mathcal{D}(A^{*})$ it follows that $A$ is self-adjoint if $A$ is a symmetric operator, the adjoint well-defined and $\mathcal{D}(A) \supseteq \mathcal{D}(A^{*})$, for proof refer to \cite[p. 256]{reed1908methods}. Our main objective is to characterise the spectrum of the Schrödinger operator, hence we also need the following definitions.
 
 \begin{definition}
 Let $I$ denote the identity operator on $X$ and $A \colon X \supseteq \mathcal{D}(A) \rightarrow Y$ be a linear, closed operator.
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $\lambda \in \C$ belongs in the resolvent set of $A$, $\lambda \in \rho(A)$, if $A  - \lambda I \colon \mathcal{D}(A) \rightarrow Y$ bijective, 
-			\[ \text{ then due to the Closed Graph Theorem is } (A - \lambda I)^{-1} \colon X \rightarrow \mathcal{D}(A) \text{ a bounded linear operator,} \]
-		\item $\sigma(A) = \C \setminus \rho(A)$ is called the spectrum of $A$, and
+		\item $\lambda \in \C$ belongs in the resolvent set of $A$, $\lambda \in \rho(A)$, if $A  - \lambda I \colon \mathcal{D}(A) \rightarrow Y$ bijective, note that
+			\[ \text{due to the Closed Graph Theorem (Theorem \ref{athm:cgt}) } (A - \lambda I)^{-1} \colon X \rightarrow \mathcal{D}(A) \text{ is a bounded operator.} \]
+		\item $\sigma(A) = \C \setminus \rho(A)$ is called the spectrum of $A$. 
 		\item $\rho(A) \ni \lambda \mapsto R(\lambda, A) \coloneqq (A - \lambda I)^{-1}$ is the resolvent function of $A$.
 	\end{enumerate}		
 \end{definition}
@@ -73,7 +74,7 @@ Let $I$ denote the identity operator on $X$ and $A \colon X \supseteq \mathcal{D
 In Chapters \ref{chap:4} and \ref{chap:7} we examine the so-called compact operators and some of their properties.
 
 \begin{definition}
-	Let $U_{X} = \{ x \in X \colon |x| < 1 \}$, $X$ be a normed vector space and $Y$ a Banach space. A linear operator $A \colon X \rightarrow Y$ is called compact, if $T(U_{X})$ is relative compact in $Y$.
+	Let $X$, $Y$ be Banach spaces and $U_{X} \coloneqq \{ x \in X \colon |x| < 1 \}$. A linear operator $A \colon X \rightarrow Y$ is called compact, if $T(U_{X})$ is relatively compact in $Y$.
 \end{definition}
 
 In the Appendix, further theorems and lemmata of functional analysis and spectral theory used in this thesis are listed.

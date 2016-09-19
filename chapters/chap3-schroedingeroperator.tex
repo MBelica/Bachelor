@@ -120,7 +120,7 @@ Resulting from Theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This 
 \end{definition}
 Note that this definition is consistent with the formal definition in \eqref{the-operator-A-formally} and we will show that it is independent of the choice of $\mu \in \R$, still assuming $\mu$ is small enough as chosen in theorem \ref{2.1:thm-LaxMilgram}. 
 \begin{remark}
-	Note, $R_{\mu}$ is the resolvent of $A$.
+	Note, $R_{\mu}$ is the resolvent function of $A$.
 \end{remark}
 We will now use the fact that every element $u \in \mathcal{D}(A) = \mathcal{R}(R_{\mu})$ is a solution of \eqref{weak-formulation-of-A-for-LM} to find additional necessary  characteristics of $\mathcal{D}(A)$. However, we already know by Lax-Milram's Theorem that $u \in H^{1}(\R)$. Let us first for the sake of brevity define
 \[ H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) \coloneqq \Big\{ u\in L^{2}(\R) : u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z, \sum_{i \in \Z} \|u\|^{2}_{H^{2}(x_{i}, x_{i+1})} < \infty \Big\}. \]
@@ -164,7 +164,7 @@ Hence, for an arbitrary $u \in \mathcal{D}(A)$ we know from \eqref{temp-link} an
 					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
 			 \end{cases} \quad \forall k \in \Z. \label{Aaction}
 	\end{equation} 
-We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the resolvent $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ let us define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we already know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$ we can therefore ensure $f \in L^{2}(\R) = \mathcal{D}(R_{\mu})$. We want to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
+We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the resolvent function $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ let us define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we already know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$ we can therefore ensure $f \in L^{2}(\R) = \mathcal{D}(R_{\mu})$. We want to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
 	\begin{align*}
 		 \int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R}(f(x)-\mu u(x)) \overline{v(x)} dx \\
 		\iff \sum_{i \in \Z} \int_{\Omega_{i}} u'(x) \overline{v'(x)} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx.
