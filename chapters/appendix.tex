@@ -72,19 +72,36 @@
 		\end{align*}
 		for $j \rightarrow \infty$, and analogously on the other boundary.
 	\end{proof}
-\end{atheorem}
+\end{atheorem} % todo proof
 
-\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} % todo proof 
-	Assume $U$ is a bounded open subset of $\R^{n}$, and $\partial U$ is $C^{1}$. Define $p^{*} \coloneqq \frac{2 n}{n - 2}$.
+\begin{atheorem}[Compact Embedding Theorem for Sobolev spaces] \label{compact-embedding-theorem} ~\
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Suppose $n > 2$. Then $H^{1}(U) \subset\subset L^{q}(U)$ for each $1 \leq q \leq p^{*}$.
+		\item Let $U \subseteq \R^{n}$ be a bounded open set of class $C^{1}$. Then the following compact embeddings hold:
+			\begin{itemize}
+				\item $H	^{1}(U) \subseteq L^{q}(U)$ for every $q \in [1, p^{*})$, where $n \geq 3$ and $p^{*} = \frac{2n}{n - 2}$.
+				\item $H^{1}(U) \subseteq L^{q}(U)$ for every $q \in [1, \infty)$, if $n = 2$.
+			\end{itemize}
 		
 			\begin{proof}
-				Follows from Rellich-Kondrachov Compactness Theorem, see for example \cite[p. 272]{evans1998partial}.
+				Follows from Rellich-Kondrachov Compact Embedding Theorem, see \cite[p. 163]{precup2013linear} and \cite[p. 272]{evans1998partial}.
 			\end{proof}
-		\item Suppose $n \in \{1, 2\}$. Then $H^{1}(U) \subset\subset L^{2}(U)$.
-			\begin{proof} To proof the embedding for $p=2$ note that from Rellich-Kondrachov Compactness Theorem it follows that $p^{*} \rightarrow \infty$ if $p \rightarrow n$. It is easily seen that if $(u_{n})_{n \in \N}$ is a $H^{1}(U)$-bounded sequence, then so it is bounded in $W^{1, n-\epsilon}(U)$ for some $\epsilon > 0$. Choosing $\epsilon$ such that $(n - \epsilon)^{*} > n$ hence allows using again via part a) the Rellich-Kondrachov Compactness Theorem and  this provides he existence of a $L^{2}(U)$ convergent subsequence. ~\\
-			For $n = 1$ this follows from Morrey's inequality and the Arzela Ascoli compactness criterion, see for example \cite[p. 274]{evans1998partial}.
+		\item Let $U \subseteq \R$ be a bounded, connected and open set. Then the embedding $H^{1}(U) \subseteq L^{2}(U)$ is compact.
+			\begin{proof} 
+				As $H^{1}(U) \subseteq C^{\frac{1}{2}}(U)$ we can estimate
+					\[ |f(x) - f(y)| \leq c |x - y|^{\frac{1}{2}} \]
+				for some $c > 0$ and for all $x, y \in U$. Let $B_{H^{1}_{k}} \coloneqq \{ f \in H^{1}_{k}(U) : \|f\|_{H^{1}(U)} \leq 1 \}$, then for $f \in B_{H^{1}_{k}}$ it holds that
+				\begin{equation}
+					|f(x)|^{2} \leq 2 \| f\|^{2}_{L^{2}(U)} + 2 \leq 4 \quad \forall x \in U. \label{eqbounded}
+				\end{equation} 
+				For an arbitrary $\epsilon > 0$ we now partition $U$ into $n_{\epsilon}$ equidistant, disjoint intervals $I_{k}$, i.e. $U = \bigcup_{k = 1}^{n_{\epsilon}} I_{k}$. Since all $f \in B_{H^{1}_{k}}$ are uniformly bounded on $U$ by \eqref{eqbounded}, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1, k}, \dotsc, c_{\nu_{\epsilon}, k}$ such that
+					\[ \forall f \in B_{H^{1}_{k}} ~\exists f \in \{1, \dotsc, \nu_{\epsilon} : \left| f\left(\frac{k}{n_{\epsilon}}\right) - c_{j, k} \right| < \epsilon ~\forall k \in \{ 1, \dotsc, n_{\epsilon} \}. \]
+				Hence, there are finitely many step functions such that for any $f \in L^{2}(U)$ there exists one of those step functions $g \in L^{2}(U)$, with function value $c_{k}$ on subinterval $I_{k}$ for each $k \in \{1, \dotsc, n_{\epsilon}\}$, such that
+				\begin{align*}
+					\| f - g\|^{2}_{L^{2}(U)} & = \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} |f(x) - c_{k+1}|^{2} dx \\
+					& \leq 2 \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} \left|f(x) - f\left(\frac{k}{n}\right)\right|^{2} dx +   \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} 2 \left| f\left(\frac{k}{n}\right) - c_{k+1} \right|^{2} dx \\ 
+					& \leq 2 \sum_{n = 0}^{n-1} \frac{c}{n^{2}} + 2 \sum_{n=0}^{n-1} \frac{1}{n^{3}} = \frac{2}{n^{2}} \left( c + \frac{1}{n} \right) < \epsilon^{2}
+				\end{align*}
+				for $n$ large enough. This means, in conclusion, that $B_{H^{1}_{k}}$ is totally bounded in $L^{2}(U)$ and in return $H^{1}_{k}$ can be compactly embedded in $L^{2}(U)$.
 			\end{proof}
 	\end{enumerate}
 \end{atheorem}
@@ -109,11 +126,11 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Embedding of $H^{1}$ in $C$]
-	Let $[a, b]$ be a compact interval in $\R$. Then, $H^{1}([a, b])$ is embedded in $C([a, b])$
+\begin{atheorem}[Embedding of $H^{1}$ in $C^{\frac{1}{2}}$]
+	Let $[a, b]$ be a compact interval in $\R$. Then, $H^{1}([a, b])$ is embedded in $C^{\frac{1}{2}}([a, b])$
 	
 	\begin{proof}
-		See \cite[p. 266seq]{evans1998partial}.
+		See \cite[p. 269]{evans1998partial}.
 	\end{proof}
 \end{atheorem}
 
@@ -141,10 +158,10 @@
 
 \begin{atheorem}[Lax-Milgram]
 	Let $H$ be a Hilbert space where $\| \cdot \|$ denotes the norm on $H$, and let $B \colon H \times H \rightarrow \C$ be a sesquilinear form. If there exist constants $\alpha, \beta > 0$ such that
-	\begin{itemize}
+	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\left| B[u, v] \right| \leq \alpha \| u \| \|v \| \quad (u, v \in H)$ and
 		\item $Re(B[u,u]) \geq \beta \|u\|^{2} \quad (u \in H)$,
-	\end{itemize}
+	\end{enumerate}
 	then there exists to each $l \in H^{*}$ a unique $w \in H$ such that
 		\[ B[v, w] = l(v) \]
 	hold for all $v \in H$.
@@ -191,18 +208,18 @@
 \end{atheorem}
 
 \begin{atheorem}[Poincare's min-max principle for eigenvalues]
-	Let $X$ be a Hilbert space and $\langle \cdot, \cdot \rangle_{X}$ denote the scalar product on $X$. Let $A \colon \mathcal{D}(A) \rightarrow X$ be a self-adjoint operator where $\mathcal{D}(A) \subseteq X$. Then,
+	Let $X$ be a seperable Hilbert space and $\langle \cdot, \cdot \rangle_{X}$ denote the scalar product on $X$. Let $A \colon \mathcal{D}(A) \rightarrow X$ be a self-adjoint operator where $\mathcal{D}(A) \subseteq X$. If the set of eigenvalues $\lambda_{s}$ is at most countable, then
 	\begin{equation}
 			\lambda_{s} = \underset{\dim U = s}{\min_{U \subseteq \mathcal{D}(A)}} \max_{v \in U \setminus \{ 0 \} } \frac{\langle A v, v \rangle_{X}}{\langle v, v \rangle_{X}}.  \label{poincare} 
 	\end{equation} 
 
 	\begin{proof}
-		See \cite[p. 107]{godunov1998modern}. % todo Andrii/Markus
+		See \cite[p. 119]{teschl2014mathematical}.
 	\end{proof}
 \end{atheorem}
 
 \begin{atheorem}[Properties of self-adjoint operators] ~\
-	\begin{enumerate}
+	\begin{enumerate}[label=\alph*\upshape)]
 		\item Every self-adjoint is symmetric and closed.
 			\begin{proof}
 				 Follows directly from the definitions for self-adjoint and closed operators.
