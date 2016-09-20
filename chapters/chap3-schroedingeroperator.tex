@@ -12,7 +12,7 @@ In general, one cannot say in which sense a solution to the formal problem
 	\begin{equation}
 		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of Delta-Distributions. If we suppose for a moment that in this periodic differential expression is smooth, more specifically, that the potential in every point $x_{k}$ is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the smooth problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
+	exists since the potential in $A$ consists of Delta-Distributions. If we suppose for a moment that this periodic differential expression is smooth, more specifically, that the potential in every point $x_{k}$ is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the smooth problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
 \begin{equation}
 	\int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R} f(x) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
@@ -32,7 +32,7 @@ The choice of $h = 1$ yields hence the estimation
 
 \section{The resolvent-mapping of the one-dimensional Schrödinger operator} \label{sec:3.1}
 
-As a first step in order to define the operator $A$ explicitly, we will show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution $u \in H^{1}(\R)$. 
+As a first step, in order to define the operator $A$ explicitly, we will show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution $u \in H^{1}(\R)$. 
 \begin{definition}
 	Given $f \in L^{2}(\R)$, we define a functional $l_{f} \colon H^{1}(\R) \rightarrow \C$ by
 	\[ l_{f}(v) \coloneqq \int_{\R} f(x) \overline{v(x)} dx \]
@@ -64,7 +64,7 @@ holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ sat
 		\end{align*}
 		holds for all $u, v \in H^{1}(\R)$ where $\alpha = \max \left\{ 12 \rho^{2} + 3 \mu^{2} , 12 \rho^{2} + 3 \right\}$. \\
 		
-		$b)$ Let $u \in H^{1}(\R)$. For the coercivity, we note first that for the given sesquilinear form $B[u, u] \in \R$ holds. Assuming $\rho \geq 0$ yields for $\mu \leq																												 -1$ that
+		$b)$ Let $u \in H^{1}(\R)$. Regarding the coercivity, we note first that for the given sesquilinear form by definition $B[u, u] \in \R$ holds. Assuming $\rho \geq 0$ yields for $\mu \leq -1$ that
 		\begin{align*}
 			B[u, u] & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \left|u(x_{i})\right|^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
@@ -103,7 +103,7 @@ Again, due to the linearity of the integral and the uniqueness of the solution, 
 		\end{equation}  
 		Now, using \eqref{weak-formulation-of-A}, \eqref{estimation-for-potential} and \eqref{bounddedeq} with a small enough $\mu \in \R$ yields with the Cauchy–Schwarz inequality (Theorem \ref{athm:csi})
 		\[ \| R_{\mu} f \|_{L^{2}(\R)}^{2} \leq \int_{\R} |u'(x)|^{2} dx + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu \int_{\R} |u(x)|^{2} dx \leq \| f \|_{L^{2}(\R)} \| u \|_{L^{2}(\R)}, \]	% todo formel
-		which shows the boundedness of the mapping $R_{\mu}$. Taking in mind that the range $\mathcal{R}(R_{\mu}) \subseteq H^{1}(\R)$, we know that for $f_{1}, f_{2} \in L^{2}(\R)$ there exist  $u_{1}, u_{2} \in \mathcal{R}(R_{\mu})$ with $u_{i} = R_{\mu} f_{i}$ for $i = 1, 2$. If now furthermore $R_{\mu} f_{1} = R_{\mu} f_{2}$ holds, \eqref{weak-formulation-of-A-for-LM} yields
+		which shows the boundedness of the mapping $R_{\mu}$. Bearing in mind that the range $\mathcal{R}(R_{\mu}) \subseteq H^{1}(\R)$, we know that for $f_{1}, f_{2} \in L^{2}(\R)$ there exist  $u_{1}, u_{2} \in \mathcal{R}(R_{\mu})$ with $u_{i} = R_{\mu} f_{i}$ for $i = 1, 2$. If now furthermore $R_{\mu} f_{1} = R_{\mu} f_{2}$ holds, \eqref{weak-formulation-of-A-for-LM} yields
 		\begin{equation}
 			0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v] = \int_{\R} (f_{1}(x) - f_{2}(x)) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R). \label{f1f2almosteverywhere}
 		\end{equation} 
@@ -166,12 +166,12 @@ Hence, for an arbitrary $u \in \mathcal{D}(A)$ we know from \eqref{temp-link} an
 					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
 			 \end{cases} \quad \forall k \in \Z. \label{Aaction}
 	\end{equation} 
-We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the resolvent function $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ let us define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we already know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$, we can therefore ensure $f \in L^{2}(\R) = \mathcal{D}(R_{\mu})$. For the reverse inclusion want to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
+We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the resolvent function $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ let us define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we already know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$, we can therefore ensure $f \in L^{2}(\R) = \mathcal{D}(R_{\mu})$. For the reverse inclusion we want to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
 	\begin{align*}
 		 \int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R}(f(x)-\mu u(x)) \overline{v(x)} dx \\
 		\iff \sum_{i \in \Z} \int_{\Omega_{i}} u'(x) \overline{v'(x)} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx.
 	\end{align*}
-For each $k \in \Z$ partial integration on both side of $x_{k}$ with a function $v \in C_{0}^{\infty}(\R)$ having $\supp v = \Omega_{k}$ and $v(x_{k}) \neq 0$ yields
+For each $k \in \Z$ partial integration on both sides of $x_{k}$ with a function $v \in C_{0}^{\infty}(\R)$ having $\supp v = \Omega_{k}$ and $v(x_{k}) \neq 0$ yields
 	\begin{align*}
 		\int_{\Omega_{k}} u'(x) \overline{v'(x)} dx + \rho u(x_{k}) \overline{v(x_{k})} & = \int_{x_{k} - \frac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx + \int_{x_{k}}^{x_{k} +\frac{1}{2}} u'(x) \overline{v'(x)} dx \\
 		& ~\qquad ~\qquad - u'(x_{k}-0) \overline{v(x_{k})}  + u'(x_{k}+0) \overline{v(x_{k})},
@@ -188,7 +188,7 @@ Consequently, we conclude that
 
 \section{The self-adjointness of the Schrödinger operator} \label{sec:3.3}
 
-In Chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjoint. For this we first have to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
+In Chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjoint. To prove this we first have to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
 
 \begin{theorem} \label{2.2:thm-RmuSymmetric}
 	$R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
@@ -212,12 +212,12 @@ Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can 
 	$A$ is a self-adjoint operator.
 		
 	\begin{proof}
-		We begin this theorem by proving that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ is symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing for $u \in \mathcal{D}(R_{\mu}^{-1})$ that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
+		begin the proof of this theorem by proving that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ is symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing for $u \in \mathcal{D}(R_{\mu}^{-1})$ that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
 		\begin{align}
 			\langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}), \label{*-condition}
 		\end{align}
 		then $v \in \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu}^{-1} v = v^{*}$.
-		By Theorem \ref{rmuinj}, in \eqref{*-condition} exists $f \in L^{2}(\R)$ such that $u = R_{\mu} f$; using use the fact that $R_{\mu}$ is symmetric and defined on the whole of $L^{2}(\R)$ yields
+		By Theorem \ref{rmuinj}, in \eqref{*-condition} exists $f \in L^{2}(\R)$ such that $u = R_{\mu} f$; using the fact that $R_{\mu}$ is symmetric and defined on the whole of $L^{2}(\R)$ yields
 		\[  \langle f, v \rangle = \langle R_{\mu} f, v^{*} \rangle = \langle f, R_{\mu} v^{*} \rangle, \]
 		
 		which means that $v \in \mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu} v^{*} = v$, i.e. $R_{\mu}^{-1}$ is self-adjoint. As the operator $A$ is simply $R_{\mu}^{-1}$ shifted by $\mu \in \R$, $A$ is hence self-adjoint as well.		

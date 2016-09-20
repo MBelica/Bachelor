@@ -1,13 +1,13 @@
 \chapter{The Floquet transformation and the Bloch waves} \label{chap:5}
 
-In Chapter \ref{chap:6} we will show that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ introduced above by varying $k$ over the Brillouin zone $B$. For this purpose we will need two results, involving the Floquet transformation and the Bloch waves, to be able to move the problem from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$. For the sake of completeness, we include here the proofs of both theorems, as given in \cite[Section 3.4, 3.5]{dorfler2011photonic}. As we intend to use these results used in both the one-dimensional case and the multi-dimensional case, expressions like $|B|$ and $|\Omega|$ won't be simplified to be applicable in both chapters. 
+In Chapter \ref{chap:6} we will show that the spectrum of the operator $A$ can be constructed from the eigenvalue sequences $(\lambda_{s}(k))_{s \in \N}$ introduced in \eqref{mod-eigv-problem} by varying $k$ over the Brillouin zone $B$. For this purpose we will need two results, involving the Floquet transformation and the Bloch waves, to be able to relate the problem from $L^{2}(\R)$ to $L^{2}(\Omega \times B)$. For the sake of completeness, we include here the proofs of both theorems, as given in \cite[Section 3.4, 3.5]{dorfler2011photonic}. However, as we intend to use these results used in both the one-dimensional and the multi-dimensional case, expressions such as $|B|$ and $|\Omega|$ won't be simplified to be applicable in both chapters. 
 
 \section{Properties of the Floquet transformation} \label{sec:5.1}
 
 \begin{theorem} \label{3.2:thm-UIsometricIsomorphism}
 	The Floquet transformation $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ 
 	\begin{equation}
-		(Uf)(x, k) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{n \in \Z} f(x - n) e^{ikn} \quad (x \in \Omega, k \in B). \label{floquet-transformation}
+		(Uf)(x, k) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{n \in \Z} f(x - n) e^{ikn} \quad (x \in \Omega, k \in B) \label{floquet-transformation}
 	\end{equation}
 	is an isometric isomorphism, with inverse given by
 		\begin{equation}
@@ -23,23 +23,25 @@ In Chapter \ref{chap:6} we will show that the spectrum of the operator $A$ can b
 		\begin{equation}
 			\| f \|_{L^{2}(\R)}^{2} = \int_{\R} |f(x)|^{2} dx = \sum_{n \in \Z} \int_{\Omega} |f(x - n)|^{2} dx.\label{functionoverperiodicity}
 		\end{equation} 
-		We can apply the Monotone Convergence Theorem which shows that
+		Apply the Monotone Convergence Theorem (Theorem \ref{athm:monotonconvthm}) shows that
 		\[ \sum_{n \in \Z} |f(x - n)|^{2} < \infty \text{ for almost every } x \in \Omega.\]
 		Thus, $(Uf)(x, k)$ is well-defined by \eqref{floquet-transformation} (as a Fourier series with variable $k$) for almost every $x \in \Omega$. Using the fact that 
 		\[ \vartheta_{n}(k) \coloneqq \frac{1}{\sqrt{|B|}} e^{ikn} \]
-		forms an orthonormal basis of $L^{2}(B)$ and Parseval's identity gives for these $x$
+		forms an orthonormal basis of $L^{2}(B)$, for proof see Theorem \ref{athm:fubini}, and Parseval's identity (Theorem \ref{athm:parseval}) gives for these $x$
 		\[ \int_{B}|(Uf)(x,k)|^{2} dk = \sum_{n \in \Z} |f(x - n)|^{2}. \]
-	 	This expression is in $L^{2}(\Omega)$ by \eqref{functionoverperiodicity} and Fubini's Theorem, and we conclude $\| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}$. It is for us still left to show that the mapping $U$ is surjective, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. For $g \in L^{2}(\Omega \times B)$, let us define
+	 	This expression is in $L^{2}(\Omega)$ by \eqref{functionoverperiodicity} and Fubini's Theorem (Theorem \ref{athm:fubini}), and we conclude $\| Uf \|_{L^{2}(\Omega \times B)} = \|f\|_{L^{2}(\R)}$. It is for us still left to show that the mapping $U$ is surjective, and that $U^{-1}$ is given by \eqref{3.8} or \eqref{3.9}. For $g \in L^{2}(\Omega \times B)$, let us define
 		\begin{equation}
 			f(x - n) \coloneqq \frac{1}{\sqrt{|B|}} \int_{B} g(x, k) e^{-ikn} dk \quad (x \in \Omega, n \in\Z).\label{3.11}
 		\end{equation}
-		Using Fubini's Theorem we know that for almost every $x \in \Omega$ we have $g(x, k) \in L^{2}(B)$, and with this, Parseval's identity states for fixed $x \in \Omega$ that $\sum_{n \in \Z} |f(x - n)|^{2} = \int_{B} |g(x, k)|^{2} dk$. Integrating this equality over $\Omega$ and using Fubini's Theorem and the Monotone Convergence Theorem then yields
+		Using Fubini's Theorem (Theorem \ref{athm:fubini}) we know that for almost every $x \in \Omega$ we have $g(x, k) \in L^{2}(B)$, and with this, Parseval's identity (Theorem \ref{athm:parseval}) states for fixed $x \in \Omega$ that $\sum_{n \in \Z} |f(x - n)|^{2} = \int_{B} |g(x, k)|^{2} dk$. Integrating this equality over $\Omega$, using Fubini's Theorem (Theorem \ref{athm:fubini}) and the Monotone Convergence Theorem (Theorem \ref{athm:monotonconvthm}) then yields
 		\begin{align*}
 			\int_{\Omega \times B} |g(x, k)|^{2} dx dk & = \int_{\Omega} \sum_{n \in \Z} |f(x - n)|^{2} dx  = \sum_{n \in\Z} \int_{\Omega} |f(x-n)|^{2} dx = \int_{\R} |f(x)|^{2} dx,	
 		\end{align*}
 		i.e. $f \in L^{2}(\R)$. Therefore, for almost every $x \in \Omega$ follows from \eqref{floquet-transformation} that
-		\[ f(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} (Uf)(x,k) e^{-ikn} dk \quad (n \in \Z), \]
-		whence \eqref{3.11} implies $U f = g$ and \eqref{3.8}, the desired result. Now \eqref{3.9} follows from \eqref{3.8} and exploiting $g(x + n, k) = e^{ikn} g(x, k)$.
+		\[ f(x - n) = \frac{1}{\sqrt{|B|}} \int_{B} (Uf)(x,k) e^{-ikn} dk \]
+		for $n \in \Z$, whence \eqref{3.11} implies $U f = g$ and \eqref{3.8}, the desired result. Exploiting then 
+		\[ g(x + n, k) = e^{ikn} g(x, k) \]
+		and \eqref{3.8} yields \eqref{3.9}.
 	\end{proof}				
 \end{theorem}
 
@@ -55,21 +57,21 @@ Using the Floquet transformation $U$, we can now prove the property of completen
 		Then, $f_{l} \rightarrow f$ in $L^{2}(\R)$ as $l \rightarrow \infty$.
 
 	\begin{proof}
-		The previous theorem tells us that $Uf \in L^{2}(\Omega \times B)$, which in return means that $(Uf)(\cdot, k) \in L^{2}(\Omega)$ for almost all $k \in B$ by Fubini's Theorem. Since $(\psi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\Omega)$ for each $k \in B$, we derive with the help of the Dominated Convergence Theorem
+		The previous theorem tells us that $(Uf) \in L^{2}(\Omega \times B)$, which in return means that 
+		\[ (Uf)(\cdot, k) \in L^{2}(\Omega) \]
+		 for almost all $k \in B$ by Fubini's Theorem (Theorem \ref{athm:fubini}). Since $(\psi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\Omega)$ for each $k \in B$, we derive with the help of the Dominated Convergence Theorem (Theorem \ref{athm:domconvthm})
 			\[ \lim_{l \rightarrow \infty} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|_{L^{2}(\Omega)} = 0 \text{ for almost every } k \in B \]
 		where 
 			\begin{equation}
 				g_{l}(x, k) \coloneqq \sum_{s=1}^{l} \langle(Uf)(\cdot, k), \psi_{s}(\cdot,k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k). \label{3.16}
 			\end{equation}
-		Moreover, we get by Bessel's inequality
-			\[ \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)}  \]
-		for all $l \in \N$ and almost every $k \in B$. Next, $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}, thus by the Dominated Convergence Theorem
+		Moreover, we get by Bessel's inequality (Theorem \ref{athm:bessel}) $\| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} \leq \| (Uf)(\cdot, k) \|^{2}_{L^{2}(\Omega)}$ for all $l \in \N$ and almost every $k \in B$. Next, $\|(Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} \in L^{1}(B)$ as a function of $k$ by Theorem \ref{3.2:thm-UIsometricIsomorphism}, thus by the Dominated Convergence Theorem (Theorem \ref{athm:domconvthm})
 		\[ \lim_{l \rightarrow \infty} \int_{B} \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk  = \int_{B} \lim_{l \rightarrow \infty}  \| (Uf)(\cdot, k) - g_{l}(\cdot, k) \|^{2}_{L^{2}(\Omega)} dk = 0. \]
-		  All in all, this means by Fubini's Theorem
+		  All in all, this means by Fubini's Theorem (Theorem \ref{athm:fubini})
 			\begin{equation}
 				\| U f - g_{l} \|_{L^{2}(\Omega \times B)} = \int_{B} \int_{\Omega} \left| (Uf)(x, k) - g_{l}(d, k) \right|^{2} dx dk \rightarrow 0 \text{ as } l \rightarrow \infty \label{3.17}
 			\end{equation} 
-		 Using \eqref{3.15}, \eqref{3.16} and \eqref{3.9}, we find that $f_{l} = U^{-1}g_{l}$, whence \eqref{3.17} and since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by Theorem \ref{3.2:thm-UIsometricIsomorphism} it follows
+		 Using \eqref{3.15}, \eqref{3.16} and \eqref{3.9}, we find that $f_{l} = U^{-1}g_{l}$. Whence \eqref{3.17} and since $U \colon L^{2}(\R) \rightarrow L^{2}(\Omega \times B)$ is isometric by Theorem \ref{3.2:thm-UIsometricIsomorphism} it follows THAT
 			\[ \| U f - g_{l} \|_{L^{2}(\Omega \times B)} = \| U(f - f_{l}) \|_{L^{2}(\Omega \times B)} = \| f - f_{l} \|_{L^{2}(\Omega \times B)} \rightarrow 0 \text{ as } l \rightarrow \infty,\]
 		 which is the desired result.
 	\end{proof}

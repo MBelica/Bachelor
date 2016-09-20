@@ -31,7 +31,7 @@
 \end{atheorem}
 
 
-\begin{atheorem}[Bessel's inequality]
+\begin{atheorem}[Bessel's inequality] \label{athm:bessel}
 	Let $H$ be a Hilbert space, and suppose that $e_1, e_2, ...$ is an orthonormal sequence in $H$. Then, for any $x \in H$ one has
 	\[ \sum_{k=1}^{\infty}\left\vert\left\langle x,e_k\right\rangle \right\vert^2 \le \left\Vert x\right\Vert^2 \]
 	where $\langle \cdot,\cdot \rangle$ denotes the inner product in the Hilbert space $H$.
@@ -108,7 +108,7 @@
 	\end{enumerate}
 \end{atheorem}
 
-\begin{atheorem}[Dominated Convergence Theorem]
+\begin{atheorem}[Dominated Convergence Theorem] \label{athm:domconvthm}
 	Let ${f_n}$ be a sequence of real-valued measurable functions on a measure space $(S, \Sigma, \mu)$. Suppose that the sequence converges pointwise to a function $f$ and is dominated by some integrable function $g$ in the sense that
 		\[ |f_n(x)| \le g(x) \]
 	for all numbers n in the index set of the sequence and all points $x \in S$. Then f is integrable and
@@ -146,7 +146,7 @@
 	\end{proof}
 \end{atheorem}	
 
-\begin{atheorem}[Fubini's Theorem for integrable functions]
+\begin{atheorem}[Fubini's Theorem for integrable functions] \label{athm:fubini}
 	Suppose $X$ and $Y$ are $\sigma$-finite measure spaces, and suppose that $X \times Y$ is given the product measure (which is unique as $X$ and $Y$ are $\sigma$-finite). Fubini's Theorem states that if $f(x,y)$ is $X \times Y$ integrable, meaning that it is measurable and
 		\[  \int_{X\times Y} |f(x,y)|\,\text{d}(x,y)<\infty, \]
 	then
@@ -173,7 +173,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Monotone Convergence Theorem]
+\begin{atheorem}[Monotone Convergence Theorem] \label{athm:monotonconvthm}
 	Let $(X, \Sigma, \mu)$ be a measure space. Let $f_1, f_2, \ldots$  be a pointwise non-decreasing sequence of $[0, \infty]$-valued $\Sigma$–measurable functions, i.e. for every $k \geq 1$ and every $x$ in $X$,
 		\[ 0 \leq f_k(x) \leq f_{k+1}(x). \] 
 	Next, set the pointwise limit of the sequence $(f_{n})$ to be $f$. That is, for every $x$ in $X$,
@@ -186,7 +186,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Orthonormality of $\vartheta$]
+\begin{atheorem}[Orthonormality of $\vartheta$] \label{athm:eta}
 	The sequence
 		\[ \vartheta_{n}(k) \coloneqq \frac{1}{\sqrt{|B|}} e^{ikn} \]
 	forms an orthonormal basis of $L^{2}(B)$.
@@ -198,7 +198,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Parseval's identity]
+\begin{atheorem}[Parseval's identity] \label{athm:parseval}
 	Suppose that $H$ is a Hilbert space with inner product $\langle \cdot,\cdot \rangle$. Let $(e_{n})$ be an orthonormal basis of $H$; i.e., the linear span of the $e_n$ is dense in $H$, and the $e_n$ are mutually orthonormal:
 		\[ \langle e_{m},e_{n}\rangle ={\begin{cases}1&{\mbox{if}}\ m=n\\0&{\mbox{if}}\ m\not =n.\end{cases}} \]
 	Then Parseval's identity asserts that for every $x \in H$,
