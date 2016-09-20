@@ -1,9 +1,9 @@
 \chapter{Fundamental domain of periodicity and the Brillouin zone}  \label{chap:4}
 
-In this chapter we will restrict the Kronig-Penney model to one periodicity cell and examine the spectrum of the resulting operator. With the help of tools we introduce in Chapter \ref{chap:5}, solving the eigenvalue problem on the period cell while varying specific boundary conditions for the solution functions can be used to determine the eigenvalues of the unrestricted problem. This is precisely the approach we will choose in Chapter \ref{chap:6}.
+In this chapter we will restrict the Kronig-Penney model to one periodicity cell and examine the spectrum of the resulting operator. With the help of tools we introduce in Chapter \ref{chap:5}, solving the eigenvalue problem on the period cell while varying specific boundary conditions for the solution functions can be used to determine the eigenvalues of the unrestricted problem, which is precisely the approach we will choose in Chapter \ref{chap:6}.
 ~\\ 
 
-Let $\Omega$ be the fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature the reciprocal lattice for $\Omega$ is $[-\pi, \pi)$, the so-called one-dimensional Brillouin zone $B$, see for example \cite[Chapter 3]{dorfler2011photonic}. For brevity let us introduce the following:
+Let $\Omega$ be a fundamental domain of periodicity associated with \eqref{the-operator-A-formally}, for simplicity let $\Omega \coloneqq \Omega_{0}$ and thus $x_{0} = 0$ being contained in $\Omega$. As commonly used in literature, the reciprocal lattice for $\Omega$ is $[-\pi, \pi)$, the so-called one-dimensional Brillouin zone $B$, see for example \cite[Chapter 3]{dorfler2011photonic}. For brevity let us introduce the following:
 \begin{definition} 
 	We define for every $k \in \overline{B}$ the set  
 	\begin{equation} 
@@ -30,7 +30,7 @@ Analogously to Section \ref{sec:3.1}, we now define $A_{k}$ by considering the p
 
 holds for all $v \in H^{1}_{k}$. Using the last remark, i.e that $H^{1}_{k}$ is a Hilbert space, we can use similar arguments as in Section \ref{sec:3.1} to prove that 
 	\[ R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k},  f \mapsto u \]
-is well-defined and injective. Consequently, we are able to define
+is well-defined and injective. Consequently, we are able to define $A_{k}$ by means of $R_{\mu, k}$:
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu I, \quad \mathcal{D}(A_{k}) = \mathcal{R}(R_{\mu, k}^{-1}). \] 
 	
 \begin{remark}
