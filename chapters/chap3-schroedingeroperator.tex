@@ -12,7 +12,7 @@ In general, one cannot say in which sense a solution to the formal problem
 	\begin{equation}
 		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of the Delta-Distribution. If we suppose for a moment that the problem is smooth, more specifically, that the potential is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the smooth problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
+	exists since the potential in $A$ consists of Delta-Distributions. If we suppose for a moment that in this periodic differential expression is smooth, more specifically, that the potential in every point $x_{k}$ is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the smooth problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
 \begin{equation}
 	\int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R} f(x) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
@@ -27,7 +27,7 @@ The choice of $h = 1$ yields hence the estimation
 \end{align}
 
 \begin{remark}
-	Since $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$, \eqref{weak-formulation-of-A} holds also for all $v \in H^{1}(\R)$.
+	The problem \eqref{weak-formulation-of-A} holds also for all $v \in H^{1}(\R)$ since $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$, for proof see Theorem \ref{athm:approx}.
 \end{remark}
 
 \section{The resolvent-mapping of the one-dimensional Schrödinger operator} \label{sec:3.1}
@@ -35,7 +35,7 @@ The choice of $h = 1$ yields hence the estimation
 As a first step in order to define the operator $A$ explicitly, we will show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution $u \in H^{1}(\R)$. 
 \begin{definition}
 	Given $f \in L^{2}(\R)$, we define a functional $l_{f} \colon H^{1}(\R) \rightarrow \C$ by
-	\[ l_{f}(v) \coloneqq \int_{\R} f(x) \overline{v}(x) dx \]
+	\[ l_{f}(v) \coloneqq \int_{\R} f(x) \overline{v(x)} dx \]
 and a sesquilinear form $B_{\mu} \colon H^{1}(\R) \times H^{1}(\R) \rightarrow \C$ for $\mu \in \R$ by
 	\[ B_{\mu}[u, v] \coloneqq \int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx. \]
 \end{definition}
@@ -43,9 +43,9 @@ As a result, \eqref{weak-formulation-of-A} is equivalent to finding for $\mu \in
 	\begin{equation}
 		B_{\mu}[u, v] =  l_{f}(v) \label{weak-formulation-of-A-for-LM}
 	\end{equation}
-holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-of-A-for-LM} now follows from Lax-Milgram's Theorem if the sesquilinear form $B_{\mu}$ is bounded and coercive and if $l_{f}$ is a bounded linear functional on $H^{1}(\R)$, which we will prove in the next two theorems.
+holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ satisfying \eqref{weak-formulation-of-A-for-LM} now follows from Lax-Milgram's Theorem (Theorem \ref{athm:lm}) if the sesquilinear form $B_{\mu}$ is bounded and coercive and if $l_{f}$ is a bounded linear functional on $H^{1}(\R)$, which we will prove in the next two theorems.
 \begin{theorem} \label{2.1:thm-LaxMilgram}
-	The sesquilinear form $B_{\mu}$ is (for sufficiently small $\mu \in \R$)
+	The sesquilinear form $B_{\mu}$ is for sufficiently small $\mu \in \R$
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item bounded, i.e. there exists a constant $\alpha > 0$ such that
 			\[ \left| B_{\mu}[u,v] \right| \leq \alpha \|u\|_{H^{1}(\R)} \|v\|_{H^{1}(\R)} \]
@@ -56,15 +56,15 @@ holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ sat
 	\end{enumerate} 
 	
 	\begin{proof} ~\\
-		$a)$ The boundedness follows from the Cauchy–Schwarz inequality and \eqref{estimation-for-potential} as for an arbitrary $\rho \in \R$
+		$a)$ The boundedness follows from the Cauchy–Schwarz inequality (Theorem \ref{athm:csi}) and \eqref{estimation-for-potential} as for an arbitrary $\rho \in \R$
 		\begin{align*}
-			\left| B(u, v) \right|^{2} & \leq 3 \| u' \|_{L^{2}(\R)}^{2} \| v' \|_{L^{2}(\R)}^{2} + 3 |\rho |\left( \sum_{i \in \Z} |u(x_{i})|^{2} \right)\left( \sum_{i \in \Z} |v(x_{i})|^{2} \right) + 3 \left| \mu \right| \| u \|_{L^{2}(\R)}^{2} \| v \|_{L^{2}(\R)}^{2} \\
-				& \leq 3 \| u' \|_{L^{2}(\R)}^{2} \| v' \|_{L^{2}(\R)}^{2} + 12 |\rho| \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  + 3 \left| \mu \right| \| u \|_{L^{2}(\R)}^{2} \| v \|_{L^{2}(\R)}^{2} \\
+			\left| B(u, v) \right|^{2} & \leq 3 \| u' \|_{L^{2}(\R)}^{2} \| v' \|_{L^{2}(\R)}^{2} + 3 \rho^{2} \left( \sum_{i \in \Z} |u(x_{i})|^{2} \right)\left( \sum_{i \in \Z} |v(x_{i})|^{2} \right) + 3 \mu^{2} \| u \|_{L^{2}(\R)}^{2} \| v \|_{L^{2}(\R)}^{2} \\
+				& \leq 3 \| u' \|_{L^{2}(\R)}^{2} \| v' \|_{L^{2}(\R)}^{2} + 12 \rho^{2} \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  + 3 \mu^{2} \| u \|_{L^{2}(\R)}^{2} \| v \|_{L^{2}(\R)}^{2} \\
 				& \leq \alpha \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)},
 		\end{align*}
-		holds for all $u, v \in H^{1}(\R)$ where $\alpha = \max \left\{ 12|\rho| + 3\left| \mu \right| , 12 |\rho| + 3 \right\}$. \\
+		holds for all $u, v \in H^{1}(\R)$ where $\alpha = \max \left\{ 12 \rho^{2} + 3 \mu^{2} , 12 \rho^{2} + 3 \right\}$. \\
 		
-		$b)$ Let $u \in H^{1}(\R)$. For the coercivity, we note first that for the given sesquilinear form $B[u, u] \in \R$ holds. Assuming $\rho \geq 0$ yields for $\mu < -1$ that
+		$b)$ Let $u \in H^{1}(\R)$. For the coercivity, we note first that for the given sesquilinear form $B[u, u] \in \R$ holds. Assuming $\rho \geq 0$ yields for $\mu \leq																												 -1$ that
 		\begin{align*}
 			B[u, u] & = \langle u' , u' \rangle + \rho \sum_{i \in \Z} \left|u(x_{i})\right|^{2} - \mu \langle u , u \rangle \\
 					& \geq \langle u' , u' \rangle  + \langle u , u \rangle \\
@@ -75,7 +75,7 @@ holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ sat
 					& = (2 \rho h + 1) \| u' \|_{L^{2}(\R)}^{2} + (2 \rho \frac{1}{h} - \mu) \| u \|_{L^{2}(\R)}^{2}  \\
 					& \geq \beta \| u \|_{H^{1}(\R)}^{2},
 		\end{align*}
-		where $\beta = \min \left\{ 2 \rho h + 1u , 2 \rho \frac{1}{h} - \mu \right\}$.
+		where $\beta = \min \left\{ 2 \rho h + 1 , 2 \rho \frac{1}{h} - \mu \right\}$.
 	\end{proof}
 \end{theorem}
 \begin{theorem}
@@ -118,7 +118,7 @@ Resulting from Theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This 
 	Let $A \colon \mathcal{D}(A) \subseteq L^{2}(\R) \rightarrow L^{2}(\R)$ be the linear operator defined by
 	\[ A \coloneqq R_{\mu}^{-1} + \mu I, \quad \mathcal{D}(A) = \mathcal{R}(R_{\mu}). \]
 \end{definition}
-Note that this definition is consistent with the formal definition in \eqref{the-operator-A-formally} and we will show that it is independent of the choice of $\mu \in \R$, still assuming $\mu$ is small enough as chosen in theorem \ref{2.1:thm-LaxMilgram}. 
+Note that this definition is consistent with the formal definition in \eqref{the-operator-A-formally} and we will show that it is independent of the choice of $\mu \in \R$, still assuming $\mu$ is small enough as chosen in Theorem \ref{2.1:thm-LaxMilgram}. 
 \begin{remark}
 	Note, $R_{\mu}$ is the resolvent function of $A$.
 \end{remark}

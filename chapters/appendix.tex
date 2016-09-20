@@ -14,7 +14,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[$L^{p}$-Approximation by test functions]
+\begin{atheorem}[$L^{p}$-Approximation by test functions] \label{athm:approx}
 	For $U \subseteq \R^{n}$ open, $C_{0}^{\infty}(U)$ is dense in $L^{p}(U)$, if $1 \leq p < \infty$.
 	
 	\begin{proof}
@@ -41,7 +41,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Cauchy–Schwarz inequality]
+\begin{atheorem}[Cauchy–Schwarz inequality] \label{athm:csi}
 	Fr all vectors $u$ and $v$ of an inner product space it is true that
 		\[ \left| \langle u,v \rangle \right|^{2} \leq \langle u,u \rangle \cdot \langle v,v \rangle, \]
 	where $\langle \cdot ,\cdot \rangle$ is the inner product. 
@@ -146,8 +146,8 @@
 	\end{proof}
 \end{atheorem}	
 
-\begin{atheorem}[Fubini's theorem for integrable functions]
-	Suppose $X$ and $Y$ are $\sigma$-finite measure spaces, and suppose that $X \times Y$ is given the product measure (which is unique as $X$ and $Y$ are $\sigma$-finite). Fubini's theorem states that if $f(x,y)$ is $X \times Y$ integrable, meaning that it is measurable and
+\begin{atheorem}[Fubini's Theorem for integrable functions]
+	Suppose $X$ and $Y$ are $\sigma$-finite measure spaces, and suppose that $X \times Y$ is given the product measure (which is unique as $X$ and $Y$ are $\sigma$-finite). Fubini's Theorem states that if $f(x,y)$ is $X \times Y$ integrable, meaning that it is measurable and
 		\[  \int_{X\times Y} |f(x,y)|\,\text{d}(x,y)<\infty, \]
 	then
 		\[ \int_X\left(\int_Y f(x,y)\,\text{d}y\right)\,\text{d}x=\int_Y\left(\int_X f(x,y)\,\text{d}x\right)\,\text{d}y=\int_{X\times Y} f(x,y)\,\text{d}(x,y). \]
@@ -158,7 +158,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Lax-Milgram]
+\begin{atheorem}[Lax-Milgram] \label{athm:lm}
 	Let $H$ be a Hilbert space where $\| \cdot \|$ denotes the norm on $H$, and let $B \colon H \times H \rightarrow \C$ be a sesquilinear form. If there exist constants $\alpha, \beta > 0$ such that
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\left| B[u, v] \right| \leq \alpha \| u \| \|v \| \quad (u, v \in H)$ and
