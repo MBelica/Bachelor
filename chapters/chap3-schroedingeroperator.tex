@@ -57,7 +57,7 @@ holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ sat
 	
 	\begin{proof} ~\\
 		$a)$ The boundedness follows from the Cauchy–Schwarz inequality (Theorem \ref{athm:csi}) and \eqref{estimation-for-potential} as for an arbitrary $\rho \in \R$
-		\begin{align*}
+		\begin{align*} % todo formel
 			\left| B(u, v) \right|^{2} & \leq 3 \| u' \|_{L^{2}(\R)}^{2} \| v' \|_{L^{2}(\R)}^{2} + 3 \rho^{2} \left( \sum_{i \in \Z} |u(x_{i})|^{2} \right)\left( \sum_{i \in \Z} |v(x_{i})|^{2} \right) + 3 \mu^{2} \| u \|_{L^{2}(\R)}^{2} \| v \|_{L^{2}(\R)}^{2} \\
 				& \leq 3 \| u' \|_{L^{2}(\R)}^{2} \| v' \|_{L^{2}(\R)}^{2} + 12 \rho^{2} \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  + 3 \mu^{2} \| u \|_{L^{2}(\R)}^{2} \| v \|_{L^{2}(\R)}^{2} \\
 				& \leq \alpha \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)},
@@ -102,7 +102,7 @@ Again, due to the linearity of the integral and the uniqueness of the solution, 
 			\| R_{\mu} f \|_{L^{2}(\R)}^{2} = \| u \|_{L^{2}(\R)}^{2} \leq \| u \|_{H^{1}(\R)}^{2}. \label{bounddedeq}
 		\end{equation}  
 		Now, using \eqref{weak-formulation-of-A}, \eqref{estimation-for-potential} and \eqref{bounddedeq} with a small enough $\mu \in \R$ yields with the Cauchy–Schwarz inequality (Theorem \ref{athm:csi})
-		\[ \| R_{\mu} f \|_{L^{2}(\R)}^{2} \leq \int_{\R} |u'(x)|^{2} dx + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu \int_{\R} |u(x)|^{2} dx \leq \| f \|_{L^{2}(\R)} \| u \|_{L^{2}(\R)}, \]	
+		\[ \| R_{\mu} f \|_{L^{2}(\R)}^{2} \leq \int_{\R} |u'(x)|^{2} dx + \rho \sum_{i \in \Z} |u(x_{i})|^{2} - \mu \int_{\R} |u(x)|^{2} dx \leq \| f \|_{L^{2}(\R)} \| u \|_{L^{2}(\R)}, \]	% todo formel
 		which shows the boundedness of the mapping $R_{\mu}$. Taking in mind that the range $\mathcal{R}(R_{\mu}) \subseteq H^{1}(\R)$, we know that for $f_{1}, f_{2} \in L^{2}(\R)$ there exist  $u_{1}, u_{2} \in \mathcal{R}(R_{\mu})$ with $u_{i} = R_{\mu} f_{i}$ for $i = 1, 2$. If now furthermore $R_{\mu} f_{1} = R_{\mu} f_{2}$ holds, \eqref{weak-formulation-of-A-for-LM} yields
 		\begin{equation}
 			0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v] = \int_{\R} (f_{1}(x) - f_{2}(x)) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R). \label{f1f2almosteverywhere}

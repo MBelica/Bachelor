@@ -30,11 +30,11 @@ Analogously to Section \ref{sec:3.1}, we now define $A_{k}$ by considering the p
 
 holds for all $v \in H^{1}_{k}$. Using the last remark, i.e that $H^{1}_{k}$ is a Hilbert space, we can use similar arguments as in Section \ref{sec:3.1} to prove that 
 	\[ R_{\mu, k} \colon L^{2}(\Omega) \rightarrow H^{1}_{k},  f \mapsto u \]
-is well-defined and injective. Consequently, we are able to define $A_{k}$ by means of $R_{\mu, k}$:
+is well-defined, bounded and injective. Consequently, we are able to define $A_{k}$ by means of $R_{\mu, k}$:
 	\[ A_{k} \coloneqq R_{\mu, k}^{-1} + \mu I, \quad \mathcal{D}(A_{k}) = \mathcal{R}(R_{\mu, k}^{-1}). \] 
 	
 \begin{remark}
-	Note, $R_{\mu, k}$ is the resolvent function of $A_{k}$.
+	$R_{\mu, k}$ is hence the resolvent function of $A_{k}$.
 \end{remark}
 
 \section{The domain of the restricted Schrödinger operator} \label{sec:4.1}
@@ -45,10 +45,10 @@ We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Therefore, procee
 	 & ~\qquad ~\qquad ~\qquad ~\qquad ~ u\big|_{\left(0, \frac{1}{2}\right)} \in H^{2}\left(\left(0, \frac{1}{2}\right)\right), ~ u'(x_{0}-0) - u(x_{0} + 0) + \rho u(x_{0}) = 0 \Big\}. 
 \end{align*}
 
-The last three properties follow directly through the same approach as in Section \ref{sec:3.2}. The quasi-periodic condition for $\psi$ comes from the boundary condition on $H^{1}_{k}$. Therefore, new is only the quasi-condition condition for $\psi'$ which we can see through the following. Choosing in \eqref{weak-formulation-to-the-restricted} a function $v \in \mathcal{D}(A_{k})$ with $\supp v = \Omega$, $v\left(x_{0}\right) = 0$ and $v\left(\frac{1}{2}\right) \neq 0$ and partial integration yields
+The last three properties follow directly through the same approach as in Section \ref{sec:3.2}. The quasi-periodic condition on $\psi$ comes from the boundary condition on $H^{1}_{k}$. Therefore, new is only the quasi-condition condition on $\psi'$ which we can see through the following. Choosing in \eqref{weak-formulation-to-the-restricted} a function $v \in \mathcal{D}(A_{k})$ with $\supp v = \Omega$, $v\left(x_{0}\right) = 0$ and $v\left(\frac{1}{2}\right) \neq 0$ and partial integration yields
 \[ - \int_{\Omega} u''(x) \overline{v(x)} dx +  u'(x) \overline{v(x)} \big|_{-\frac{1}{2}}^{\frac{1}{2}} + - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \] 
 \[ \iff u'\left(\frac{1}{2}\right) e^{-ik} = u'\left(-\frac{1}{2}\right), \] 
-whereas we used in the last step that $A_{k} u = f$ and that $v$ is quasi-periodic on the boundary. In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we need to show that $R_{\mu, k}$ is compact from which we deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$.
+whereas we used in the last step that $A_{k} u = f$ and that $v \in H^{1}_{k}$. In the remainder of this chapter we will further investigate the operator $A_{k}$. For this purpose, we need to show that $R_{\mu, k}$ is compact from which we will be able deduce that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $H^{1}_{k}$. % todo not H^1_k
 
 \section{The compactness of the restricted resolvent function} \label{sec:4.2}
 
@@ -58,18 +58,18 @@ whereas we used in the last step that $A_{k} u = f$ and that $v$ is quasi-period
 	\begin{proof}
 	Let $(f_{j})_{j \in \N} \in L^{2}(\Omega)$ be a  bounded sequence. We will show that 
 		\[ u_{j} \coloneqq R_{\mu, k} f_{j} \quad \text{ for all } j \geq 1 \]
-	is a bounded sequence with respect to the $H^{1}$-Norm as well. Each such $u_{j}$ is by definition in $H^{1}_{k}$ and has to satisfy
+	is a bounded sequence with respect to the $H^{1}$-Norm. Each such $u_{j}$ is by definition in $H^{1}_{k}$ and has to satisfy
 		\begin{equation}
 			\int_{\Omega} u_{j}'(x) \overline{v'(x)} dx + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j}(x) \overline{v(x)} dx = \int_{\Omega} f_{j}(x) \overline{v(x)} dx \quad \forall v \in H^{1}_{k}. \label{ujsatisfy}
 		\end{equation} 
 	Now, the particular choice of $v = u_{j}$ in \eqref{ujsatisfy} yields with \eqref{estimation-for-potential} for small enough $\mu$
-		\[  \| u_{j} \|_{H^{1}(\Omega)} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)}. \]
-	Thus, $\| u_{j} \|_{H^{1}(\Omega)} \leq C$ for all $j$. The assertion follows from the Compact Embedding Theorem for Sobolev spaces, see Theorem \ref{compact-embedding-theorem}.
+		\[  \| u_{j} \|_{H^{1}(\Omega)}^{2} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)}. \] % todo formel
+	Thus, $\| u_{j} \|_{H^{1}(\Omega)} \leq C$ for all $j$ and the assertion follows from the Compact Embedding Theorem for Sobolev spaces, see Theorem \ref{compact-embedding-theorem}.
 	\end{proof}	
 \end{theorem}		
 
 \section{The spectrum of the restricted Schrödinger operator} \label{sec:4.3}
-Using the compactness of $R_{\mu, k}$, we know on the one hand that every non-zero $\lambda \in \sigma(R_{\mu, k})$ is an eigenvalue of $R_{\mu, k}$ and on the other hand that the at most countable sequence of eigenvalues can only accumulate at $0$, for proofs see \cite[p. 271]{werner2006funkana}. We will from now consider the eigenvalue problem to find $\psi \in \mathcal{D}(A_{k}) \subseteq H_{k}^{1}$ such that
+Using the compactness of $R_{\mu, k}$, we know on the one hand that every non-zero $\lambda \in \sigma(R_{\mu, k})$ is an eigenvalue of $R_{\mu, k}$ and on the other hand that the at most countable sequence of eigenvalues can only accumulate at $0$, for proofs see \cite[p. 271]{werner2006funkana}. We will now consider the eigenvalue problem to find $\psi \in \mathcal{D}(A_{k}) \subseteq H_{k}^{1}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}
 	\end{equation}
@@ -83,26 +83,26 @@ is an eigenvalue for the eigenfunction $w$ except that now of the operator $A_{k
 	\begin{equation}
 		\lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{comment-after}
 	\end{equation} 
-and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, for proof see \cite[p. 643 - 645]{evans1998partial}.
+and the corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions for \eqref{quasi-periodic-condition}, for proof see Theorem \cite[p. 643 - 645]{evans1998partial}.
 ~\\
 
-At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This step is needed in Chapter \ref{chap:6} to show that the eigenvalues in \ref{eigv-problem} depend continuously on $k$. For this, we define first
+At the end of this chapter, we transform the eigenvalue problem \eqref{eigv-problem} such that the boundary condition is independent of $k$. This step is needed in Chapter \ref{chap:6} to show that the eigenvalues in \eqref{eigv-problem} depend continuously on $k$. For this, we define first
 	\[ \varphi_{s}(x, k) \coloneqq e^{-ikx} \psi_{s}(x, k). \]
 This yields
 	\begin{align}
 		A_{k} \psi_{s}(x, k) & = \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} + \frac{d^{2}}{dx^{2}} \psi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})} \notag \\
 			& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
-			& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
+			& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed} % todo formel
 	\end{align}
-Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through 
+Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through % todo an or the
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
 	\end{cases} \] 
-Note that we defined the operator $\tilde{A_{k}}$ to examine eigenvalues and eigenfunctions of $A_{k}$, hence we actually require $\mathcal{D}(\tilde{A_{k}}) = \mathcal{D}(A_{k})$. Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields
+Note that we defined the operator $\tilde{A_{k}}$ to examine eigenvalues and eigenfunctions of $A_{k}$, hence we require $\mathcal{D}(\tilde{A_{k}}) = \mathcal{D}(A_{k})$. Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields % todo require
 	\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
-From this, \eqref{comment-after} and from Theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the periodic eigenvalue problem
+From this, \eqref{comment-after} and from Theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the now periodic eigenvalue problem
 	\begin{align}
 		\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
-		\varphi\left(x - \frac{1}{2}\right) = \varphi\left(x + \frac{1}{2}\right). \label{periodic-condition}
+		\varphi\left(x - \frac{1}{2}\right) = \varphi\left(x + \frac{1}{2}\right), \label{periodic-condition}
 	\end{align}
 with the identical eigenvalue sequence $(\lambda_{s}(s))_{s \in \N}$ as in \eqref{eigv-problem} by \eqref{transformed}.
