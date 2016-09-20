@@ -122,7 +122,7 @@ Resulting from Theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This 
 \end{definition}
 Note that this definition is consistent with the formal definition in \eqref{the-operator-A-formally} and we will show that it is independent of the choice of $\mu \in \R$, still assuming $\mu$ is small enough as chosen in Theorem \ref{2.1:thm-LaxMilgram}. 
 \begin{remark}
-	Note, $R_{\mu}$ is the resolvent function of $A$.
+	$R_{\mu}$ is hence the resolvent function of $A$.
 \end{remark}
 We will now use the fact that every element $u \in \mathcal{D}(A) = \mathcal{R}(R_{\mu})$ is a solution of \eqref{weak-formulation-of-A-for-LM} to find additional necessary  characteristics of $\mathcal{D}(A)$. However, we already know by Lax-Milram's Theorem that $u \in H^{1}(\R)$. Let us first for the sake of brevity define
 \[ H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) \coloneqq \Big\{ u\in L^{2}(\R) : u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z, \sum_{i \in \Z} \|u\|^{2}_{H^{2}(x_{i}, x_{i+1})} < \infty \Big\}. \]
@@ -144,12 +144,12 @@ and therefore
 		\mathcal{D}(A) \subseteq \Big\{ u \in H^{1}(\R) \colon u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall i, j \in \Z \Big\}
 	\end{equation} 
 	
-Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} for some arbitrary $n \in \N$ yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump} that
+Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} for an arbitrary $n \in \N$ yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump}:
 \[ \sum_{i=-n}^{n-1} -\int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx + \sum_{i=-n}^{n-1} u' \overline{v} \big|_{x_{i}}^{x_{i+1}} + \rho \sum_{i=-n}^{n-1} u(x_{i}) \overline{v(x_{j})} - \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx = \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx \]
 \begin{equation}
 	\iff \sum_{i=-n}^{n-1} \int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx = - \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx - \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx. \label{refwa}
 \end{equation} 
-By defining $w_{n} \coloneqq \sum_{i=-n}^{n-1} u'' \mathds{1}_{[x_{i}, x_{i+1}]}$ we can estimate the left-hand side of \eqref{refwa} by
+By defining $w_{n} \coloneqq \sum_{i=-n}^{n-1} u'' \mathds{1}_{[x_{i}, x_{i+1}]}$ we can estimate the left-hand side of \eqref{refwa} through
 \begin{align}
 	\left| \langle w_{n}, v \rangle \right| & \leq \left| \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx \right| + \left| \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx \right|  \notag \\
 		& \leq \|f\|_{L^{2}(x_{-n}, x_{n})} \|v\|_{L^{2}(x_{-n}, x_{n})} + |\mu| \|u\|_{L^{2}(x_{-n}, x_{n})} \|v\|_{L^{2}(x_{-n}, x_{n})} \notag \\
@@ -166,7 +166,7 @@ Hence, for an arbitrary $u \in \mathcal{D}(A)$ we know from \eqref{temp-link} an
 					- u'' & \text{ on } (x_{k}, x_{k} + \frac{1}{2}),
 			 \end{cases} \quad \forall k \in \Z. \label{Aaction}
 	\end{equation} 
-We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the resolvent function $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ let us define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we already know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$ we can therefore ensure $f \in L^{2}(\R) = \mathcal{D}(R_{\mu})$. We want to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
+We are furthermore able to show in \eqref{firstdomaininclusion} the reverse inclusion by using the resolvent function $R_{\mu}$. But first let us, again for brevity, denote with $B$ the right-hand side of \eqref{firstdomaininclusion}. Now, since $\mathcal{R}(R_{\mu}) = \mathcal{D}(A)$, we proceed by proving that each $u \in B$ is also in the range of $R_{\mu}$. More specifically, as $\mathcal{D}(R_{\mu}) = L^{2}(\R)$ let us define $f \coloneqq - u''$ on $(x_{k}, x_{k + 1})$ for all $i \in \Z$; as we already know that $u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big)$, we can therefore ensure $f \in L^{2}(\R) = \mathcal{D}(R_{\mu})$. For the reverse inclusion want to show that $u = R_{\mu}(f - \mu u)$ or equivalently 
 	\begin{align*}
 		 \int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R}(f(x)-\mu u(x)) \overline{v(x)} dx \\
 		\iff \sum_{i \in \Z} \int_{\Omega_{i}} u'(x) \overline{v'(x)} + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} = - \sum_{i \in \Z} \int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx.
@@ -174,7 +174,7 @@ We are furthermore able to show in \eqref{firstdomaininclusion} the reverse incl
 For each $k \in \Z$ partial integration on both side of $x_{k}$ with a function $v \in C_{0}^{\infty}(\R)$ having $\supp v = \Omega_{k}$ and $v(x_{k}) \neq 0$ yields
 	\begin{align*}
 		\int_{\Omega_{k}} u'(x) \overline{v'(x)} dx + \rho u(x_{k}) \overline{v(x_{k})} & = \int_{x_{k} - \frac{1}{2}}^{x_{k}} u'(x) \overline{v'(x)} dx + \int_{x_{k}}^{x_{k} +\frac{1}{2}} u'(x) \overline{v'(x)} dx \\
-		& ~\qquad ~\quad - u'(x_{k}-0) \overline{v(x_{k})}  + u'(x_{k}+0) \overline{v(x_{k})},
+		& ~\qquad ~\qquad - u'(x_{k}-0) \overline{v(x_{k})}  + u'(x_{k}+0) \overline{v(x_{k})},
 	\end{align*}
 which is equivalent to
 	\[ u'(x_{k}-0)\overline{v(x_{k})} - u'(x_{k}+0)\overline{v(x_{k})} + \rho u(x_{k})\overline{v(x_{k})} = 0. \]
@@ -206,18 +206,18 @@ In Chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjo
 	\end{proof}
 \end{theorem}
 
-Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can now prove the main statement of this section. Since every self-adjoint operator has an entirely real spectrum, this theorem yields further our first result about the spectrum of $A$, for a proof see Theorem \ref{spectrul-sa-real}.
+Using the fact that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators we can now prove the main statement of this section. Since every self-adjoint operator has an entirely real spectrum, this theorem yields furthermore our first result about the spectrum of $A$, for a proof see Theorem \ref{spectrul-sa-real}. % todo further vs furthermore
 
 \begin{theorem} \label{2.3:thm-ASelfAdjoint}
 	$A$ is a self-adjoint operator.
 		
 	\begin{proof}
-		We begin by proving that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ is symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
+		We begin this theorem by proving that $R_{\mu}^{-1}$ is self-adjoint. As we already know that $R_{\mu}^{-1}$ is symmetric, showing that $R_{\mu}^{-1}$ is self-adjoint is equivalent to showing for $u \in \mathcal{D}(R_{\mu}^{-1})$ that if $v \in \mathcal{D}({R_{\mu}^{-1}}^{*})$ and $v^{*} \in L^{2}(\R)$ are such that
 		\begin{align}
 			\langle R_{\mu}^{-1} u, v \rangle = \langle u, v^{*} \rangle \quad \forall u \in \mathcal{D}(R_{\mu}^{-1}), \label{*-condition}
 		\end{align}
 		then $v \in \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu}^{-1} v = v^{*}$.
-		In \eqref{*-condition} for any $u \in \mathcal{D}(R_{\mu}^{-1})$ exists $f \in L^{2}(\R)$ such that $u = R_{\mu} f$; using use the fact that $R_{\mu}$ is symmetric and defined on the whole of $L^{2}(\R)$ yields
+		By Theorem \ref{rmuinj}, in \eqref{*-condition} exists $f \in L^{2}(\R)$ such that $u = R_{\mu} f$; using use the fact that $R_{\mu}$ is symmetric and defined on the whole of $L^{2}(\R)$ yields
 		\[  \langle f, v \rangle = \langle R_{\mu} f, v^{*} \rangle = \langle f, R_{\mu} v^{*} \rangle, \]
 		
 		which means that $v \in \mathcal{R}(R_{\mu}) = \mathcal{D}(R_{\mu}^{-1})$ and $R_{\mu} v^{*} = v$, i.e. $R_{\mu}^{-1}$ is self-adjoint. As the operator $A$ is simply $R_{\mu}^{-1}$ shifted by $\mu \in \R$, $A$ is hence self-adjoint as well.		
