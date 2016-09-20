@@ -63,7 +63,7 @@ whereas we used in the last step that $A_{k} u = f$ and that $v \in H^{1}_{k}$. 
 			\int_{\Omega} u_{j}'(x) \overline{v'(x)} dx + \rho u_{j}(x_{0}) \overline{v(x_{0})} - \mu \int_{\Omega} u_{j}(x) \overline{v(x)} dx = \int_{\Omega} f_{j}(x) \overline{v(x)} dx \quad \forall v \in H^{1}_{k}. \label{ujsatisfy}
 		\end{equation} 
 	Now, the particular choice of $v = u_{j}$ in \eqref{ujsatisfy} yields with \eqref{estimation-for-potential} for small enough $\mu$
-		\[  \| u_{j} \|_{H^{1}(\Omega)}^{2} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)}. \] % todo formel
+		\[  \| u_{j} \|_{H^{1}(\Omega)}^{2} \leq \| f_{j} \|_{L^{2}(\Omega)} \| u_{j} \|_{L^{2}(\Omega)} \leq c \sqrt{vol(\Omega)}. \]
 	Thus, $\| u_{j} \|_{H^{1}(\Omega)} \leq C$ for all $j$ and the assertion follows from the Compact Embedding Theorem for Sobolev spaces, see Theorem \ref{compact-embedding-theorem}.
 	\end{proof}	
 \end{theorem}		
@@ -94,11 +94,11 @@ This yields
 			& = e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0} - \frac{1}{2}, x_{0})} \cdot \mathds{1}_{(x_{0} - \frac{1}{2}, x_{0})} \notag \\
 			& ~\qquad + e^{ikx} \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)\big|_{(x_{0}, x_{0}  + \frac{1}{2})} \cdot \mathds{1}_{(x_{0}, x_{0} + \frac{1}{2})}. \label{transformed}
 	\end{align}
-Therefore, we define the operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through % todo an or the
+Therefore, we define an operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \rightarrow L^{2}(\R)$ through
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
 	\end{cases} \] 
-Note that we defined the operator $\tilde{A_{k}}$ to examine eigenvalues and eigenfunctions of $A_{k}$, hence we require $\mathcal{D}(\tilde{A_{k}}) = \mathcal{D}(A_{k})$. Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields % todo require
+Note that we defined the operator $\tilde{A_{k}}$ to examine eigenvalues and eigenfunctions of $A_{k}$, hence we require $\mathcal{D}(\tilde{A_{k}}) = \mathcal{D}(A_{k})$. Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields % todo Andrii require
 	\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
 From this, \eqref{comment-after} and from Theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the now periodic eigenvalue problem
 	\begin{align}

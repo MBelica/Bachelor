@@ -71,7 +71,7 @@ Given $f \in L^{2}(\R^{n})$, following the proofs in Section \ref{sec:3.1} we ca
 is a bounded, linear functional. Hence, Lax-Migram's Theorem ensures the existence of a unique solution $u \in H^{1}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation} for any $f \in L^{2}(\R^{n})$. In return, the operator $R_{\mu}^{n} \colon L^{2}(\R^{n}) \rightarrow H^{1}(\R^{n}), f \mapsto u$, where $u \in H^{1}(\R^{n})$ is the solution of \eqref{eq:7.2-md-weak-formulation}, is well-defined. 
 
 \begin{theorem} 
-	$R_{\mu}^{n}$ is an injective, bounded linear operator. 
+	$R_{\mu}^{n}$ is an injective, bounded linear operator.  
 	
 	\begin{proof}
 		The proof follows that of Theorem \ref{rmuinj}.
@@ -88,7 +88,7 @@ Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We c
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(D_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
-		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$ % todo +- vor rho
+		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$ % todo Andrii +- vor rho
 	\end{enumerate}
 \end{theorem}
 
@@ -148,7 +148,7 @@ as the operator for the multi-dimensional case of our problem on the fundamental
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
-		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$ % todo +- vor rho
+		\item $\frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} - 0} - \frac{\partial u}{\partial \eta_{j}} \big|_{S_{j} + 0} - \rho u \big|_{S_{j}} = 0$ where $\eta_{j}$ denotes the normal on $S_{j}$ % todo Andrii +- vor rho
 		\item $u \big|_{\Omega_{j}^{+}} = u \big|_{\Omega_{j}^{-}} e^{i k_{j}}$, $\frac{\partial u}{\partial x_{j}}\big|_{\Omega_{j}^{+}} = e^{ik_{j}} \frac{\partial u}{\partial x_{j}}\big|_{\Omega_{j}^{-}}$ for $j = 1, \dotsc, n $
 	\end{enumerate}
 \end{theorem}
