@@ -66,6 +66,7 @@
 
 \begin{document} \urlstyle{rm}
 
+
 \pagenumbering{gobble}
 \include{chapters/kit-cover}
 \tableofcontents
@@ -79,11 +80,12 @@
 \include{chapters/chap7-multidcase}
 \include{chapters/chap8-outlconcl}
 
-\appendix \pagenumbering{Roman} 
-\include{chapters/appendix}
- \addcontentsline{toc}{section}{A.2 ~ Bibliography}
-\bibliography{bilbio.bib}
- \addcontentsline{toc}{section}{A.3 ~ Statement}
-\include{chapters/statement}
+\appendix \pagenumbering{Roman}
+ \include{chapters/appendix}
+\addcontentsline{toc}{section}{A.2 ~ Bibliography}
+ \bibliography{bilbio.bib}
+\addcontentsline{toc}{section}{A.3 ~ Declaration}
+ \include{chapters/statement}
+
 
 \end{document}

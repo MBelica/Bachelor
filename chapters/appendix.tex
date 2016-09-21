@@ -1,5 +1,8 @@
-\chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix}  \renewcommand{\thesection}{A.\arabic{section}}
+\chapter*{Appendix}  \addcontentsline{toc}{chapter}{Appendix} 
+
 \addcontentsline{toc}{section}{A.1 ~ Theorems}
+
+
 \begin{atheorem}[Alternative definition of the Delta-Distribution] \label{athem:delta}
 	For the sequence of functionals $\delta_{\epsilon}$ for $\epsilon > 0$, $x_{0} \in \R$ and $f \in \mathfrak{D}(\R)$ defined through $\delta_{\epsilon}(f) \coloneqq \frac{1}{\sqrt{2 \pi} \epsilon} \int_{\R} e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} f(x) dx$ it holds that  
  		\[ \delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f). \]
@@ -15,14 +18,14 @@
 \end{atheorem}
 
 \begin{atheorem}[$L^{p}$-Approximation by test functions] \label{athm:approx}
-	For $U \subseteq \R^{n}$ open, $C_{0}^{\infty}(U)$ is dense in $L^{p}(U)$, if $1 \leq p < \infty$. % todo antonii fragen
+	For $U \subseteq \R^{n}$ open, $C_{0}^{\infty}(U)$ is dense in $L^{p}(U)$, if $1 \leq p < \infty$.
 	
 	\begin{proof}
 		See \cite[p. 31]{adams2003sobolev}.
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[$H^{k}$-Approximation by test functions] 
+\begin{atheorem}[$H^{k}$-Approximation by test functions] \label{athm:hkapprox}
 	Let $\Omega \subseteq \R^{n}$ be an open set. Let $u \in H^{k}(\Omega)$, then there exists a sequence of functions $u_{k} \in C^{\infty}(\Omega)$ such that $\| u_{k} - u \|_{H^{k}(\Omega)}$ as $n \rightarrow \infty$.
 	
 	\begin{proof}
@@ -209,6 +212,16 @@
 	\end{proof}
 \end{atheorem}
 
+\begin{atheorem}[Poincare's inequality] \label{poincareineq}
+ If a domain $\Omega \subset \R^{n}$ has finite width, then there exists a constant $c = c(p)$ such that for all $\varphi \in C_{0}^{\infty}(\Omega)$
+ 	\[ \| \varphi \|_{L^{p}(\Omega)} \leq c \| \nabla \varphi \|_{L^{p}(\Omega)} \]
+ 	With Theorem \ref{athm:approx} this can be extended to every function $u \in L^{p}(\Omega)$.
+ 	
+	\begin{proof}
+		See \cite[p. 183]{adams2003sobolev}.
+	\end{proof}
+\end{atheorem}
+
 \begin{atheorem}[Poincare's min-max principle for eigenvalues] \label{athm:poincare}
 	Let $X$ be a seperable Hilbert space and $\langle \cdot, \cdot \rangle_{X}$ denote the scalar product on $X$. Let $A \colon \mathcal{D}(A) \rightarrow X$ be a self-adjoint operator where $\mathcal{D}(A) \subseteq X$. If the set of eigenvalues $\lambda_{s}$ is at most countable, then
 	\begin{equation*}
@@ -220,7 +233,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Properties of self-adjoint operators] ~\
+\begin{atheorem}[Properties of self-adjoint operators] ~\ \label{athm:propself}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Every self-adjoint is symmetric and closed.
 			\begin{proof}
@@ -261,7 +274,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Trace Theorem]
+\begin{atheorem}[Trace Theorem] \label{athm:trace}
 	Assume $U$ is bounded and $\partial U$ is $C^{1}$. Then there exists a bounded linear operator
 		\[ T \colon H^{1}(U) \rightarrow L^{2}(\partial U) \]
 	such that
@@ -284,4 +297,4 @@
 		\[ (-1)^{\alpha} \int_{\Omega} f \varphi' = \int_{\Omega} g \varphi  = \int_{\Omega} \tilde{g} \varphi. \]
 		Then $\int_{\Omega} \left( g - \tilde{g} \right) \varphi = 0$ for all $\varphi \in C_{0}^{\infty}(\Omega)$, whence $g - \tilde{g} = 0$ almost everywhere.	
 	\end{proof}
-\end{atheorem}  
+\end{atheorem} 
