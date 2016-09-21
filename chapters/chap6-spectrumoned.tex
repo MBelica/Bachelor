@@ -214,11 +214,11 @@ The other inclusion can be established by using the properties of the Floquet tr
 				u_{l} \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk \label{ul}
 			\end{equation} 
 
-		Since $\lambda$ is chosen to be outside of the spectrum the operator, $A_{k} - \lambda I$ is invertible, and therefore the following equation has for every $f \in L^{2}(\R)$ and $k \in B$ a unique solution $v \in \mathcal{D}(A_{k})$
+		Since $\lambda$ is chosen to be outside of the spectrum the operator, $(A_{k} - \lambda I)$ is invertible, and therefore the following equation has for every $f \in L^{2}(\R)$ and $k \in \overline{B}$ a unique solution $v \in \mathcal{D}(A_{k})$
 		\begin{equation}
 			(A_{k} - \lambda I) v(\cdot, k) = (Uf)(\cdot, k) \quad \text{ on } \Omega. \label{4.9}			
 		\end{equation}
-		Due to \eqref{4.9}, both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy quasi-periodic boundary conditions. Hence, \eqref{eigv-problem}, \eqref{lambda-distance} and Parseval's identity yield
+		Due to \eqref{4.9}, both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy quasi-periodic boundary conditions. Hence, \eqref{eigv-problem}, \eqref{lambda-distance} and Parseval's identity (Theorem \ref{athm:parseval}) yield
 		\begin{align*}
 			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& = \sum_{s=1}^{\infty}|\langle (A_{k} - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
@@ -237,7 +237,9 @@ The other inclusion can be established by using the properties of the Floquet tr
 			\begin{equation}
 				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R) \text{ as } l \rightarrow \infty. \label{ulflconvergence}
 			\end{equation}
-		We will now prove that  % todo Zurück Ist distributionell Lösung okay? also meine Änderung in Kapitel 6.3
+		We will now prove that, in a distributional sense, 
+		\[ (A - \lambda I) u_{l} = f_{l}, \]
+		for all $l \in \N$, which implies that
 		\begin{equation}
 				\langle u_{l}, (A - \lambda I) v \rangle = \langle f_{l}, v\rangle \text{ for all } l \in \N, v \in \mathcal{D}(A); \label{lefttoprove}
 			\end{equation} 
@@ -246,7 +248,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 		which is the desired result. 
 		~\\
 				
-		Eventually, we are left to prove \eqref{lefttoprove}. So, let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open interval containing $\supp(\varphi)$ in its interior. By Fubini's Theorem we know that 
+		Eventually, we are left to prove \eqref{lefttoprove}. So, let $\varphi \in C_{0}^{\infty}(\R)$ be fixed, and let $K \subseteq \R$ denote an open ball containing $\supp(\varphi)$ in its interior. By Fubini's Theorem we know that 
 		\begin{align*}
 			r_{s}(x, k) & \coloneqq \frac{1}{\lambda_{s}(k) - \lambda} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)} \psi_{s}(x, k) \overline{(A - \lambda I) \varphi(x)}, 
 			\intertext{and}
