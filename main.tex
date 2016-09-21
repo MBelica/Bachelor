@@ -66,9 +66,10 @@
 
 \begin{document} \urlstyle{rm}
 
+\pagenumbering{gobble}
 \include{chapters/kit-cover}
- 
 \tableofcontents
+
 \include{chapters/chap1-introduction}
 \include{chapters/chap2-preliminaries}
 \include{chapters/chap3-schroedingeroperator}
@@ -77,10 +78,12 @@
 \include{chapters/chap6-spectrumoned}
 \include{chapters/chap7-multidcase}
 \include{chapters/chap8-outlconcl}
-\appendix
 
+\appendix \pagenumbering{Roman} 
 \include{chapters/appendix}
+ \addcontentsline{toc}{section}{A.2 ~ Bibliography}
 \bibliography{bilbio.bib}
+ \addcontentsline{toc}{section}{A.3 ~ Statement}
 \include{chapters/statement}
 
 \end{document}

@@ -1,5 +1,5 @@
-\chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix} 
-
+\chapter*{Appendix} \addcontentsline{toc}{chapter}{Appendix}  \renewcommand{\thesection}{A.\arabic{section}}
+\addcontentsline{toc}{section}{A.1 ~ Theorems}
 \begin{atheorem}[Alternative definition of the Delta-Distribution] \label{athem:delta}
 	For the sequence of functionals $\delta_{\epsilon}$ for $\epsilon > 0$, $x_{0} \in \R$ and $f \in \mathfrak{D}(\R)$ defined through $\delta_{\epsilon}(f) \coloneqq \frac{1}{\sqrt{2 \pi} \epsilon} \int_{\R} e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} f(x) dx$ it holds that  
  		\[ \delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f). \]
@@ -15,7 +15,7 @@
 \end{atheorem}
 
 \begin{atheorem}[$L^{p}$-Approximation by test functions] \label{athm:approx}
-	For $U \subseteq \R^{n}$ open, $C_{0}^{\infty}(U)$ is dense in $L^{p}(U)$, if $1 \leq p < \infty$.
+	For $U \subseteq \R^{n}$ open, $C_{0}^{\infty}(U)$ is dense in $L^{p}(U)$, if $1 \leq p < \infty$. % todo antonii fragen
 	
 	\begin{proof}
 		See \cite[p. 31]{adams2003sobolev}.

@@ -48,7 +48,7 @@ We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Therefore, procee
 The last three properties can be obtained by following the same approach as in Section \ref{sec:3.2}. The quasi-periodic condition on $\psi$ results from the boundary condition on $H^{1}_{k}$. To establish the quasi-periodic condition on $\psi'$ we proceed as follows. Choosing in \eqref{weak-formulation-to-the-restricted} a function $v \in \mathcal{D}(A_{k})$ with $\supp v = \Omega$, $v\left(x_{0}\right) = 0$ and $v\left(\frac{1}{2}\right) \neq 0$ and partial integration yields
 \[ - \int_{\Omega} u''(x) \overline{v(x)} dx +  u'(x) \overline{v(x)} \big|_{-\frac{1}{2}}^{\frac{1}{2}} + - \mu \int_{\Omega} u(x) \overline{v(x)} dx = \int_{\Omega} f(x) \overline{v(x)} dx \] 
 \[ \iff u'\left(\frac{1}{2}\right) e^{-ik} = u'\left(-\frac{1}{2}\right), \] 
-whereas in the last step we used the fact $A_{k} u = f$ and that $v \in H^{1}_{k}$. In the remainder of this chapter we will further investigate the operator $A_{k}$. We will show that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $L^{2}(\R)$. For this purpose, we first need to prove that $R_{\mu, k}$ is compact.
+whereas in the last step we used the fact that $A_{k} u = f$ and that $v \in H^{1}_{k}$. In the remainder of this chapter we will further investigate the operator $A_{k}$. We will show that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $L^{2}(\R)$. For this purpose, we first need to prove that $R_{\mu, k}$ is compact.
 
 \section{The compactness of the restricted resolvent function} \label{sec:4.2}
 
@@ -98,7 +98,7 @@ Therefore, we define an operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \right
 	\[ \tilde{A}_{k} \varphi_{s}(x, k) \coloneqq \begin{cases}
 		\left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0} - \frac{1}{2}, x_{0})} & \text{for } x \in (x_{0} - \frac{1}{2}, x_{0}) \\ \left( \frac{d}{dx} + ik \right)^{2} \varphi_{s}(x, k)|_{(x_{0}, x_{0}  + \frac{1}{2})} & \text{for } x \in (x_{0}, x_{0} + \frac{1}{2}).
 	\end{cases} \] 
-Note that we defined the operator $\tilde{A_{k}}$ to determine eigenvalues and eigenfunctions of $A_{k}$, hence we require $\mathcal{D}(\tilde{A_{k}}) = \mathcal{D}(A_{k})$. Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields % todo Andrii require
+Note that we defined the operator $\tilde{A_{k}}$ to determine eigenvalues and eigenfunctions of $A_{k}$, hence we require $\mathcal{D}(\tilde{A_{k}}) = \mathcal{D}(A_{k})$. Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields 
 	\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
 From this, \eqref{comment-after} and from Theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the now periodic eigenvalue problem
 	\begin{align}
