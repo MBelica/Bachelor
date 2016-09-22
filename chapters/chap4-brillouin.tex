@@ -79,7 +79,7 @@ The eigenvalue $\lambda$ depends on the boundary condition we set on the domain,
 	\begin{equation}
 		\tilde{\lambda}(k) \coloneqq \frac{1}{\lambda(k)} - \mu \label{ewresp}
 	\end{equation} 
-is an eigenvalue for the eigenfunction $w$ except that now of the operator $A_{k}$. Using the compactness of $R_{\mu, k}$ and \eqref{ewresp}, we see that $A_{k}$ has a purely discrete spectrum satisfying
+is an eigenvalue for the eigenfunction $w$ of the operator $A_{k}$. Using the compactness of $R_{\mu, k}$ and \eqref{ewresp}, we see that $A_{k}$ has a purely discrete spectrum satisfying
 	\begin{equation}
 		\lambda_{1}(k) \leq \lambda_{2}(k) \leq \dotsc \leq \lambda_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{comment-after}
 	\end{equation} 
@@ -100,7 +100,7 @@ Therefore, we define an operator $\tilde{A_{k}} \colon \mathcal{D}(A_{k}) \right
 	\end{cases} \] 
 Note that we defined the operator $\tilde{A_{k}}$ to determine eigenvalues and eigenfunctions of $A_{k}$, hence we require $\mathcal{D}(\tilde{A_{k}}) = \mathcal{D}(A_{k})$. Using \eqref{eigv-problem} and \eqref{quasi-periodic-condition}, yields 
 	\[ \varphi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x - \frac{1}{2})} \psi_{s}\left(x - \frac{1}{2}, k\right) = e^{-ik(x + \frac{1}{2})} \psi_{s}\left(x + \frac{1}{2}, k\right) = \varphi_{s}\left(x + \frac{1}{2}, k\right). \]
-From this, \eqref{comment-after} and from Theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the now periodic eigenvalue problem
+From this, \eqref{comment-after} and from Theorem \ref{3.1:thm-Rmuk.isCompact} follows that $(\varphi_{s}(\cdot, k))_{s \in \N}$ is an orthonormal and complete system of eigenfunctions in $L^{2}(\R)$ to the periodic eigenvalue problem
 	\begin{align}
 		\tilde{A}_{k} \varphi = \lambda_{s}(k) \varphi \text{ on } \Omega, \label{mod-eigv-problem} \\
 		\varphi\left(x - \frac{1}{2}\right) = \varphi\left(x + \frac{1}{2}\right), \label{periodic-condition}
