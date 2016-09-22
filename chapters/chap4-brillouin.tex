@@ -1,4 +1,4 @@
-\chapter{Fundamental domain of periodicity and the Brillouin zone}  \label{chap:4}
+\chapter{The restricted operator on the fundamental domain of periodicity}  \label{chap:4}
 
 In this chapter we will restrict the Kronig-Penney model to one periodicity cell and examine the spectrum of the resulting operator. With the help of tools we will introduce in Chapter \ref{chap:5}, solving the eigenvalue problem on the period cell while varying specific boundary conditions for the solution functions can be used to determine the eigenvalues of the unrestricted problem, which is the approach we will adopt in Chapter \ref{chap:6}.
 ~\\ 
@@ -37,7 +37,7 @@ is well-defined, bounded and injective. Consequently, we are able to define $A_{
 	$R_{\mu, k}$ is thus the resolvent function of $A_{k}$.
 \end{remark}
 
-\section{The domain of the restricted Schrödinger operator} \label{sec:4.1}
+\section{The domain} \label{sec:4.1}
 
 We already know that $\mathcal{D}(A_{k}) \subseteq H^{1}_{k}$. Therefore, proceeding as in Section \ref{sec:3.2}, by choosing the similar test functions $v \in H^{1}_{k}$ in \eqref{weak-formulation-to-the-restricted}, we are able to show that
 \begin{align*}
@@ -50,7 +50,7 @@ The last three properties can be obtained by following the same approach as in S
 \[ \iff u'\left(\frac{1}{2}\right) e^{-ik} = u'\left(-\frac{1}{2}\right), \] 
 whereas in the last step we used the fact that $A_{k} u = f$ and that $v \in H^{1}_{k}$. In the remainder of this chapter we will further investigate the operator $A_{k}$. We will show that the eigenfunctions of $A_{k}$ form a complete and orthonormal system in $L^{2}(\R)$. For this purpose, we first need to prove that $R_{\mu, k}$ is compact.
 
-\section{The compactness of the restricted resolvent function} \label{sec:4.2}
+\section{The compactness of the resolvent function} \label{sec:4.2}
 
 \begin{theorem} \label{3.1:thm-Rmuk.isCompact}
 	The operator $R_{\mu, k}$ is compact.
@@ -68,7 +68,7 @@ whereas in the last step we used the fact that $A_{k} u = f$ and that $v \in H^{
 	\end{proof}	
 \end{theorem}		
 
-\section{The spectrum of the restricted Schrödinger operator} \label{sec:4.3}
+\section{The spectrum} \label{sec:4.3}
 Using the compactness of $R_{\mu, k}$, we know on the one hand that every non-zero $\lambda \in \sigma(R_{\mu, k})$ is an eigenvalue of $R_{\mu, k}$ and on the other hand that the at most countable sequence of eigenvalues can only accumulate at $0$, for proofs see \cite[p. 271]{werner2006funkana}. We will now consider the eigenvalue problem to find $\psi \in \mathcal{D}(A_{k}) \subseteq H_{k}^{1}$ such that
 	\begin{equation}
 		A_{k} \psi = \lambda \psi \text{ on } \Omega. \label{eigv-problem}

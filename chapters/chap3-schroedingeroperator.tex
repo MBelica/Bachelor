@@ -12,11 +12,11 @@ In general, one cannot say in which sense a solution to the formal problem
 	\begin{equation}
 		Au = f \quad \text{for } f \in L^{2}(\R) \label{formal-problem}
 	\end{equation}
-	exists since the potential in $A$ consists of Delta-Distributions. If we suppose for a moment that this periodic differential expression is smooth, more specifically, that the potential in every point $x_{k}$ is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak-formulation to the smooth problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak-formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
+	exists since the potential in $A$ consists of Delta-Distributions. If we suppose for a moment that this periodic differential expression is smooth, more specifically, that the potential in every point $x_{k}$ is instead given by \eqref{eq:2.1-smooth_potential} for some $\epsilon > 0$, then formally multiplying it by a test function and integrating by parts yields the so-called weak formulation to the smooth problem whose solution requires less regularity. Motivated by this, by taking the limit of the potential in the weak formulation, we henceforth consider the problem to find for $\mu \in \R$ a function $u \in H^{1}(\R)$ such that
 \begin{equation}
 	\int_{\R} u'(x) \overline{v'(x)} dx + \rho \sum_{i \in \Z} u(x_{i}) \overline{v(x_{i})} - \mu \int_{\R} u(x) \overline{v(x)} dx = \int_{\R} f(x) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R), \label{weak-formulation-of-A}
 \end{equation}	
-holds and call \eqref{weak-formulation-of-A} the weak-formulation of \eqref{formal-problem}. We should note that the left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate the norm with the help of some integration methods via
+holds and call \eqref{weak-formulation-of-A} the weak formulation of \eqref{formal-problem}. We should note that the left-hand side of problem \eqref{weak-formulation-of-A} is actually well-defined and finite, as for any $h \in (0, 1]$ we can estimate the norm with the help of some integration methods via
 \begin{align}
 	\sum_{i \in \Z} |u(x_{i})|^{2} & \leq \sum_{i \in \Z} \left( 2 |u( x_{i} + h )|^{2} +  2 h \int_{x_{i}}^{x_{i} + h} \left| u'(\tau) \right|^{2} d\tau \right) \notag \\
 		 & \leq 2 \sum_{i \in \Z} \left( \frac{1}{h} \int_{\Omega_{i}} |u( x )|^{2} dx + h \int_{\Omega_{i}} \left| u'(\tau) \right|^{2} d\tau \right). \label{preestimation-for-potential}
@@ -30,7 +30,7 @@ The choice of $h = 1$ yields hence the estimation
 	The problem \eqref{weak-formulation-of-A} holds also for all $v \in H^{1}(\R)$ since $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$, for proof see Theorem \ref{athm:approx}.
 \end{remark}
 
-\section{The resolvent-mapping of the one-dimensional Schrödinger operator} \label{sec:3.1}
+\section{The resolvent-mapping} \label{sec:3.1}
 
 As a first step, in order to define the operator $A$ explicitly, we will show that for each $f \in L^{2}(\R)$ the equation \eqref{weak-formulation-of-A} has a unique solution $u \in H^{1}(\R)$. 
 \begin{definition}
@@ -113,13 +113,13 @@ Again, due to the linearity of the integral and the uniqueness of the solution, 
 	\end{proof}
 \end{theorem}
 
-\section{The domain of the one-dimensional Schrödinger operator} \label{sec:3.2}
+\section{The domain} \label{sec:3.2}
 
 Resulting from Theorem \ref{rmuinj}, we know that $R_{\mu}$ is invertible. This allows us to define the aforementioned operator $A$ explicitly.
 \begin{definition}
 	Let $A \colon \mathcal{D}(A) \subseteq L^{2}(\R) \rightarrow L^{2}(\R)$ be the linear operator defined by
 	\[ A \coloneqq R_{\mu}^{-1} + \mu I, \quad \mathcal{D}(A) = \mathcal{R}(R_{\mu}). \]
-\end{definition} % todo Andrii: consistent
+\end{definition}
 Note that this definition is consistent with the formal definition in \eqref{the-operator-A-formally} and we will show that it is independent of the choice of $\mu \in \R$, still assuming $\mu$ is small enough as chosen in Theorem \ref{2.1:thm-LaxMilgram}. 
 \begin{remark}
 	$R_{\mu}$ is thus the resolvent function of $A$.
@@ -186,7 +186,7 @@ Consequently, we conclude that
 	From \eqref{Aaction} and \eqref{DomA} follows that the definition of $A$ is independent of $\mu$.
 \end{remark}
 
-\section{The self-adjointness of the Schrödinger operator} \label{sec:3.3}
+\section{The self-adjointness} \label{sec:3.3}
 
 In Chapter \ref{chap:6} we will need the fact that the operator $A$ is self-adjoint. To prove this we first have to show that $R_{\mu}$ and $R_{\mu}^{-1}$ are symmetric operators.
 

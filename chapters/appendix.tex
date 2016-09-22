@@ -1,19 +1,18 @@
-\chapter*{Appendix}  \addcontentsline{toc}{chapter}{Appendix} 
-
+\chapter*{Appendix} \cftaddtitleline{toc}{chapter}{Appendix}{}
 \addcontentsline{toc}{section}{A.1 ~ Theorems}
 
 
 \begin{atheorem}[Alternative definition of the Delta-Distribution] \label{athem:delta}
-	For the sequence of functionals $\delta_{\epsilon}$ for $\epsilon > 0$, $x_{0} \in \R$ and $f \in \mathfrak{D}(\R)$ defined through $\delta_{\epsilon}(f) \coloneqq \frac{1}{\sqrt{2 \pi} \epsilon} \int_{\R} e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} f(x) dx$ it holds that  
+	For the sequence of functionals $\delta_{\epsilon}$ for $\epsilon > 0$, $x_{0} \in \R$ and $f \in \mathfrak{D}(\R)$ defined through $\delta_{\epsilon}(f) \coloneqq \frac{1}{\sqrt{2 \pi} \epsilon} \int_{\R} f(x) e^{-\frac{(x - x_{0})^{2}}{2 \epsilon^{2}}} dx$ it holds that  
  		\[ \delta_{x_{0}}(f) = \lim_{\epsilon \rightarrow 0} \delta_{\epsilon}(f). \]
 	
 	\begin{proof}
-		Given $\delta_{\epsilon}$ and $x_{0} \in \R$ we have
-			\[ \delta_{\epsilon}(f) = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}} dx} \]
+		By definition we have
+			\[ \delta_{\epsilon}(f) = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}}}dx. \]
 		Substituting $z \coloneqq \frac{x - x_{0}}{\sqrt{2} \epsilon}$ yields
-			\[ \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}} dx} = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(\sqrt{2} \epsilon z + x_{0}) e^{-z^{2}} dz \]
-		Using the Taylor series of $f$ around $x_{0}$ and a formula for the Gaussian integral we then get
-			\[ \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} \left( f(x_{0}) + \mathcal{O}(\epsilon) \right) = f(x_{0}) \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} = f(x_{0}). \]
+			\[ \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(x) e^{-\frac{(x-x_{0})^{2}}{2 \epsilon^{2}}} dx = \frac{1}{\sqrt{2 \pi} \epsilon} \int_{-\infty}^{\infty} f(\sqrt{2} \epsilon z + x_{0}) e^{-z^{2}} dz. \]
+		Now, using the Taylor series of $f$ around $x_{0}$ and a formula for the Gaussian integral we then get
+			\[ \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} \left( f(x_{0}) + \mathcal{O}(\epsilon) \right) dz = f(x_{0}) \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-z^{2}} dz = f(x_{0}). \]
 	\end{proof}
 \end{atheorem}
 
@@ -27,7 +26,7 @@
 
 \begin{atheorem}[$H^{k}$-Approximation by test functions] \label{athm:hkapprox}
 	Let $\Omega \subseteq \R^{n}$ be an open set. Let $u \in H^{k}(\Omega)$, then there exists a sequence of functions $u_{k} \in C^{\infty}(\Omega)$ such that $\| u_{k} - u \|_{H^{k}(\Omega)}$ as $n \rightarrow \infty$.
-	
+	% todo todo
 	\begin{proof}
 		See \cite[p. 138]{adams2003sobolev}.
 	\end{proof}	
@@ -36,8 +35,8 @@
 
 \begin{atheorem}[Bessel's inequality] \label{athm:bessel}
 	Let $H$ be a Hilbert space, and suppose that $e_1, e_2, ...$ is an orthonormal sequence in $H$. Then, for any $x \in H$ one has
-	\[ \sum_{k=1}^{\infty}\left\vert\left\langle x,e_k\right\rangle \right\vert^2 \le \left\Vert x\right\Vert^2 \]
-	where $\langle \cdot,\cdot \rangle$ denotes the inner product in the Hilbert space $H$.
+	\[ \sum_{k=1}^{\infty}\left\vert\left\langle x,e_k\right\rangle_{H} \right\vert^2 \le \left\Vert x\right\Vert^2 \]
+	where $\langle \cdot,\cdot \rangle_{H}$ denotes the inner product in the Hilbert space $H$.
 
 	\begin{proof}
 		See \cite[p. 233]{werner2006funkana}.
@@ -45,7 +44,7 @@
 \end{atheorem}
 
 \begin{atheorem}[Cauchy–Schwarz inequality] \label{athm:csi}
-	Fr all vectors $u$ and $v$ of an inner product space it is true that
+	For all vectors $u$ and $v$ of an inner product space it is true that
 		\[ \left| \langle u,v \rangle \right|^{2} \leq \langle u,u \rangle \cdot \langle v,v \rangle, \]
 	where $\langle \cdot ,\cdot \rangle$ is the inner product. 
 
@@ -58,7 +57,7 @@
 	Let $X$ be a Banach space. Is $A$ a closed operator and $\mathcal{D}(A) = X$, then $A$ is continuous on $X$.
 
 	\begin{proof}
-		See \cite[p. 417]{evans1998partial}.
+		See \cite[p. 638]{evans1998partial}.
 	\end{proof}
 \end{atheorem}
 
@@ -139,7 +138,7 @@
 	\end{proof}
 \end{atheorem}
 
-\begin{atheorem}[Equivalent definitions of closed operators]
+\begin{atheorem}[Equivalent definitions of closed operators] % todo  kein Label
 	Let X, Y be two Banach spaces. A linear operator $A \colon X \supset \mathcal{D}(A)  \rightarrow Y$ is closed if for every sequence $(x_n)_{n \in \N}$ in $\mathcal{D}(A)$ from
 	\[ x_{n} \rightarrow x \in X \text{ and } Tx_{n} \rightarrow y \in Y \]
 	follows that $x \in D$ and $Tx = y$.
@@ -251,16 +250,6 @@
 	
 	\begin{proof}
 		See \cite[p. 259]{werner2006funkana}.
-	\end{proof}
-\end{atheorem}
-
-\begin{atheorem}[Riesz' representation theorem]
-	Let $H$ be a Hilbert space, and let $H^{*}$ denote its dual space, consisting of all continuous linear functionals from $H$ into $\R$ or $\C$. If $x$ is an element of $H$, then the function $\varphi_{x}$, for all $y$ in $H$ defined by
-	\[ \varphi_{x}(y) = \left\langle y,x\right\rangle_{H}, \]
-	where $\langle \cdot ,\cdot \rangle_{H}$ denotes the inner product of the Hilbert space, is an element of $H^{*}$. Hence, every element of $H^{*}$ can be written uniquely in this form.
-	
-	\begin{proof}
-		See \cite[p. 284]{evans1998partial}
 	\end{proof}
 \end{atheorem}
 

@@ -3,7 +3,7 @@
 In this chapter, we want to model the movement of a particle in $\R^{n}$ with periodically distributed, smooth, $(n-1)$-dimensional surfaces supporting a potential. To show that the basic concepts presented in the previous chapters hold also in the new setting, we will give a formal justification of applicability of the one-dimensional proofs to the multi-dimensional case in a series of theorems.
 ~\\
 
-To start with, let $\Omega$ denote a periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $\Omega$ being the unit cube $[0, 1]^{n}$. Contained in $\Omega$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{\Omega}$. Furthermore, let $D \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial D$. We will denote with $\Omega_{j} = Y + j$ the $j$th copy of $\Omega$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $S_{j} = S + j$. Finally, we denote with $\Omega_{i}^{+}$ and $\Omega_{i}^{-}$ the opposing edges of $\Omega$ for $i = 1, \dotsc, n$, as illustrated in Figure \ref{fig:7.1}.
+To start with, let $\Omega$ denote a periodicity cell in $\R^{n}$ relating to the problem introduced above and $B^{n}$ the corresponding Brillouin zone, for simplicity assume $\Omega$ being the unit cube $[0, 1]^{n}$. Contained in $\Omega$ let $S$ be a smooth surface without a boundary subject to the conditions $\dim S = n - 1$ and $S \subseteq \overset{\circ}{\Omega}$. Furthermore, let $D \subseteq Y$ denote the set enclosed by $S$, such that $S = \partial D$. We will denote with $\Omega_{j} = Y + j$ the $j$th copy of $\Omega$ for any $j \in \Z^{n}$, which results through translation of the periodicity cell by $j$, and analogously for $S_{j} = S + j$ and $D_{j} = D + j$. Finally, we denote with $\Omega_{i}^{+}$ and $\Omega_{i}^{-}$ the opposing edges of $\Omega$ for $i = 1, \dotsc, n$, as illustrated in Figure \ref{fig:7.1}.
 ~\\
 
 The mathematical representation of the above is a multi-dimensional Schrödinger operator $A^{n}$ whose operation is formally defined by
@@ -12,7 +12,7 @@ The mathematical representation of the above is a multi-dimensional Schrödinger
 \end{equation}
 on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Delta-Distribution on hypersurface $S_{i}$. Let us recall that on a hypersurface $S$ the Delta-Distribution acts on $\varphi \in C_{0}^{\infty}(\R^{n})$ by 
 	\[ \delta_{S}\left(\varphi\right) \coloneqq \int_{S} \varphi(s) ds . \]
-where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed explanation see \cite[Chapter 14]{forster2012analysis}. Since every function in $H^{1}(\R^{n})$ can be approximated by a sequence in $C_{0}^{\infty}(\R^{n})$ (Theorem \ref{athm:hkapprox}), we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
+where $s$ is the hypersurface measure associated to $S_{j}$; for a more detailed explanation see \cite[Chapter 14]{forster2012analysis}. Since every function in $H^{1}(\R^{n})$ can be approximated by a sequence in $C_{0}^{\infty}(\R^{n})$ (Theorem \ref{athm:hkapprox}), we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
 	\[ \delta_{S}\left(u\right) \coloneqq \lim_{n \rightarrow \infty} \delta_{S}\left(u_{n}\right) . \]
 \begin{remark}
 	This definition is independent of the chosen sequence in $C_{0}^{\infty}(\R^{n})$.
@@ -47,11 +47,11 @@ where $s$ is the hypersurface measure associated to $S_{j}$, for a more detailed
 	\caption{Periodicity cell for the multi-dimensional potential} \label{fig:7.1}
 \end{figure}
 
-Again motivated by the weak-formulation, given a right-hand side $f \in L^{2}(\R^{n})$ we consider for some $\mu \in \R$ the problem to find $u \in H^{1}(\R^{n})$ such that
+Again motivated by the weak formulation, given a right-hand side $f \in L^{2}(\R^{n})$ we consider for some $\mu \in \R$ the problem to find $u \in H^{1}(\R^{n})$ such that
 	\begin{equation}
 		\int_{\R^{n}} \nabla u(x) \overline{\nabla v(x)} dx + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds - \mu \int_{\R^{n}} u(x) \overline{v(x)} dx = \int_{\R^{n}} f(x) \overline{v(x)} dx \label{eq:7.2-md-weak-formulation}
 	\end{equation} 
-holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u, v$ the traces. As $u, v \in H^{1}(\R)$, the traces are in $L^{2}(\R^{n})$ by \cite[p. 251, Theorem 5.1]{evans1998partial} and \cite[p. 164]{adams2003sobolev}, and thus, the second term on the left-hand side in \eqref{eq:7.2-md-weak-formulation} is well defined by the next remark.
+holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u, v$ the traces. As $u, v \in H^{1}(\R)$, the traces are in $L^{2}(\R^{n})$ by \cite[p. 251, Theorem 5.1]{evans1998partial} and \cite[p. 164]{adams2003sobolev}, and thus, in view of the following remark, the second term on the left-hand side of \eqref{eq:7.2-md-weak-formulation} is well-defined.
 
 \begin{remark} 
 	The term in \eqref{eq:7.2-md-weak-formulation} originating from the potential is finite.
@@ -93,7 +93,7 @@ Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We c
 \end{theorem}
 
 \begin{proof}
- 	Comparing the three claimed properties to those in $\mathcal{D}(A)$ in Section \ref{sec:3.2} we can see that by analogously choosing particular functions $v \in C_{0}^{\infty}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation} the three asserted properties follow. The first is the equivalent to \eqref{Aaction}, the second is a consequence of $u \in H^{1}(\R^{n})$ and the third follows from partial integration in \eqref{eq:7.2-md-weak-formulation} with a $v \in C_{0}^{\infty}(\R^{n})$ such that $\supp v = \Omega$.
+ 	Comparing these properties to those in $\mathcal{D}(A)$ in Section \ref{sec:3.2} we can see that by analogously choosing particular functions $v \in C_{0}^{\infty}(\R^{n})$ in \eqref{eq:7.2-md-weak-formulation} the three asserted properties follow. The first is the equivalent to \eqref{Aaction}, the second is a consequence of $u \in H^{1}(\R^{n})$ and the third follows from partial integration in \eqref{eq:7.2-md-weak-formulation} with a $v \in C_{0}^{\infty}(\R^{n})$ such that $\supp v = \Omega$.
 \end{proof}
 
 \begin{figure}[!ht] \centering
@@ -122,7 +122,7 @@ Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We c
 	\caption{Normal $\eta$ on the hypersurface $S$ in a periodicity cell}  \label{fig:7.2}
 \end{figure}
 	
-We are interested in the periodic spectral problem of the operator $A^{n}$. Therefore, we will again relate the spectrum of the operator $A^{n}$ on the whole of $\R^{n}$ via the Floquet transform to a family of eigenvalue problems on the periodicity cell. However, first, we need to show the self-adjointness of the operator $A^{n}$.
+We are interested in the periodic spectral problem of the operator $A^{n}$. Therefore, we will again relate the spectrum of the operator $A^{n}$ on the whole of $\R^{n}$ via the Floquet transformation to a family of eigenvalue problems on the periodicity cell. However, first we need to show the self-adjointness of the operator $A^{n}$.
 
 \begin{remark}
 	The operator $A^{n}$ is self-adjoint.	
@@ -132,7 +132,7 @@ We are interested in the periodic spectral problem of the operator $A^{n}$. Ther
 	The operators $R_{\mu}^{n}$ and $\left(R_{\mu}^{n}\right)^{-1}$ are symmetric. The fact that for any $u \in \mathcal{D}\left(\left(R_{\mu}^{n}\right)^{-1}\right)$ there exists $f \in L^{2}(\R^{n})$ such that $u = R_{\mu}^{n} f$ and that $R_{\mu}^{n}$ is defined on the whole of $L^{2}(\R^{n})$ then yields the self-adjointness of $A^{n}$ similarly to the proof given in Section \ref{sec:3.3}.
 \end{proof}
 
-The periodicity cell we will now focus on can be chosen arbitrary, let this for simplicity be $Y$. For brevity, let us define for $k \in \overline{B^{n}}$ 
+The periodicity cell we will now focus on can be chosen arbitrarily, let this for simplicity be $Y$. For brevity, let us define for $k \in \overline{B^{n}}$ 
 \[ H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{\Omega_{j}^{+}} = w \big|_{\Omega_{j}^{-}} e^{i k_{j}} \text{ for } k \in \overline{B^{n}}, j = 1,\dotsc, n \right\}, \]
  and consider the problem to find $u \in H^{1}_{k, n}$ such that
 	\begin{equation}
@@ -140,11 +140,11 @@ The periodicity cell we will now focus on can be chosen arbitrary, let this for 
 	\end{equation} 
 holds for all $v \in H^{1}_{k, n}$. 
 ~\\ ~\\
-Again, Lax-Milgram's Theorem ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined, and we can show that $R_{\mu, k}$ is injective. This allows us to define 
+Again, Lax-Milgram's Theorem (Theorem \ref{athm:lm}) ensures the existence of a unique solution $u \in H^{1}_{k, n}$ if $\mu \in \R$ is small enough, and the operator $R_{\mu, k} \colon f \mapsto u$ is in return well-defined, and we can show that $R_{\mu, k}$ is injective. This allows us to define 
 	\[ A_{k}^{n} \coloneqq \left(R_{\mu, k}^{n}\right)^{-1} + \mu I, \quad \mathcal{D}(A_{k}^{n}) = \mathcal{R}(R_{\mu, k}^{n}), \]
 as the operator for the multi-dimensional case of our problem on the fundamental domain of periodicity.
 
-\begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can characterise the solution $u \in \mathcal{D}(A^{n}_{k}) \subseteq H^{1}_{k, n}$ from \eqref{eq:7.2-md-weak-formulation}, namely that for all $j \in \Z^{n}$ it holds:
+\begin{theorem}[Characterisation of $\mathcal{D}(A^{n}_{k})$] Let $Y \coloneqq \R^{n} \setminus \overline{\bigcup_{j \in \Z^{n}} D_{j}}$. We can characterise the solution $u \in \mathcal{D}(A^{n}_{k}) \subseteq H^{1}_{k, n}$ from \eqref{eq:7.2-md-weak-formulation}, such that for all $j \in \Z^{n}$ it holds:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\Delta u \in L^{2}(D_{j})$, $\Delta u \in L^{2}(Y)$ and $\sum_{j \in \Z^{n}} \|\Delta u \|_{L^{2}(B_{j})}^{2} < \infty$
 		\item $u \big|_{S_{j} - 0} = u \big|_{S_{j} + 0}$
@@ -154,7 +154,7 @@ as the operator for the multi-dimensional case of our problem on the fundamental
 \end{theorem}
 	
 \begin{proof}
- 	The first three properties follow as in Theorem \ref{thrm:7.2}. The quasi-periodic condition on the function $u \in \mathcal{D}(A^{n}_{k})$ follows from the boundary condition in $H^{1}_{k, n}$. Additionally, the quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to satisfy additionally quasi-periodic conditions for their weak derivative
+ 	The first three properties can be proven as in Theorem \ref{thrm:7.2}. The quasi-periodic condition on the function $u \in \mathcal{D}(A^{n}_{k})$ follows from the boundary condition in $H^{1}_{k, n}$. Additionally, the quasi-periodic boundary conditions on $H^{1}_{k,n}$ require a solution $u \in H^{1}_{k, n}$ to satisfy additionally quasi-periodic conditions for their weak derivative
  		\[ \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{+}} = e^{ik_{1}} \frac{\partial u}{\partial x_{1}}\big|_{\Omega_{1}^{-}}. \]
  		We can see this by partial integration in \eqref{eq:7.3-md_weak_formulation_res} with a function $v \in C_{0}^{\infty}(\R^{n})$ such that $U^{+}_{j}, U^{-}_{j} \not\subset \supp v$ where $U^{+}_{j} \supset \Omega_{j}^{+}$ and $U^{-}_{j} \supset \Omega_{j}^{-}$ are neighbourhoods of the opposing edges for $j = 2, \dotsc, n$, and analogously for the other coordinates.
 \end{proof}
@@ -175,8 +175,8 @@ As before, we understand $\psi_{s}$ extended by the boundary condition on $\Omeg
 	\begin{equation}
 		\lambda^{n}_{1}(k) \leq \lambda^{n}_{2}(k) \leq \dotsc \leq \lambda^{n}_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{md-comment-after}
 	\end{equation}
-Taking into account Theorem \ref{eigvcso} we know that the to \eqref{md-eigv-problem} corresponding eigenfunctions form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $L^{2}(\R^{n})$. By transformations of the problem \eqref{md-eigv-problem} such that the boundary condition is independent of $k$., similar to the one in \eqref{mod-eigv-problem} and \eqref{periodic-condition}, we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B^{n}}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B^{n}} \}$ is again a compact real interval for each $s \in \N$.
+Taking into account Theorem \ref{eigvcso} we know that the eigenfunctions corresponding to \eqref{md-eigv-problem} form a $\langle \cdot , \cdot \rangle$-orthonormal and complete system $(\psi_{s}(\cdot, k))_{s \in \N}$ of eigenfunctions in $L^{2}(\R^{n})$. By transformations of the problem \eqref{md-eigv-problem} such that the boundary condition is independent of $k$, similar to those in \eqref{mod-eigv-problem} and \eqref{periodic-condition}, we are then able to show that the eigenvalues of $A^{n}_{k}$ are continuous functions of $k \in \overline{B^{n}}$, and thus $I^{n}_{s} = \{ \lambda^{n}_{s}(k) : k \in \overline{B^{n}} \}$ is again a compact real interval for each $s \in \N$.
 ~\\
 
-Finally, our main result for the multi-dimensional case follows from using the same arguments as in Chapter \ref{**-condition} based on a similar cut-off function $\eta$ as in \eqref{eta}, Bloch waves and the Floquet transform, now for the multi-dimensional situation, to relate the spectrum of the operator on the whole of $\R^{n}$ to a family of eigenvalue problems on the periodicity cell while varying the boundary condition. We claim that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the compact intervals $I^{n}_{s}$, i.e.
+Finally, our main result for the multi-dimensional case follows from using the same arguments as in Chapter \ref{**-condition} based on a similar cut-off function $\eta$ as in \eqref{eta}, Bloch waves and the Floquet transformation, now for the multi-dimensional situation, to relate the spectrum of the operator on the whole of $\R^{n}$ to a family of eigenvalue problems on the periodicity cell while varying the boundary condition. We claim that the spectrum of a self-adjoint Schrödinger operator with periodic delta-potential on a hypersurface is the union of the compact intervals $I^{n}_{s}$, i.e.
 	\[ \sigma(A^{n}) = \bigcup_{s \in \N} I^{n}_{s}. \]

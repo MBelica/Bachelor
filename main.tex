@@ -1,3 +1,6 @@
+% todo Definitionsbereich kommt später, differential Ausdruck
+% todo resolvent bounded anyway per definition anyway
+% todo 4 Kommentare, Änderung letztes Kapitel, Definition-Änderung, Inhaltsverzeichnis
 \documentclass[10pt]{mitthesis}
 
 
@@ -28,6 +31,7 @@
 \usepackage{pgf}
 \usepackage{pgfplots}
 \usepackage{tikz}
+\usepackage{tocloft}
 \usepackage{url}
 \usepackage{xpatch}
 
@@ -61,7 +65,7 @@
 \newtheorem*{definitions}{Definitions}
 \numberwithin{equation}{chapter}
 \newtheorem{atheorem}{Theorem}[chapter]
-\renewcommand{\theatheorem}{A.\arabic{atheorem}}
+\renewcommand{\theatheorem}{A.1.\arabic{atheorem}}
  
 
 \begin{document} \urlstyle{rm}
@@ -78,14 +82,14 @@
 \include{chapters/chap5-floquetbloch}
 \include{chapters/chap6-spectrumoned}
 \include{chapters/chap7-multidcase}
-\include{chapters/chap8-outlconcl}
+\include{chapters/chap8-outlconcl} 
 
-\appendix \pagenumbering{Roman}
+\appendix \pagenumbering{Roman} 
  \include{chapters/appendix}
 \addcontentsline{toc}{section}{A.2 ~ Bibliography}
  \bibliography{bilbio.bib}
 \addcontentsline{toc}{section}{A.3 ~ Declaration}
  \include{chapters/statement}
-
+ 
 
 \end{document}
