@@ -67,7 +67,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 		\begin{equation}
 			A_{k} \psi_{s}(\cdot, k) = \lambda \psi_{s}(\cdot, k) \label{firstinclusion-firstequation} 
 		\end{equation} 
-		We regard $\psi_{s}(\cdot, k)$ as extended to the whole of $\R$ by the boundary condition \eqref{quasi-periodic-condition}, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies
+		As introduced in Chapter \ref{chap:4}, we regard $\psi_{s}(\cdot, k)$ extended to the whole of $\R$, whence, due to the periodic structure of $A$, $\psi_{s}$ satisfies
 		\[ A \psi_{s} = \lambda \psi_{s} \]
 		\enquote{locally}, i.e. $\psi_{s} \in \Big\{ \psi \in  H^{1}_{loc}(\R) : \psi \in H^{2}_{loc}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), \psi'(x_{j} - 0) - \psi'(x_{j} + 0) + \rho  \psi(x_{j}) = 0 ~\forall j \in \Z \Big\}$, and $ -\psi_{s}'' = \lambda \psi_{s}$ on $\R \setminus \bigcup_{i \in \Z} x_{i}$. Now, if we choose a function $\eta \in H^{2}(\R)$ such that 
 			\begin{equation}
@@ -75,7 +75,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 			\end{equation} 
 		we are able to define, for each $l \in \N$,
 			\[ \kappa_{l}(x) \coloneqq \eta\left(\frac{|x|}{l}\right) \psi_{s}(x, k) \]		
-	 	for all $x \in \R$; for an illustration see Figures \ref{fig:6.1}, \ref{fig:6.2} and \ref{fig:6.3} where a schematic of the real part is depicted; the complex part goes analogously. As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
+	 	for all $x \in \R$; for an illustration see Figures \ref{fig:6.1}, \ref{fig:6.2} and \ref{fig:6.3} where a schematic of the real part is depicted; the analogous complex part is not depicted here. As $\psi_{s} \in \mathcal{D}(A)$ we know $\kappa_{l} \in \mathcal{D}(A)$, hence, we see that
 		\begin{align}
 			(A - \lambda I) \kappa_{l} & = \sum_{i \in \N} \left[ (- \frac{d^{2}}{dx^{2}} - \lambda) \kappa_{l}|_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] \label{eq:sepofspectraleq} \\
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
@@ -114,7 +114,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 	};
  \end{axis}
  \end{tikzpicture}%	
- \caption{Example for the function $\eta$.} \label{fig:6.1}
+ \caption{Example for the function $\eta$} \label{fig:6.1}
 \end{figure}
 	
 \begin{figure}
@@ -145,7 +145,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 	};
   \end{axis}
  \end{tikzpicture}%
- \caption{A schematic of the real part of a Bloch wave in one dimension.} \label{fig:6.2}
+ \caption{A schematic of the real part of a Bloch wave in one dimension} \label{fig:6.2}
 \end{figure}
 
 \begin{figure}
@@ -176,7 +176,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 		};
   \end{axis}
  \end{tikzpicture}%
- \caption{Resulting real part of the function $u_{l}$.} \label{fig:6.3}
+ \caption{Resulting real part of the function $u_{l}$} \label{fig:6.3}
 \end{figure}		
 ~\newline
 

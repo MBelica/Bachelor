@@ -12,7 +12,7 @@ The mathematical representation of the above is a multi-dimensional Schrödinger
 \end{equation}
 on the whole of $\R^{n}$, where $\delta_{S_{i}}$ denotes the Delta-Distribution on hypersurface $S_{i}$. Let us recall that on a hypersurface $S$ the Delta-Distribution acts on $\varphi \in C_{0}^{\infty}(\R^{n})$ by 
 	\[ \delta_{S}\left(\varphi\right) \coloneqq \int_{S} \varphi(s) ds . \]
-where $s$ is the hypersurface measure associated to $S_{j}$; for a more detailed explanation see \cite[Chapter 14]{forster2012analysis}. Since every function in $H^{1}(\R^{n})$ can be approximated by a sequence in $C_{0}^{\infty}(\R^{n})$ (Theorem \ref{athm:hkapprox}), we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
+where $s$ is the hypersurface measure associated to $S_{j}$; for a more detailed explanation see \cite[Chapter 14]{forster2012analysis}. Since every function in $H^{1}(\R^{n})$ can be approximated by a sequence in $C_{0}^{\infty}(\R^{n})$ (Theorem \ref{athm:approx}), we find for every $u \in H^{1}(\R^{n})$ a sequence $(u_{n})_{n \in \N} \in C_{0}^{\infty}(\R^{n})$ such that $\lim_{n \rightarrow \infty} u_{n} = u$, and hence we define
 	\[ \delta_{S}\left(u\right) \coloneqq \lim_{n \rightarrow \infty} \delta_{S}\left(u_{n}\right) . \]
 \begin{remark}
 	This definition is independent of the chosen sequence in $C_{0}^{\infty}(\R^{n})$.
@@ -171,7 +171,7 @@ For our ultimate goal, we then consider the eigenvalue problem to find $\psi \in
 	\begin{equation}
 		A^{n}_{k} \psi_{s} = \lambda^{n}_{s}(k) \psi_{s} \text{ on } \Omega. \label{md-eigv-problem}
 	\end{equation}
-As before, we understand $\psi_{s}$ extended by the boundary condition on $\Omega$ in $H^{1}_{k, n}$ to the whole of $\R^{n}$ and call the eigenfunctions Bloch waves. Using the compactness of $R_{\mu, k}^{n}$, we know furthermore that every non-zero $\lambda \in \sigma(A_{k}^{n})$ is an eigenvalue of $A_{k}^{n}$ and that the purely discrete spectrum satisfies
+As before, in writing the boundary condition in the form in $H^{1}_{k, n}$, we regard $\psi_{s}(\cdot, k)$ extended to the whole of $\R^{n}$ and call the eigenfunctions Bloch waves. Using the compactness of $R_{\mu, k}^{n}$, we know furthermore that every non-zero $\lambda \in \sigma(A_{k}^{n})$ is an eigenvalue of $A_{k}^{n}$ and that the purely discrete spectrum satisfies
 	\begin{equation}
 		\lambda^{n}_{1}(k) \leq \lambda^{n}_{2}(k) \leq \dotsc \leq \lambda^{n}_{s}(k) \rightarrow \infty \text{ as } s \rightarrow \infty. \label{md-comment-after}
 	\end{equation}
