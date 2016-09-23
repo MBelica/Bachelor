@@ -205,7 +205,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 	\begin{proof}
 		Let $\lambda \in \R \setminus \bigcup_{s \in \N} I_{s}$. Hence, due to \eqref{UIclosed}, there exists some $\delta > 0$ such that
 			\begin{equation}
-				|\lambda_{s}(k) - \lambda| \geq \delta \quad \text{ for all } s \in \N, k \in B \label{lambda-distance}
+				|\lambda_{s}(k) - \lambda| \geq \delta \quad \text{ for all } s \in \N, k \in B \label{lambda-distance}
 			\end{equation}
 		We are going to prove that $\lambda \in \rho(A)$, i.e. for each $f \in L^{2}(\R)$ there exists some $u \in \mathcal{D}(A)$ satisfying $(A-\lambda I)u = f$. For an arbitrary $f \in L^{2}(\R)$ and $l \in \N$, we define at first
 			\[ f_{l}(x) \coloneqq \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x,k) dk \]
@@ -218,7 +218,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 		\begin{equation}
 			(A_{k} - \lambda I) v(\cdot, k) = (Uf)(\cdot, k) \quad \text{ on } \Omega. \label{4.9}			
 		\end{equation}
-		Due to \eqref{4.9}, both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy quasi-periodic boundary conditions. Hence, \eqref{eigv-problem}, \eqref{lambda-distance} and Parseval's identity (Theorem \ref{athm:parseval}) yield
+		Due to \eqref{4.9}, both $v(\cdot, k)$ and $\psi_{s}(\cdot, k)$ satisfy quasi-periodic boundary conditions. Hence, \eqref{eigv-problem}, \eqref{lambda-distance} and Parseval's identity (Theorem \ref{athm:parseval}) yield
 		\begin{align*}
 			\| (Uf)(\cdot, k)\|^{2}_{L^{2}(\Omega)} & = \sum_{s=1}^{\infty} |\langle (Uf)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
 			& = \sum_{s=1}^{\infty}|\langle (A_{k} - \lambda) v(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)}|^{2} \\
@@ -232,7 +232,7 @@ The other inclusion can be established by using the properties of the Floquet tr
 					& = (\lambda_{s}(k) - \lambda) \langle Uu(\cdot, k), \psi_{s}(\cdot, k) \rangle_{L^{2}(\Omega)}.
 			\end{align*}
 		Now, we are able to apply Theorem \ref{3.3:thm-flConvergence} which yields for \eqref{ul} that
-			\[ u_{l}(x) = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uu)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk, \]
+			\[ u_{l}(x) = \frac{1}{\sqrt{|B|}} \sum_{s=1}^{l} \int_{B} \langle (Uu)(\cdot, k), \psi_{s}(\cdot, k)\rangle_{L^{2}(\Omega)} \psi_{s}(x, k) dk, \]
 		and whence Theorem \ref{3.3:thm-flConvergence} gives
 			\begin{equation}
 				u_{l} \rightarrow u, \quad f_{l} \rightarrow f \quad \text{ in } L^{2}(\R) \text{ as } l \rightarrow \infty. \label{ulflconvergence}

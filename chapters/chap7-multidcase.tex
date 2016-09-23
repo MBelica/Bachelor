@@ -49,7 +49,7 @@ where $s$ is the hypersurface measure associated to $S_{j}$; for a more detailed
 
 Again motivated by the weak formulation, given a right-hand side $f \in L^{2}(\R^{n})$ we consider for some $\mu \in \R$ the problem to find $u \in H^{1}(\R^{n})$ such that
 	\begin{equation}
-		\int_{\R^{n}} \nabla u(x) \overline{\nabla v(x)} dx + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds - \mu \int_{\R^{n}} u(x) \overline{v(x)} dx = \int_{\R^{n}} f(x) \overline{v(x)} dx \label{eq:7.2-md-weak-formulation}
+		\int_{\R^{n}} \nabla u(x) \overline{\nabla v(x)} dx + \rho \sum_{i \in \Z^{n}} \int_{S_{j}} u(s) \overline{v(s)} ds - \mu \int_{\R^{n}} u(x) \overline{v(x)} dx = \int_{\R^{n}} f(x) \overline{v(x)} dx \label{eq:7.2-md-weak-formulation}
 	\end{equation} 
 holds for all $v \in H^{1}(\R^{n})$. Note that in the second term we denote by $u, v$ the traces. As $u, v \in H^{1}(\R)$, the traces are in $L^{2}(\R^{n})$ by \cite[p. 251, Theorem 5.1]{evans1998partial} and \cite[p. 164]{adams2003sobolev}, and thus, in view of the following remark, the second term on the left-hand side of \eqref{eq:7.2-md-weak-formulation} is well-defined.
 
@@ -133,10 +133,10 @@ We are interested in the periodic spectral problem of the operator $A^{n}$. Ther
 \end{proof}
 
 The periodicity cell we will now focus on can be chosen arbitrarily, let this for simplicity be $Y$. For brevity, let us define for $k \in \overline{B^{n}}$ 
-\[ H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{\Omega_{j}^{+}} = w \big|_{\Omega_{j}^{-}} e^{i k_{j}} \text{ for } k \in \overline{B^{n}}, j = 1,\dotsc, n \right\}, \]
+\[ H^{1}_{k, n} \coloneqq \left\{ w \in H^{1}(Y) \colon w \big|_{\Omega_{j}^{+}} = w \big|_{\Omega_{j}^{-}} e^{i k_{j}} \text{ for } k \in \overline{B^{n}}, j = 1,\dotsc, n \right\}, \]
  and consider the problem to find $u \in H^{1}_{k, n}$ such that
 	\begin{equation}
-		\int_{Y} \nabla u(x) \overline{\nabla v(x)} dx + \rho \int_{S} u(s) \overline{v(s)} ds - \mu \int_{Y} u(x) \overline{v(x)} dx = \int_{Y} f(x) \overline{v(x)} dx \label{eq:7.3-md_weak_formulation_res}
+		\int_{Y} \nabla u(x) \overline{\nabla v(x)} dx + \rho \int_{S} u(s) \overline{v(s)} ds - \mu \int_{Y} u(x) \overline{v(x)} dx = \int_{Y} f(x) \overline{v(x)} dx \label{eq:7.3-md_weak_formulation_res}
 	\end{equation} 
 holds for all $v \in H^{1}_{k, n}$. 
 ~\\ ~\\

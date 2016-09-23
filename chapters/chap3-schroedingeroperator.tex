@@ -108,7 +108,7 @@ Again, due to the linearity of the integral and the uniqueness of the solution, 
 			0 = B_{\mu}[u_{1}, v] - B_{\mu}[u_{2}, v] = \int_{\R} (f_{1}(x) - f_{2}(x)) \overline{v(x)} dx \quad \forall v \in C_{0}^{\infty}(\R). \label{f1f2almosteverywhere}
 		\end{equation} 
 		Since $C_{0}^{\infty}(\R)$ is dense in $L^{2}(\R)$ (Theorem \ref{athm:approx}) we know from the equation \eqref{f1f2almosteverywhere} that
-		\[ 0 = \int_{\R} \left(f_{1}(x) - f_{2}(x)\right) \overline{v(x)} dx \quad \forall v \in L^{2}(\R), \]
+		\[ 0 = \int_{\R} \left(f_{1}(x) - f_{2}(x)\right) \overline{v(x)} dx \quad \forall v \in L^{2}(\R), \]
 		i.e. $f_{1} = f_{2}$ almost everywhere.
 	\end{proof}
 \end{theorem}
@@ -144,7 +144,7 @@ and therefore
 		\mathcal{D}(A) \subseteq \Big\{ u \in H^{1}(\R) \colon u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall i, j \in \Z \Big\}
 	\end{equation} 
 	
-Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} for an arbitrary $n \in \N$ yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump}:
+Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} for an arbitrary $n \in \N$ yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump}:
 \[ \sum_{i=-n}^{n-1} -\int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx + \sum_{i=-n}^{n-1} u' \overline{v} \big|_{x_{i}}^{x_{i+1}} + \rho \sum_{i=-n}^{n-1} u(x_{i}) \overline{v(x_{j})} - \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx = \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx \]
 \begin{equation}
 	\iff \sum_{i=-n}^{n-1} \int_{x_{i}}^{x_{i+1}} u''(x) \overline{v(x)} dx = - \int_{x_{-n}}^{x_{n}} f(x) \overline{v(x)} dx - \mu \int_{x_{-n}}^{x_{n}} u(x) \overline{v(x)} dx. \label{refwa}
@@ -155,7 +155,7 @@ By defining $w_{n} \coloneqq \sum_{i=-n}^{n-1} u'' \mathds{1}_{[x_{i}, x_{i+1}]}
 		& \leq \|f\|_{L^{2}(x_{-n}, x_{n})} \|v\|_{L^{2}(x_{-n}, x_{n})} + |\mu| \|u\|_{L^{2}(x_{-n}, x_{n})} \|v\|_{L^{2}(x_{-n}, x_{n})} \notag \\
 		& \leq c \|v\|_{L^{2}(x_{-n}, x_{n})}, \label{refwa2}
 \end{align}
-for some $c \in \R$, since $f \in L^{2}(\R)$ and $u \in H^{1}(\R)$. This constant is independent of $n$, from which, with \eqref{refwa2}, follows that $\sum_{i \in \Z} \|u''\|^{2}_{L^{2}(x_{i}, x_{i+1})} < \infty$. This yields the inclusion
+for some $c \in \R$, since $f \in L^{2}(\R)$ and $u \in H^{1}(\R)$. This constant is independent of $n$, from which, with \eqref{refwa2}, follows that $\sum_{i \in \Z} \|u''\|^{2}_{L^{2}(x_{i}, x_{i+1})} < \infty$. This yields the inclusion
 	\begin{equation}
 		\mathcal{D}(A) \subseteq \left\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \in \Z \right\}. \label{firstdomaininclusion} 
 	\end{equation}

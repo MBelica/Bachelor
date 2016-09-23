@@ -72,7 +72,7 @@
 		\item Let $U \subseteq \R^{n}$ be a bounded open set of class $C^{1}$. Then the following compact embeddings hold:
 			\begin{itemize}
 				\item $H	^{1}(U) \subseteq L^{q}(U)$ for every $q \in [1, p^{*})$, where $n \geq 3$ and $p^{*} = \frac{2n}{n - 2}$.
-				\item $H^{1}(U) \subseteq L^{q}(U)$ for every $q \in [1, \infty)$, if $n = 2$.
+				\item $H^{1}(U) \subseteq L^{q}(U)$ for every $q \in [1, \infty)$, if $n = 2$.
 			\end{itemize}
 		
 			\begin{proof}
@@ -82,11 +82,11 @@
 			\begin{proof} 
 				By Theorem \ref{embhc} $H^{1}(U) \subseteq C^{\frac{1}{2}}(U)$, hence we can estimate
 					\begin{equation}
-						|f(x) - f(y)| \leq c |x - y|^{\frac{1}{2}} \tag{$*$} \label{hoelderstet}
+						|f(x) - f(y)| \leq c |x - y|^{\frac{1}{2}} \tag{$*$} \label{hoelderstet}
 					\end{equation} 
 				for some $c > 0$ and for all $x, y \in U$. Let $B_{H^{1}_{k}} \coloneqq \{ f \in H^{1}_{k}(U) : \|f\|_{H^{1}(U)} \leq 1 \}$, then for $f \in B_{H^{1}_{k}}$ it holds that
 				\begin{equation}
-					|f(x)|^{2} \leq 2 \| f\|^{2}_{L^{2}(U)} + 2 \leq 4 \quad \forall x \in U. \tag{$**$} \label{eqbounded}
+					|f(x)|^{2} \leq 2 \| f\|^{2}_{L^{2}(U)} + 2 \leq 4 \quad \forall x \in U. \tag{$**$} \label{eqbounded}
 				\end{equation} 
 				For an arbitrary $\epsilon > 0$ we now partition $U$ into $n_{\epsilon}$ equidistant, disjoint intervals $I_{k}$, i.e. $U = \bigcup_{k = 1}^{n_{\epsilon}} I_{k}$. Since all $f \in B_{H^{1}_{k}}$ are uniformly bounded on $U$ by \eqref{eqbounded}, there exist for each subinterval $I_{k}$ a finite number of constants $c_{1, k}, \dotsc, c_{\nu_{\epsilon}, k}$ such that
 					\[ \forall f \in B_{H^{1}_{k}} ~\exists j \in \{1, \dotsc, \nu_{\epsilon} \} : \left| f\left(\frac{k}{n_{\epsilon}}\right) - c_{j, k} \right| < \frac{1}{n_{\epsilon}} ~\forall k \in \{ 1, \dotsc, n_{\epsilon} \}. \]
@@ -229,7 +229,7 @@
 			\begin{proof}
 				 Follows directly from the definitions for self-adjoint and closed operators.
 			\end{proof}
-		\item For $A$ being a self-adjoint operator, $\lambda \in \rho(A)$, $(A - \lambda I)^{-1}$ is bounded.
+		\item For $A$ being a self-adjoint operator, $\lambda \in \rho(A)$, $(A - \lambda I)^{-1}$ is bounded.
 			\begin{proof}
 				Since every self-adjoint is closed, $(A - \lambda I)$ is as the shift with $\lambda \in \R$ also closed. Furthermore, the graph of $(A - \lambda I)^{-1}$ is simply the graph of $(A - \lambda I)$ rotated and hence $(A - \lambda I)^{-1}$ is closed as well. The closed Graph Theorem now yields the desired result.
 			\end{proof}
