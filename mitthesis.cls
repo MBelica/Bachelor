@@ -220,10 +220,10 @@
 %	into 1in margin.
 %  Draft mode brings the header back down.
 
-\setlength{\oddsidemargin}{0.835in}	% 1.25in left margin 
-\setlength{\evensidemargin}{0.835in}	% 1.25in left margin (even pages)
+\setlength{\oddsidemargin}{0.4in}	% 1.25in left margin 
+\setlength{\evensidemargin}{0.4in}	% 1.25in left margin (even pages)
 \setlength{\topmargin}{0.0in}		% 1in top margin
-\setlength{\textwidth}{5.355in}		% 6.0in text - 1.25in rt margin
+\setlength{\textwidth}{5.85in}		% 6.0in text - 1.25in rt margin
 \setlength{\textheight}{212mm}		% Body ht for 1in margins
 \addtolength{\topmargin}{-\headheight}	% No header, so compensate
 \addtolength{\topmargin}{-\headsep}	% for header height and separation
@@ -532,3 +532,4 @@ requirements for the \@degreeword\ of \\
 
 \def\abstract{\subsection*{Abstract}\small\def\baselinestretch{1}\@normalsize}
 \def\endabstract{\par}
+

@@ -62,7 +62,8 @@ holds for all $v \in H^{1}(\R)$. The existence of a unique $u \in H^{1}(\R)$ sat
 				& \leq 3 \| u' \|_{L^{2}(\R)}^{2} \| v' \|_{L^{2}(\R)}^{2} + 12 \rho^{2} \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)}  + 3 \mu^{2} \| u \|_{L^{2}(\R)}^{2} \| v \|_{L^{2}(\R)}^{2} \\
 				& \leq \alpha \| u \|^{2}_{H^{1}(\R)} \| v \|^{2}_{H^{1}(\R)},
 		\end{align*}
-		holds for all $u, v \in H^{1}(\R)$ where $\alpha = \max \left\{ 12 \rho^{2} + 3 \mu^{2} , 12 \rho^{2} + 3 \right\}$. \\
+		holds for all $u, v \in H^{1}(\R)$ where $\alpha = \max \left\{ 12 \rho^{2} + 3 \mu^{2} , 12 \rho^{2} + 3 \right\}$. 
+		~\newpage
 		
 		$b)$ Let $u \in H^{1}(\R)$. Regarding the coercivity, we note first that for the given sesquilinear form by definition $B[u, u] \in \R$ holds. Assuming $\rho \geq 0$ yields for $\mu \leq -1$ that
 		\begin{align*}
@@ -127,8 +128,9 @@ Note that this definition is consistent with the formal definition in \eqref{the
 We will now use the fact that every element $u \in \mathcal{D}(A) = \mathcal{R}(R_{\mu})$ is a solution of \eqref{weak-formulation-of-A-for-LM} to find additional necessary  characteristics of $\mathcal{D}(A)$. However, we already know by Lax-Milram's Theorem that $u \in H^{1}(\R)$. Let us first for the sake of brevity define
 \[ H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big) \coloneqq \Big\{ u\in L^{2}(\R) : u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z, \sum_{i \in \Z} \|u\|^{2}_{H^{2}(x_{i}, x_{i+1})} < \infty \Big\}. \]
 Then, considering in \eqref{weak-formulation-of-A} any fixed $k \in \Z$ and an arbitrary test function $v \in C_{0}^{\infty}(\R)$ with $\supp v \subseteq [x_{k}, x_{k+1}]$ we get 
+	\[ \int_{x_{k}}^{x_{k + 1}} u'(x) \overline{v'(x)} dx = \int_{x_{k}}^{x_{k+1}} \left(Au\right)(x) \overline{v(x)} dx \]
 	\begin{equation}
-		\int_{x_{k}}^{x_{k + 1}} u'(x) \overline{v'(x)} dx = \int_{x_{k}}^{x_{k+1}} \left(Au\right)(x) \overline{v(x)} dx \iff \int_{x_{k}}^{x_{k+1}} - u(x) \overline{v''(x)} dx = \int_{x_{k}}^{x_{k+1}} \left(Au\right)(x) \overline{v(x)} dx, \label{temp-link}
+		 \iff \int_{x_{k}}^{x_{k+1}} - u(x) \overline{v''(x)} dx = \int_{x_{k}}^{x_{k+1}} \left(Au\right)(x) \overline{v(x)} dx, \label{temp-link}
 	\end{equation} 
 whence $u'' \in L^{2}(x_{k}, x_{k + 1})$ and $A u = - u''$ on $(x_{k}, x_{k + 1})$. Since we chose an arbitrary $k \in \Z$, we can note 
 	$$ \mathcal{D}(A) \subseteq \Big\{ u \in H^{1}(\R) \colon u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}) ~\forall i \in \Z \Big\}. $$
@@ -141,7 +143,7 @@ Now, choosing in addition $v$ to be non-zero in $x_{k}$ yields
 	\end{equation} 
 and therefore
 	\begin{equation}
-		\mathcal{D}(A) \subseteq \Big\{ u \in H^{1}(\R) \colon u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall i, j \in \Z \Big\}
+		\mathcal{D}(A) \subseteq \Big\{ u \in H^{1}(\R) \colon u\big|_{(x_{i}, x_{i+1})} \in H^{2}(x_{i}, x_{i+1}), u'(x_{i} - 0) - u'(x_{i} + 0) + \rho u(x_{i}) = 0 ~\forall i \in \Z \Big\}
 	\end{equation} 
 	
 Finally, choosing a function $v \in C_{0}^{\infty}(\R)$ with $\supp v = (x_{-n}, x_{n})$ in \eqref{weak-formulation-of-A} for an arbitrary $n \in \N$ yields with partial integration on every interval $(x_{i}, x_{i+1})$ by using \eqref{jump}:
@@ -157,7 +159,7 @@ By defining $w_{n} \coloneqq \sum_{i=-n}^{n-1} u'' \mathds{1}_{[x_{i}, x_{i+1}]}
 \end{align}
 for some $c \in \R$, since $f \in L^{2}(\R)$ and $u \in H^{1}(\R)$. This constant is independent of $n$, from which, with \eqref{refwa2}, follows that $\sum_{i \in \Z} \|u''\|^{2}_{L^{2}(x_{i}, x_{i+1})} < \infty$. This yields the inclusion
 	\begin{equation}
-		\mathcal{D}(A) \subseteq \left\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \in \Z \right\}. \label{firstdomaininclusion} 
+		\mathcal{D}(A) \subseteq \left\{ u \in H^{1}(\R): u \in H^{2}\Big(\R \setminus \bigcup_{i \in \Z} x_{i} \Big), u'(x_{j} - 0) - u'(x_{j} + 0) + \rho u(x_{j}) = 0 ~\forall j \in \Z \right\} \label{firstdomaininclusion} 
 	\end{equation}
 Hence, for an arbitrary $u \in \mathcal{D}(A)$ we know from \eqref{temp-link} and \eqref{firstdomaininclusion} that
 	\begin{equation}

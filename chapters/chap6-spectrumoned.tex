@@ -81,11 +81,26 @@ Using this property we are now able to prove the first inclusion of the main sta
 				& = \sum_{i \in \N} \left[ \eta\left(\frac{|\cdot|}{l}\right) \left(- \frac{d^{2}}{dx^{2}} - \lambda \right) \psi_{s}(\cdot, k) |_{(x_{i}, x_{i+1})} \cdot \mathds{1}_{(x_{i}, x_{i+1})} \right] + R \notag
 		\end{align}
 		where $R$ is a sum of products of derivatives of order $\geq 1$ of $\eta\left(\frac{|\cdot|}{l}\right)$ and of order $\leq 1$ of $\psi_{s}(\cdot, k)$. 
+		Let use denote with $B_{l}$ the ball around $0$ with radius $l$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, since $\psi_{s}(\cdot, k) \in H^{1}_{loc}(\R)$, the quasi-periodic structure of $\psi_{s}(\cdot, k)$ implies
+		\begin{equation}
+			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
+		\end{equation}
+		Now, the quasi-periodic structure allows us additionally to find an upper boundary for $\kappa_{l}$:
+		\begin{equation}
+			\| \kappa_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l}. \label{eq:6.11}
+		\end{equation} 
+		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, \eqref{eq:6.11} yields
+		\[ \frac{1}{\|\kappa_{l}\|_{L^{2}(\R)}}\| (A - \lambda I) \kappa_{l} \|_{L^{2}(\R)} \leq \frac{c}{l}, \]
+		which eventually results in the property
+			\[ \frac{1}{\|\kappa_{l} \|_{L^{2}(\R)}} \| (A - \lambda I) \kappa_{l} \|_{L^{2}(\R)} \rightarrow 0 \text{ as } l \rightarrow \infty. \]
+		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
+	\end{proof}
+\end{theorem}	
 		
 \definecolor{lightblue}{rgb}{0.00000,0.44700,0.74100}%
 \begin{figure}
  \begin{tikzpicture}
-  \begin{axis}[ width=6in, height=2.25in, at={(1.011in,2.39in)}, scale only axis, xmin=-2.5, xmax=2.5, ymin=-0.5, ymax=1.25, ticks=none, axis x line=middle,
+  \begin{axis}[ width=5.85in, height=2.245in, at={(1.011in,2.39in)}, scale only axis, xmin=-2.5, xmax=2.5, ymin=-0.5, ymax=1.25, ticks=none, axis x line=middle,
              axis y line=middle, yticklabels={,,}, xticklabels={,,} after end axis/.code={ \draw[red,->] (axis cs:0,0) -- (axis cs:0.5,0); }]
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -2 -0.025 \\ -2 0.025 \\ };
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -1.5 -0.025 \\ -1.5 0.025 \\ };
@@ -119,7 +134,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 	
 \begin{figure}
  \begin{tikzpicture}
-  \begin{axis}[ width=6in, height=2.25in, at={(1.011in,2.39in)}, scale only axis, xmin=-2.5, xmax=2.5, ymin=-150, ymax=175, ticks=none, axis x line=middle, axis y line=middle, yticklabels={,,}, xticklabels={,,} after end axis/.code={ \draw[red,->] (axis cs:0,0) -- (axis cs:0.5,0); }]
+  \begin{axis}[ width=5.85in, height=2.245in, at={(1.011in,2.39in)}, scale only axis, xmin=-2.5, xmax=2.5, ymin=-150, ymax=175, ticks=none, axis x line=middle, axis y line=middle, yticklabels={,,}, xticklabels={,,} after end axis/.code={ \draw[red,->] (axis cs:0,0) -- (axis cs:0.5,0); }]
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -2 -5 \\ -2 5 \\ };
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -1.5 -5 \\ -1.5 5 \\ };
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -1 -5 \\ -1 5 \\ };
@@ -150,7 +165,7 @@ Using this property we are now able to prove the first inclusion of the main sta
 
 \begin{figure}
  \begin{tikzpicture}
-  \begin{axis}[ width=6in, height=2.25in, at={(1.011in,2.39in)}, scale only axis, xmin=-2.5, xmax=2.5, ymin=-150, ymax=175, ticks=none, axis x line=middle, axis y line=middle, yticklabels={,,}, xticklabels={,,} after end axis/.code={ \draw[red,->] (axis cs:0,0) -- (axis cs:0.5,0); }]
+  \begin{axis}[ width=5.85in, height=2.245in, at={(1.011in,2.39in)}, scale only axis, xmin=-2.5, xmax=2.5, ymin=-150, ymax=175, ticks=none, axis x line=middle, axis y line=middle, yticklabels={,,}, xticklabels={,,} after end axis/.code={ \draw[red,->] (axis cs:0,0) -- (axis cs:0.5,0); }]
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -2 -5 \\ -2 5 \\ };
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -1.5 -5 \\ -1.5 5 \\ };
 	\addplot [color=black,solid,forget plot] table[row sep=crcr]{ -1 -5 \\ -1 5 \\ };
@@ -178,23 +193,6 @@ Using this property we are now able to prove the first inclusion of the main sta
  \end{tikzpicture}%
  \caption{Resulting real part of the function $u_{l}$} \label{fig:6.3}
 \end{figure}		
-~\newline
-
-		Let use denote with $B_{l}$ the ball around $0$ with radius $l$ and let, for simplicity, $c \in \R$ be a generic constant. Thus, since $\psi_{s}(\cdot, k) \in H^{1}_{loc}(\R)$, the quasi-periodic structure of $\psi_{s}(\cdot, k)$ implies
-		\begin{equation}
-			 \| R \|_{L^{2}(\R)} \leq \frac{c}{l} \| \psi_{s}(\cdot, k) \|_{H^{1}(B_{l})} \leq c \frac{1}{\sqrt{l}}. \label{eq:estimofR}
-		\end{equation}
-		Now, the quasi-periodic structure allows us additionally to find an upper boundary for $\kappa_{l}$:
-		\begin{equation}
-			\| \kappa_{l} \|_{L^{2}(\R)} \geq c \| \psi_{s}(\cdot, k) \|_{L^{2}(K_{l})} \geq c \sqrt{l}. \label{eq:6.11}
-		\end{equation} 
-		Together with \eqref{UIclosed}, \eqref{firstinclusion-firstequation} and \eqref{eq:sepofspectraleq}, \eqref{eq:6.11} yields
-		\[ \frac{1}{\|\kappa_{l}\|_{L^{2}(\R)}}\| (A - \lambda I) \kappa_{l} \|_{L^{2}(\R)} \leq \frac{c}{l}, \]
-		which eventually results in the property
-			\[ \frac{1}{\|\kappa_{l} \|_{L^{2}(\R)}} \| (A - \lambda I) \kappa_{l} \|_{L^{2}(\R)} \rightarrow 0 \text{ as } l \rightarrow \infty. \]
-		Thus, either $\lambda$ is an eigenvalue of $A$, or $(A - \lambda I)^{-1}$ exists but is unbounded. In both cases, $\lambda \in \sigma(A)$.
-	\end{proof}
-\end{theorem}	
 
 The other inclusion can be established by using the properties of the Floquet transformation shown above and the completeness of the Bloch waves. Hence, this proof follows that for a general $m$-th order linear differential operator with periodic coefficients. Again, for the sake of completeness, we include the proof here, as given in \cite[Section 3.6]{dorfler2011photonic}.
 
